@@ -195,7 +195,7 @@ function App() {
 
 
     <div style={{ marginBottom: '1rem' }}>
-      <label>¿Cuántos años vivís en este lugar?<br />
+      <label>¿Hace cuántos años vivís en este lugar?<br />
         <select
           value={yearsInBarrio}
           onChange={(e) => setYearsInBarrio(e.target.value)}
