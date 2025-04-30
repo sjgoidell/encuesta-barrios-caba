@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  background-color: #1e1e1e;      /* Dark gray */
+  color: #f5f5f5;                 /* Light text */
+  font-family: 'Georgia', serif; /* More editorial, NYT feel */
+  line-height: 1.6;
+}
+
+input, select, textarea {
+  background-color: #111;
+  color: #f5f5f5;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #111;
+}
