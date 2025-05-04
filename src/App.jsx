@@ -23,6 +23,29 @@ function App() {
   const [barrioName, setBarrioName] = useState('')
   const [suggestions, setSuggestions] = useState([])
   const inputRef = useRef()
+  const [mapClickCount, setMapClickCount] = useState(0)
+  const [showTerms, setShowTerms] = useState(false)
+
+  //Capturing metadata
+  const [userRegion, setUserRegion] = useState('unknown')
+  const sessionStartTime = useRef(Date.now())
+  const deviceType = window.innerWidth <= 768 ? 'mobile' : 'desktop'
+  const language = navigator.language || 'unknown'
+  useEffect(() => {
+    fetch('https://ipapi.co/json')
+      .then(res => res.json())
+      .then(data => {
+        if (data.city && data.country) {
+          setUserRegion(`${data.city}, ${data.country}`)
+        } else if (data.country_name) {
+          setUserRegion(data.country_name)
+        }
+      })
+      .catch(() => setUserRegion('unknown'))
+  }, [])
+    
+
+  // click outside barrio dropdown
   useEffect(() => {
     function handleClickOutside(event) {
       if (inputRef.current && !inputRef.current.contains(event.target)) {
@@ -108,7 +131,7 @@ function App() {
     }
   }  
   
-
+  // submission validation
   const validateScreen2 = () => {
     const emailRegex = /^.+@.+\..+$/
     if (!email || !emailRegex.test(email)) {
@@ -146,9 +169,10 @@ function App() {
     return true
   }  
      
+  // submission
   const handleSubmit = async () => {
 
-  // Bundle data
+  // Bundle data for submission
     const fullSubmission = {
       email: email || '',
       age: age || '',
@@ -156,7 +180,6 @@ function App() {
       yearsInBarrio: yearsInBarrio || '',
       barrioName: barrioName || '',
       pinLocation: pinLocation || null,
-      polygon: polygonGeoJson ? JSON.stringify(polygonGeoJson) : null,
       landmarks: landmarks || '',
       altNames: altNames || '',
       comments: comments || '',
@@ -165,7 +188,13 @@ function App() {
       claseSocial: claseSocial || '',
       genero: genero || '',
       situacionDomicilio: situacionDomicilio || '',
-      submittedAt: new Date()
+      submittedAt: new Date(),
+      sessionDuration: Date.now() - sessionStartTime.current,
+      deviceType,
+      language,
+      userRegion,
+      mapClickCount,
+      polygon: polygonGeoJson ? JSON.stringify(polygonGeoJson) : null
     }
   
     try {
@@ -225,10 +254,10 @@ function App() {
           </p>
           <button onClick={goNext}>Aceptar y comenzar →</button>
           <p style={{ fontSize: '0.8rem', marginTop: '2rem' }}>
-            Al participar, aceptás los <span style={{ color: 'lightblue', cursor: 'pointer' }} onClick={() => setShowModal(true)}>términos y condiciones</span> del proyecto.  
-            Este proyecto quería agradecer al trabajo del New York Times en su <a href="https://www.nytimes.com/interactive/2023/upshot/extremely-detailed-nyc-neighborhood-map.html" target="_blank" rel="noopener noreferrer" style={{ color: 'lightblue' }}>
-              "Extremely Detailed Map of New York City Neighborhoods"
-            </a> por la inspiración de este proyecto.
+            Al participar, aceptás los <span style={{ color: 'lightblue', cursor: 'pointer' }} onClick={() => setShowTerms(true)}>términos y condiciones</span> del proyecto.  
+            Este proyecto quería agradecer al trabajo del New York Times en su "<a href="https://www.nytimes.com/interactive/2023/upshot/extremely-detailed-nyc-neighborhood-map.html" target="_blank" rel="noopener noreferrer" style={{ color: 'lightblue' }}>
+              Extremely Detailed Map of New York City Neighborhoods
+            </a>" por la inspiración de este proyecto.
           </p>
         </div>
         </>
@@ -390,6 +419,7 @@ function App() {
           <MapScreen
             step={step}
             setPinLocation={setPinLocation}
+            setMapClickCount={setMapClickCount}
             //overrideCenter={isMobile && step === 3 ? [-58.437, -34.6337] : undefined}
           />
 
@@ -510,7 +540,7 @@ function App() {
         style={{ width: '100%', padding: '0.5rem', marginTop: '0.25rem' }}
       >
             <option value="">Seleccioná una opción</option>
-            <option value="<alta">Clase alta</option>
+            <option value="alta">Clase alta</option>
             <option value="mediaalta">Clase media alta</option>
             <option value="media">Clase media</option>
             <option value="mediabaja">Clase media baja</option>
@@ -630,8 +660,57 @@ function App() {
       border: '2px solid red'
     }}>
       <h3 style={{ color: 'red' }}>Aviso</h3>
-      <p>{modalMessage || 'Aquí irá el texto completo de los términos y condiciones del proyecto (placeholder).'}</p>
+      <p>{modalMessage || 'Placeholder text for Terms and Conditions'}</p>
       <button onClick={() => setShowModal(false)} style={{ marginTop: '1rem' }}>
+        Cerrar
+      </button>
+    </div>
+  </div>
+)}
+
+
+{showTerms && (
+  <div style={{
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0,0,0,0.7)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 1000
+  }}>
+    <div style={{
+      backgroundColor: '#222',
+      padding: '2rem',
+      borderRadius: '8px',
+      width: '90%',
+      maxWidth: '500px',
+      color: '#fff',
+      border: '1px solid #aaa'
+    }}>
+      <h3 style={{ color: '#fff' }}>Términos y Condiciones</h3>
+
+      <p>Este proyecto busca recopilar información colectiva sobre cómo las personas en CABA definen sus barrios. Tus respuestas serán utilizadas exclusivamente para fines de análisis urbano, visualización pública, investigación académica y desarrollo de políticas basadas en evidencia.</p>
+
+      <p>Al participar, estarás compartiendo información incluyendo:</p>
+
+      <ul>
+        <li>Tus respuestas en el formulario (mapa, nombres, descripciones, datos demográficos)</li>
+        <li>Información técnica básica como el momento de la participación, idioma del navegador y tipo de dispositivo</li>
+        <li>Tu ubicación aproximada basada en tu dirección IP (ciudad y país)</li>
+        <li>Interacciones dentro del mapa (como la cantidad de clics)</li>
+      </ul>
+
+      <p><strong>No se recopilarán datos sensibles</strong> como tu nombre, dirección exacta ni tu IP completa.</p>
+
+      <p>Toda la información será almacenada de forma segura y podrá ser compartida públicamente de manera agregada y anónima.</p>
+
+      <p>Al hacer clic en “Aceptar y comenzar”, estás dando tu consentimiento para participar bajo estos términos.</p>
+
+      <button onClick={() => setShowTerms(false)} style={{ marginTop: '1rem' }}>
         Cerrar
       </button>
     </div>

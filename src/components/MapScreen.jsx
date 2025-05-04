@@ -57,6 +57,9 @@ const MapScreen = ({ setPinLocation, readOnly = false, blurred = false, override
         const { lng, lat } = e.lngLat
         markerRef.current.setLngLat([lng, lat])
         setPinLocation({ lat, lng })
+        if(setMapClickCount) {
+          setMapClickCount(prev => prev +1)
+        }
       })
     }    
       
