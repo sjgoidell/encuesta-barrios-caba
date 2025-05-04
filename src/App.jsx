@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './App.css'
 import MapScreen from './components/MapScreen'
 import Fuse from 'fuse.js'
@@ -6,9 +6,14 @@ import barrios from './data/barrios'
 import BoundaryDrawScreen from './components/BoundaryDrawScreen'
 import { collection, addDoc } from 'firebase/firestore'
 import { db } from './firebase'
+import * as turf from '@turf/turf'
+import mapboxgl from 'mapbox-gl'
 
+mapboxgl.accessToken = 'pk.eyJ1Ijoic2dvaWRlbGwiLCJhIjoiY21hM2J0ZzFoMWFhNDJqcTZibzQ4NzM5ZSJ9.hTrCOqO2-fWRG86oum5g_A'
 
 function App() {
+  const [showModal, setShowModal] = useState(false)
+  const [modalMessage, setModalMessage] = useState('')
   const [step, setStep] = useState(1)
   const [email, setEmail] = useState('')
   const [age, setAge] = useState('')
@@ -17,6 +22,17 @@ function App() {
   const [pinLocation, setPinLocation] = useState(null)
   const [barrioName, setBarrioName] = useState('')
   const [suggestions, setSuggestions] = useState([])
+  const inputRef = useRef()
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (inputRef.current && !inputRef.current.contains(event.target)) {
+        setSuggestions([])
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
   const fuse = new Fuse(barrios, {
     includeScore: true,
     threshold: 0.4 // Adjust this for strict/loose match
@@ -27,42 +43,112 @@ function App() {
   const [comments, setComments] = useState('')
   const [canContact, setCanContact] = useState(null)
   const [comunidad, setComunidad] = useState('')
-  const [estadoSocial, setEstadoSocial] = useState('')
+  const [claseSocial, setClaseSocial] = useState('')
   const [genero, setGenero] = useState('')
   const [situacionDomicilio, setSituacionDomicilio] = useState('')
   const [formErrors, setFormErrors] = useState({})
+  const [drawingInstructionsVisible, setDrawingInstructionsVisible] = useState(true)
+  
+  const backgroundMapStyle = {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100vw',
+    height: '100vh',
+    zIndex: -1,
+    filter: step <= 2 ? 'grayscale(100%) blur(1px)' : 'none'
+  }
 
+  const isMobile = window.innerWidth <= 768
+  const floatingBoxStyle = {
+    position: 'absolute',
+    top: '1rem',
+    left: '1rem',
+    backgroundColor: '#2c2c2c',
+    border: '1px solid white',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+    padding: '2rem',
+    borderRadius: '8px',
+    width: 'calc(100vw - 4rem)',
+    maxWidth: '350px',
+    color: '#fff',
+    zIndex: 1
+  }  
+
+  const getFloatingStyle = () => {
+    const isMobile = window.innerWidth <= 768
+  
+    const base = {
+      backgroundColor: '#2c2c2c',
+      border: '1px solid white',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+      padding: '1.5rem',
+      borderRadius: '8px',
+      width: isMobile ? '90%' : 'calc(100vw - 2rem)',
+      maxWidth: isMobile ? '320px' : '350px',
+      color: '#fff',
+      zIndex: 1
+    }
+  
+    if (isMobile && (step === 3 || step === 4)) {
+      return {
+        ...base,
+        position: 'fixed',
+        bottom: '1rem',
+        left: '50%',
+        transform: 'translateX(-50%)'
+      }
+    }
+  
+    return {
+      ...base,
+      position: 'absolute',
+      top: '1rem',
+      left: '1rem'
+    }
+  }  
+  
+
+  const validateScreen2 = () => {
+    const emailRegex = /^.+@.+\..+$/
+    if (!email || !emailRegex.test(email)) {
+      setModalMessage('Por favor ingresá un email válido (ej: nombre@dominio.com).')
+      return false
+    }
+    return true
+  }
+
+  const validateScreen3 = () => {
+    if (!barrioName.trim()) {
+      setModalMessage('Por favor ingresá un nombre de barrio.')
+      return false
+    }
+    return true
+  }
+
+  const validateScreen4 = () => {
+    if (!polygonGeoJson || !polygonGeoJson.geometry?.coordinates?.length) {
+      setModalMessage('Debés dibujar los límites de tu barrio.')
+      return false
+    }
+  
+    if (polygonGeoJson && pinLocation) {
+      const polygon = polygonGeoJson.geometry.coordinates[0]
+      const point = turf.point([pinLocation.lng, pinLocation.lat])
+      const poly = turf.polygon([polygon])
+      const inside = turf.booleanPointInPolygon(point, poly)
+      if (!inside) {
+        setModalMessage('El marcador debe estar dentro del límite que dibujaste.')
+        return false
+      }
+    }
+  
+    return true
+  }  
      
   const handleSubmit = async () => {
 
-    const newErrors = {}
-
-    if (!email || !email.includes('@')) newErrors.email = 'Por favor ingresá un email válido.'
-    if (!barrioName) newErrors.barrioName = 'Ingresá un nombre de barrio.'
-    if (!pinLocation) newErrors.pin = 'Marcá un punto en el mapa.'
-    if (!polygonGeoJson) newErrors.polygon = 'Dibujá los límites de tu barrio.'
-    if (canContact === null) newErrors.canContact = 'Seleccioná una opción.'
-    
-    if (Object.keys(newErrors).length > 0) {
-      setFormErrors(newErrors)
-      return
-    }
-    
-    setFormErrors({})
-    
-
-      // ✅ Step 1: Validate required fields
-  if (!email || !email.includes('@')) {
-    alert('Por favor ingresá un email válido.')
-    return
-  }
-
-  if (!barrioName || !pinLocation || !polygonGeoJson || canContact === null) {
-    alert('Por favor completá todos los campos obligatorios.')
-    return
-  }
-
-  // ✅ Step 2: Bundle data
+  // Bundle data
     const fullSubmission = {
       email: email || '',
       age: age || '',
@@ -76,249 +162,301 @@ function App() {
       comments: comments || '',
       canContact: canContact || '',
       comunidad: comunidad || '',
-      estadoSocial: estadoSocial || '',
+      claseSocial: claseSocial || '',
       genero: genero || '',
       situacionDomicilio: situacionDomicilio || '',
       submittedAt: new Date()
     }
   
     try {
-      console.log('Polygon (string):', polygonGeoJson ? JSON.stringify(polygonGeoJson) : 'null')
-      console.log('Submitting:', fullSubmission)
-      if (
-        !email ||
-        !barrioName ||
-        !pinLocation ||
-        !polygonGeoJson ||
-        canContact === null
-      ) {
-        alert("Por favor completá todos los campos obligatorios antes de enviar.")
-        return
-      }      
       await addDoc(collection(db, 'responses'), fullSubmission)
       console.log('✅ Submission saved!')
       setStep(6)
     } catch (err) {
       console.error('❌ Failed to save submission:', err)
     }
-  } 
+  }
 
-  
+  const goNext = () => {
+    if (step === 2 && !validateScreen2()) {
+      setShowModal(true)
+      return
+    }
+    if (step === 3 && !validateScreen3()) {
+      setShowModal(true)
+      return
+    }
+    if (step === 4 && !validateScreen4()) {
+      setShowModal(true)
+      return
+    }
+    setStep((prev) => Math.min(prev + 1, 6))
+  }
 
-
-  const goNext = () => setStep((prev) => Math.min(prev + 1, 6))
   const goBack = () => setStep((prev) => Math.max(prev - 1, 1))
 
-  console.log('Pin location:', pinLocation)
-  console.log(polygonGeoJson)
-
   return (
-    <div style={{ padding: '2rem', maxWidth: '700px', margin: '0 auto' }}>
+    <div style={{
+      position: 'relative',
+      padding: (step >= 6 ? '2rem' : '0'),
+      maxWidth: (step >= 6 ? '700px' : 'none'),
+      margin: (step >= 6 ? '0 auto' : '0')
+    }}>
+    
+    {step === 1 || step === 2 || step === 5 ? (
+      <MapScreen readOnly blurred />
+    ) : null}
+
+
       {/* Step 1 */}
       {step === 1 && (
         <>
-          <h1>Ayudanos a mapear los barrios de Buenos Aires</h1>
+        <MapScreen readOnly blurred />
+        <div style={getFloatingStyle()}>
+          <h1>Ayudanos a mapear los barrios y límites de Buenos Aires!</h1>
           <p>
-            ¿Dónde empieza y termina tu barrio? Queremos construir un mapa colectivo basado en cómo vos lo vivís.
-            Tus respuestas serán anónimas y usadas exclusivamente para este proyecto.
+            ¿Dónde empieza y termina tu barrio? ¿Cómo se llama la zona? Cada día, porteños siguen discutiendo los límites y nombres de sus barrios. Nuestra misión es construir un mapa colectivo de todos los barrios de CABA basado en cómo vos lo vivís.
+          </p>
+          <p>  
+            ¡Sumate al proyecto! Recibirás información sobre los resultados cuando esté completo. 
+          </p>
+          <p>
+            <span style={{color: '#ff3840' }}>Tus respuestas serán <em>anónimas</em> y usadas <em>exclusivamente para este proyecto.</em> </span>
           </p>
           <button onClick={goNext}>Aceptar y comenzar →</button>
           <p style={{ fontSize: '0.8rem', marginTop: '2rem' }}>
-            Al participar, aceptás los términos y condiciones del proyecto.
+            Al participar, aceptás los <span style={{ color: 'lightblue', cursor: 'pointer' }} onClick={() => setShowModal(true)}>términos y condiciones</span> del proyecto.  
+            Este proyecto quería agradecer al trabajo del New York Times en su <a href="https://www.nytimes.com/interactive/2023/upshot/extremely-detailed-nyc-neighborhood-map.html" target="_blank" rel="noopener noreferrer" style={{ color: 'lightblue' }}>
+              "Extremely Detailed Map of New York City Neighborhoods"
+            </a> por la inspiración de este proyecto.
           </p>
+        </div>
         </>
       )}
 
       {/* Step 2 */}
-      {step === 2 && (
-  <>
-    <h2>Información del participante</h2>
+          {step === 2 && (
+          <div style={getFloatingStyle()}>
+        <h2>Información del participante</h2>
 
         <div style={{ marginBottom: '1rem' }}>
-      <label>Email (requerido):</label>
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      {formErrors.email && <p style={{ color: 'red', fontSize: '0.9rem' }}>{formErrors.email}</p>}
-    </div>
+          <label>Email (requerido):</label>
+          <input
+            type="email"
+            value={email}
+            style={{ width: '75%' }}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
 
+        <div style={{ marginBottom: '1rem' }}>
+          <label>Edad:</label>
+          <select
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+            style={{ width: '100%', padding: '0.5rem', marginTop: '0.25rem' }}
+          >
+            <option value="">Seleccioná una opción</option>
+            <option value="<18">Menos de 18</option>
+            <option value="18–24">18–24</option>
+            <option value="25–34">25–34</option>
+            <option value="35–44">35–44</option>
+            <option value="45–54">45–54</option>
+            <option value="55–64">55–64</option>
+            <option value="65+">65 o más</option>
+          </select>
+        </div>
 
-    <div style={{ marginBottom: '1rem' }}>
-      <label>Edad:<br />
-        <select
-          value={age}
-          onChange={(e) => setAge(e.target.value)}
-          style={{ width: '100%', padding: '0.5rem', marginTop: '0.25rem' }}
-        >
-          <option value="">Seleccioná una opción</option>
-          <option value="<18">Menos de 18</option>
-          <option value="18–24">18–24</option>
-          <option value="25–34">25–34</option>
-          <option value="35–44">35–44</option>
-          <option value="45–54">45–54</option>
-          <option value="55–64">55–64</option>
-          <option value="65+">65 o más</option>
-        </select>
-      </label>
-    </div>
+        <div style={{ marginBottom: '2rem' }}>
+          <label style={{ display: 'block', marginBottom: '0.5rem' }}>
+            ¿Vivís actualmente en CABA?
+          </label>
+          <div style={{ display: 'flex', gap: '2rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <input
+                type="radio"
+                name="caba"
+                value="sí"
+                checked={livesInCaba === 'sí'}
+                onChange={() => setLivesInCaba('sí')}
+              />
+              <span style={{ marginTop: '0.25rem' }}>Sí</span>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <input
+                type="radio"
+                name="caba"
+                value="no"
+                checked={livesInCaba === 'no'}
+                onChange={() => setLivesInCaba('no')}
+              />
+              <span style={{ marginTop: '0.25rem' }}>No</span>
+            </div>
+          </div>
+        </div>
 
-    <div style={{ marginBottom: '2rem' }}>
-  <label style={{ display: 'block', marginBottom: '0.5rem' }}>
-    ¿Vivís actualmente en CABA?
-  </label>
-  <div style={{ display: 'flex', gap: '2rem' }}>
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <input
-        type="radio"
-        name="caba"
-        value="sí"
-        checked={livesInCaba === 'sí'}
-        onChange={() => setLivesInCaba('sí')}
-      />
-      <span style={{ marginTop: '0.25rem' }}>Sí</span>
-    </div>
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <input
-        type="radio"
-        name="caba"
-        value="no"
-        checked={livesInCaba === 'no'}
-        onChange={() => setLivesInCaba('no')}
-      />
-      <span style={{ marginTop: '0.25rem' }}>No</span>
-    </div>
-  </div>
-</div>
+        <div style={{ marginBottom: '1rem' }}>
+          <label>¿Hace cuántos años vivís en este lugar?</label>
+          <select
+            value={yearsInBarrio}
+            onChange={(e) => setYearsInBarrio(e.target.value)}
+            style={{ width: '100%', padding: '0.5rem', marginTop: '0.25rem' }}
+          >
+            <option value="">Seleccioná una opción</option>
+            <option value="<1">Menos de 1 año</option>
+            <option value="1–5">1–5 años</option>
+            <option value="6–10">6–10 años</option>
+            <option value="10+">Más de 10 años</option>
+            <option value="toda_la_vida">Toda mi vida</option>
+          </select>
+        </div>
 
-
-
-    <div style={{ marginBottom: '1rem' }}>
-      <label>¿Hace cuántos años vivís en este lugar?<br />
-        <select
-          value={yearsInBarrio}
-          onChange={(e) => setYearsInBarrio(e.target.value)}
-          style={{ width: '100%', padding: '0.5rem', marginTop: '0.25rem' }}
-        >
-          <option value="">Seleccioná una opción</option>
-          <option value="<1">Menos de 1 año</option>
-          <option value="1–2">1–2 años</option>
-          <option value="3–5">3–5 años</option>
-          <option value="6–10">6–10 años</option>
-          <option value="11–20">11–20 años</option>
-          <option value="20+">Más de 20 años</option>
-          <option value="toda_la_vida">Toda mi vida</option>
-        </select>
-      </label>
-    </div>
-
-    <div style={{ marginTop: '2rem' }}>
-      <button onClick={goBack} style={{ marginRight: '1rem' }}>← Volver</button>
-      <button onClick={goNext}>Siguiente →</button>
-    </div>
-        </>
-      )}
+        <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
+          <button onClick={goBack} style={{ marginRight: '1rem' ,width: '80%', maxWidth:'150px'}}>← Volver</button>
+          <button onClick={goNext}style={{ marginRight: '1rem' ,width: '80%', maxWidth:'150px'}}>→ Siguiente</button>
+        </div>
+      </div>
+    )}
 
 
       {/* Step 3 */}
       {step === 3 && (
-  <>
-    <h2>Ubicación y nombre del barrio</h2>
-    <p>Ubicá el centro de tu barrio en el mapa y escribí cómo lo llamás.</p>
-
-    <MapScreen
-      setPinLocation={setPinLocation}
-    />
-
-
-    <div style={{ marginBottom: '6rem', position: 'relative' }}>
-      <label>Nombre del barrio:<br />
-        <input
-          type="text"
-          value={barrioName}
-          onChange={(e) => {
-            const input = e.target.value
-            setBarrioName(input)
-          
-            if (input.length > 1) {
-              const results = fuse.search(input).map(r => r.item)
-              setSuggestions(results.slice(0, 5))
-            } else {
-              setSuggestions([])
-            }
-          }}          
-          style={{ width: '100%', padding: '0.5rem', marginTop: '0.25rem' }}
-          placeholder="Ej: Villa Crespo, Palermo Soho..."
-        />
-      </label>
-
-      {suggestions.length > 0 && (
-        <ul style={{
-          position: 'absolute',
-          top: '105%',
-          left: 0,
-          right: 0,
-          background: '#222',
-          color: 'white',
-          border: '1px solid #444',
-          listStyle: 'none',
-          margin: 0,
-          padding: 0,
-          zIndex: 10
-        }}>
-          {suggestions.map((suggestion, index) => (
-            <li
-              key={index}
-              onClick={() => {
-                setBarrioName(suggestion)
-                setSuggestions([])
-              }}
-              style={{
-                padding: '0.5rem',
-                cursor: 'pointer',
-                borderBottom: '1px solid #333'
-              }}
-            >
-              {suggestion}
-            </li>
-          ))}
-            </ul>
-          )}
-        </div>
-
-
-        <div style={{ marginTop: '2rem' }}>
-          <button onClick={goBack} style={{ marginRight: '1rem' }}>← Volver</button>
-          <button onClick={goNext}>Siguiente →</button>
-        </div>
-            </>
-          )}
-
-
-      {/* Step 4 */}
-      {step === 4 && (
         <>
-          <h2>Dibujá tu barrio</h2>
-          <p>Usá las herramientas para dibujar los límites de tu barrio. Podés editarlo o borrarlo.</p>
+          <div style={getFloatingStyle()}>
+            <h2>Ubicación y nombre del barrio</h2>
+            <p>Ubicá el centro de tu barrio en el mapa y escribí cómo lo llamás.</p>
 
-          <BoundaryDrawScreen
-            setPolygonGeoJson={setPolygonGeoJson}
-            pinLocation={pinLocation}
-            barrioName={barrioName}
+            <div style={{ marginBottom: '4rem', position: 'relative' }} ref={inputRef}>
+              <label>Nombre del barrio:<br />
+                <input
+                  type="text"
+                  value={barrioName}
+                  onChange={(e) => {
+                    const input = e.target.value
+                    setBarrioName(input)
+
+                    if (input.length > 1) {
+                      const results = fuse.search(input).map(r => r.item)
+                      setSuggestions(results.slice(0, 5))
+                    } else {
+                      setSuggestions([])
+                    }
+                  }}
+                  style={{ width: '95%', padding: '0.5rem', marginTop: '0.25rem' }}
+                  placeholder="Ej: Villa Crespo, Palermo Soho..."
+                />
+              </label>
+
+              {suggestions.length > 0 && (
+                <ul style={{
+                  position: 'absolute',
+                  top: '105%',
+                  left: 0,
+                  right: 0,
+                  background: '#222',
+                  color: 'white',
+                  border: '1px solid #444',
+                  listStyle: 'none',
+                  margin: 0,
+                  padding: 0,
+                  zIndex: 10
+                }}>
+                  {suggestions.map((suggestion, index) => (
+                    <li
+                      key={index}
+                      onClick={() => {
+                        setBarrioName(suggestion)
+                        setSuggestions([])
+                      }}
+                      style={{
+                        padding: '0.5rem',
+                        cursor: 'pointer',
+                        borderBottom: '1px solid #333'
+                      }}
+                    >
+                      {suggestion}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
+              <button onClick={goBack} style={{ marginRight: '1rem' ,width: '80%', maxWidth:'150px'}}>← Volver</button>
+              <button onClick={goNext}style={{ marginRight: '1rem' ,width: '80%', maxWidth:'150px'}}>→ Siguiente</button>
+            </div>
+          </div>
+
+          <MapScreen
+            step={step}
+            setPinLocation={setPinLocation}
+            //overrideCenter={isMobile && step === 3 ? [-58.437, -34.6337] : undefined}
           />
 
 
-          <div style={{ marginTop: '2rem' }}>
-            <button onClick={goBack} style={{ marginRight: '1rem' }}>← Volver</button>
-            <button onClick={goNext}>Siguiente →</button>
-          </div>
         </>
       )}
 
 
+{step === 4 && (
+  <>
+    <div style={getFloatingStyle()}>
+      <h2>Dibujá tu barrio</h2>
+      <p>Usá las herramientas para dibujar los límites de tu barrio. Podés editarlo o borrarlo.</p>
+
+      {drawingInstructionsVisible && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'rgba(0,0,0,0.7)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 999
+        }}>
+          <div style={{
+            backgroundColor: '#fff',
+            color: '#000',
+            padding: '2rem',
+            borderRadius: '8px',
+            maxWidth: '400px',
+            textAlign: 'left'
+          }}>
+            <h3 style={{ marginTop: 0 }}>¿Dónde están los límites de tu barrio?</h3>
+            <p><strong>Cómo dibujar:</strong></p>
+            <ol>
+              <li>Tocá el mapa para agregar el punto de inicio.</li>
+              <li>Tocá para agregar más puntos y formar el contorno.</li>
+              <li>Hacé clic en el primer punto para cerrar el polígono.</li>
+            </ol>
+            <button onClick={() => setDrawingInstructionsVisible(false)} style={{ marginTop: '1rem' }}>
+              Estoy listo para dibujar →
+            </button>
+          </div>
+        </div>
+      )}
+
+            <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
+              <button onClick={goBack} style={{ marginRight: '1rem' ,width: '80%', maxWidth:'150px'}}>← Volver</button>
+              <button onClick={goNext}style={{ marginRight: '1rem' ,width: '80%', maxWidth:'150px'}}>→ Siguiente</button>
+      </div>
+    </div>
+
+    <BoundaryDrawScreen
+      setPolygonGeoJson={setPolygonGeoJson}
+      pinLocation={pinLocation}
+      barrioName={barrioName}
+    />
+  </>
+)}
+
+
 {step === 5 && (
   <>
+  <div style={getFloatingStyle()}>
     <h2>Contanos un poco más</h2>
 
     {/* Text input fields */}
@@ -328,6 +466,7 @@ function App() {
         type="text"
         value={landmarks}
         onChange={(e) => setLandmarks(e.target.value)}
+        style={{ width: '95%' }}
       />
     </div>
 
@@ -337,6 +476,7 @@ function App() {
         type="text"
         value={altNames}
         onChange={(e) => setAltNames(e.target.value)}
+        style={{ width: '95%' }}
       />
     </div>
 
@@ -345,35 +485,9 @@ function App() {
       <textarea
         value={comments}
         onChange={(e) => setComments(e.target.value)}
+        style={{ width: '95%' }}
         rows={4}
       />
-    </div>
-
-    {/* Contact permission - vertical radio buttons */}
-    <div style={{ marginBottom: '1rem' }}>
-      <label>¿Te gustaría que te contactemos más adelante?</label>
-      <div style={{ display: 'flex', gap: '2rem', marginTop: '0.5rem' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <input
-            type="radio"
-            name="contact"
-            value="sí"
-            checked={canContact === 'sí'}
-            onChange={() => setCanContact('sí')}
-          />
-          <span>Sí</span>
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <input
-            type="radio"
-            name="contact"
-            value="no"
-            checked={canContact === 'no'}
-            onChange={() => setCanContact('no')}
-          />
-          <span>No</span>
-        </div>
-      </div>
     </div>
 
     {/* Comunidad */}
@@ -382,27 +496,26 @@ function App() {
       <textarea
         value={comunidad}
         onChange={(e) => setComunidad(e.target.value)}
+        style={{ width: '95%' }}
         rows={3}
       />
     </div>
 
-    {/* Estado Social */}
-    <div style={{ marginBottom: '1rem' }}>
-      <label>¿Cómo definirías tu estado social autopercibido?</label>
-      <div style={{ display: 'flex', gap: '2rem', marginTop: '0.5rem' }}>
-        {['alto', 'mediano', 'bajo'].map((option) => (
-          <div key={option} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <input
-              type="radio"
-              name="estadoSocial"
-              value={option}
-              checked={estadoSocial === option}
-              onChange={() => setEstadoSocial(option)}
-            />
-            <span style={{ textTransform: 'capitalize' }}>{option}</span>
-          </div>
-        ))}
-      </div>
+    {/* Clase Social */}
+        <div style={{ marginBottom: '1rem' }}>
+      <label>¿Cómo definirías tu clase social?</label>
+      <select
+        value={claseSocial}
+        onChange={(e) => setClaseSocial(e.target.value)}
+        style={{ width: '100%', padding: '0.5rem', marginTop: '0.25rem' }}
+      >
+            <option value="">Seleccioná una opción</option>
+            <option value="<alta">Clase alta</option>
+            <option value="mediaalta">Clase media alta</option>
+            <option value="media">Clase media</option>
+            <option value="mediabaja">Clase media baja</option>
+            <option value="baja">Clase baja</option>
+      </select>
     </div>
 
     {/* Género */}
@@ -447,10 +560,38 @@ function App() {
       </div>
     </div>
 
+        {/* Contact permission - vertical radio buttons */}
+        <div style={{ marginBottom: '1rem' }}>
+      <label>¿Te gustaría que te contactemos más adelante?</label>
+      <div style={{ display: 'flex', gap: '2rem', marginTop: '0.5rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <input
+            type="radio"
+            name="contact"
+            value="sí"
+            checked={canContact === 'sí'}
+            onChange={() => setCanContact('sí')}
+          />
+          <span>Sí</span>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <input
+            type="radio"
+            name="contact"
+            value="no"
+            checked={canContact === 'no'}
+            onChange={() => setCanContact('no')}
+          />
+          <span>No</span>
+        </div>
+      </div>
+    </div>
+
     {/* Navigation Buttons */}
-    <div style={{ marginTop: '2rem' }}>
-      <button onClick={goBack} style={{ marginRight: '1rem' }}>← Volver</button>
-      <button onClick={handleSubmit}>Enviar respuestas →</button>
+      <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
+              <button onClick={goBack} style={{ marginRight: '1rem' ,width: '80%', maxWidth:'150px'}}>← Volver</button>
+              <button onClick={handleSubmit}style={{ marginRight: '1rem' ,width: '80%', maxWidth:'150px', color: '#ceffd0'}}>→ Enviar</button>
+    </div>
     </div>
   </>
 )}
@@ -465,6 +606,39 @@ function App() {
           <button onClick={goBack}>← Volver</button>
         </>
       )}
+
+{showModal && (
+  <div style={{
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0,0,0,0.7)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 1000
+  }}>
+    <div style={{
+      backgroundColor: '#222',
+      padding: '2rem',
+      borderRadius: '8px',
+      width: '75%',
+      maxWidth: '275px',
+      color: '#fff',
+      border: '2px solid red'
+    }}>
+      <h3 style={{ color: 'red' }}>Aviso</h3>
+      <p>{modalMessage || 'Aquí irá el texto completo de los términos y condiciones del proyecto (placeholder).'}</p>
+      <button onClick={() => setShowModal(false)} style={{ marginTop: '1rem' }}>
+        Cerrar
+      </button>
+    </div>
+  </div>
+)}
+
+
     </div>
   )
 }

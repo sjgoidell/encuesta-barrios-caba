@@ -34,7 +34,7 @@ const BoundaryDrawScreen = ({ setPolygonGeoJson, pinLocation, barrioName }) => {
   
     // ✅ Add this inside the setTimeout so it's guaranteed to happen after layout
     setTimeout(() => {
-      map.resize()
+      map.resize(),100
   
       // 🔴 Add fixed pin from previous screen
       if (pinLocation) {
@@ -52,7 +52,14 @@ const BoundaryDrawScreen = ({ setPolygonGeoJson, pinLocation, barrioName }) => {
     }, 100)
   
     // 🔁 Handle draw events
-    map.on('draw.create', updateGeoJSON)
+    map.on('draw.create', (e) => {
+      const existing = draw.getAll()
+      if (existing.features.length > 1) {
+        // Delete all except the most recent
+        draw.delete(existing.features[0].id)
+      }
+      updateGeoJSON()
+    })    
     map.on('draw.update', updateGeoJSON)
     map.on('draw.delete', () => setPolygonGeoJson(null))
   
@@ -69,8 +76,15 @@ const BoundaryDrawScreen = ({ setPolygonGeoJson, pinLocation, barrioName }) => {
   }, [setPolygonGeoJson, pinLocation, barrioName])
   
 
-  return (
-    <div style={{ height: '500px', width: '100%' }}>
+    return (
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        zIndex: -1
+      }}>
       <div ref={mapContainerRef} style={{ height: '100%', width: '100%' }} />
     </div>
   )

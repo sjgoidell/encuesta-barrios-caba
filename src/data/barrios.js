@@ -48,6 +48,8 @@ const barrios = [
     "Villa Soldati",
     "Villa Urquiza",
     "Abasto",
+    "Belgrano C",
+    "Belgrano R",
     "Bajo Belgrano",
     "Barracas Sur",
     "Barrio Norte",
