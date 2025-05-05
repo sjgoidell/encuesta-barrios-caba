@@ -1,3 +1,4 @@
+// Import
 import { useState, useEffect, useRef } from 'react'
 import './App.css'
 import MapScreen from './components/MapScreen'
@@ -12,6 +13,8 @@ import mapboxgl from 'mapbox-gl'
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2dvaWRlbGwiLCJhIjoiY21hM2J0ZzFoMWFhNDJqcTZibzQ4NzM5ZSJ9.hTrCOqO2-fWRG86oum5g_A'
 
 function App() {
+
+  //Base Constants
   const [showModal, setShowModal] = useState(false)
   const [modalMessage, setModalMessage] = useState('')
   const [step, setStep] = useState(1)
@@ -56,10 +59,13 @@ function App() {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
+  // barrio match in search
   const fuse = new Fuse(barrios, {
     includeScore: true,
     threshold: 0.4 // Adjust this for strict/loose match
   })
+
+  // defining variables
   const [polygonGeoJson, setPolygonGeoJson] = useState(null)
   const [landmarks, setLandmarks] = useState('')
   const [altNames, setAltNames] = useState('')
@@ -486,6 +492,11 @@ function App() {
 
 {step === 5 && (
   <>
+    <BoundaryDrawScreen
+    polygonGeoJson={polygonGeoJson}
+    barrioName={barrioName}
+    readOnly={true}
+  />
   <div style={getFloatingStyle()}>
     <h2>Contanos un poco más</h2>
 

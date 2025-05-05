@@ -6,7 +6,12 @@ import '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css'
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2dvaWRlbGwiLCJhIjoiY21hM2J0ZzFoMWFhNDJqcTZibzQ4NzM5ZSJ9.hTrCOqO2-fWRG86oum5g_A'
 
-const BoundaryDrawScreen = ({ setPolygonGeoJson, pinLocation, barrioName }) => {
+const BoundaryDrawScreen = ({ setPolygonGeoJson, pinLocation, barrioName, polygonGeoJson, readOnly = false }) => {
+  const draw = new MapboxDraw({
+    displayControlsDefault: false,
+    controls: readOnly ? {} : { polygon: true, trash: true },
+    defaultMode: readOnly ? 'simple_select' : 'draw_polygon'
+  })
   const mapContainerRef = useRef(null)
   const drawRef = useRef(null)
   const defaultCenter = [-58.437, -34.6037]
@@ -17,19 +22,52 @@ const BoundaryDrawScreen = ({ setPolygonGeoJson, pinLocation, barrioName }) => {
       style: 'mapbox://styles/mapbox/dark-v11',
       center: defaultCenter,
       zoom: 12,
+      interactive: !readOnly
     })
+
+    if (readOnly) {
+      map.scrollZoom.disable()
+      map.dragPan.disable()
+      map.boxZoom.disable()
+      map.keyboard.disable()
+      map.doubleClickZoom.disable()
+      map.touchZoomRotate.disable()
+    }    
   
     const draw = new MapboxDraw({
       displayControlsDefault: false,
-      controls: {
-        polygon: true,
-        trash: true
-      },
-      defaultMode: 'draw_polygon'
+      controls: readOnly ? {} : { polygon: true, trash: true },
+      defaultMode: readOnly ? 'simple_select' : 'draw_polygon'
     })
   
-    drawRef.current = draw
     map.addControl(draw, 'top-right')
+  
+    if (readOnly && polygonGeoJson) {
+      try {
+        // Ensure it's added *after* the draw tool is mounted
+        map.on('load', () => {
+          draw.add(polygonGeoJson)
+          if (readOnly && polygonGeoJson && polygonGeoJson.geometry?.type === 'Polygon') {
+            // Calculate the center of the polygon by averaging all coordinates
+            const coords = polygonGeoJson.geometry.coordinates[0]
+            const center = coords.reduce(
+              (acc, coord) => [acc[0] + coord[0], acc[1] + coord[1]],
+              [0, 0]
+            ).map(val => val / coords.length)
+          
+            // Add popup with barrio name
+            if (barrioName) {
+              new mapboxgl.Popup({ closeButton: false, offset: 25 })
+                .setLngLat(center)
+                .setHTML(`<div style="color:#ccc;font-weight:bold;">${barrioName}</div>`)
+                .addTo(map)
+            }
+          }          
+          draw.changeMode('simple_select')
+        })
+      } catch (e) {
+        console.warn('⚠️ Failed to load polygon in read-only mode:', e)
+      } } 
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right')
   
     // ✅ Add this inside the setTimeout so it's guaranteed to happen after layout
