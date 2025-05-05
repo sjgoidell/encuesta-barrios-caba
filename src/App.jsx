@@ -154,6 +154,25 @@ function App() {
     }
   }  
   
+  // Tracking shape for submission (screen 3)
+  const canProceedScreen3 = barrioName.trim().length > 0
+
+  // Tracking shape for submission (screen 4)
+  const isPolygonValid =
+      polygonGeoJson?.geometry?.coordinates?.length &&
+      polygonGeoJson.geometry.coordinates[0].length > 2 // at least a triangle
+
+  const isPinInsidePolygon = (() => {
+      if (!polygonGeoJson || !pinLocation) return false
+      const polygon = polygonGeoJson.geometry.coordinates[0]
+      const point = turf.point([pinLocation.lng, pinLocation.lat])
+      const poly = turf.polygon([polygon])
+      return turf.booleanPointInPolygon(point, poly)
+    })()
+
+  const canProceedScreen4 = isPolygonValid && isPinInsidePolygon
+
+
   // submission validation
   const validateScreen2 = () => {
     const emailRegex = /^.+@.+\..+$/
@@ -461,10 +480,47 @@ function App() {
               )}
             </div>
 
-            <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
-              <button onClick={goBack} className="btn-nav">Volver<span>⬅️</span></button>
-              <button onClick={goNext} className="btn-nav btn-next">Siguiente<span>➡️</span></button>
+            <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+              <AnimatePresence>
+                {!canProceedScreen3 && (
+                  <motion.p
+                    key="tooltip"
+                    initial={{ opacity: 0, y: -5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -5 }}
+                    transition={{ duration: 0.3 }}
+                    style={{
+                      fontSize: '0.75rem',
+                      color: '#bbb',
+                      textAlign: 'center',
+                      marginBottom: '0.5rem'
+                    }}
+                  >
+                    Ingresá un nombre para continuar
+                  </motion.p>
+                )}
+              </AnimatePresence>
+
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <button onClick={goBack} className="btn-nav">
+                  Volver
+                  <span>⬅️</span>
+                </button>
+
+                <button
+                  onClick={goNext}
+                  className={`btn-nav ${canProceedScreen3 ? 'btn-next' : 'btn-disabled'}`}
+                  disabled={!canProceedScreen3}
+                  animate={{ scale: canProceedScreen4 ? 1 : 0.98 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  Siguiente
+                  <span>➡️</span>
+                </button>
+              </div>
             </div>
+
+
           </motion.div>
 
           <MapScreen
@@ -476,6 +532,7 @@ function App() {
         </>
       )}
       </AnimatePresence>
+
 
       {/* Step 4 */}
       <AnimatePresence mode="wait">
@@ -545,10 +602,48 @@ function App() {
             <h2>✏️ Dibujá tu barrio</h2>
             <p>Usá las herramientas para dibujar los límites de tu barrio. Podés editarlo o borrarlo.</p>
 
-            <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
-              <button onClick={goBack} className="btn-nav">Volver<span>⬅️</span></button>
-              <button onClick={goNext} className="btn-nav btn-next">Siguiente<span>➡️</span></button>
+            <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+              <AnimatePresence>
+                {!canProceedScreen4 && (
+                  <motion.p
+                    key="tooltip4"
+                    initial={{ opacity: 0, y: -5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -5 }}
+                    transition={{ duration: 0.3 }}
+                    style={{
+                      fontSize: '0.75rem',
+                      color: '#bbb',
+                      textAlign: 'center',
+                      marginBottom: '0.5rem'
+                    }}
+                  >
+                    { !isPolygonValid ? 'Dibujá un límite para continuar' :
+                      !isPinInsidePolygon ? 'El pin debe estar dentro del polígono' : ''
+                    }
+                  </motion.p>
+                )}
+              </AnimatePresence>
+
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <button onClick={goBack} className="btn-nav">
+                  Volver
+                  <span>⬅️</span>
+                </button>
+
+                <motion.button
+                  onClick={goNext}
+                  className={`btn-nav ${canProceedScreen4 ? 'btn-next' : 'btn-disabled'}`}
+                  disabled={!canProceedScreen4}
+                  animate={{ scale: canProceedScreen4 ? 1 : 0.98 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  Siguiente
+                  <span>➡️</span>
+                </motion.button>
+              </div>
             </div>
+
           </motion.div>
 
           <BoundaryDrawScreen
