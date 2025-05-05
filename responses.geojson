@@ -259,6 +259,58 @@
         "coordinates": [
           [
             [
+              -58.44699283080109,
+              -34.61069938723734
+            ],
+            [
+              -58.453859285879076,
+              -34.595156855856764
+            ],
+            [
+              -58.44596286253932,
+              -34.584275353251826
+            ],
+            [
+              -58.424333529042855,
+              -34.590493529243005
+            ],
+            [
+              -58.41472049193395,
+              -34.60349366619389
+            ],
+            [
+              -58.43343158202157,
+              -34.613807544432305
+            ],
+            [
+              -58.44699283080109,
+              -34.61069938723734
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Palermo",
+        "fillColor": "#33FFF5",
+        "email": "gustavo@beep.com",
+        "claseSocial": "alta",
+        "genero": "otro",
+        "comunidad": "No me gusta mucha gente de mi barrio y no considero parte de mi comunidad. Ellos tienes menos de noventa años y quiero vivir en un nursing home. (No es in opción, pero ahora vivo en un nursing home y quiero más nursing homes en el barrio)",
+        "situacionDomicilio": "familiar",
+        "userRegion": "Brooklyn, US",
+        "language": "en-US",
+        "deviceType": "mobile",
+        "mapClicks": 0,
+        "timestamp": "2025-05-05T12:42:12.073Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
               -58.42390012988487,
               -34.57115243278559
             ],
@@ -416,7 +468,7 @@
       },
       "properties": {
         "barrio": "Chacalermo",
-        "fillColor": "#33FFF5",
+        "fillColor": "#F5FF33",
         "email": "genaromendezc@gmail.com",
         "claseSocial": "media",
         "genero": "hombre",
@@ -464,7 +516,7 @@
       },
       "properties": {
         "barrio": "Palermo Sensible",
-        "fillColor": "#F5FF33",
+        "fillColor": "#FF8F33",
         "email": "a@a.a",
         "claseSocial": "",
         "genero": "hombre",
@@ -552,7 +604,7 @@
       },
       "properties": {
         "barrio": "Villa Pueyrredón",
-        "fillColor": "#FF8F33",
+        "fillColor": "#33FF8F",
         "email": "agustinastout@hotmail.com",
         "claseSocial": "mediaalta",
         "genero": "mujer",
@@ -615,6 +667,82 @@
         "coordinates": [
           [
             [
+              -58.396259709808405,
+              -34.63045951412242
+            ],
+            [
+              -58.394761020569746,
+              -34.63532355400439
+            ],
+            [
+              -58.39576014672885,
+              -34.63535780679442
+            ],
+            [
+              -58.39380352466719,
+              -34.64155732891488
+            ],
+            [
+              -58.39974706865725,
+              -34.644258855796984
+            ],
+            [
+              -58.40162919906551,
+              -34.645420165628416
+            ],
+            [
+              -58.4048052941298,
+              -34.646968553437006
+            ],
+            [
+              -58.406334525086464,
+              -34.639903799066985
+            ],
+            [
+              -58.40509937700567,
+              -34.63966184476506
+            ],
+            [
+              -58.40556990960813,
+              -34.63719387056088
+            ],
+            [
+              -58.40580517590884,
+              -34.63361275779485
+            ],
+            [
+              -58.39874718687763,
+              -34.63095101976849
+            ],
+            [
+              -58.396259709808405,
+              -34.63045951412242
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Parque Patricios",
+        "fillColor": "#8F33FF",
+        "email": "a@a.a",
+        "claseSocial": "media",
+        "genero": "hombre",
+        "comunidad": "",
+        "situacionDomicilio": "dueño",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "desktop",
+        "mapClicks": 0,
+        "timestamp": "2025-05-05T10:30:18.133Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
               -58.43853452807973,
               -34.5883888480346
             ],
@@ -648,7 +776,7 @@
       },
       "properties": {
         "barrio": "Palermo Hollywood",
-        "fillColor": "#33FF8F",
+        "fillColor": "#FF5733",
         "email": "martin.niepo@gmail.com",
         "claseSocial": "mediaalta",
         "genero": "hombre",
@@ -688,7 +816,7 @@
       },
       "properties": {
         "barrio": "Parque Avellaneda",
-        "fillColor": "#8F33FF",
+        "fillColor": "#33FF57",
         "email": "",
         "claseSocial": "",
         "genero": "mujer",
@@ -744,7 +872,7 @@
       },
       "properties": {
         "barrio": "Palermo Hollywood",
-        "fillColor": "#33FF8F",
+        "fillColor": "#FF5733",
         "email": "beep@beepbeep.com",
         "claseSocial": "",
         "genero": "otro",
@@ -755,6 +883,126 @@
         "deviceType": "",
         "mapClicks": 0,
         "timestamp": "2025-04-30T21:20:39.898Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.37451525879003,
+              -34.58719516857879
+            ],
+            [
+              -58.39030810546973,
+              -34.57758468265663
+            ],
+            [
+              -58.38172503662186,
+              -34.57815003611977
+            ],
+            [
+              -58.372626983643116,
+              -34.5819660714251
+            ],
+            [
+              -58.37451525879003,
+              -34.58719516857879
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "villa 31",
+        "fillColor": "#3357FF",
+        "email": "a@a.a",
+        "claseSocial": "",
+        "genero": "mujer",
+        "comunidad": "",
+        "situacionDomicilio": "",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "desktop",
+        "mapClicks": 0,
+        "timestamp": "2025-05-05T10:37:13.505Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.396259709808405,
+              -34.63045951412242
+            ],
+            [
+              -58.394761020569746,
+              -34.63532355400439
+            ],
+            [
+              -58.39576014672885,
+              -34.63535780679442
+            ],
+            [
+              -58.39380352466719,
+              -34.64155732891488
+            ],
+            [
+              -58.39974706865725,
+              -34.644258855796984
+            ],
+            [
+              -58.40162919906551,
+              -34.645420165628416
+            ],
+            [
+              -58.4048052941298,
+              -34.646968553437006
+            ],
+            [
+              -58.406334525086464,
+              -34.639903799066985
+            ],
+            [
+              -58.40509937700567,
+              -34.63966184476506
+            ],
+            [
+              -58.40556990960813,
+              -34.63719387056088
+            ],
+            [
+              -58.40580517590884,
+              -34.63361275779485
+            ],
+            [
+              -58.39874718687763,
+              -34.63095101976849
+            ],
+            [
+              -58.396259709808405,
+              -34.63045951412242
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Parque Patricios",
+        "fillColor": "#8F33FF",
+        "email": "a@a.a",
+        "claseSocial": "media",
+        "genero": "hombre",
+        "comunidad": "",
+        "situacionDomicilio": "dueño",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "desktop",
+        "mapClicks": 0,
+        "timestamp": "2025-05-05T10:36:02.827Z"
       }
     },
     {
@@ -788,7 +1036,7 @@
       },
       "properties": {
         "barrio": "Recoleta",
-        "fillColor": "#FF5733",
+        "fillColor": "#FF33A1",
         "email": "francoamasso@gmail.com",
         "claseSocial": "mediaalta",
         "genero": "hombre",

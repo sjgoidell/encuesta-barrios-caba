@@ -9,6 +9,7 @@ import { collection, addDoc } from 'firebase/firestore'
 import { db } from './firebase'
 import * as turf from '@turf/turf'
 import mapboxgl from 'mapbox-gl'
+import { motion, AnimatePresence } from 'framer-motion'
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2dvaWRlbGwiLCJhIjoiY21hM2J0ZzFoMWFhNDJqcTZibzQ4NzM5ZSJ9.hTrCOqO2-fWRG86oum5g_A'
 
@@ -102,7 +103,23 @@ function App() {
     maxWidth: '350px',
     color: '#fff',
     zIndex: 1
-  }  
+  }
+  // mobile constraints for transitions
+    const slideVariants = {
+      initial: {
+        opacity: 0,
+        transform: isMobile ? 'translateX(-50%) translateX(100vw)' : 'translateX(-100%)'
+      },
+      animate: {
+        opacity: 1,
+        transform: isMobile ? 'translateX(-50%) translateX(0)' : 'translateX(0%)'
+      },
+      exit: {
+        opacity: 0,
+        transform: isMobile ? 'translateX(-50%) translateX(-100vw)' : 'translateX(-100%)'
+      }
+    }
+
 
   const getFloatingStyle = () => {
     const isMobile = window.innerWidth <= 768
@@ -116,7 +133,8 @@ function App() {
       width: isMobile ? '90%' : 'calc(100vw - 2rem)',
       maxWidth: isMobile ? '320px' : '350px',
       color: '#fff',
-      zIndex: 1
+      zIndex: 1,
+      fontSize: isMobile ? '0.75rem' : '1rem'
     }
   
     if (isMobile && (step === 3 || step === 4)) {
@@ -124,8 +142,7 @@ function App() {
         ...base,
         position: 'fixed',
         bottom: '1rem',
-        left: '50%',
-        transform: 'translateX(-50%)'
+        left: '50%'
       }
     }
   
@@ -244,10 +261,18 @@ function App() {
 
 
       {/* Step 1 */}
+      <AnimatePresence mode="wait">
       {step === 1 && (
         <>
         <MapScreen readOnly blurred />
-        <div style={getFloatingStyle()}>
+        <motion.div
+          key="step1"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+          transition={{ duration: 0.5, ease: 'easeInOut' }}
+          style={getFloatingStyle()}
+        >
           <h1>Ayudanos a mapear los barrios y límites de Buenos Aires! 🗺️</h1>
           <p>
           📌 ¿Dónde empieza y termina tu barrio? ¿Cómo se llama la zona? Cada día, porteños siguen discutiendo los límites y nombres de sus barrios. Nuestra misión es construir un mapa colectivo de todos los barrios de CABA basado en cómo vos lo vivís.
@@ -258,20 +283,29 @@ function App() {
           <p>
             <span style={{color: '#ff3840' }}>Tus respuestas serán <em>anónimas</em> y usadas <em>exclusivamente para este proyecto.</em> </span>
           </p>
-          <button onClick={goNext}>Aceptar y comenzar →</button>
+          <button onClick={goNext}>Aceptar y comenzar ➡️</button>
           <p style={{ fontSize: '0.8rem', marginTop: '2rem' }}>
             Al participar, aceptás los <span style={{ color: 'lightblue', cursor: 'pointer' }} onClick={() => setShowTerms(true)}>términos y condiciones</span> del proyecto.  
             Este proyecto quería agradecer al trabajo del New York Times en su "<a href="https://www.nytimes.com/interactive/2023/upshot/extremely-detailed-nyc-neighborhood-map.html" target="_blank" rel="noopener noreferrer" style={{ color: 'lightblue' }}>
               Extremely Detailed Map of New York City Neighborhoods
             </a>" por la inspiración de este proyecto.
           </p>
-        </div>
+        </motion.div>
         </>
       )}
+      </AnimatePresence>
 
       {/* Step 2 */}
+      <AnimatePresence mode="wait">
           {step === 2 && (
-          <div style={getFloatingStyle()}>
+        <motion.div
+        key="step2"
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -100 }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
+        style={getFloatingStyle()}
+      >
         <h2>👉 Información del participante</h2>
 
         <div style={{ marginBottom: '1rem' }}>
@@ -347,17 +381,28 @@ function App() {
         </div>
 
         <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
-          <button onClick={goBack} style={{ marginRight: '1rem' ,width: '80%', maxWidth:'150px'}}>← Volver</button>
-          <button onClick={goNext}style={{ marginRight: '1rem' ,width: '80%', maxWidth:'150px'}}>→ Siguiente</button>
+
+        <button onClick={goBack} className="btn-nav">Volver<span>⬅️</span></button>
+        <button onClick={goNext} className="btn-nav btn-next">Siguiente<span>➡️</span></button>
         </div>
-      </div>
+      </motion.div>
     )}
+    </AnimatePresence>
 
 
       {/* Step 3 */}
+      <AnimatePresence mode="wait">
       {step === 3 && (
         <>
-          <div style={getFloatingStyle()}>
+                  <motion.div
+                    key="step3"
+                    variants={slideVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"                    
+                    transition={{ duration: 0.5, ease: 'easeInOut' }}
+                    style={getFloatingStyle()}
+                  >
             <h2>🎯 Ubicación y nombre del barrio</h2>
             <p>Ubicá el centro de tu barrio en el mapa y escribí cómo lo llamás.</p>
 
@@ -417,10 +462,10 @@ function App() {
             </div>
 
             <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
-              <button onClick={goBack} style={{ marginRight: '1rem' ,width: '80%', maxWidth:'150px'}}>← Volver</button>
-              <button onClick={goNext}style={{ marginRight: '1rem' ,width: '80%', maxWidth:'150px'}}>→ Siguiente</button>
+              <button onClick={goBack} className="btn-nav">Volver<span>⬅️</span></button>
+              <button onClick={goNext} className="btn-nav btn-next">Siguiente<span>➡️</span></button>
             </div>
-          </div>
+          </motion.div>
 
           <MapScreen
             step={step}
@@ -428,242 +473,259 @@ function App() {
             setMapClickCount={setMapClickCount}
             //overrideCenter={isMobile && step === 3 ? [-58.437, -34.6337] : undefined}
           />
-
-
         </>
       )}
+      </AnimatePresence>
 
-
-{step === 4 && (
-  <>
-    <div style={getFloatingStyle()}>
-      <h2>✏️ Dibujá tu barrio</h2>
-      <p>Usá las herramientas para dibujar los límites de tu barrio. Podés editarlo o borrarlo.</p>
-
-      {drawingInstructionsVisible && (
-          <div style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            backgroundColor: 'rgba(0,0,0,0.7)',
-            display: 'flex',
-            alignItems: 'flex-start',
-            justifyContent: 'center',
-            paddingTop: '10vh',
-            zIndex: 999,
-            overflowY: 'auto'
-          }}>
+      {/* Step 4 */}
+      <AnimatePresence mode="wait">
+      {step === 4 && (
+        <>
+          {/* 👇 Move the modal here first */}
+          {drawingInstructionsVisible && (
             <div style={{
-              backgroundColor: '#fff',
-              color: '#000',
-              padding: '1.5rem',
-              borderRadius: '8px',
-              maxWidth: '380px',
-              width: '90%',
-              textAlign: 'center',
-              fontSize: '0.9rem',
-              boxShadow: '0 8px 20px rgba(0, 0, 0, 0.3)'
+              position: 'fixed',
+              inset: 0,
+              backgroundColor: 'rgba(0,0,0,0.7)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              zIndex: 999,
+              overflowY: 'auto',
+              padding: '1rem'
             }}>
-              <h3 style={{ marginTop: 0, fontSize: '1.1rem' }}>📍 ¿Dónde están los límites de tu barrio?</h3>
-              <p><strong>Cómo dibujar:</strong></p>
-              <ol style={{ textAlign: 'left', paddingLeft: '1.2rem', fontSize: '0.85rem' }}>
-                <li>🖊️ Tocá el mapa para agregar el punto de inicio.</li>
-                <li>📌 Tocá para agregar más puntos y formar el contorno.</li>
-                <li>✅ Hacé clic en el primer punto para cerrar el polígono.</li>
-                <li>🔄 Si necesitás reiniciar, usá el icono de la papelera arriba a la derecha.</li>
-              </ol>
-              <button
-                onClick={() => setDrawingInstructionsVisible(false)}
-                style={{
-                  marginTop: '1.25rem',
-                  padding: '0.9rem 1.6rem',
-                  fontSize: '1rem',
-                  backgroundColor: '#000',
-                  color: '#fff',
-                  border: 'none',
-                  borderRadius: '6px',
-                  cursor: 'pointer'
-                }}
-              >
-                Estoy listo para dibujar →
-              </button>
+              <div style={{
+                backgroundColor: '#fff',
+                color: '#000',
+                padding: '1.5rem',
+                borderRadius: '8px',
+                maxWidth: '380px',
+                width: '100%',
+                textAlign: 'center',
+                fontSize: '0.9rem',
+                boxShadow: '0 8px 20px rgba(0, 0, 0, 0.3)'
+              }}>
+                <h3 style={{ marginTop: 0, fontSize: '1.1rem' }}>📍 ¿Dónde están los límites de tu barrio?</h3>
+                <p><strong>Cómo dibujar:</strong></p>
+                <ol style={{ textAlign: 'left', paddingLeft: '1.2rem', fontSize: '0.85rem' }}>
+                  <li>🖊️ Tocá el mapa para agregar el punto de inicio.</li>
+                  <li>📌 Tocá para agregar más puntos y formar el contorno.</li>
+                  <li>✅ Hacé clic en el primer punto para cerrar el polígono.</li>
+                  <li>🔄 Si necesitás reiniciar, usá el icono de la papelera arriba a la derecha.</li>
+                </ol>
+                <button
+                  onClick={() => setDrawingInstructionsVisible(false)}
+                  style={{
+                    marginTop: '1.25rem',
+                    padding: '0.9rem 1.6rem',
+                    fontSize: '1rem',
+                    backgroundColor: '#000',
+                    color: '#fff',
+                    border: 'none',
+                    borderRadius: '6px',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Estoy listo para dibujar ➡️
+                </button>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+
+          {/* Floating instruction box */}
+          <motion.div
+            key="step4"
+            variants={slideVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"            
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
+            style={getFloatingStyle()}
+          >
+            <h2>✏️ Dibujá tu barrio</h2>
+            <p>Usá las herramientas para dibujar los límites de tu barrio. Podés editarlo o borrarlo.</p>
 
             <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
-              <button onClick={goBack} style={{ marginRight: '1rem' ,width: '80%', maxWidth:'150px'}}>← Volver</button>
-              <button onClick={goNext}style={{ marginRight: '1rem' ,width: '80%', maxWidth:'150px'}}>→ Siguiente</button>
-      </div>
-    </div>
+              <button onClick={goBack} className="btn-nav">Volver<span>⬅️</span></button>
+              <button onClick={goNext} className="btn-nav btn-next">Siguiente<span>➡️</span></button>
+            </div>
+          </motion.div>
 
-    <BoundaryDrawScreen
-      setPolygonGeoJson={setPolygonGeoJson}
-      pinLocation={pinLocation}
-      barrioName={barrioName}
-    />
-  </>
-)}
-
-
-{step === 5 && (
-  <>
-    <BoundaryDrawScreen
-    polygonGeoJson={polygonGeoJson}
-    barrioName={barrioName}
-    readOnly={true}
-    pinLocation={pinLocation}
-  />
-  <div style={getFloatingStyle()}>
-    <h2>📝 Contanos un poco más</h2>
-
-    {/* Text input fields */}
-    <div style={{ marginBottom: '1rem' }}>
-      <label>¿Qué calles, plazas o lugares definen tu barrio?</label>
-      <input
-        type="text"
-        value={landmarks}
-        onChange={(e) => setLandmarks(e.target.value)}
-        style={{ width: '95%' }}
-      />
-    </div>
-
-    <div style={{ marginBottom: '1rem' }}>
-      <label>¿Usás otros nombres para esta zona?</label>
-      <input
-        type="text"
-        value={altNames}
-        onChange={(e) => setAltNames(e.target.value)}
-        style={{ width: '95%' }}
-      />
-    </div>
-
-    <div style={{ marginBottom: '1rem' }}>
-      <label>¿Querés contarnos algo más sobre tu barrio?</label>
-      <textarea
-        value={comments}
-        onChange={(e) => setComments(e.target.value)}
-        style={{ width: '95%' }}
-        rows={4}
-      />
-    </div>
-
-    {/* Comunidad */}
-    <div style={{ marginBottom: '1rem' }}>
-      <label>¿Te considerás parte de una(s) comunidad(es) en particular? (ej. religiosa, étnica, tribu urbana)</label>
-      <textarea
-        value={comunidad}
-        onChange={(e) => setComunidad(e.target.value)}
-        style={{ width: '95%' }}
-        rows={3}
-      />
-    </div>
-
-    {/* Clase Social */}
-        <div style={{ marginBottom: '1rem' }}>
-      <label>¿Cómo definirías tu clase social?</label>
-      <select
-        value={claseSocial}
-        onChange={(e) => setClaseSocial(e.target.value)}
-        style={{ width: '100%', padding: '0.5rem', marginTop: '0.25rem' }}
-      >
-            <option value="">Seleccioná una opción</option>
-            <option value="alta">Clase alta</option>
-            <option value="mediaalta">Clase media alta</option>
-            <option value="media">Clase media</option>
-            <option value="mediabaja">Clase media baja</option>
-            <option value="baja">Clase baja</option>
-      </select>
-    </div>
-
-    {/* Género */}
-    <div style={{ marginBottom: '1rem' }}>
-      <label>¿Cómo es tu género?</label>
-      <div style={{ display: 'flex', gap: '2rem', marginTop: '0.5rem' }}>
-        {['hombre', 'mujer', 'otro'].map((option) => (
-          <div key={option} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <input
-              type="radio"
-              name="genero"
-              value={option}
-              checked={genero === option}
-              onChange={() => setGenero(option)}
-            />
-            <span style={{ textTransform: 'capitalize' }}>{option}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    {/* Situación Domicilio */}
-    <div style={{ marginBottom: '1rem' }}>
-      <label>Describe tu situación de domicilio</label>
-      <div style={{ display: 'flex', gap: '2rem', marginTop: '0.5rem' }}>
-        {[
-          { value: 'dueño', label: 'Dueño' },
-          { value: 'alquiler', label: 'Alquiler' },
-          { value: 'familiar', label: 'Domicilio de familia / amigos' }
-        ].map(({ value, label }) => (
-          <div key={value} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <input
-              type="radio"
-              name="situacionDomicilio"
-              value={value}
-              checked={situacionDomicilio === value}
-              onChange={() => setSituacionDomicilio(value)}
-            />
-            <span>{label}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-
-        {/* Contact permission - vertical radio buttons */}
-        <div style={{ marginBottom: '1rem' }}>
-      <label>¿Te gustaría que te contactemos más adelante?</label>
-      <div style={{ display: 'flex', gap: '2rem', marginTop: '0.5rem' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <input
-            type="radio"
-            name="contact"
-            value="sí"
-            checked={canContact === 'sí'}
-            onChange={() => setCanContact('sí')}
+          <BoundaryDrawScreen
+            setPolygonGeoJson={setPolygonGeoJson}
+            pinLocation={pinLocation}
+            barrioName={barrioName}
           />
-          <span>Sí</span>
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <input
-            type="radio"
-            name="contact"
-            value="no"
-            checked={canContact === 'no'}
-            onChange={() => setCanContact('no')}
-          />
-          <span>No</span>
-        </div>
-      </div>
-    </div>
+        </>
+      )}
+      </AnimatePresence>
 
-    {/* Navigation Buttons */}
-      <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
-              <button onClick={goBack} style={{ marginRight: '1rem' ,width: '80%', maxWidth:'150px'}}>← Volver</button>
-              <button onClick={handleSubmit}style={{ marginRight: '1rem' ,width: '80%', maxWidth:'150px', color: '#ceffd0'}}>→ Enviar</button>
-    </div>
-    </div>
-  </>
-)}
+      {/* Step 5 */}
+      <AnimatePresence mode="wait">
+        {step === 5 && (
+          <>
+            <BoundaryDrawScreen
+            polygonGeoJson={polygonGeoJson}
+            barrioName={barrioName}
+            readOnly={true}
+            pinLocation={pinLocation}
+          />
+                  <motion.div
+                    key="step5"
+                    initial={{ opacity: 0, x: -100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -100 }}
+                    transition={{ duration: 0.5, ease: 'easeInOut' }}
+                    style={getFloatingStyle()}
+                  >
+            <h2>📝 Contanos un poco más</h2>
+
+            {/* Text input fields */}
+            <div style={{ marginBottom: '1rem' }}>
+              <label>¿Qué calles, plazas o lugares definen tu barrio?</label>
+              <input
+                type="text"
+                value={landmarks}
+                onChange={(e) => setLandmarks(e.target.value)}
+                style={{ width: '95%' }}
+              />
+            </div>
+
+            <div style={{ marginBottom: '1rem' }}>
+              <label>¿Usás otros nombres para esta zona?</label>
+              <input
+                type="text"
+                value={altNames}
+                onChange={(e) => setAltNames(e.target.value)}
+                style={{ width: '95%' }}
+              />
+            </div>
+
+            <div style={{ marginBottom: '1rem' }}>
+              <label>¿Querés contarnos algo más sobre tu barrio?</label>
+              <textarea
+                value={comments}
+                onChange={(e) => setComments(e.target.value)}
+                style={{ width: '95%' }}
+                rows={4}
+              />
+            </div>
+
+            {/* Comunidad */}
+            <div style={{ marginBottom: '1rem' }}>
+              <label>¿Te considerás parte de una(s) comunidad(es) en particular? (ej. religiosa, étnica, tribu urbana)</label>
+              <textarea
+                value={comunidad}
+                onChange={(e) => setComunidad(e.target.value)}
+                style={{ width: '95%' }}
+                rows={3}
+              />
+            </div>
+
+            {/* Clase Social */}
+                <div style={{ marginBottom: '1rem' }}>
+              <label>¿Cómo definirías tu clase social?</label>
+              <select
+                value={claseSocial}
+                onChange={(e) => setClaseSocial(e.target.value)}
+                style={{ width: '100%', padding: '0.5rem', marginTop: '0.25rem' }}
+              >
+                    <option value="">Seleccioná una opción</option>
+                    <option value="alta">Clase alta</option>
+                    <option value="mediaalta">Clase media alta</option>
+                    <option value="media">Clase media</option>
+                    <option value="mediabaja">Clase media baja</option>
+                    <option value="baja">Clase baja</option>
+              </select>
+            </div>
+
+            {/* Género */}
+            <div style={{ marginBottom: '1rem' }}>
+              <label>¿Cómo es tu género?</label>
+              <div style={{ display: 'flex', gap: '2rem', marginTop: '0.5rem' }}>
+                {['hombre', 'mujer', 'otro'].map((option) => (
+                  <div key={option} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <input
+                      type="radio"
+                      name="genero"
+                      value={option}
+                      checked={genero === option}
+                      onChange={() => setGenero(option)}
+                    />
+                    <span style={{ textTransform: 'capitalize' }}>{option}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Situación Domicilio */}
+            <div style={{ marginBottom: '1rem' }}>
+              <label>Describe tu situación de domicilio</label>
+              <div style={{ display: 'flex', gap: '2rem', marginTop: '0.5rem' }}>
+                {[
+                  { value: 'dueño', label: 'Dueño' },
+                  { value: 'alquiler', label: 'Alquiler' },
+                  { value: 'familiar', label: 'Domicilio de familia / amigos' }
+                ].map(({ value, label }) => (
+                  <div key={value} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <input
+                      type="radio"
+                      name="situacionDomicilio"
+                      value={value}
+                      checked={situacionDomicilio === value}
+                      onChange={() => setSituacionDomicilio(value)}
+                    />
+                    <span>{label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+                {/* Contact permission - vertical radio buttons */}
+                <div style={{ marginBottom: '1rem' }}>
+              <label>¿Te gustaría que te contactemos más adelante?</label>
+              <div style={{ display: 'flex', gap: '2rem', marginTop: '0.5rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <input
+                    type="radio"
+                    name="contact"
+                    value="sí"
+                    checked={canContact === 'sí'}
+                    onChange={() => setCanContact('sí')}
+                  />
+                  <span>Sí</span>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <input
+                    type="radio"
+                    name="contact"
+                    value="no"
+                    checked={canContact === 'no'}
+                    onChange={() => setCanContact('no')}
+                  />
+                  <span>No</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Navigation Buttons */}
+              <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
+                <button onClick={goBack} className="btn-nav">Volver<span>⬅️</span></button>
+                <button onClick={handleSubmit} className="btn-nav btn-next">Enviar<span>➡️</span></button>
+            </div>
+            </motion.div>
+          </>
+        )}
+        </AnimatePresence>
 
 
 
       {/* Step 6 */}
       {step === 6 && (
         <>
-          <h2>¡Gracias por mapear tu barrio!</h2>
-          <p>Tu aporte es muy valioso para el mapa colectivo de Buenos Aires.</p>
-          <button onClick={goBack}>← Volver</button>
+          <h2>✅ ¡Gracias por mapear tu barrio!</h2>
+          <p>Tu aporte es muy valioso para el mapa colectivo de Buenos Aires. 🚀</p>
+          <button onClick={goBack} className="btn-nav">Volver<span>⬅️</span></button>
         </>
       )}
 
@@ -719,7 +781,8 @@ function App() {
       width: '90%',
       maxWidth: '500px',
       color: '#fff',
-      border: '1px solid #aaa'
+      border: '1px solid #aaa',
+      fontSize: '0.70rem' // Smaller font size
     }}>
       <h3 style={{ color: '#fff' }}>Términos y Condiciones</h3>
 
