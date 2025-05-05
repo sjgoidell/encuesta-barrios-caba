@@ -248,12 +248,12 @@ function App() {
         <>
         <MapScreen readOnly blurred />
         <div style={getFloatingStyle()}>
-          <h1>Ayudanos a mapear los barrios y límites de Buenos Aires!</h1>
+          <h1>Ayudanos a mapear los barrios y límites de Buenos Aires! 🗺️</h1>
           <p>
-            ¿Dónde empieza y termina tu barrio? ¿Cómo se llama la zona? Cada día, porteños siguen discutiendo los límites y nombres de sus barrios. Nuestra misión es construir un mapa colectivo de todos los barrios de CABA basado en cómo vos lo vivís.
+          📌 ¿Dónde empieza y termina tu barrio? ¿Cómo se llama la zona? Cada día, porteños siguen discutiendo los límites y nombres de sus barrios. Nuestra misión es construir un mapa colectivo de todos los barrios de CABA basado en cómo vos lo vivís.
           </p>
           <p>  
-            ¡Sumate al proyecto! Recibirás información sobre los resultados cuando esté completo. 
+          🚀 ¡Sumate al proyecto! Recibirás información sobre los resultados cuando esté completo. 
           </p>
           <p>
             <span style={{color: '#ff3840' }}>Tus respuestas serán <em>anónimas</em> y usadas <em>exclusivamente para este proyecto.</em> </span>
@@ -272,7 +272,7 @@ function App() {
       {/* Step 2 */}
           {step === 2 && (
           <div style={getFloatingStyle()}>
-        <h2>Información del participante</h2>
+        <h2>👉 Información del participante</h2>
 
         <div style={{ marginBottom: '1rem' }}>
           <label>Email (requerido):</label>
@@ -358,7 +358,7 @@ function App() {
       {step === 3 && (
         <>
           <div style={getFloatingStyle()}>
-            <h2>Ubicación y nombre del barrio</h2>
+            <h2>🎯 Ubicación y nombre del barrio</h2>
             <p>Ubicá el centro de tu barrio en el mapa y escribí cómo lo llamás.</p>
 
             <div style={{ marginBottom: '4rem', position: 'relative' }} ref={inputRef}>
@@ -437,43 +437,61 @@ function App() {
 {step === 4 && (
   <>
     <div style={getFloatingStyle()}>
-      <h2>Dibujá tu barrio</h2>
+      <h2>✏️ Dibujá tu barrio</h2>
       <p>Usá las herramientas para dibujar los límites de tu barrio. Podés editarlo o borrarlo.</p>
 
       {drawingInstructionsVisible && (
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          backgroundColor: 'rgba(0,0,0,0.7)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          zIndex: 999
-        }}>
           <div style={{
-            backgroundColor: '#fff',
-            color: '#000',
-            padding: '2rem',
-            borderRadius: '8px',
-            maxWidth: '400px',
-            textAlign: 'left'
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'rgba(0,0,0,0.7)',
+            display: 'flex',
+            alignItems: 'flex-start',
+            justifyContent: 'center',
+            paddingTop: '10vh',
+            zIndex: 999,
+            overflowY: 'auto'
           }}>
-            <h3 style={{ marginTop: 0 }}>¿Dónde están los límites de tu barrio?</h3>
-            <p><strong>Cómo dibujar:</strong></p>
-            <ol>
-              <li>Tocá el mapa para agregar el punto de inicio.</li>
-              <li>Tocá para agregar más puntos y formar el contorno.</li>
-              <li>Hacé clic en el primer punto para cerrar el polígono.</li>
-            </ol>
-            <button onClick={() => setDrawingInstructionsVisible(false)} style={{ marginTop: '1rem' }}>
-              Estoy listo para dibujar →
-            </button>
+            <div style={{
+              backgroundColor: '#fff',
+              color: '#000',
+              padding: '1.5rem',
+              borderRadius: '8px',
+              maxWidth: '380px',
+              width: '90%',
+              textAlign: 'center',
+              fontSize: '0.9rem',
+              boxShadow: '0 8px 20px rgba(0, 0, 0, 0.3)'
+            }}>
+              <h3 style={{ marginTop: 0, fontSize: '1.1rem' }}>📍 ¿Dónde están los límites de tu barrio?</h3>
+              <p><strong>Cómo dibujar:</strong></p>
+              <ol style={{ textAlign: 'left', paddingLeft: '1.2rem', fontSize: '0.85rem' }}>
+                <li>🖊️ Tocá el mapa para agregar el punto de inicio.</li>
+                <li>📌 Tocá para agregar más puntos y formar el contorno.</li>
+                <li>✅ Hacé clic en el primer punto para cerrar el polígono.</li>
+                <li>🔄 Si necesitás reiniciar, usá el icono de la papelera arriba a la derecha.</li>
+              </ol>
+              <button
+                onClick={() => setDrawingInstructionsVisible(false)}
+                style={{
+                  marginTop: '1.25rem',
+                  padding: '0.9rem 1.6rem',
+                  fontSize: '1rem',
+                  backgroundColor: '#000',
+                  color: '#fff',
+                  border: 'none',
+                  borderRadius: '6px',
+                  cursor: 'pointer'
+                }}
+              >
+                Estoy listo para dibujar →
+              </button>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
             <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
               <button onClick={goBack} style={{ marginRight: '1rem' ,width: '80%', maxWidth:'150px'}}>← Volver</button>
@@ -496,9 +514,10 @@ function App() {
     polygonGeoJson={polygonGeoJson}
     barrioName={barrioName}
     readOnly={true}
+    pinLocation={pinLocation}
   />
   <div style={getFloatingStyle()}>
-    <h2>Contanos un poco más</h2>
+    <h2>📝 Contanos un poco más</h2>
 
     {/* Text input fields */}
     <div style={{ marginBottom: '1rem' }}>

@@ -17,14 +17,17 @@ const BoundaryDrawScreen = ({ setPolygonGeoJson, pinLocation, barrioName, polygo
   const defaultCenter = [-58.437, -34.6037]
 
   useEffect(() => {
+    const isMobile = window.innerWidth <= 768
+    const defaultCenter = [-58.437, -34.6037]
+  
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: 'mapbox://styles/mapbox/dark-v11',
-      center: defaultCenter,
-      zoom: 12,
+      center: pinLocation ? [pinLocation.lng, pinLocation.lat] : defaultCenter,
+      zoom: pinLocation ? 13 : 11,
       interactive: !readOnly
     })
-
+  
     if (readOnly) {
       map.scrollZoom.disable()
       map.dragPan.disable()
@@ -32,7 +35,7 @@ const BoundaryDrawScreen = ({ setPolygonGeoJson, pinLocation, barrioName, polygo
       map.keyboard.disable()
       map.doubleClickZoom.disable()
       map.touchZoomRotate.disable()
-    }    
+    }
   
     const draw = new MapboxDraw({
       displayControlsDefault: false,
@@ -40,66 +43,67 @@ const BoundaryDrawScreen = ({ setPolygonGeoJson, pinLocation, barrioName, polygo
       defaultMode: readOnly ? 'simple_select' : 'draw_polygon'
     })
   
+    drawRef.current = draw
     map.addControl(draw, 'top-right')
-  
-    if (readOnly && polygonGeoJson) {
-      try {
-        // Ensure it's added *after* the draw tool is mounted
-        map.on('load', () => {
-          draw.add(polygonGeoJson)
-          if (readOnly && polygonGeoJson && polygonGeoJson.geometry?.type === 'Polygon') {
-            // Calculate the center of the polygon by averaging all coordinates
-            const coords = polygonGeoJson.geometry.coordinates[0]
-            const center = coords.reduce(
-              (acc, coord) => [acc[0] + coord[0], acc[1] + coord[1]],
-              [0, 0]
-            ).map(val => val / coords.length)
-          
-            // Add popup with barrio name
-            if (barrioName) {
-              new mapboxgl.Popup({ closeButton: false, offset: 25 })
-                .setLngLat(center)
-                .setHTML(`<div style="color:#ccc;font-weight:bold;">${barrioName}</div>`)
-                .addTo(map)
-            }
-          }          
-          draw.changeMode('simple_select')
-        })
-      } catch (e) {
-        console.warn('⚠️ Failed to load polygon in read-only mode:', e)
-      } } 
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right')
   
-    // ✅ Add this inside the setTimeout so it's guaranteed to happen after layout
-    setTimeout(() => {
-      map.resize(),100
+    map.on('load', () => {
+      map.resize()
   
-      // 🔴 Add fixed pin from previous screen
+      // 1. Fly to pin with offset (for mobile layout)
+      if (pinLocation && isMobile) {
+        const screenPoint = map.project([pinLocation.lng, pinLocation.lat])
+        const shifted = { x: screenPoint.x, y: screenPoint.y + 100 }
+        const newCenter = map.unproject(shifted)
+        map.flyTo({ center: newCenter, zoom: 13, speed: 0.6 })
+      }
+  
+      // 2. Show red pin
       if (pinLocation) {
         new mapboxgl.Marker({ color: 'red' })
           .setLngLat([pinLocation.lng, pinLocation.lat])
           .addTo(map)
-      
+  
         if (barrioName) {
           new mapboxgl.Popup({ offset: 25 })
             .setLngLat([pinLocation.lng, pinLocation.lat])
             .setHTML(`<strong style="color: #999;">${barrioName}</strong>`)
             .addTo(map)
         }
-      }      
-    }, 100)
-  
-    // 🔁 Handle draw events
-    map.on('draw.create', (e) => {
-      const existing = draw.getAll()
-      if (existing.features.length > 1) {
-        // Delete all except the most recent
-        draw.delete(existing.features[0].id)
       }
-      updateGeoJSON()
-    })    
-    map.on('draw.update', updateGeoJSON)
-    map.on('draw.delete', () => setPolygonGeoJson(null))
+  
+      // 3. Show polygon if in readOnly mode
+      if (readOnly && polygonGeoJson && polygonGeoJson.geometry?.type === 'Polygon') {
+        try {
+          draw.add(polygonGeoJson)
+          draw.changeMode('simple_select')
+  
+          // Optional: center map on polygon if pin doesn't exist
+          if (!pinLocation) {
+            const coords = polygonGeoJson.geometry.coordinates[0]
+            const center = coords.reduce(
+              (acc, coord) => [acc[0] + coord[0], acc[1] + coord[1]],
+              [0, 0]
+            ).map(val => val / coords.length)
+            map.flyTo({ center, zoom: 13, speed: 0.6 })
+          }
+        } catch (e) {
+          console.warn('⚠️ Failed to load polygon in read-only mode:', e)
+        }
+      }
+    })
+  
+    if (!readOnly) {
+      map.on('draw.create', (e) => {
+        const existing = draw.getAll()
+        if (existing.features.length > 1) {
+          draw.delete(existing.features[0].id)
+        }
+        updateGeoJSON()
+      })
+      map.on('draw.update', updateGeoJSON)
+      map.on('draw.delete', () => setPolygonGeoJson(null))
+    }
   
     function updateGeoJSON() {
       const data = draw.getAll()
@@ -111,21 +115,22 @@ const BoundaryDrawScreen = ({ setPolygonGeoJson, pinLocation, barrioName, polygo
     }
   
     return () => map.remove()
-  }, [setPolygonGeoJson, pinLocation, barrioName])
+  }, [setPolygonGeoJson, pinLocation, barrioName, polygonGeoJson, readOnly])  
   
 
-    return (
-      <div style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        zIndex: -1
-      }}>
+  return (
+    <div style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100vw',
+      height: '100vh',
+      zIndex: -1
+    }}>
       <div ref={mapContainerRef} style={{ height: '100%', width: '100%' }} />
     </div>
   )
+  
 }
 
 export default BoundaryDrawScreen
