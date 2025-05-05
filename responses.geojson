@@ -1,0 +1,849 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.433968420570366,
+              -34.55331826363158
+            ],
+            [
+              -58.445126410072746,
+              -34.55982149380631
+            ],
+            [
+              -58.433110113685444,
+              -34.56547606331106
+            ],
+            [
+              -58.44671564909768,
+              -34.57358421581384
+            ],
+            [
+              -58.463023479907804,
+              -34.5682129076766
+            ],
+            [
+              -58.46954660318315,
+              -34.57245345479409
+            ],
+            [
+              -58.47727136514665,
+              -34.56298262820482
+            ],
+            [
+              -58.45356195871848,
+              -34.5505856742817
+            ],
+            [
+              -58.450720190611094,
+              -34.55275679281239
+            ],
+            [
+              -58.44299439326602,
+              -34.54845438805453
+            ],
+            [
+              -58.47159983483634,
+              -34.57242571066698
+            ],
+            [
+              -58.44140019818016,
+              -34.548043811735184
+            ],
+            [
+              -58.433968420570366,
+              -34.55331826363158
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Belgrano",
+        "fillColor": "#FF5733",
+        "email": "belio.francisco.2000@gmail.com",
+        "claseSocial": "",
+        "genero": "hombre",
+        "comunidad": "",
+        "situacionDomicilio": "dueño",
+        "userRegion": "",
+        "language": "",
+        "deviceType": "",
+        "mapClicks": 0,
+        "timestamp": "2025-04-30T21:01:05.860Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.45221474936868,
+              -34.599509040423555
+            ],
+            [
+              -58.452901645127014,
+              -34.61463244015018
+            ],
+            [
+              -58.41752651313392,
+              -34.61025117800459
+            ],
+            [
+              -58.4216478876841,
+              -34.594420174686135
+            ],
+            [
+              -58.45221474936868,
+              -34.599509040423555
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Palermo Soho",
+        "fillColor": "#33FF57",
+        "email": "a@a.a",
+        "claseSocial": "",
+        "genero": "",
+        "comunidad": "",
+        "situacionDomicilio": "",
+        "userRegion": "",
+        "language": "",
+        "deviceType": "",
+        "mapClicks": 0,
+        "timestamp": "2025-05-04T00:02:46.088Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.42394632624102,
+              -34.570691115365435
+            ],
+            [
+              -58.43189601372444,
+              -34.574477432351884
+            ],
+            [
+              -58.44031332988345,
+              -34.56517176820068
+            ],
+            [
+              -58.43758549594335,
+              -34.56292541737691
+            ],
+            [
+              -58.42394632624102,
+              -34.570691115365435
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Las Cañitas",
+        "fillColor": "#3357FF",
+        "email": "xxx@gmail.com",
+        "claseSocial": "",
+        "genero": "mujer",
+        "comunidad": "Tías de cañitas ",
+        "situacionDomicilio": "dueño",
+        "userRegion": "",
+        "language": "",
+        "deviceType": "",
+        "mapClicks": 0,
+        "timestamp": "2025-05-01T19:03:09.012Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.451527853610315,
+              -34.593006545353084
+            ],
+            [
+              -58.454790608420225,
+              -34.61095784867999
+            ],
+            [
+              -58.42203826792087,
+              -34.61246422121165
+            ],
+            [
+              -58.44006928157695,
+              -34.59423051991437
+            ],
+            [
+              -58.451527853610315,
+              -34.593006545353084
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Villa Crespo",
+        "fillColor": "#FF33A1",
+        "email": "s@a.a",
+        "claseSocial": "",
+        "genero": "",
+        "comunidad": "",
+        "situacionDomicilio": "",
+        "userRegion": "",
+        "language": "",
+        "deviceType": "",
+        "mapClicks": 0,
+        "timestamp": "2025-05-04T14:23:22.838Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.40761157278993,
+              -34.5724927977883
+            ],
+            [
+              -58.41447802786851,
+              -34.580549215121614
+            ],
+            [
+              -58.40383502249712,
+              -34.5874742830767
+            ],
+            [
+              -58.39662524466455,
+              -34.580549215121614
+            ],
+            [
+              -58.40761157278993,
+              -34.5724927977883
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "barrio parque",
+        "fillColor": "#A133FF",
+        "email": "a@s.com",
+        "claseSocial": "",
+        "genero": "",
+        "comunidad": "",
+        "situacionDomicilio": "",
+        "userRegion": "",
+        "language": "",
+        "deviceType": "",
+        "mapClicks": 0,
+        "timestamp": "2025-05-03T21:07:36.367Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.42390012988487,
+              -34.57115243278559
+            ],
+            [
+              -58.431409917236635,
+              -34.574541520877816
+            ],
+            [
+              -58.4392934904042,
+              -34.56646029433032
+            ],
+            [
+              -58.44485362142399,
+              -34.56200050577794
+            ],
+            [
+              -58.43756046255382,
+              -34.563070876841905
+            ],
+            [
+              -58.42390012988487,
+              -34.57115243278559
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Las Cañitas",
+        "fillColor": "#3357FF",
+        "email": "sgoidell@yahoo.com",
+        "claseSocial": "<alta",
+        "genero": "hombre",
+        "comunidad": "",
+        "situacionDomicilio": "alquiler",
+        "userRegion": "",
+        "language": "",
+        "deviceType": "",
+        "mapClicks": 0,
+        "timestamp": "2025-05-04T19:28:21.865Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.431565411109815,
+              -34.574436382064626
+            ],
+            [
+              -58.42404946474889,
+              -34.57103933554403
+            ],
+            [
+              -58.436671352931455,
+              -34.56340388287281
+            ],
+            [
+              -58.44156386005608,
+              -34.5622366818684
+            ],
+            [
+              -58.4446682726836,
+              -34.56132844087391
+            ],
+            [
+              -58.445321833236534,
+              -34.56119388580923
+            ],
+            [
+              -58.43935809318933,
+              -34.566037731005856
+            ],
+            [
+              -58.434538084109306,
+              -34.57141945033755
+            ],
+            [
+              -58.431565411109815,
+              -34.574436382064626
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Las Cañitas",
+        "fillColor": "#3357FF",
+        "email": "sgoidell@yahoo.com",
+        "claseSocial": "alta",
+        "genero": "hombre",
+        "comunidad": "",
+        "situacionDomicilio": "alquiler",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "desktop",
+        "mapClicks": 0,
+        "timestamp": "2025-05-05T04:54:08.935Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.45091528686886,
+              -34.58875538824717
+            ],
+            [
+              -58.447653173122376,
+              -34.59182450636093
+            ],
+            [
+              -58.44410135784476,
+              -34.59438374946562
+            ],
+            [
+              -58.43837297095867,
+              -34.58845985657052
+            ],
+            [
+              -58.445148635617684,
+              -34.5847441811771
+            ],
+            [
+              -58.44432479849225,
+              -34.58317047228036
+            ],
+            [
+              -58.44333806901014,
+              -34.58171815943034
+            ],
+            [
+              -58.44618151570893,
+              -34.579320330895804
+            ],
+            [
+              -58.45049741627375,
+              -34.58003347024083
+            ],
+            [
+              -58.45548202019382,
+              -34.58739494585114
+            ],
+            [
+              -58.45091528686886,
+              -34.58875538824717
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Chacalermo",
+        "fillColor": "#33FFF5",
+        "email": "genaromendezc@gmail.com",
+        "claseSocial": "media",
+        "genero": "hombre",
+        "comunidad": "Me considero indie palermitano",
+        "situacionDomicilio": "alquiler",
+        "userRegion": "",
+        "language": "",
+        "deviceType": "",
+        "mapClicks": 0,
+        "timestamp": "2025-05-04T16:28:57.774Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.410156010218984,
+              -34.5888598405555
+            ],
+            [
+              -58.4143530865517,
+              -34.59409595118164
+            ],
+            [
+              -58.42292031452888,
+              -34.59409595118164
+            ],
+            [
+              -58.422271282106465,
+              -34.58918042824102
+            ],
+            [
+              -58.41591076436568,
+              -34.58490582407123
+            ],
+            [
+              -58.410156010218984,
+              -34.5888598405555
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Palermo Sensible",
+        "fillColor": "#F5FF33",
+        "email": "a@a.a",
+        "claseSocial": "",
+        "genero": "hombre",
+        "comunidad": "Interrior",
+        "situacionDomicilio": "alquiler",
+        "userRegion": "",
+        "language": "",
+        "deviceType": "",
+        "mapClicks": 0,
+        "timestamp": "2025-05-04T15:23:52.156Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.50670316591605,
+              -34.58096472444097
+            ],
+            [
+              -58.498665710826714,
+              -34.577658016432515
+            ],
+            [
+              -58.49860560367867,
+              -34.577095970639824
+            ],
+            [
+              -58.50110637315895,
+              -34.57794351312387
+            ],
+            [
+              -58.512547712042846,
+              -34.58431672422887
+            ],
+            [
+              -58.50498610444666,
+              -34.59182013917845
+            ],
+            [
+              -58.4995496431809,
+              -34.588985773449686
+            ],
+            [
+              -58.49089799241891,
+              -34.585154828692914
+            ],
+            [
+              -58.48904614074999,
+              -34.584502197549035
+            ],
+            [
+              -58.48912212766123,
+              -34.58423236588403
+            ],
+            [
+              -58.489198114572474,
+              -34.58396253421902
+            ],
+            [
+              -58.494454266461275,
+              -34.580806745632124
+            ],
+            [
+              -58.496319728354024,
+              -34.578294146182614
+            ],
+            [
+              -58.497925487897746,
+              -34.577225035696074
+            ],
+            [
+              -58.490232328043845,
+              -34.58293087035023
+            ],
+            [
+              -58.50670316591605,
+              -34.58096472444097
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Villa Pueyrredón",
+        "fillColor": "#FF8F33",
+        "email": "agustinastout@hotmail.com",
+        "claseSocial": "mediaalta",
+        "genero": "mujer",
+        "comunidad": "No",
+        "situacionDomicilio": "familiar",
+        "userRegion": "",
+        "language": "",
+        "deviceType": "",
+        "mapClicks": 0,
+        "timestamp": "2025-05-04T23:57:30.224Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.44520541434281,
+              -34.600757491854345
+            ],
+            [
+              -58.445548737096814,
+              -34.60782216303541
+            ],
+            [
+              -58.428897583531764,
+              -34.606833145251585
+            ],
+            [
+              -58.42958422903973,
+              -34.59906188134101
+            ],
+            [
+              -58.44520541434281,
+              -34.600757491854345
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Palermo Soho",
+        "fillColor": "#33FF57",
+        "email": "a@a.a",
+        "claseSocial": "",
+        "genero": "",
+        "comunidad": "",
+        "situacionDomicilio": "",
+        "userRegion": "",
+        "language": "",
+        "deviceType": "",
+        "mapClicks": 0,
+        "timestamp": "2025-05-03T21:06:11.209Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.43853452807973,
+              -34.5883888480346
+            ],
+            [
+              -58.44486349424825,
+              -34.58443090662273
+            ],
+            [
+              -58.44401151803295,
+              -34.58192578299857
+            ],
+            [
+              -58.43543090043913,
+              -34.5752617865922
+            ],
+            [
+              -58.42670450939265,
+              -34.577670992373804
+            ],
+            [
+              -58.42792161827107,
+              -34.580025931259584
+            ],
+            [
+              -58.43853452807973,
+              -34.5883888480346
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Palermo Hollywood",
+        "fillColor": "#33FF8F",
+        "email": "martin.niepo@gmail.com",
+        "claseSocial": "mediaalta",
+        "genero": "hombre",
+        "comunidad": "",
+        "situacionDomicilio": "dueño",
+        "userRegion": "",
+        "language": "",
+        "deviceType": "",
+        "mapClicks": 0,
+        "timestamp": "2025-05-04T16:40:31.586Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.43660530154,
+              -34.6037708787846
+            ],
+            [
+              -58.450334191278515,
+              -34.61012701788734
+            ],
+            [
+              -58.43300146791826,
+              -34.61238686135066
+            ],
+            [
+              -58.43660530154,
+              -34.6037708787846
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Parque Avellaneda",
+        "fillColor": "#8F33FF",
+        "email": "",
+        "claseSocial": "",
+        "genero": "mujer",
+        "comunidad": "",
+        "situacionDomicilio": "familiar",
+        "userRegion": "",
+        "language": "",
+        "deviceType": "",
+        "mapClicks": 0,
+        "timestamp": "2025-04-30T19:49:53.706Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.46531032923333,
+              -34.56174450185228
+            ],
+            [
+              -58.46479534510239,
+              -34.59142601585427
+            ],
+            [
+              -58.43475460413508,
+              -34.59990450164125
+            ],
+            [
+              -58.42205166224076,
+              -34.594676204354435
+            ],
+            [
+              -58.41329693201624,
+              -34.577717300271516
+            ],
+            [
+              -58.436299556528,
+              -34.56513721124584
+            ],
+            [
+              -58.4577572286468,
+              -34.56174450185228
+            ],
+            [
+              -58.46531032923333,
+              -34.56174450185228
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Palermo Hollywood",
+        "fillColor": "#33FF8F",
+        "email": "beep@beepbeep.com",
+        "claseSocial": "",
+        "genero": "otro",
+        "comunidad": "vivo con novia y sus viente y ocho primos",
+        "situacionDomicilio": "familiar",
+        "userRegion": "",
+        "language": "",
+        "deviceType": "",
+        "mapClicks": 0,
+        "timestamp": "2025-04-30T21:20:39.898Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.41602174581283,
+              -34.597684886842124
+            ],
+            [
+              -58.38259694693994,
+              -34.59886942680147
+            ],
+            [
+              -58.382024398275334,
+              -34.58875566937436
+            ],
+            [
+              -58.401712755426345,
+              -34.57344784982696
+            ],
+            [
+              -58.41602174581283,
+              -34.597684886842124
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Recoleta",
+        "fillColor": "#FF5733",
+        "email": "francoamasso@gmail.com",
+        "claseSocial": "mediaalta",
+        "genero": "hombre",
+        "comunidad": "No",
+        "situacionDomicilio": "dueño",
+        "userRegion": "",
+        "language": "",
+        "deviceType": "",
+        "mapClicks": 0,
+        "timestamp": "2025-05-04T17:08:08.346Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.45221474936868,
+              -34.599509040423555
+            ],
+            [
+              -58.452901645127014,
+              -34.61463244015018
+            ],
+            [
+              -58.41752651313392,
+              -34.61025117800459
+            ],
+            [
+              -58.4216478876841,
+              -34.594420174686135
+            ],
+            [
+              -58.45221474936868,
+              -34.599509040423555
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Palermo Soho",
+        "fillColor": "#33FF57",
+        "email": "a@a.a",
+        "claseSocial": "",
+        "genero": "",
+        "comunidad": "",
+        "situacionDomicilio": "",
+        "userRegion": "",
+        "language": "",
+        "deviceType": "",
+        "mapClicks": 0,
+        "timestamp": "2025-05-04T00:02:47.972Z"
+      }
+    }
+  ]
+}
