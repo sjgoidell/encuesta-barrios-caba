@@ -4,7 +4,7 @@ import MapboxDraw from '@mapbox/mapbox-gl-draw'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css'
 
-mapboxgl.accessToken = 'pk.eyJ1Ijoic2dvaWRlbGwiLCJhIjoiY21hM2J0ZzFoMWFhNDJqcTZibzQ4NzM5ZSJ9.hTrCOqO2-fWRG86oum5g_A'
+mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN
 
 const BoundaryDrawScreen = ({ setPolygonGeoJson, pinLocation, barrioName, polygonGeoJson, readOnly = false }) => {
   const draw = new MapboxDraw({

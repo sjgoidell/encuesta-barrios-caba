@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import mapboxgl from 'mapbox-gl'
 
-mapboxgl.accessToken = 'pk.eyJ1Ijoic2dvaWRlbGwiLCJhIjoiY21hM2J0ZzFoMWFhNDJqcTZibzQ4NzM5ZSJ9.hTrCOqO2-fWRG86oum5g_A'
+mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN
 
 const MapScreen = ({ setPinLocation, readOnly = false, blurred = false, overrideCenter, step}) => {
   const mapContainerRef = useRef(null)
