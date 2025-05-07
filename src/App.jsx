@@ -370,10 +370,9 @@ function App() {
                     transition={{ duration: 0.5, ease: 'easeInOut' }}
                     style={getFloatingStyle()}
                   >
-            <p>🎯 Ubicar y nombrar el barrio: Mueve el mapa a tu barrio, hacé click donde vivís y escribí cómo lo llamás.</p>
 
             <div style={{ marginBottom: '1rem', position: 'relative' }} ref={inputRef}>
-              <label>Nombre del barrio:<br />
+              <label>🎯 Nombre del barrio: Hacé click donde vivís y escribí cómo lo llamás<br />
                 <input
                   type="text"
                   value={barrioName}
