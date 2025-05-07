@@ -41,15 +41,19 @@ async function exportToGeoJSON() {
           properties: {
             barrio: data.barrioName || '',
             fillColor: getColorForBarrio(data.barrioName || ''),
+            pinLocation: data.pinLocation || '',
+            comments: data.comments || '',
             email: data.email || '',
-            claseSocial: data.claseSocial || '',
-            genero: data.genero || '',
+            age: data.age || '',
+            yearsInBarrio: data.yearsInBarrio || '',
             comunidad: data.comunidad || '',
             situacionDomicilio: data.situacionDomicilio || '',
             userRegion: data.userRegion || '',
             language: data.language || '',
             deviceType: data.deviceType || '',
             mapClicks: data.mapClickCount || 0,
+            canContact: data.canContact || '',
+            deviceType: data.deviceType || '',
             timestamp: data.submittedAt?.toDate?.().toISOString() || ''
           }
         })

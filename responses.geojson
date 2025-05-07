@@ -33,15 +33,21 @@
       "properties": {
         "barrio": "Teatro Colon",
         "fillColor": "#FF5733",
+        "pinLocation": {
+          "lat": -34.6014323857603,
+          "lng": -58.38277422956121
+        },
+        "comments": "",
         "email": "beep@beep.org",
-        "claseSocial": "",
-        "genero": "",
+        "age": "",
+        "yearsInBarrio": "",
         "comunidad": "",
         "situacionDomicilio": "",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "desktop",
         "mapClicks": 0,
+        "canContact": "",
         "timestamp": "2025-05-06T18:39:57.977Z"
       }
     },
@@ -109,15 +115,21 @@
       "properties": {
         "barrio": "Belgrano",
         "fillColor": "#33FF57",
+        "pinLocation": {
+          "lat": -34.55886091162459,
+          "lng": -58.452649084377825
+        },
+        "comments": "",
         "email": "belio.francisco.2000@gmail.com",
-        "claseSocial": "",
-        "genero": "hombre",
+        "age": "18–24",
+        "yearsInBarrio": "toda_la_vida",
         "comunidad": "",
         "situacionDomicilio": "dueño",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
+        "canContact": "no",
         "timestamp": "2025-04-30T21:01:05.860Z"
       }
     },
@@ -153,15 +165,21 @@
       "properties": {
         "barrio": "Palermo Soho",
         "fillColor": "#3357FF",
+        "pinLocation": {
+          "lat": -34.6037,
+          "lng": -58.437
+        },
+        "comments": "",
         "email": "a@a.a",
-        "claseSocial": "",
-        "genero": "",
+        "age": "",
+        "yearsInBarrio": "",
         "comunidad": "",
         "situacionDomicilio": "",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
+        "canContact": "",
         "timestamp": "2025-05-04T00:02:46.088Z"
       }
     },
@@ -197,16 +215,188 @@
       "properties": {
         "barrio": "Palermo Hollywood",
         "fillColor": "#FF33A1",
+        "pinLocation": {
+          "lat": -34.58076785859135,
+          "lng": -58.43406468588928
+        },
+        "comments": "",
         "email": "genaromendezc@gmail.com",
-        "claseSocial": "",
-        "genero": "",
+        "age": "20–29",
+        "yearsInBarrio": "<1",
         "comunidad": "",
         "situacionDomicilio": "alquiler",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
+        "canContact": "no",
         "timestamp": "2025-05-07T14:20:29.221Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.475551779923634,
+              -34.563351198940474
+            ],
+            [
+              -58.47800600124052,
+              -34.56765547563324
+            ],
+            [
+              -58.46775996287167,
+              -34.559739411490916
+            ],
+            [
+              -58.46890660450303,
+              -34.57696793301319
+            ],
+            [
+              -58.461738403346246,
+              -34.5703254673777
+            ],
+            [
+              -58.462697295505095,
+              -34.56984014391672
+            ],
+            [
+              -58.4746364779876,
+              -34.5676909682974
+            ],
+            [
+              -58.47372787928917,
+              -34.57072818736316
+            ],
+            [
+              -58.47877043223709,
+              -34.569715860618636
+            ],
+            [
+              -58.474827584985405,
+              -34.57216975038838
+            ],
+            [
+              -58.47088473773371,
+              -34.57462364015812
+            ],
+            [
+              -58.469977815810466,
+              -34.57105948858245
+            ],
+            [
+              -58.46907089388721,
+              -34.56749533700678
+            ],
+            [
+              -58.46816397196396,
+              -34.563931185431116
+            ],
+            [
+              -58.46771051100234,
+              -34.56214910964328
+            ],
+            [
+              -58.46365735092891,
+              -34.5635647365323
+            ],
+            [
+              -58.4708252069289,
+              -34.56467644683676
+            ],
+            [
+              -58.467257050040715,
+              -34.56036703385544
+            ],
+            [
+              -58.47841168678155,
+              -34.56994672302834
+            ],
+            [
+              -58.47554507589706,
+              -34.56850213300807
+            ],
+            [
+              -58.475213571623705,
+              -34.568045499231744
+            ],
+            [
+              -58.47488206735035,
+              -34.56758886545542
+            ],
+            [
+              -58.47471631521367,
+              -34.56736054856726
+            ],
+            [
+              -58.47455056307699,
+              -34.567132231679096
+            ],
+            [
+              -58.47446768700865,
+              -34.56701807323501
+            ],
+            [
+              -58.47438481094031,
+              -34.56690391479093
+            ],
+            [
+              -58.474219058803634,
+              -34.566675597902766
+            ],
+            [
+              -58.47289304171021,
+              -34.564849062797464
+            ],
+            [
+              -58.47156702461678,
+              -34.563022527692155
+            ],
+            [
+              -58.470904016070065,
+              -34.56210926013951
+            ],
+            [
+              -58.470241007523356,
+              -34.56119599258685
+            ],
+            [
+              -58.47408997709739,
+              -34.5638129698531
+            ],
+            [
+              -58.47793894667142,
+              -34.56642994711935
+            ],
+            [
+              -58.475551779923634,
+              -34.563351198940474
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Belgrano R",
+        "fillColor": "#A133FF",
+        "pinLocation": {
+          "lat": -34.563340155758205,
+          "lng": -58.46715647525379
+        },
+        "comments": "",
+        "email": "galeno050@hotmail.com",
+        "age": "40–49",
+        "yearsInBarrio": "1–5",
+        "comunidad": "",
+        "situacionDomicilio": "alquiler",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "sí",
+        "timestamp": "2025-05-07T16:23:23.851Z"
       }
     },
     {
@@ -240,16 +430,22 @@
       },
       "properties": {
         "barrio": "Las Cañitas",
-        "fillColor": "#A133FF",
+        "fillColor": "#33FFF5",
+        "pinLocation": {
+          "lat": -34.5682724733659,
+          "lng": -58.43564629855044
+        },
+        "comments": "Es el mejor!",
         "email": "xxx@gmail.com",
-        "claseSocial": "",
-        "genero": "mujer",
+        "age": "25–34",
+        "yearsInBarrio": "1–2",
         "comunidad": "Tías de cañitas ",
         "situacionDomicilio": "dueño",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
+        "canContact": "sí",
         "timestamp": "2025-05-01T19:03:09.012Z"
       }
     },
@@ -284,17 +480,73 @@
       },
       "properties": {
         "barrio": "Villa Crespo",
-        "fillColor": "#33FFF5",
+        "fillColor": "#F5FF33",
+        "pinLocation": {
+          "lat": -34.6037,
+          "lng": -58.437
+        },
+        "comments": "",
         "email": "s@a.a",
-        "claseSocial": "",
-        "genero": "",
+        "age": "",
+        "yearsInBarrio": "",
         "comunidad": "",
         "situacionDomicilio": "",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
+        "canContact": "",
         "timestamp": "2025-05-04T14:23:22.838Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.43555023710053,
+              -34.60617151600833
+            ],
+            [
+              -58.448795432961035,
+              -34.60266931213445
+            ],
+            [
+              -58.441864011364046,
+              -34.591314377675374
+            ],
+            [
+              -58.42655997709414,
+              -34.59939292186329
+            ],
+            [
+              -58.43555023710053,
+              -34.60617151600833
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "s",
+        "fillColor": "#FF8F33",
+        "pinLocation": {
+          "lat": -34.6037,
+          "lng": -58.437
+        },
+        "comments": "",
+        "email": "s@s.s",
+        "age": "",
+        "yearsInBarrio": "",
+        "comunidad": "",
+        "situacionDomicilio": "",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "mobile",
+        "mapClicks": 0,
+        "canContact": "",
+        "timestamp": "2025-05-07T16:07:57.563Z"
       }
     },
     {
@@ -328,16 +580,22 @@
       },
       "properties": {
         "barrio": "barrio parque",
-        "fillColor": "#F5FF33",
+        "fillColor": "#33FF8F",
+        "pinLocation": {
+          "lat": -34.578994528718745,
+          "lng": -58.403560363246484
+        },
+        "comments": "",
         "email": "a@s.com",
-        "claseSocial": "",
-        "genero": "",
+        "age": "",
+        "yearsInBarrio": "",
         "comunidad": "",
         "situacionDomicilio": "",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
+        "canContact": "",
         "timestamp": "2025-05-03T21:07:36.367Z"
       }
     },
@@ -380,16 +638,22 @@
       },
       "properties": {
         "barrio": "Palermo",
-        "fillColor": "#FF8F33",
+        "fillColor": "#8F33FF",
+        "pinLocation": {
+          "lat": -34.6037,
+          "lng": -58.437
+        },
+        "comments": "No quiero, lo siento soy una persona privada ",
         "email": "gustavo@beep.com",
-        "claseSocial": "alta",
-        "genero": "otro",
+        "age": "35–44",
+        "yearsInBarrio": "6–10",
         "comunidad": "No me gusta mucha gente de mi barrio y no considero parte de mi comunidad. Ellos tienes menos de noventa años y quiero vivir en un nursing home. (No es in opción, pero ahora vivo en un nursing home y quiero más nursing homes en el barrio)",
         "situacionDomicilio": "familiar",
         "userRegion": "Brooklyn, US",
         "language": "en-US",
         "deviceType": "mobile",
         "mapClicks": 0,
+        "canContact": "no",
         "timestamp": "2025-05-05T12:42:12.073Z"
       }
     },
@@ -428,16 +692,22 @@
       },
       "properties": {
         "barrio": "Las Cañitas",
-        "fillColor": "#A133FF",
+        "fillColor": "#33FFF5",
+        "pinLocation": {
+          "lat": -34.57178058427991,
+          "lng": -58.429388990948524
+        },
+        "comments": "",
         "email": "sgoidell@yahoo.com",
-        "claseSocial": "<alta",
-        "genero": "hombre",
+        "age": "25–34",
+        "yearsInBarrio": "1–5",
         "comunidad": "",
         "situacionDomicilio": "alquiler",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
+        "canContact": "sí",
         "timestamp": "2025-05-04T19:28:21.865Z"
       }
     },
@@ -488,16 +758,22 @@
       },
       "properties": {
         "barrio": "Las Cañitas",
-        "fillColor": "#A133FF",
+        "fillColor": "#33FFF5",
+        "pinLocation": {
+          "lat": -34.57157733862026,
+          "lng": -58.429393025091116
+        },
+        "comments": "",
         "email": "sgoidell@yahoo.com",
-        "claseSocial": "alta",
-        "genero": "hombre",
+        "age": "18–24",
+        "yearsInBarrio": "1–5",
         "comunidad": "",
         "situacionDomicilio": "alquiler",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "desktop",
         "mapClicks": 0,
+        "canContact": "no",
         "timestamp": "2025-05-05T04:54:08.935Z"
       }
     },
@@ -556,16 +832,22 @@
       },
       "properties": {
         "barrio": "Chacalermo",
-        "fillColor": "#33FF8F",
+        "fillColor": "#FF5733",
+        "pinLocation": {
+          "lat": -34.58293134636718,
+          "lng": -58.44830486557696
+        },
+        "comments": "Es el límite entre Palermo Hollywood y la parte de Chacarita entre las avenidas Córdoba y Corrientes",
         "email": "genaromendezc@gmail.com",
-        "claseSocial": "media",
-        "genero": "hombre",
+        "age": "18–24",
+        "yearsInBarrio": "1–5",
         "comunidad": "Me considero indie palermitano",
         "situacionDomicilio": "alquiler",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
+        "canContact": "sí",
         "timestamp": "2025-05-04T16:28:57.774Z"
       }
     },
@@ -604,16 +886,22 @@
       },
       "properties": {
         "barrio": "Palermo Sensible",
-        "fillColor": "#8F33FF",
+        "fillColor": "#33FF57",
+        "pinLocation": {
+          "lat": -34.59141638057281,
+          "lng": -58.41413692747733
+        },
+        "comments": "Está plagado de psicólogos",
         "email": "a@a.a",
-        "claseSocial": "",
-        "genero": "hombre",
+        "age": "",
+        "yearsInBarrio": "",
         "comunidad": "Interrior",
         "situacionDomicilio": "alquiler",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
+        "canContact": "sí",
         "timestamp": "2025-05-04T15:23:52.156Z"
       }
     },
@@ -692,16 +980,22 @@
       },
       "properties": {
         "barrio": "Villa Pueyrredón",
-        "fillColor": "#FF5733",
+        "fillColor": "#3357FF",
+        "pinLocation": {
+          "lat": -34.5827319450675,
+          "lng": -58.498854038444804
+        },
+        "comments": "Es un verdadero barrio, las señoras todavía sacan la reposera y toman mate en lanpuerta",
         "email": "agustinastout@hotmail.com",
-        "claseSocial": "mediaalta",
-        "genero": "mujer",
+        "age": "25–34",
+        "yearsInBarrio": "toda_la_vida",
         "comunidad": "No",
         "situacionDomicilio": "familiar",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
+        "canContact": "sí",
         "timestamp": "2025-05-04T23:57:30.224Z"
       }
     },
@@ -737,15 +1031,21 @@
       "properties": {
         "barrio": "Palermo Soho",
         "fillColor": "#3357FF",
+        "pinLocation": {
+          "lat": -34.6037,
+          "lng": -58.437
+        },
+        "comments": "",
         "email": "a@a.a",
-        "claseSocial": "",
-        "genero": "",
+        "age": "",
+        "yearsInBarrio": "",
         "comunidad": "",
         "situacionDomicilio": "",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
+        "canContact": "",
         "timestamp": "2025-05-03T21:06:11.209Z"
       }
     },
@@ -812,16 +1112,22 @@
       },
       "properties": {
         "barrio": "Parque Patricios",
-        "fillColor": "#33FF57",
+        "fillColor": "#FF33A1",
+        "pinLocation": {
+          "lat": -34.635247227068454,
+          "lng": -58.401226315837135
+        },
+        "comments": "",
         "email": "a@a.a",
-        "claseSocial": "media",
-        "genero": "hombre",
+        "age": "35–44",
+        "yearsInBarrio": "toda_la_vida",
         "comunidad": "",
         "situacionDomicilio": "dueño",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "desktop",
         "mapClicks": 0,
+        "canContact": "no",
         "timestamp": "2025-05-05T10:30:18.133Z"
       }
     },
@@ -852,16 +1158,22 @@
       },
       "properties": {
         "barrio": "Barrio Norte",
-        "fillColor": "#3357FF",
+        "fillColor": "#A133FF",
+        "pinLocation": {
+          "lat": -34.59038334663038,
+          "lng": -58.41653172606003
+        },
+        "comments": "",
         "email": "a@a.a",
-        "claseSocial": "",
-        "genero": "",
+        "age": "",
+        "yearsInBarrio": "",
         "comunidad": "",
         "situacionDomicilio": "",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "mobile",
         "mapClicks": 0,
+        "canContact": "",
         "timestamp": "2025-05-05T18:37:43.077Z"
       }
     },
@@ -905,15 +1217,21 @@
       "properties": {
         "barrio": "Palermo Hollywood",
         "fillColor": "#FF33A1",
+        "pinLocation": {
+          "lat": -34.5822262653941,
+          "lng": -58.436264630089454
+        },
+        "comments": "",
         "email": "martin.niepo@gmail.com",
-        "claseSocial": "mediaalta",
-        "genero": "hombre",
+        "age": "18–24",
+        "yearsInBarrio": "toda_la_vida",
         "comunidad": "",
         "situacionDomicilio": "dueño",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
+        "canContact": "sí",
         "timestamp": "2025-05-04T16:40:31.586Z"
       }
     },
@@ -944,17 +1262,189 @@
       },
       "properties": {
         "barrio": "v",
-        "fillColor": "#FF33A1",
+        "fillColor": "#33FFF5",
+        "pinLocation": {
+          "lat": -34.57892690865754,
+          "lng": -58.439178948561064
+        },
+        "comments": "",
         "email": "a@a.a",
-        "claseSocial": "",
-        "genero": "",
+        "age": "",
+        "yearsInBarrio": "",
         "comunidad": "",
         "situacionDomicilio": "",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "mobile",
         "mapClicks": 1,
+        "canContact": "",
         "timestamp": "2025-05-07T07:15:51.791Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.475551779923634,
+              -34.563351198940474
+            ],
+            [
+              -58.47800600124052,
+              -34.56765547563324
+            ],
+            [
+              -58.46775996287167,
+              -34.559739411490916
+            ],
+            [
+              -58.46890660450303,
+              -34.57696793301319
+            ],
+            [
+              -58.461738403346246,
+              -34.5703254673777
+            ],
+            [
+              -58.462697295505095,
+              -34.56984014391672
+            ],
+            [
+              -58.4746364779876,
+              -34.5676909682974
+            ],
+            [
+              -58.47372787928917,
+              -34.57072818736316
+            ],
+            [
+              -58.47877043223709,
+              -34.569715860618636
+            ],
+            [
+              -58.474827584985405,
+              -34.57216975038838
+            ],
+            [
+              -58.47088473773371,
+              -34.57462364015812
+            ],
+            [
+              -58.469977815810466,
+              -34.57105948858245
+            ],
+            [
+              -58.46907089388721,
+              -34.56749533700678
+            ],
+            [
+              -58.46816397196396,
+              -34.563931185431116
+            ],
+            [
+              -58.46771051100234,
+              -34.56214910964328
+            ],
+            [
+              -58.46365735092891,
+              -34.5635647365323
+            ],
+            [
+              -58.4708252069289,
+              -34.56467644683676
+            ],
+            [
+              -58.467257050040715,
+              -34.56036703385544
+            ],
+            [
+              -58.47841168678155,
+              -34.56994672302834
+            ],
+            [
+              -58.47554507589706,
+              -34.56850213300807
+            ],
+            [
+              -58.475213571623705,
+              -34.568045499231744
+            ],
+            [
+              -58.47488206735035,
+              -34.56758886545542
+            ],
+            [
+              -58.47471631521367,
+              -34.56736054856726
+            ],
+            [
+              -58.47455056307699,
+              -34.567132231679096
+            ],
+            [
+              -58.47446768700865,
+              -34.56701807323501
+            ],
+            [
+              -58.47438481094031,
+              -34.56690391479093
+            ],
+            [
+              -58.474219058803634,
+              -34.566675597902766
+            ],
+            [
+              -58.47289304171021,
+              -34.564849062797464
+            ],
+            [
+              -58.47156702461678,
+              -34.563022527692155
+            ],
+            [
+              -58.470904016070065,
+              -34.56210926013951
+            ],
+            [
+              -58.470241007523356,
+              -34.56119599258685
+            ],
+            [
+              -58.47408997709739,
+              -34.5638129698531
+            ],
+            [
+              -58.47793894667142,
+              -34.56642994711935
+            ],
+            [
+              -58.475551779923634,
+              -34.563351198940474
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Belgrano R",
+        "fillColor": "#A133FF",
+        "pinLocation": {
+          "lat": -34.563340155758205,
+          "lng": -58.46715647525379
+        },
+        "comments": "",
+        "email": "galeno050@hotmail.com",
+        "age": "40–49",
+        "yearsInBarrio": "1–5",
+        "comunidad": "",
+        "situacionDomicilio": "alquiler",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "sí",
+        "timestamp": "2025-05-07T16:23:22.998Z"
       }
     },
     {
@@ -984,16 +1474,22 @@
       },
       "properties": {
         "barrio": "Parque Avellaneda",
-        "fillColor": "#A133FF",
+        "fillColor": "#F5FF33",
+        "pinLocation": {
+          "lat": -34.60349865476773,
+          "lng": -58.45605441284145
+        },
+        "comments": "",
         "email": "",
-        "claseSocial": "",
-        "genero": "mujer",
+        "age": "",
+        "yearsInBarrio": "1–2",
         "comunidad": "",
         "situacionDomicilio": "familiar",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
+        "canContact": "",
         "timestamp": "2025-04-30T19:49:53.706Z"
       }
     },
@@ -1028,16 +1524,22 @@
       },
       "properties": {
         "barrio": "Las Cañitas",
-        "fillColor": "#A133FF",
+        "fillColor": "#33FFF5",
+        "pinLocation": {
+          "lat": -34.568899962934225,
+          "lng": -58.43436549709307
+        },
+        "comments": "Palermo pero más tranquilo",
         "email": "sebastiens.96@gmail.com",
-        "claseSocial": "mediaalta",
-        "genero": "hombre",
+        "age": "25–34",
+        "yearsInBarrio": "<1",
         "comunidad": "No",
         "situacionDomicilio": "alquiler",
         "userRegion": "Buenos Aires, AR",
         "language": "en",
         "deviceType": "mobile",
         "mapClicks": 0,
+        "canContact": "no",
         "timestamp": "2025-05-07T00:25:34.870Z"
       }
     },
@@ -1085,15 +1587,21 @@
       "properties": {
         "barrio": "Palermo Hollywood",
         "fillColor": "#FF33A1",
+        "pinLocation": {
+          "lat": -34.58154123567093,
+          "lng": -58.43370601951273
+        },
+        "comments": "no hay películas o personas famosas",
         "email": "beep@beepbeep.com",
-        "claseSocial": "",
-        "genero": "otro",
+        "age": "65+",
+        "yearsInBarrio": "toda_la_vida",
         "comunidad": "vivo con novia y sus viente y ocho primos",
         "situacionDomicilio": "familiar",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
+        "canContact": "no",
         "timestamp": "2025-04-30T21:20:39.898Z"
       }
     },
@@ -1128,16 +1636,22 @@
       },
       "properties": {
         "barrio": "villa 31",
-        "fillColor": "#33FFF5",
+        "fillColor": "#FF8F33",
+        "pinLocation": {
+          "lat": -34.58295538531161,
+          "lng": -58.37794848632885
+        },
+        "comments": "",
         "email": "a@a.a",
-        "claseSocial": "",
-        "genero": "mujer",
+        "age": "65+",
+        "yearsInBarrio": "",
         "comunidad": "",
         "situacionDomicilio": "",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "desktop",
         "mapClicks": 0,
+        "canContact": "",
         "timestamp": "2025-05-05T10:37:13.505Z"
       }
     },
@@ -1204,16 +1718,22 @@
       },
       "properties": {
         "barrio": "Parque Patricios",
-        "fillColor": "#33FF57",
+        "fillColor": "#FF33A1",
+        "pinLocation": {
+          "lat": -34.635247227068454,
+          "lng": -58.401226315837135
+        },
+        "comments": "",
         "email": "a@a.a",
-        "claseSocial": "media",
-        "genero": "hombre",
+        "age": "35–44",
+        "yearsInBarrio": "toda_la_vida",
         "comunidad": "",
         "situacionDomicilio": "dueño",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "desktop",
         "mapClicks": 0,
+        "canContact": "no",
         "timestamp": "2025-05-05T10:36:02.827Z"
       }
     },
@@ -1248,16 +1768,22 @@
       },
       "properties": {
         "barrio": "Recoleta",
-        "fillColor": "#F5FF33",
+        "fillColor": "#33FF8F",
+        "pinLocation": {
+          "lat": -34.59251154018976,
+          "lng": -58.3932972809872
+        },
+        "comments": "Mucho anciano con dinero, turistas e hijos de gente del interior que tienen propiedades",
         "email": "francoamasso@gmail.com",
-        "claseSocial": "mediaalta",
-        "genero": "hombre",
+        "age": "25–34",
+        "yearsInBarrio": "1–5",
         "comunidad": "No",
         "situacionDomicilio": "dueño",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
+        "canContact": "no",
         "timestamp": "2025-05-04T17:08:08.346Z"
       }
     },
@@ -1328,16 +1854,22 @@
       },
       "properties": {
         "barrio": "Belgrano C",
-        "fillColor": "#FF8F33",
+        "fillColor": "#8F33FF",
+        "pinLocation": {
+          "lat": -34.559877334280266,
+          "lng": -58.45062366185485
+        },
+        "comments": "",
         "email": "valentin.szekasy@sanandres.esc.edu.ar",
-        "claseSocial": "",
-        "genero": "hombre",
+        "age": "18–24",
+        "yearsInBarrio": "10+",
         "comunidad": "",
         "situacionDomicilio": "",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "mobile",
         "mapClicks": 0,
+        "canContact": "",
         "timestamp": "2025-05-06T21:38:10.879Z"
       }
     },
@@ -1373,15 +1905,21 @@
       "properties": {
         "barrio": "Palermo Soho",
         "fillColor": "#3357FF",
+        "pinLocation": {
+          "lat": -34.6037,
+          "lng": -58.437
+        },
+        "comments": "",
         "email": "a@a.a",
-        "claseSocial": "",
-        "genero": "",
+        "age": "",
+        "yearsInBarrio": "",
         "comunidad": "",
         "situacionDomicilio": "",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
+        "canContact": "",
         "timestamp": "2025-05-04T00:02:47.972Z"
       }
     }

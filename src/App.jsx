@@ -105,6 +105,10 @@ function App() {
     color: '#fff',
     zIndex: 1
   }
+
+  // mobile-only screen 2
+  const [showBarrioNameInput, setShowBarrioNameInput] = useState(!isMobile) // false on mobile initially
+
   // mobile constraints for transitions
     const slideVariants = {
       initial: {
@@ -282,11 +286,6 @@ function App() {
     const goBack = () => {
       setStep((prev) => Math.max(prev - 1, 1))
     }
-    
-    useEffect(() => {
-      console.log('🔺 polygonGeoJson updated:', polygonGeoJson)
-    }, [polygonGeoJson])
-  
 
   return (
     
@@ -341,23 +340,27 @@ function App() {
       <AnimatePresence mode="wait">
       {step === 2 && (
         <>
-        <div style={{
-          position: 'absolute',
-          top: '0.5rem',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          backgroundColor: '#fff',
-          color: '#000',
-          padding: '0.4rem 0.8rem',
-          borderRadius: '20px',
-          fontSize: '0.85rem',
-          boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
-          zIndex: 10,
-          textAlign: 'center'
-        }}>
-          {pinMoved ? 'Escribí abajo cómo lo llamás' : 'Hacé click donde vivís'}
-        </div>
+          {!showBarrioNameInput && (
+            <div style={{
+              position: 'absolute',
+              top: '0.5rem',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              backgroundColor: '#fff',
+              color: '#000',
+              padding: '0.4rem 0.8rem',
+              borderRadius: '20px',
+              fontSize: '0.85rem',
+              boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
+              zIndex: 10,
+              textAlign: 'center'
+            }}>
+              {!pinMoved ? 'Hacé click donde vivís' : 'Escribí abajo cómo lo llamás'}
+            </div>
+          )}
 
+
+        {(!isMobile || showBarrioNameInput) && (
                   <motion.div
                     key="step2"
                     variants={slideVariants}
@@ -367,7 +370,6 @@ function App() {
                     transition={{ duration: 0.5, ease: 'easeInOut' }}
                     style={getFloatingStyle()}
                   >
-
             <p>🎯 Ubicar y nombrar el barrio: Mueve el mapa a tu barrio, hacé click donde vivís y escribí cómo lo llamás.</p>
 
             <div style={{ marginBottom: '1rem', position: 'relative' }} ref={inputRef}>
@@ -378,7 +380,6 @@ function App() {
                   onChange={(e) => {
                     const input = e.target.value
                     setBarrioName(input)
-
                     if (input.length > 1) {
                       const results = fuse.search(input).map(r => r.item)
                       setSuggestions(results.slice(0, 5))
@@ -437,7 +438,6 @@ function App() {
                     exit={{ opacity: 0, y: -5 }}
                     transition={{ duration: 0.3 }}
                     style={{
-                      //fontSize: '0.75rem',
                       color: '#bbb',
                       textAlign: 'center',
                       marginBottom: '0.5rem'
@@ -455,20 +455,17 @@ function App() {
                 </button>
 
                 <button
-                  onClick={goNext}
-                  className={`btn-nav ${canProceedScreen2 ? 'btn-next' : 'btn-disabled'}`}
-                  disabled={!canProceedScreen2}
-                  animate={{ scale: canProceedScreen3 ? 1 : 0.98 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  Siguiente
-                  <span>➡️</span>
-                </button>
+              onClick={goNext}
+              className={`btn-nav ${canProceedScreen2 ? 'btn-next' : 'btn-disabled'}`}
+              disabled={!canProceedScreen2}
+            >
+                    Siguiente
+                    <span>➡️</span>
+                  </button>
+                </div>
               </div>
-            </div>
-
-
-          </motion.div>
+            </motion.div>
+          )}
 
           <MapScreen
             step={step}
@@ -476,6 +473,9 @@ function App() {
               setPinLocation(loc)
               if (loc.lat !== cabaCenter.lat || loc.lng !== cabaCenter.lng) {
                 setPinMoved(true)
+                if (isMobile && !showBarrioNameInput) {
+                  setShowBarrioNameInput(true)
+                }
               }
             }}
             setMapClickCount={setMapClickCount}
@@ -483,6 +483,7 @@ function App() {
         </>
       )}
       </AnimatePresence>
+
 
       {/* Step 3: DIBUJAR LIMITES */}
       <AnimatePresence mode="wait">
