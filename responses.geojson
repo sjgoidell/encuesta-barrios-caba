@@ -171,6 +171,50 @@
         "coordinates": [
           [
             [
+              -58.438032829610535,
+              -34.58769022634934
+            ],
+            [
+              -58.42661734804257,
+              -34.57807979767801
+            ],
+            [
+              -58.43554373964476,
+              -34.57497030341574
+            ],
+            [
+              -58.444641792623145,
+              -34.583026480643014
+            ],
+            [
+              -58.438032829610535,
+              -34.58769022634934
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Palermo Hollywood",
+        "fillColor": "#FF33A1",
+        "email": "genaromendezc@gmail.com",
+        "claseSocial": "",
+        "genero": "",
+        "comunidad": "",
+        "situacionDomicilio": "alquiler",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "timestamp": "2025-05-07T14:20:29.221Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
               -58.42394632624102,
               -34.570691115365435
             ],
@@ -196,7 +240,7 @@
       },
       "properties": {
         "barrio": "Las Cañitas",
-        "fillColor": "#FF33A1",
+        "fillColor": "#A133FF",
         "email": "xxx@gmail.com",
         "claseSocial": "",
         "genero": "mujer",
@@ -240,7 +284,7 @@
       },
       "properties": {
         "barrio": "Villa Crespo",
-        "fillColor": "#A133FF",
+        "fillColor": "#33FFF5",
         "email": "s@a.a",
         "claseSocial": "",
         "genero": "",
@@ -284,7 +328,7 @@
       },
       "properties": {
         "barrio": "barrio parque",
-        "fillColor": "#33FFF5",
+        "fillColor": "#F5FF33",
         "email": "a@s.com",
         "claseSocial": "",
         "genero": "",
@@ -336,7 +380,7 @@
       },
       "properties": {
         "barrio": "Palermo",
-        "fillColor": "#F5FF33",
+        "fillColor": "#FF8F33",
         "email": "gustavo@beep.com",
         "claseSocial": "alta",
         "genero": "otro",
@@ -384,7 +428,7 @@
       },
       "properties": {
         "barrio": "Las Cañitas",
-        "fillColor": "#FF33A1",
+        "fillColor": "#A133FF",
         "email": "sgoidell@yahoo.com",
         "claseSocial": "<alta",
         "genero": "hombre",
@@ -444,7 +488,7 @@
       },
       "properties": {
         "barrio": "Las Cañitas",
-        "fillColor": "#FF33A1",
+        "fillColor": "#A133FF",
         "email": "sgoidell@yahoo.com",
         "claseSocial": "alta",
         "genero": "hombre",
@@ -512,7 +556,7 @@
       },
       "properties": {
         "barrio": "Chacalermo",
-        "fillColor": "#FF8F33",
+        "fillColor": "#33FF8F",
         "email": "genaromendezc@gmail.com",
         "claseSocial": "media",
         "genero": "hombre",
@@ -560,7 +604,7 @@
       },
       "properties": {
         "barrio": "Palermo Sensible",
-        "fillColor": "#33FF8F",
+        "fillColor": "#8F33FF",
         "email": "a@a.a",
         "claseSocial": "",
         "genero": "hombre",
@@ -648,7 +692,7 @@
       },
       "properties": {
         "barrio": "Villa Pueyrredón",
-        "fillColor": "#8F33FF",
+        "fillColor": "#FF5733",
         "email": "agustinastout@hotmail.com",
         "claseSocial": "mediaalta",
         "genero": "mujer",
@@ -768,7 +812,7 @@
       },
       "properties": {
         "barrio": "Parque Patricios",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "email": "a@a.a",
         "claseSocial": "media",
         "genero": "hombre",
@@ -808,7 +852,7 @@
       },
       "properties": {
         "barrio": "Barrio Norte",
-        "fillColor": "#33FF57",
+        "fillColor": "#3357FF",
         "email": "a@a.a",
         "claseSocial": "",
         "genero": "",
@@ -860,7 +904,7 @@
       },
       "properties": {
         "barrio": "Palermo Hollywood",
-        "fillColor": "#3357FF",
+        "fillColor": "#FF33A1",
         "email": "martin.niepo@gmail.com",
         "claseSocial": "mediaalta",
         "genero": "hombre",
@@ -871,6 +915,46 @@
         "deviceType": "",
         "mapClicks": 0,
         "timestamp": "2025-05-04T16:40:31.586Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.43738604461859,
+              -34.58281548479533
+            ],
+            [
+              -58.43518995502811,
+              -34.56880184654759
+            ],
+            [
+              -58.447474357274444,
+              -34.57609149352331
+            ],
+            [
+              -58.43738604461859,
+              -34.58281548479533
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "v",
+        "fillColor": "#FF33A1",
+        "email": "a@a.a",
+        "claseSocial": "",
+        "genero": "",
+        "comunidad": "",
+        "situacionDomicilio": "",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "timestamp": "2025-05-07T07:15:51.791Z"
       }
     },
     {
@@ -900,7 +984,7 @@
       },
       "properties": {
         "barrio": "Parque Avellaneda",
-        "fillColor": "#FF33A1",
+        "fillColor": "#A133FF",
         "email": "",
         "claseSocial": "",
         "genero": "mujer",
@@ -944,7 +1028,7 @@
       },
       "properties": {
         "barrio": "Las Cañitas",
-        "fillColor": "#FF33A1",
+        "fillColor": "#A133FF",
         "email": "sebastiens.96@gmail.com",
         "claseSocial": "mediaalta",
         "genero": "hombre",
@@ -1000,7 +1084,7 @@
       },
       "properties": {
         "barrio": "Palermo Hollywood",
-        "fillColor": "#3357FF",
+        "fillColor": "#FF33A1",
         "email": "beep@beepbeep.com",
         "claseSocial": "",
         "genero": "otro",
@@ -1044,7 +1128,7 @@
       },
       "properties": {
         "barrio": "villa 31",
-        "fillColor": "#A133FF",
+        "fillColor": "#33FFF5",
         "email": "a@a.a",
         "claseSocial": "",
         "genero": "mujer",
@@ -1120,7 +1204,7 @@
       },
       "properties": {
         "barrio": "Parque Patricios",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "email": "a@a.a",
         "claseSocial": "media",
         "genero": "hombre",
@@ -1164,7 +1248,7 @@
       },
       "properties": {
         "barrio": "Recoleta",
-        "fillColor": "#33FFF5",
+        "fillColor": "#F5FF33",
         "email": "francoamasso@gmail.com",
         "claseSocial": "mediaalta",
         "genero": "hombre",
@@ -1244,7 +1328,7 @@
       },
       "properties": {
         "barrio": "Belgrano C",
-        "fillColor": "#F5FF33",
+        "fillColor": "#FF8F33",
         "email": "valentin.szekasy@sanandres.esc.edu.ar",
         "claseSocial": "",
         "genero": "hombre",

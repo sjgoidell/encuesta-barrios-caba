@@ -33,7 +33,7 @@ const MapScreen = ({
     // Resize + center logic
     setTimeout(() => {
       map.resize()
-      if (isMobile && !readOnly && step === 3) {
+      if (isMobile && !readOnly && step === 2) {
         const centerPoint = map.project(cabaCenter)
         const shiftedPoint = {
           x: centerPoint.x,

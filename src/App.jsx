@@ -283,6 +283,10 @@ function App() {
       setStep((prev) => Math.max(prev - 1, 1))
     }
     
+    useEffect(() => {
+      console.log('🔺 polygonGeoJson updated:', polygonGeoJson)
+    }, [polygonGeoJson])
+  
 
   return (
     
@@ -366,7 +370,7 @@ function App() {
 
             <p>🎯 Ubicar y nombrar el barrio: Mueve el mapa a tu barrio, hacé click donde vivís y escribí cómo lo llamás.</p>
 
-            <div style={{ marginBottom: '1.5rem', position: 'relative' }} ref={inputRef}>
+            <div style={{ marginBottom: '1rem', position: 'relative' }} ref={inputRef}>
               <label>Nombre del barrio:<br />
                 <input
                   type="text"
@@ -390,7 +394,7 @@ function App() {
               {suggestions.length > 0 && (
                 <ul style={{
                   position: 'absolute',
-                  top: '105%',
+                  bottom: '105%',
                   left: 0,
                   right: 0,
                   background: '#222',
@@ -399,7 +403,9 @@ function App() {
                   listStyle: 'none',
                   margin: 0,
                   padding: 0,
-                  zIndex: 10
+                  zIndex: 10,
+                  maxHeight: '160px',
+                  overflowY: 'auto'
                 }}>
                   {suggestions.map((suggestion, index) => (
                     <li
@@ -568,8 +574,7 @@ function App() {
             transition={{ duration: 0.5, ease: 'easeInOut' }}
             style={getFloatingStyle()}
           >
-            <h2>✏️ Dibujá tu barrio</h2>
-            <p>Usá las herramientas para dibujar los límites de tu barrio. Podés editarlo o borrarlo.</p>
+            <p>✏️ Marcá los limites de tu barrio. </p>
 
             <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
               <AnimatePresence>
