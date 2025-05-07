@@ -186,7 +186,8 @@ function App() {
     }
     return true
   }
-  const [pinPlaced, setPinPlaced] = useState(false)
+  const [pinMoved, setPinMoved] = useState(false)
+  const cabaCenter = { lat: -34.6037, lng: -58.437 }
 
   const validateScreen3 = () => {
     if (!polygonGeoJson || !polygonGeoJson.geometry?.coordinates?.length) {
@@ -333,7 +334,6 @@ function App() {
       </AnimatePresence>
 
       {/* Step 2: PIN + BARRIO NAME */}
-
       <AnimatePresence mode="wait">
       {step === 2 && (
         <>
@@ -351,7 +351,7 @@ function App() {
           zIndex: 10,
           textAlign: 'center'
         }}>
-          {pinPlaced ? 'Escribí abajo cómo lo llamás' : 'Hacé click donde vivís'}
+          {pinMoved ? 'Escribí abajo cómo lo llamás' : 'Hacé click donde vivís'}
         </div>
 
                   <motion.div
@@ -363,10 +363,10 @@ function App() {
                     transition={{ duration: 0.5, ease: 'easeInOut' }}
                     style={getFloatingStyle()}
                   >
-            <h2>🎯 Ubicación y nombre del barrio</h2>
-            <p>Mueve el mapa a tu barrio, hacé click donde vivís y escribí cómo lo llamás.</p>
 
-            <div style={{ marginBottom: '4rem', position: 'relative' }} ref={inputRef}>
+            <p>🎯 Ubicar y nombrar el barrio: Mueve el mapa a tu barrio, hacé click donde vivís y escribí cómo lo llamás.</p>
+
+            <div style={{ marginBottom: '1.5rem', position: 'relative' }} ref={inputRef}>
               <label>Nombre del barrio:<br />
                 <input
                   type="text"
@@ -421,7 +421,7 @@ function App() {
               )}
             </div>
 
-            <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+            <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
               <AnimatePresence>
                 {!canProceedScreen2 && (
                   <motion.p
@@ -468,7 +468,9 @@ function App() {
             step={step}
             setPinLocation={(loc) => {
               setPinLocation(loc)
-              setPinPlaced(true)  // 👈 NEW
+              if (loc.lat !== cabaCenter.lat || loc.lng !== cabaCenter.lng) {
+                setPinMoved(true)
+              }
             }}
             setMapClickCount={setMapClickCount}
           />
@@ -809,8 +811,6 @@ function App() {
           </>
         )}
         </AnimatePresence>
-
-
 
       {/* Step 5 */}
       {step === 5 && (

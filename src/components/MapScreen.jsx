@@ -5,7 +5,7 @@ mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN
 
 const MapScreen = ({
   setPinLocation,
-  setPinPlaced,
+  setPinMoved,
   setMapClickCount,
   readOnly = false,
   blurred = false,
@@ -68,8 +68,8 @@ const MapScreen = ({
           setPinLocation({ lat, lng })
         }
 
-        if (typeof setPinPlaced === 'function') {
-          setPinPlaced(true)
+        if (typeof setPinMoved === 'function') {
+          setPinMoved(true)
         }
 
         if (typeof setMapClickCount === 'function') {
