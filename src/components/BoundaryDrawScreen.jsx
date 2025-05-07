@@ -24,7 +24,7 @@ const BoundaryDrawScreen = ({
       container: mapContainerRef.current,
       style: 'mapbox://styles/mapbox/dark-v11',
       center: pinLocation ? [pinLocation.lng, pinLocation.lat] : defaultCenter,
-      zoom: pinLocation ? 13 : 11,
+      zoom: pinLocation ? 14 : 12,
       interactive: !readOnly
     })
 
