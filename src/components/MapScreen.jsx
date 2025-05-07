@@ -3,14 +3,20 @@ import mapboxgl from 'mapbox-gl'
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN
 
-const MapScreen = ({ setPinLocation, readOnly = false, blurred = false, overrideCenter, step}) => {
+const MapScreen = ({
+  setPinLocation,
+  setPinPlaced,
+  setMapClickCount,
+  readOnly = false,
+  blurred = false,
+  overrideCenter,
+  step
+}) => {
   const mapContainerRef = useRef(null)
   const markerRef = useRef(null)
   const isMobile = window.innerWidth <= 768
   const cabaCenter = [-58.437, -34.6037] // lng, lat
   const defaultCenter = overrideCenter || cabaCenter
-
-
 
   useEffect(() => {
     const map = new mapboxgl.Map({
@@ -21,60 +27,60 @@ const MapScreen = ({ setPinLocation, readOnly = false, blurred = false, override
       interactive: !readOnly
     })
 
-    // Add + / - controls
+    // Add zoom controls
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right')
 
-    // Ensure map sizes properly
+    // Resize + center logic
     setTimeout(() => {
       map.resize()
-    
       if (isMobile && !readOnly && step === 3) {
-        // Shift the visible center upward for Screen 3 on mobile
         const centerPoint = map.project(cabaCenter)
         const shiftedPoint = {
           x: centerPoint.x,
-          y: centerPoint.y + 200 // shift the map up by 100 pixels
+          y: centerPoint.y + 200
         }
         const shiftedLngLat = map.unproject(shiftedPoint)
         map.setCenter(shiftedLngLat)
       } else {
         map.setCenter(defaultCenter)
       }
-    }, 100)    
-    
+    }, 100)
 
-    // 🧭 Create a movable marker, starting in center
+    // ✅ Create initial red marker at center
     markerRef.current = new mapboxgl.Marker({ color: 'red' })
-      .setLngLat(cabaCenter)
+      .setLngLat(defaultCenter)
       .addTo(map)
-      if (!readOnly && typeof setPinLocation === 'function') {
-        setPinLocation({ lat: defaultCenter[1], lng: defaultCenter[0] })      
-      }      
 
-    // 💡 Move marker on click
-    if (!readOnly && typeof setPinLocation === 'function') {
-      map.on('click', (e) => {
-        const { lng, lat } = e.lngLat
-        markerRef.current.setLngLat([lng, lat])
-        setPinLocation({ lat, lng })
-        if(setMapClickCount) {
-          setMapClickCount(prev => prev +1)
-        }
-      })
-    }    
-      
-    // Read only
+    if (typeof setPinLocation === 'function') {
+      setPinLocation({ lat: defaultCenter[1], lng: defaultCenter[0] })
+    }
+
+    // ✅ Update marker and state on click
     if (!readOnly) {
       map.on('click', (e) => {
         const { lng, lat } = e.lngLat
-        if (setPinLocation) {
+
+        if (markerRef.current) {
+          markerRef.current.setLngLat([lng, lat])
+        }
+
+        if (typeof setPinLocation === 'function') {
           setPinLocation({ lat, lng })
+        }
+
+        if (typeof setPinPlaced === 'function') {
+          setPinPlaced(true)
+        }
+
+        if (typeof setMapClickCount === 'function') {
+          setMapClickCount(prev => prev + 1)
         }
       })
     }
 
     return () => map.remove()
-  }, [readOnly, setPinLocation])
+  }, [readOnly, step]) // ✅ keep this minimal
+  
 
   return (
     <div
@@ -90,7 +96,7 @@ const MapScreen = ({ setPinLocation, readOnly = false, blurred = false, override
         pointerEvents: readOnly ? 'none' : 'auto'
       }}
     />
-  )  
+  )
 }
 
 export default MapScreen

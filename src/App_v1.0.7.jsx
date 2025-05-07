@@ -29,7 +29,6 @@ function App() {
   const inputRef = useRef()
   const [mapClickCount, setMapClickCount] = useState(0)
   const [showTerms, setShowTerms] = useState(false)
-  const MotionButton = motion.button
 
   //Capturing metadata
   const [userRegion, setUserRegion] = useState('unknown')
@@ -87,7 +86,7 @@ function App() {
     width: '100vw',
     height: '100vh',
     zIndex: -1,
-    filter: step <= 1 ? 'grayscale(100%) blur(1px)' : 'none'
+    filter: step <= 2 ? 'grayscale(100%) blur(1px)' : 'none'
   }
 
   const isMobile = window.innerWidth <= 768
@@ -135,10 +134,10 @@ function App() {
       maxWidth: isMobile ? '320px' : '350px',
       color: '#fff',
       zIndex: 1,
-      fontSize: isMobile ? '0.9rem' : '1rem'
+      fontSize: isMobile ? '0.75rem' : '1rem'
     }
   
-    if (isMobile && (step === 2 || step === 3)) {
+    if (isMobile && (step === 3 || step === 4)) {
       return {
         ...base,
         position: 'fixed',
@@ -155,10 +154,10 @@ function App() {
     }
   }  
   
-  // Tracking shape for submission (screen 2)
-  const canProceedScreen2 = barrioName.trim().length > 0
-
   // Tracking shape for submission (screen 3)
+  const canProceedScreen3 = barrioName.trim().length > 0
+
+  // Tracking shape for submission (screen 4)
   const isPolygonValid =
       polygonGeoJson?.geometry?.coordinates?.length &&
       polygonGeoJson.geometry.coordinates[0].length > 2 // at least a triangle
@@ -171,24 +170,28 @@ function App() {
       return turf.booleanPointInPolygon(point, poly)
     })()
 
-  const canProceedScreen3 = isPolygonValid && isPinInsidePolygon
+  const canProceedScreen4 = isPolygonValid && isPinInsidePolygon
 
-  const canProceedScreen4 = (() => {
-    const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/
-    return emailRegex.test(email.trim())
-  })()  
 
   // submission validation
   const validateScreen2 = () => {
+    const emailRegex = /^.+@.+\..+$/
+    if (!email || !emailRegex.test(email)) {
+      setModalMessage('Por favor ingresá un email válido (ej: nombre@dominio.com).')
+      return false
+    }
+    return true
+  }
+
+  const validateScreen3 = () => {
     if (!barrioName.trim()) {
       setModalMessage('Por favor ingresá un nombre de barrio.')
       return false
     }
     return true
   }
-  const [pinPlaced, setPinPlaced] = useState(false)
 
-  const validateScreen3 = () => {
+  const validateScreen4 = () => {
     if (!polygonGeoJson || !polygonGeoJson.geometry?.coordinates?.length) {
       setModalMessage('Debés dibujar los límites de tu barrio.')
       return false
@@ -206,16 +209,7 @@ function App() {
     }
   
     return true
-  }
-  
-  const validateScreen4 = () => {
-    const emailRegex = /^.+@.+\..+$/
-    if (!email || !emailRegex.test(email)) {
-      setModalMessage('Por favor ingresá un email válido (ej: nombre@dominio.com).')
-      return false
-    }
-    return true
-  }
+  }  
      
   // submission
   const handleSubmit = async () => {
@@ -224,17 +218,17 @@ function App() {
     const fullSubmission = {
       email: email || '',
       age: age || '',
-//      livesInCaba: livesInCaba || '',
+      livesInCaba: livesInCaba || '',
       yearsInBarrio: yearsInBarrio || '',
       barrioName: barrioName || '',
       pinLocation: pinLocation || null,
-//      landmarks: landmarks || '',
-//      altNames: altNames || '',
+      landmarks: landmarks || '',
+      altNames: altNames || '',
       comments: comments || '',
       canContact: canContact || '',
       comunidad: comunidad || '',
-//      claseSocial: claseSocial || '',
-//      genero: genero || '',
+      claseSocial: claseSocial || '',
+      genero: genero || '',
       situacionDomicilio: situacionDomicilio || '',
       submittedAt: new Date(),
       sessionDuration: Date.now() - sessionStartTime.current,
@@ -245,59 +239,47 @@ function App() {
       polygon: polygonGeoJson ? JSON.stringify(polygonGeoJson) : null
     }
   
-    console.log('Submitting with:', {
-      email, canProceedScreen4
-    })    
-
     try {
       await addDoc(collection(db, 'responses'), fullSubmission)
       console.log('✅ Submission saved!')
-      setStep(5)
+      setStep(6)
     } catch (err) {
       console.error('❌ Failed to save submission:', err)
     }
   }
 
-  // Go next / back button logic
-    const goNext = () => {
-      if (step === 2 && !canProceedScreen2) {
-        setModalMessage('Tocá el mapa y escribí el nombre del barrio.')
-        setShowModal(true)
-        return
-      }
-      if (step === 3 && !canProceedScreen3) {
-        setModalMessage('Dibujá los límites y asegurate que el pin esté adentro del polígono.')
-        setShowModal(true)
-        return
-      }
-      if (step === 4 && !canProceedScreen4) {
-        setModalMessage('Ingresá un email válido.')
-        setShowModal(true)
-        return
-      }
-      setStep((prev) => Math.min(prev + 1, 4))
+  const goNext = () => {
+    if (step === 2 && !validateScreen2()) {
+      setShowModal(true)
+      return
     }
-    
-    const goBack = () => {
-      setStep((prev) => Math.max(prev - 1, 1))
+    if (step === 3 && !validateScreen3()) {
+      setShowModal(true)
+      return
     }
-    
+    if (step === 4 && !validateScreen4()) {
+      setShowModal(true)
+      return
+    }
+    setStep((prev) => Math.min(prev + 1, 6))
+  }
+
+  const goBack = () => setStep((prev) => Math.max(prev - 1, 1))
 
   return (
-    
     <div style={{
       position: 'relative',
-      padding: (step >= 4 ? '2rem' : '0'),
-      maxWidth: (step >= 4 ? '700px' : 'none'),
-      margin: (step >= 4 ? '0 auto' : '0')
+      padding: (step >= 6 ? '2rem' : '0'),
+      maxWidth: (step >= 6 ? '700px' : 'none'),
+      margin: (step >= 6 ? '0 auto' : '0')
     }}>
     
-    {step === 1 || step === 5 ? (
+    {step === 1 || step === 2 || step === 5 ? (
       <MapScreen readOnly blurred />
     ) : null}
 
 
-      {/* Step 1: WELCOME */}
+      {/* Step 1 */}
       <AnimatePresence mode="wait">
       {step === 1 && (
         <>
@@ -332,30 +314,107 @@ function App() {
       )}
       </AnimatePresence>
 
-      {/* Step 2: PIN + BARRIO NAME */}
-
+      {/* Step 2 */}
       <AnimatePresence mode="wait">
-      {step === 2 && (
-        <>
-        <div style={{
-          position: 'absolute',
-          top: '0.5rem',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          backgroundColor: '#fff',
-          color: '#000',
-          padding: '0.4rem 0.8rem',
-          borderRadius: '20px',
-          fontSize: '0.85rem',
-          boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
-          zIndex: 10,
-          textAlign: 'center'
-        }}>
-          {pinPlaced ? 'Escribí abajo cómo lo llamás' : 'Hacé click donde vivís'}
+          {step === 2 && (
+        <motion.div
+        key="step2"
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -100 }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
+        style={getFloatingStyle()}
+      >
+        <h2>👉 Información del participante</h2>
+
+        <div style={{ marginBottom: '1rem' }}>
+          <label>Email (requerido):</label>
+          <input
+            type="email"
+            value={email}
+            style={{ width: '75%' }}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
 
+        <div style={{ marginBottom: '1rem' }}>
+          <label>Edad:</label>
+          <select
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+            style={{ width: '100%', padding: '0.5rem', marginTop: '0.25rem' }}
+          >
+            <option value="">Seleccioná una opción</option>
+            <option value="<18">Menos de 18</option>
+            <option value="18–24">18–24</option>
+            <option value="25–34">25–34</option>
+            <option value="35–44">35–44</option>
+            <option value="45–54">45–54</option>
+            <option value="55–64">55–64</option>
+            <option value="65+">65 o más</option>
+          </select>
+        </div>
+
+        <div style={{ marginBottom: '2rem' }}>
+          <label style={{ display: 'block', marginBottom: '0.5rem' }}>
+            ¿Vivís actualmente en CABA?
+          </label>
+          <div style={{ display: 'flex', gap: '2rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <input
+                type="radio"
+                name="caba"
+                value="sí"
+                checked={livesInCaba === 'sí'}
+                onChange={() => setLivesInCaba('sí')}
+              />
+              <span style={{ marginTop: '0.25rem' }}>Sí</span>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <input
+                type="radio"
+                name="caba"
+                value="no"
+                checked={livesInCaba === 'no'}
+                onChange={() => setLivesInCaba('no')}
+              />
+              <span style={{ marginTop: '0.25rem' }}>No</span>
+            </div>
+          </div>
+        </div>
+
+        <div style={{ marginBottom: '1rem' }}>
+          <label>¿Hace cuántos años vivís en este lugar?</label>
+          <select
+            value={yearsInBarrio}
+            onChange={(e) => setYearsInBarrio(e.target.value)}
+            style={{ width: '100%', padding: '0.5rem', marginTop: '0.25rem' }}
+          >
+            <option value="">Seleccioná una opción</option>
+            <option value="<1">Menos de 1 año</option>
+            <option value="1–5">1–5 años</option>
+            <option value="6–10">6–10 años</option>
+            <option value="10+">Más de 10 años</option>
+            <option value="toda_la_vida">Toda mi vida</option>
+          </select>
+        </div>
+
+        <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
+
+        <button onClick={goBack} className="btn-nav">Volver<span>⬅️</span></button>
+        <button onClick={goNext} className="btn-nav btn-next">Siguiente<span>➡️</span></button>
+        </div>
+      </motion.div>
+    )}
+    </AnimatePresence>
+
+
+      {/* Step 3 */}
+      <AnimatePresence mode="wait">
+      {step === 3 && (
+        <>
                   <motion.div
-                    key="step2"
+                    key="step3"
                     variants={slideVariants}
                     initial="initial"
                     animate="animate"
@@ -364,7 +423,7 @@ function App() {
                     style={getFloatingStyle()}
                   >
             <h2>🎯 Ubicación y nombre del barrio</h2>
-            <p>Mueve el mapa a tu barrio, hacé click donde vivís y escribí cómo lo llamás.</p>
+            <p>Ubicá el centro de tu barrio en el mapa y escribí cómo lo llamás.</p>
 
             <div style={{ marginBottom: '4rem', position: 'relative' }} ref={inputRef}>
               <label>Nombre del barrio:<br />
@@ -423,7 +482,7 @@ function App() {
 
             <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
               <AnimatePresence>
-                {!canProceedScreen2 && (
+                {!canProceedScreen3 && (
                   <motion.p
                     key="tooltip"
                     initial={{ opacity: 0, y: -5 }}
@@ -431,7 +490,7 @@ function App() {
                     exit={{ opacity: 0, y: -5 }}
                     transition={{ duration: 0.3 }}
                     style={{
-                      //fontSize: '0.75rem',
+                      fontSize: '0.75rem',
                       color: '#bbb',
                       textAlign: 'center',
                       marginBottom: '0.5rem'
@@ -450,9 +509,9 @@ function App() {
 
                 <button
                   onClick={goNext}
-                  className={`btn-nav ${canProceedScreen2 ? 'btn-next' : 'btn-disabled'}`}
-                  disabled={!canProceedScreen2}
-                  animate={{ scale: canProceedScreen3 ? 1 : 0.98 }}
+                  className={`btn-nav ${canProceedScreen3 ? 'btn-next' : 'btn-disabled'}`}
+                  disabled={!canProceedScreen3}
+                  animate={{ scale: canProceedScreen4 ? 1 : 0.98 }}
                   transition={{ duration: 0.2 }}
                 >
                   Siguiente
@@ -466,19 +525,18 @@ function App() {
 
           <MapScreen
             step={step}
-            setPinLocation={(loc) => {
-              setPinLocation(loc)
-              setPinPlaced(true)  // 👈 NEW
-            }}
+            setPinLocation={setPinLocation}
             setMapClickCount={setMapClickCount}
+            //overrideCenter={isMobile && step === 3 ? [-58.437, -34.6337] : undefined}
           />
         </>
       )}
       </AnimatePresence>
 
-      {/* Step 3: DIBUJAR LIMITES */}
+
+      {/* Step 4 */}
       <AnimatePresence mode="wait">
-      {step === 3 && (
+      {step === 4 && (
         <>
           {/* 👇 Move the modal here first */}
           {drawingInstructionsVisible && (
@@ -506,8 +564,9 @@ function App() {
               }}>
                 <h3 style={{ marginTop: 0, fontSize: '1.1rem' }}>📍 ¿Dónde están los límites de tu barrio?</h3>
                 <p><strong>Cómo dibujar:</strong></p>
-                <ol style={{ textAlign: 'left', paddingLeft: '1.2rem', fontSize: '1rem' }}>
-                  <li>📌 Tocá el mapa para los puntos para formar el contorno.</li>
+                <ol style={{ textAlign: 'left', paddingLeft: '1.2rem', fontSize: '0.85rem' }}>
+                  <li>🖊️ Tocá el mapa para agregar el punto de inicio.</li>
+                  <li>📌 Tocá para agregar más puntos y formar el contorno.</li>
                   <li>✅ Hacé clic en el primer punto para cerrar el polígono.</li>
                   <li>🔄 Si necesitás reiniciar, usá el icono de la papelera arriba a la derecha.</li>
                 </ol>
@@ -530,35 +589,9 @@ function App() {
             </div>
           )}
 
-<AnimatePresence>
-  {!canProceedScreen3 && (
-    <motion.div
-      key="tooltip"
-      initial={{ opacity: 0, y: -8 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -8 }}
-      transition={{ duration: 0.3 }}
-      style={{
-        position: "absolute",
-        top: '0.75rem',
-        backgroundColor: '#fff',
-        color: '#000',
-        borderRadius: '20px',
-        padding: '0.4rem 1rem',
-        fontSize: '0.8rem',
-        marginBottom: '0.75rem',
-        textAlign: 'center',
-        boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
-      }}
-    >
-      Tocá el mapa para agregar puntos y cerrar el polígono
-    </motion.div>
-  )}
-</AnimatePresence>
-
           {/* Floating instruction box */}
           <motion.div
-            key="step3"
+            key="step4"
             variants={slideVariants}
             initial="initial"
             animate="animate"
@@ -571,7 +604,7 @@ function App() {
 
             <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
               <AnimatePresence>
-                {!canProceedScreen3 && (
+                {!canProceedScreen4 && (
                   <motion.p
                     key="tooltip4"
                     initial={{ opacity: 0, y: -5 }}
@@ -598,16 +631,16 @@ function App() {
                   <span>⬅️</span>
                 </button>
 
-                <MotionButton
+                <motion.button
                   onClick={goNext}
-                  className={`btn-nav ${canProceedScreen3 ? 'btn-next' : 'btn-disabled'}`}
-                  disabled={!canProceedScreen3}
-                  animate={{ scale: canProceedScreen3 ? 1 : 0.98 }}
+                  className={`btn-nav ${canProceedScreen4 ? 'btn-next' : 'btn-disabled'}`}
+                  disabled={!canProceedScreen4}
+                  animate={{ scale: canProceedScreen4 ? 1 : 0.98 }}
                   transition={{ duration: 0.2 }}
                 >
                   Siguiente
                   <span>➡️</span>
-                </MotionButton>
+                </motion.button>
               </div>
             </div>
 
@@ -622,10 +655,9 @@ function App() {
       )}
       </AnimatePresence>
 
-
-      {/* Step 4: MAS DETALLE */}
+      {/* Step 5 */}
       <AnimatePresence mode="wait">
-        {step === 4 && (
+        {step === 5 && (
           <>
             <BoundaryDrawScreen
             polygonGeoJson={polygonGeoJson}
@@ -634,7 +666,7 @@ function App() {
             pinLocation={pinLocation}
           />
                   <motion.div
-                    key="step4"
+                    key="step5"
                     initial={{ opacity: 0, x: -100 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -100 }}
@@ -643,11 +675,31 @@ function App() {
                   >
             <h2>📝 Contanos un poco más</h2>
 
-            {/* Open ended input */}
+            {/* Text input fields */}
             <div style={{ marginBottom: '1rem' }}>
+              <label>¿Qué calles, plazas o lugares definen tu barrio?</label>
+              <input
+                type="text"
+                value={landmarks}
+                onChange={(e) => setLandmarks(e.target.value)}
+                style={{ width: '95%' }}
+              />
+            </div>
+
+            <div style={{ marginBottom: '1rem' }}>
+              <label>¿Usás otros nombres para esta zona?</label>
+              <input
+                type="text"
+                value={altNames}
+                onChange={(e) => setAltNames(e.target.value)}
+                style={{ width: '95%' }}
+              />
+            </div>
+
+            <div style={{ marginBottom: '1rem' }}>
+              <label>¿Querés contarnos algo más sobre tu barrio?</label>
               <textarea
                 value={comments}
-                placeholder= "Opcional | ¿Hay otros nombres para la zona? ¿Cuáles calles o lugares la definen y/o querés contarnos algo más?"
                 onChange={(e) => setComments(e.target.value)}
                 style={{ width: '95%' }}
                 rows={4}
@@ -656,56 +708,59 @@ function App() {
 
             {/* Comunidad */}
             <div style={{ marginBottom: '1rem' }}>
+              <label>¿Te considerás parte de una(s) comunidad(es) en particular? (ej. religiosa, étnica, tribu urbana)</label>
               <textarea
                 value={comunidad}
-                placeholder= "Opcional | ¿Te considerás parte de una(s) comunidad(es) en particular? (ej. religiosa, étnica, tribu urbana)"
                 onChange={(e) => setComunidad(e.target.value)}
                 style={{ width: '95%' }}
-                rows={4}
+                rows={3}
               />
             </div>
 
-            {/* Age  & años en el lugar*/}
-            <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
-            <select
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
-              style={{ flex: 1, padding: '0.5rem' }}
-              placeholder="Edad"
-            >
-              <option value="">Edad</option>
-              <option value="<20">Menos de 20</option>
-              <option value="20–29">20–29</option>
-              <option value="30–39">30–39</option>
-              <option value="40–49">40–49</option>
-              <option value="50–59">50–59</option>
-              <option value="60–69">60–69</option>
-              <option value="70+">70 o más</option>
-            </select>
+            {/* Clase Social */}
+                <div style={{ marginBottom: '1rem' }}>
+              <label>¿Cómo definirías tu clase social?</label>
+              <select
+                value={claseSocial}
+                onChange={(e) => setClaseSocial(e.target.value)}
+                style={{ width: '100%', padding: '0.5rem', marginTop: '0.25rem' }}
+              >
+                    <option value="">Seleccioná una opción</option>
+                    <option value="alta">Clase alta</option>
+                    <option value="mediaalta">Clase media alta</option>
+                    <option value="media">Clase media</option>
+                    <option value="mediabaja">Clase media baja</option>
+                    <option value="baja">Clase baja</option>
+              </select>
+            </div>
 
-            <select
-              value={yearsInBarrio}
-              onChange={(e) => setYearsInBarrio(e.target.value)}
-              style={{ flex: 1, padding: '0.5rem' }}
-              placeholder="Años en el barrio"
-            >
-              <option value="">Años en barrio</option>
-              <option value="<1">Menos de 1 año</option>
-              <option value="1–5">1–5 años</option>
-              <option value="6–10">6–10 años</option>
-              <option value="10+">Más de 10 años</option>
-              <option value="toda_la_vida">Toda mi vida</option>
-            </select>
-          </div>
+            {/* Género */}
+            <div style={{ marginBottom: '1rem' }}>
+              <label>¿Cómo es tu género?</label>
+              <div style={{ display: 'flex', gap: '2rem', marginTop: '0.5rem' }}>
+                {['hombre', 'mujer', 'otro'].map((option) => (
+                  <div key={option} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <input
+                      type="radio"
+                      name="genero"
+                      value={option}
+                      checked={genero === option}
+                      onChange={() => setGenero(option)}
+                    />
+                    <span style={{ textTransform: 'capitalize' }}>{option}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
 
             {/* Situación Domicilio */}
             <div style={{ marginBottom: '1rem' }}>
-              <label>OPCIONAL: Describe tu situación de domicilio</label>
+              <label>Describe tu situación de domicilio</label>
               <div style={{ display: 'flex', gap: '2rem', marginTop: '0.5rem' }}>
                 {[
                   { value: 'dueño', label: 'Dueño' },
                   { value: 'alquiler', label: 'Alquiler' },
-                  { value: 'familiar', label: 'Domicilio de conocidos' }
+                  { value: 'familiar', label: 'Domicilio de familia / amigos' }
                 ].map(({ value, label }) => (
                   <div key={value} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <input
@@ -721,89 +776,37 @@ function App() {
               </div>
             </div>
 
-            {/* Email */}
-            <div style={{ marginBottom: '1rem' }}>
-              <input
-                type="email"
-                placeholder="Email (requerido)"
-                value={email}
-                style={{ width: '75%' }}
-                onChange={(e) => setEmail(e.target.value)}
-              />
+                {/* Contact permission - vertical radio buttons */}
+                <div style={{ marginBottom: '1rem' }}>
+              <label>¿Te gustaría que te contactemos más adelante?</label>
+              <div style={{ display: 'flex', gap: '2rem', marginTop: '0.5rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <input
+                    type="radio"
+                    name="contact"
+                    value="sí"
+                    checked={canContact === 'sí'}
+                    onChange={() => setCanContact('sí')}
+                  />
+                  <span>Sí</span>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <input
+                    type="radio"
+                    name="contact"
+                    value="no"
+                    checked={canContact === 'no'}
+                    onChange={() => setCanContact('no')}
+                  />
+                  <span>No</span>
+                </div>
+              </div>
             </div>
 
-                {/* Contact permission - vertical radio buttons */}
-                <div style={{ marginBottom: '1rem', width: '100%' }}>
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      fontSize: '0.9rem',
-                      color: '#fff'
-                    }}>
-                      <input
-                        type="checkbox"
-                        checked={canContact === 'sí'}
-                        onChange={(e) => setCanContact(e.target.checked ? 'sí' : 'no')}
-                        style={{
-                          marginRight: '0.5rem',
-                          transform: 'scale(1.1)',
-                          appearance: 'checkbox',
-                          accentColor: '#fff',
-                          width: '18px',
-                          height: '18px',
-                          cursor: 'pointer'
-                        }}
-                      />
-                      <label style={{
-                        cursor: 'pointer',
-                        margin: 0,
-                        lineHeight: 1.2
-                      }}>
-                        Estoy de acuerdo en que me contacten más adelante
-                      </label>
-                    </div>
-                  </div>
-
-
             {/* Navigation Buttons */}
-            <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-              <AnimatePresence>
-                {!canProceedScreen4 && (
-                  <motion.p
-                    key="tooltip"
-                    initial={{ opacity: 0, y: -5 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -5 }}
-                    transition={{ duration: 0.3 }}
-                    style={{
-                      fontSize: '0.75rem',
-                      color: '#bbb',
-                      textAlign: 'center',
-                      marginBottom: '0.5rem'
-                    }}
-                  >
-                    Ingresá un email para enviar
-                  </motion.p>
-                )}
-              </AnimatePresence>
-
-              <div style={{ display: 'flex', gap: '1rem' }}>
-                <button onClick={goBack} className="btn-nav">
-                  Volver
-                  <span>⬅️</span>
-                </button>
-
-                <MotionButton
-                  onClick={handleSubmit}
-                  className={`btn-nav ${canProceedScreen4 ? 'btn-next' : 'btn-disabled'}`}
-                  disabled={!canProceedScreen4}
-                  animate={{ scale: canProceedScreen4 ? 1 : 0.98 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  Enviar
-                  <span>➡️</span>
-                </MotionButton>
-              </div>
+              <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
+                <button onClick={goBack} className="btn-nav">Volver<span>⬅️</span></button>
+                <button onClick={handleSubmit} className="btn-nav btn-next">Enviar<span>➡️</span></button>
             </div>
             </motion.div>
           </>
@@ -812,8 +815,8 @@ function App() {
 
 
 
-      {/* Step 5 */}
-      {step === 5 && (
+      {/* Step 6 */}
+      {step === 6 && (
         <>
           <h2>✅ ¡Gracias por mapear tu barrio!</h2>
           <p>Tu aporte es muy valioso para el mapa colectivo de Buenos Aires. 🚀</p>
@@ -821,42 +824,6 @@ function App() {
         </>
       )}
 
-{/* Progress Bar */}
-{step >= 1 && step <= 4 && (
-  <div style={{
-    position: 'fixed',
-    bottom: '0.75rem',
-    left: '50%',
-    transform: 'translateX(-50%)',
-    display: 'flex',
-    alignItems: 'center',
-    backgroundColor: 'transparent',
-    zIndex: 1000,
-    padding: '0.25rem 0.75rem',
-    borderRadius: '999px',
-    boxShadow: '0 2px 4px rgba(255, 255, 255, 0.1)',
-    backdropFilter: 'blur(3px)'
-  }}>
-    <span style={{
-      marginRight: '0.75rem',
-      color: '#fff',
-      fontSize: '0.7rem',
-      fontWeight: 'bold'
-    }}>Paso</span>
-    {[1, 2, 3, 4].map((s) => (
-      <div key={s} style={{
-        width: '12px',
-        height: '5px',
-        margin: '0 3px',
-        borderRadius: '3px',
-        backgroundColor:
-          step === s ? '#FFD700' : step > s ? '#00CC66' : '#666'
-      }} />
-    ))}
-  </div>
-)}
-
-{/* Modals */}
 {showModal && (
   <div style={{
     position: 'fixed',
