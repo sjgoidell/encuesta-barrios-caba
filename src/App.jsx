@@ -181,10 +181,13 @@ function App() {
 
   const canProceedScreen3 = isPolygonValid && isPinInsidePolygon
 
-  const canProceedScreen4 = (() => {
-    const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/
-    return emailRegex.test(email.trim())
-  })()  
+  const canProceedScreen4 = true
+  
+ //backup logic for screen4 email required
+ // const canProceedScreen4 = (() => {
+    //const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/
+    //return emailRegex.test(email.trim())
+ // })()  
 
   // submission validation
   const validateScreen2 = () => {
@@ -217,12 +220,20 @@ function App() {
     return true
   }
   
+  // email required code
+      /*
+      const validateScreen4 = () => {
+        const emailRegex = /^.+@.+\..+$/
+        if (!email || !emailRegex.test(email)) {
+          setModalMessage('Por favor ingresá un email válido (ej: nombre@dominio.com).')
+          return false
+        }
+        return true
+      }
+      */
+
+  // email not required code
   const validateScreen4 = () => {
-    const emailRegex = /^.+@.+\..+$/
-    if (!email || !emailRegex.test(email)) {
-      setModalMessage('Por favor ingresá un email válido (ej: nombre@dominio.com).')
-      return false
-    }
     return true
   }
      
@@ -344,24 +355,26 @@ function App() {
       <AnimatePresence mode="wait">
       {step === 2 && (
         <>
-          {!showBarrioNameInput && (
-            <div style={{
-              position: 'absolute',
-              top: '0.5rem',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              backgroundColor: '#fff',
-              color: '#000',
-              padding: '0.4rem 0.8rem',
-              borderRadius: '20px',
-              fontSize: '0.85rem',
-              boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
-              zIndex: 10,
-              textAlign: 'center'
-            }}>
-              {!pinMoved ? 'Hacé click donde vivís' : 'Escribí abajo cómo lo llamás'}
-            </div>
-          )}
+          <div style={{
+            position: 'absolute',
+            top: '0.75rem',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            backgroundColor: '#fff',
+            color: '#000',
+            padding: '0.6rem 1.2rem',
+            borderRadius: '24px',
+            fontSize: '1rem',
+            fontWeight: '600',
+            boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
+            zIndex: 10,
+            textAlign: 'center',
+            maxWidth: '90%',
+            lineHeight: '1.4'
+          }}>
+            {!pinMoved ? 'Hacé click donde vivís' : 'Escribí abajo cómo lo llamás'}
+          </div>
+
 
 
         {(!isMobile || showBarrioNameInput) && (
@@ -371,7 +384,7 @@ function App() {
                     initial="initial"
                     animate="animate"
                     exit="exit"                    
-                    transition={{ duration: 0.5, ease: 'easeInOut' }}
+                    transition={{ duration: 0.4, ease: 'easeInOut' }}
                     style={getFloatingStyle()}
                   >
 
@@ -545,31 +558,29 @@ function App() {
             </div>
           )}
 
-<AnimatePresence>
-  {!canProceedScreen3 && (
-    <motion.div
-      key="tooltip"
-      initial={{ opacity: 0, y: -8 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -8 }}
-      transition={{ duration: 0.3 }}
-      style={{
-        position: "absolute",
-        top: '0.75rem',
-        backgroundColor: '#fff',
-        color: '#000',
-        borderRadius: '20px',
-        padding: '0.4rem 1rem',
-        fontSize: '0.8rem',
-        marginBottom: '0.75rem',
-        textAlign: 'center',
-        boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
-      }}
-    >
-      Tocá el mapa para agregar puntos y cerrar el polígono
-    </motion.div>
-  )}
-</AnimatePresence>
+        {/* White instructions at top */}
+        {!canProceedScreen3 && (
+          <div style={{
+            position: 'fixed',
+            top: '0.75rem',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            backgroundColor: '#fff',
+            color: '#000',
+            padding: '0.75rem 1.25rem',
+            borderRadius: '16px',
+            fontSize: '0.95rem',
+            fontWeight: '600',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+            maxWidth: '260px',
+            width: '60%',
+            lineHeight: '1.4',
+            textAlign: 'center',
+            zIndex: 1000
+          }}>
+            ✏️ Tocá el mapa para agregar puntos y cerrar el polígono
+          </div>
+        )}
 
           {/* Floating instruction box */}
           <motion.div
@@ -581,9 +592,8 @@ function App() {
             transition={{ duration: 0.5, ease: 'easeInOut' }}
             style={getFloatingStyle()}
           >
-            <p>✏️ Marcá los limites de tu barrio. </p>
 
-            <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+            <div style={{ marginTop: '0rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
               <AnimatePresence>
                 {!canProceedScreen3 && (
                   <motion.p
@@ -739,7 +749,7 @@ function App() {
             <div style={{ marginBottom: '1rem' }}>
               <input
                 type="email"
-                placeholder="Email (requerido)"
+                placeholder="Email (opcional)"
                 value={email}
                 style={{ width: '75%' }}
                 onChange={(e) => setEmail(e.target.value)}
