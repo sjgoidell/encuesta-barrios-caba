@@ -29,7 +29,11 @@ function App() {
   const inputRef = useRef()
   const [mapClickCount, setMapClickCount] = useState(0)
   const [showTerms, setShowTerms] = useState(false)
+ 
+ // Map and motion constants
   const MotionButton = motion.button
+  const mapRef = useRef(null)
+  const [mapReady, setMapReady] = useState(false)
 
   //Capturing metadata
   const [userRegion, setUserRegion] = useState('unknown')
@@ -314,9 +318,9 @@ function App() {
           transition={{ duration: 0.5, ease: 'easeInOut' }}
           style={getFloatingStyle()}
         >
-          <h1>Ayudanos a mapear los barrios y límites de Buenos Aires! 🗺️</h1>
+          <h1>Ayudanos a mapear los barrios de Buenos Aires! 🗺️</h1>
           <p>
-          📌 ¿Dónde empieza y termina tu barrio? ¿Cómo se llama la zona? Cada día, porteños siguen discutiendo los límites y nombres de sus barrios. Nuestra misión es construir un mapa colectivo de todos los barrios de CABA basado en cómo vos lo vivís.
+          📌 ¿Dónde empieza y termina tu barrio? ¿Cómo se llama la zona? Cada día, porteños discuten los límites y nombres de sus barrios. Nuestra misión es construir un mapa colectivo de los barrios de CABA basado en cómo vos lo vivís.
           </p>
           <p>  
           🚀 ¡Sumate al proyecto! Recibirás información sobre los resultados cuando esté completo. 
@@ -327,9 +331,9 @@ function App() {
           <button onClick={goNext}>Aceptar y comenzar ➡️</button>
           <p style={{ fontSize: '0.8rem', marginTop: '2rem' }}>
             Al participar, aceptás los <span style={{ color: 'lightblue', cursor: 'pointer' }} onClick={() => setShowTerms(true)}>términos y condiciones</span> del proyecto.  
-            Este proyecto quería agradecer al trabajo del New York Times en su "<a href="https://www.nytimes.com/interactive/2023/upshot/extremely-detailed-nyc-neighborhood-map.html" target="_blank" rel="noopener noreferrer" style={{ color: 'lightblue' }}>
+            La inspiración del proyecto viene del New York Times ("<a href="https://www.nytimes.com/interactive/2023/upshot/extremely-detailed-nyc-neighborhood-map.html" target="_blank" rel="noopener noreferrer" style={{ color: 'lightblue' }}>
               Extremely Detailed Map of New York City Neighborhoods
-            </a>" por la inspiración de este proyecto.
+            </a>")
           </p>
         </motion.div>
         </>
@@ -394,7 +398,8 @@ function App() {
               {suggestions.length > 0 && (
                 <ul style={{
                   position: 'absolute',
-                  bottom: '105%',
+                  top: isMobile ? 'auto' : '105%',
+                  bottom: isMobile ? '105%' : 'auto',
                   left: 0,
                   right: 0,
                   background: '#222',
@@ -478,6 +483,8 @@ function App() {
               }
             }}
             setMapClickCount={setMapClickCount}
+            mapRef={mapRef}
+            setMapReady={setMapReady}
           />
         </>
       )}

@@ -6,6 +6,7 @@ mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN
 const MapScreen = ({
   setPinLocation,
   setPinMoved,
+  mapRef,
   setMapClickCount,
   readOnly = false,
   blurred = false,
@@ -27,6 +28,11 @@ const MapScreen = ({
       interactive: !readOnly
     })
 
+    // Move to center after placing pin
+    if (mapRef) {
+      mapRef.current = map
+    }
+
     // Add zoom controls
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right')
 
@@ -37,7 +43,7 @@ const MapScreen = ({
         const centerPoint = map.project(cabaCenter)
         const shiftedPoint = {
           x: centerPoint.x,
-          y: centerPoint.y + 200
+          y: centerPoint.y
         }
         const shiftedLngLat = map.unproject(shiftedPoint)
         map.setCenter(shiftedLngLat)
@@ -74,6 +80,17 @@ const MapScreen = ({
 
         if (typeof setMapClickCount === 'function') {
           setMapClickCount(prev => prev + 1)
+        }
+
+          // ✅ Center the map with slight upward offset
+        if (isMobile) {
+          const centerPoint = map.project([lng, lat])
+          const shiftedPoint = {
+            x: centerPoint.x,
+            y: centerPoint.y + 50
+          }
+          const newCenter = map.unproject(shiftedPoint)
+          map.flyTo({ center: newCenter, zoom: 13, speed: 0.8 })
         }
       })
     }
