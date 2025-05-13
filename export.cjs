@@ -15,17 +15,31 @@ async function exportData() {
 
   snapshot.forEach(doc => {
     const data = doc.data()
-    rows.push({
-      email: data.email || '',
-      barrio: data.barrioName || '',
-      lat: data.pinLocation?.lat || '',
-      lng: data.pinLocation?.lng || '',
-      polygon: data.polygon || '',
-      claseSocial: data.claseSocial || '',
-      genero: data.genero || '',
-      comunidad: data.comunidad || '',
-      timestamp: data.submittedAt ? data.submittedAt.toDate().toISOString() : ''
-    })
+          rows.push({
+            email: data.email || '',
+            age: data.age || '',
+            yearsInBarrio: data.yearsInBarrio || '',
+            barrioName: data.barrioName || '',
+            pinLocation: JSON.stringify(data.pinLocation || ''),
+            comments: data.comments || '',
+            canContact: data.canContact || '',
+            religionAffiliation: data.religionAffiliation || '',
+            selectedReligion: data.selectedReligion || '',
+            otherReligion: data.otherReligion || '',
+            comunidadesSeleccionadas: Array.isArray(data.comunidadesSeleccionadas) ? data.comunidadesSeleccionadas.join('; ') : '',
+            otraComunidadTexto: data.otraComunidadTexto || '',
+            nacimientoLugar: data.nacimientoLugar || '',
+            provinciaNacimiento: data.provinciaNacimiento || '',
+            paisNacimiento: data.paisNacimiento || '',
+            situacionDomicilio: data.situacionDomicilio || '',
+            submittedAt: data.submittedAt?.toDate?.().toISOString() || '',
+            sessionDuration: data.sessionDuration || '',
+            deviceType: data.deviceType || '',
+            language: data.language || '',
+            userRegion: data.userRegion || '',
+            mapClickCount: data.mapClickCount || '',
+            polygon: data.polygon || ''
+          })
   })
 
   const headers = Object.keys(rows[0])

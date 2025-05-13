@@ -4,12 +4,16 @@ import './App.css'
 import MapScreen from './components/MapScreen'
 import Fuse from 'fuse.js'
 import barrios from './data/barrios'
+import comunidadOptions from './data/comunidades'
+import provincias from './data/provincias'
+import paises from './data/paises'
 import BoundaryDrawScreen from './components/BoundaryDrawScreen'
 import { collection, addDoc } from 'firebase/firestore'
 import { db } from './firebase'
 import * as turf from '@turf/turf'
 import mapboxgl from 'mapbox-gl'
 import { motion, AnimatePresence } from 'framer-motion'
+import Select from 'react-select'
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2dvaWRlbGwiLCJhIjoiY21hM2J0ZzFoMWFhNDJqcTZibzQ4NzM5ZSJ9.hTrCOqO2-fWRG86oum5g_A'
 
@@ -19,13 +23,6 @@ function App() {
   const [showModal, setShowModal] = useState(false)
   const [modalMessage, setModalMessage] = useState('')
   const [step, setStep] = useState(1)
-  const [email, setEmail] = useState('')
-  const [age, setAge] = useState('')
-  const [livesInCaba, setLivesInCaba] = useState('')
-  const [yearsInBarrio, setYearsInBarrio] = useState('')
-  const [pinLocation, setPinLocation] = useState(null)
-  const [barrioName, setBarrioName] = useState('')
-  const [suggestions, setSuggestions] = useState([])
   const inputRef = useRef()
   const [mapClickCount, setMapClickCount] = useState(0)
   const [showTerms, setShowTerms] = useState(false)
@@ -71,18 +68,32 @@ function App() {
     threshold: 0.4 // Adjust this for strict/loose match
   })
 
+  // checks / misc
+  const [drawingInstructionsVisible, setDrawingInstructionsVisible] = useState(true)
+  const [formErrors, setFormErrors] = useState({})
+
   // defining variables
+  const [email, setEmail] = useState('')
+  const [age, setAge] = useState('')
+  const [yearsInBarrio, setYearsInBarrio] = useState('')
+  const [pinLocation, setPinLocation] = useState(null)
+  const [barrioName, setBarrioName] = useState('')
+  const [suggestions, setSuggestions] = useState([])
   const [polygonGeoJson, setPolygonGeoJson] = useState(null)
   const [landmarks, setLandmarks] = useState('')
   const [altNames, setAltNames] = useState('')
   const [comments, setComments] = useState('')
-  const [canContact, setCanContact] = useState(null)
-  const [comunidad, setComunidad] = useState('')
-  const [claseSocial, setClaseSocial] = useState('')
-  const [genero, setGenero] = useState('')
+  const [religionAffiliation, setReligionAffiliation] = useState('')
+  const [selectedReligion, setSelectedReligion] = useState('')
+  const [otherReligion, setOtherReligion] = useState('')
+  const [comunidadesSeleccionadas, setComunidadesSeleccionadas] = useState([])
+  const [otraComunidadTexto, setOtraComunidadTexto] = useState('')
+  const [nacimientoLugar, setNacimientoLugar] = useState('')
+  const [provinciaNacimiento, setProvinciaNacimiento] = useState('')
+  const [paisNacimiento, setPaisNacimiento] = useState('')
+
   const [situacionDomicilio, setSituacionDomicilio] = useState('')
-  const [formErrors, setFormErrors] = useState({})
-  const [drawingInstructionsVisible, setDrawingInstructionsVisible] = useState(true)
+  const [canContact, setCanContact] = useState(null)
   
   const backgroundMapStyle = {
     position: 'fixed',
@@ -241,29 +252,34 @@ function App() {
   const handleSubmit = async () => {
 
   // Bundle data for submission
-    const fullSubmission = {
-      email: email || '',
-      age: age || '',
-//      livesInCaba: livesInCaba || '',
-      yearsInBarrio: yearsInBarrio || '',
-      barrioName: barrioName || '',
-      pinLocation: pinLocation || null,
-//      landmarks: landmarks || '',
-//      altNames: altNames || '',
-      comments: comments || '',
-      canContact: canContact || '',
-      comunidad: comunidad || '',
-//      claseSocial: claseSocial || '',
-//      genero: genero || '',
-      situacionDomicilio: situacionDomicilio || '',
-      submittedAt: new Date(),
-      sessionDuration: Date.now() - sessionStartTime.current,
-      deviceType,
-      language,
-      userRegion,
-      mapClickCount,
-      polygon: polygonGeoJson ? JSON.stringify(polygonGeoJson) : null
-    }
+      const fullSubmission = {
+        email: email || '',
+        age: age || '',
+        yearsInBarrio: yearsInBarrio || '',
+        barrioName: barrioName || '',
+        pinLocation: pinLocation || null,
+        altNames: altNames || '',
+        landmarks: landmarks || '',
+        comments: comments || '',
+        religionAffiliation: religionAffiliation || '',
+        selectedReligion: selectedReligion || '',
+        otherReligion: otherReligion || '',
+        comunidadesSeleccionadas: comunidadesSeleccionadas.map(c => c.value),
+        otraComunidadTexto: otraComunidadTexto || '',
+        nacimientoLugar: nacimientoLugar || '',
+        provinciaNacimiento: provinciaNacimiento || '',
+        paisNacimiento: paisNacimiento || '',
+        situacionDomicilio: situacionDomicilio || '',
+        canContact: canContact || '',
+        submittedAt: new Date(),
+        sessionDuration: Date.now() - sessionStartTime.current,
+        deviceType,
+        language,
+        userRegion,
+        mapClickCount,
+        polygon: polygonGeoJson ? JSON.stringify(polygonGeoJson) : null
+      }
+
   
     console.log('Submitting with:', {
       email, canProceedScreen4
@@ -306,9 +322,9 @@ function App() {
     
     <div style={{
       position: 'relative',
-      padding: (step >= 4 ? '2rem' : '0'),
-      maxWidth: (step >= 4 ? '700px' : 'none'),
-      margin: (step >= 4 ? '0 auto' : '0')
+      padding: step === 4 ? '2rem' : '0',
+      maxWidth: step === 4 ? '100%' : 'none',
+      margin: 0
     }}>
     
     {step === 1 || step === 5 ? (
@@ -331,13 +347,13 @@ function App() {
         >
           <h1>Ayudanos a mapear los barrios de Buenos Aires! 🗺️</h1>
           <p>
-          📌 ¿Dónde empieza y termina tu barrio? ¿Cómo se llama la zona? Cada día, porteños discuten los límites y nombres de sus barrios. Nuestra misión es construir un mapa colectivo de los barrios de CABA basado en cómo vos lo vivís.
+          📌 Para vos, ¿dónde empieza y termina tu barrio? Cada día, porteños discuten los límites y nombres de sus barrios. Nuestra misión es construir un mapa colectivo de los barrios de CABA basado en cómo vos lo vivís.
           </p>
           <p>  
           🚀 ¡Sumate al proyecto! Recibirás información sobre los resultados cuando esté completo. 
           </p>
           <p>
-            <span style={{color: '#ff3840' }}>Tus respuestas serán <em>anónimas</em> y usadas <em>exclusivamente para este proyecto.</em> </span>
+            <span style={{color: '#ff3840' }}>Tus respuestas serán <em>confidencial</em> y usadas <em>exclusivamente para este proyecto.</em> </span>
           </p>
           <button onClick={goNext}>Aceptar y comenzar ➡️</button>
           <p style={{ fontSize: '0.8rem', marginTop: '2rem' }}>
@@ -532,11 +548,11 @@ function App() {
                 fontSize: '0.9rem',
                 boxShadow: '0 8px 20px rgba(0, 0, 0, 0.3)'
               }}>
-                <h3 style={{ marginTop: 0, fontSize: '1.1rem' }}>📍 ¿Dónde están los límites de tu barrio?</h3>
+                <h3 style={{ marginTop: 0, fontSize: '1.1rem' }}>📍 ¿Dónde percibes los límites de tu barrio?</h3>
                 <p><strong>Cómo dibujar:</strong></p>
                 <ol style={{ textAlign: 'left', paddingLeft: '1.2rem', fontSize: '1rem' }}>
                   <li>📌 Tocá el mapa para los puntos para formar el contorno.</li>
-                  <li>✅ Hacé clic en el primer punto para cerrar el polígono.</li>
+                  <li>✅ Hacé clic en el primer punto para cerrarlo.</li>
                   <li>🔄 Si necesitás reiniciar, usá el icono de la papelera arriba a la derecha.</li>
                 </ol>
                 <button
@@ -578,7 +594,7 @@ function App() {
             textAlign: 'center',
             zIndex: 1000
           }}>
-            ✏️ Tocá el mapa para agregar puntos y cerrar el polígono
+            ✏️ Tocá el mapa para agregar puntos y cerrar el contorno en el primer punto
           </div>
         )}
 
@@ -649,189 +665,341 @@ function App() {
 
       {/* Step 4: MAS DETALLE */}
       <AnimatePresence mode="wait">
-        {step === 4 && (
-          <>
-            <BoundaryDrawScreen
-            polygonGeoJson={polygonGeoJson}
-            barrioName={barrioName}
-            readOnly={true}
-            pinLocation={pinLocation}
+{step === 4 && (
+  <>
+    <BoundaryDrawScreen
+      polygonGeoJson={polygonGeoJson}
+      barrioName={barrioName}
+      readOnly={true}
+      pinLocation={pinLocation}
+    />
+
+    <motion.div
+      key="step4"
+      initial={{ opacity: 0, x: -100 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -100 }}
+      transition={{ duration: 0.5, ease: 'easeInOut' }}
+      style={getFloatingStyle()}
+    >
+
+      <h2>📝 Contanos un poco más</h2>
+
+      {/* 🟣 Detalles del barrio */}
+      <div className="section-box">
+        <div className="section-title">
+          <span>📍</span> Detalles del barrio
+        </div>
+
+        {/* Otros nombres */}
+        <label style={{ marginBottom: '0.5rem', display: 'block' }}>¿Hay otros nombres para el barrio?</label>
+        <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
+          {['sí', 'no'].map(option => (
+            <button
+              key={option}
+              type="button"
+              onClick={() => setAltNames(option)}
+              style={{
+                padding: '0.5rem 1rem',
+                borderRadius: '6px',
+                fontSize: '0.85rem',
+                fontWeight: '500',
+                border: altNames === option ? '2px solid #00cc66' : '1px solid #ccc',
+                backgroundColor: altNames === option ? '#e6ffe6' : '#2c2c2c',
+                color: altNames === option ? '#000' : '#fff',
+                cursor: 'pointer',
+              }}
+            >
+              {option.toUpperCase()}
+            </button>
+          ))}
+        </div>
+
+        {altNames === 'sí' && (
+          <textarea
+            value={landmarks}
+            onChange={(e) => setLandmarks(e.target.value)}
+            rows={1}
+            placeholder="¿Cuál(es)?"
+            style={{ width: '95%' }}
           />
-                  <motion.div
-                    key="step4"
-                    initial={{ opacity: 0, x: -100 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -100 }}
-                    transition={{ duration: 0.5, ease: 'easeInOut' }}
-                    style={getFloatingStyle()}
-                  >
-            <h2>📝 Contanos un poco más</h2>
+        )}
 
-            {/* Open ended input */}
-            <div style={{ marginBottom: '1rem' }}>
-              <textarea
-                value={comments}
-                placeholder= "Opcional | ¿Hay otros nombres para la zona? ¿Cuáles calles o lugares la definen y/o querés contarnos algo más?"
-                onChange={(e) => setComments(e.target.value)}
-                style={{ width: '95%' }}
-                rows={4}
-              />
-            </div>
+        {/* Calles / Lugares */}
+        <label style={{ marginTop: '1rem', display: 'block', marginBottom: '0.5rem' }}>
+          ¿Cuáles calles o lugares definen el barrio? ¿Querés contarnos algo más?
+        </label>
+        <textarea
+          value={comments}
+          onChange={(e) => setComments(e.target.value)}
+          rows={3}
+          placeholder="Ej: La zona llega hasta la estación..."
+          style={{ width: '95%' }}
+        />
+      </div>
 
-            {/* Comunidad */}
-            <div style={{ marginBottom: '1rem' }}>
-              <textarea
-                value={comunidad}
-                placeholder= "Opcional | ¿Te considerás parte de una(s) comunidad(es) en particular? (ej. religiosa, étnica, tribu urbana)"
-                onChange={(e) => setComunidad(e.target.value)}
-                style={{ width: '95%' }}
-                rows={4}
-              />
-            </div>
+      {/* 🧍 Sobre vos */}
+      <div className="section-box">
+        <div className="section-title">
+          <span>🧍</span> Sobre vos
+        </div>
 
-            {/* Age  & años en el lugar*/}
-            <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
-            <select
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
-              style={{ flex: 1, padding: '0.5rem' }}
-              placeholder="Edad"
+        {/* Comunidad religiosa */}
+        <label style={{ display: 'block', marginBottom: '0.5rem' }}>¿Te considerás parte de una comunidad religiosa?</label>
+        <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
+          {['sí', 'no'].map(option => (
+            <button
+              key={option}
+              type="button"
+              onClick={() => {
+                setReligionAffiliation(option)
+                if (option === 'no') {
+                  setSelectedReligion('')
+                  setOtherReligion('')
+                }
+              }}
+              style={{
+                padding: '0.5rem 1rem',
+                borderRadius: '6px',
+                fontSize: '0.85rem',
+                fontWeight: '500',
+                border: religionAffiliation === option ? '2px solid #00cc66' : '1px solid #ccc',
+                backgroundColor: religionAffiliation === option ? '#e6ffe6' : '#2c2c2c',
+                color: religionAffiliation === option ? '#000' : '#fff',
+                cursor: 'pointer'
+              }}
             >
-              <option value="">Edad</option>
-              <option value="<20">Menos de 20</option>
-              <option value="20–29">20–29</option>
-              <option value="30–39">30–39</option>
-              <option value="40–49">40–49</option>
-              <option value="50–59">50–59</option>
-              <option value="60–69">60–69</option>
-              <option value="70+">70 o más</option>
+              {option.toUpperCase()}
+            </button>
+          ))}
+        </div>
+
+        {religionAffiliation === 'sí' && (
+          <>
+            <select
+              value={selectedReligion}
+              onChange={(e) => setSelectedReligion(e.target.value)}
+              style={{ width: '95%' }}
+            >
+              <option value="">Elegí una opción</option>
+              <option value="católica">Católica</option>
+              <option value="evangélica">Evangélica</option>
+              <option value="judía">Judía</option>
+              <option value="musulmana">Musulmana</option>
+              <option value="otro cristianismo">Otro tipo de cristianismo</option>
+              <option value="otro">Otro</option>
             </select>
 
-            <select
-              value={yearsInBarrio}
-              onChange={(e) => setYearsInBarrio(e.target.value)}
-              style={{ flex: 1, padding: '0.5rem' }}
-              placeholder="Años en el barrio"
-            >
-              <option value="">Años en barrio</option>
-              <option value="<1">Menos de 1 año</option>
-              <option value="1–5">1–5 años</option>
-              <option value="6–10">6–10 años</option>
-              <option value="10+">Más de 10 años</option>
-              <option value="toda_la_vida">Toda mi vida</option>
-            </select>
-          </div>
-
-            {/* Situación Domicilio */}
-            <div style={{ marginBottom: '1rem' }}>
-              <label>OPCIONAL: Describe tu situación de domicilio</label>
-              <div style={{ display: 'flex', gap: '2rem', marginTop: '0.5rem' }}>
-                {[
-                  { value: 'dueño', label: 'Dueño' },
-                  { value: 'alquiler', label: 'Alquiler' },
-                  { value: 'familiar', label: 'Domicilio de conocidos' }
-                ].map(({ value, label }) => (
-                  <div key={value} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <input
-                      type="radio"
-                      name="situacionDomicilio"
-                      value={value}
-                      checked={situacionDomicilio === value}
-                      onChange={() => setSituacionDomicilio(value)}
-                    />
-                    <span>{label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Email */}
-            <div style={{ marginBottom: '1rem' }}>
+            {selectedReligion === 'otro' && (
               <input
-                type="email"
-                placeholder="Email (opcional)"
-                value={email}
-                style={{ width: '75%' }}
-                onChange={(e) => setEmail(e.target.value)}
+                type="text"
+                value={otherReligion}
+                onChange={(e) => setOtherReligion(e.target.value)}
+                placeholder="Especificá"
+                style={{ width: '50%', marginTop: '0.5rem' }}
               />
-            </div>
-
-                {/* Contact permission - vertical radio buttons */}
-                <div style={{ marginBottom: '1rem', width: '100%' }}>
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      fontSize: '0.9rem',
-                      color: '#fff'
-                    }}>
-                      <input
-                        type="checkbox"
-                        checked={canContact === 'sí'}
-                        onChange={(e) => setCanContact(e.target.checked ? 'sí' : 'no')}
-                        style={{
-                          marginRight: '0.5rem',
-                          transform: 'scale(1.1)',
-                          appearance: 'checkbox',
-                          accentColor: '#fff',
-                          width: '18px',
-                          height: '18px',
-                          cursor: 'pointer'
-                        }}
-                      />
-                      <label style={{
-                        cursor: 'pointer',
-                        margin: 0,
-                        lineHeight: 1.2
-                      }}>
-                        Estoy de acuerdo en que me contacten más adelante
-                      </label>
-                    </div>
-                  </div>
-
-
-            {/* Navigation Buttons */}
-            <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-              <AnimatePresence>
-                {!canProceedScreen4 && (
-                  <motion.p
-                    key="tooltip"
-                    initial={{ opacity: 0, y: -5 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -5 }}
-                    transition={{ duration: 0.3 }}
-                    style={{
-                      fontSize: '0.75rem',
-                      color: '#bbb',
-                      textAlign: 'center',
-                      marginBottom: '0.5rem'
-                    }}
-                  >
-                    Ingresá un email para enviar
-                  </motion.p>
-                )}
-              </AnimatePresence>
-
-              <div style={{ display: 'flex', gap: '1rem' }}>
-                <button onClick={goBack} className="btn-nav">
-                  Volver
-                  <span>⬅️</span>
-                </button>
-
-                <MotionButton
-                  onClick={handleSubmit}
-                  className={`btn-nav ${canProceedScreen4 ? 'btn-next' : 'btn-disabled'}`}
-                  disabled={!canProceedScreen4}
-                  animate={{ scale: canProceedScreen4 ? 1 : 0.98 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  Enviar
-                  <span>➡️</span>
-                </MotionButton>
-              </div>
-            </div>
-            </motion.div>
+            )}
           </>
         )}
+
+        {/* Otras comunidades */}
+        <label style={{ marginTop: '1.25rem', display: 'block' }}>¿Te considerás parte de otra(s) comunidad(es)?</label>
+        <Select
+          isMulti
+          options={comunidadOptions}
+          placeholder="Elegir comunidad(es)..."
+          value={comunidadesSeleccionadas}
+          onChange={setComunidadesSeleccionadas}
+          classNamePrefix="react-select"
+          styles={{
+    control: (base) => ({
+      ...base,
+      width: '95%',
+      padding: '0.5rem',
+      fontSize: '0.9rem',
+      backgroundColor: '#111',
+      color: '#fff',
+      borderRadius: '6px',
+      border: '1px solid #ccc'
+    }),
+    multiValue: (base) => ({
+      ...base,
+      backgroundColor: '#e6ffe6'
+    }),
+    multiValueLabel: (base) => ({
+      ...base,
+      color: '#fff',         // ✅ ensure text is readable
+      fontWeight: '600'
+    }),
+    option: (base, { isSelected }) => ({
+      ...base,
+      backgroundColor: isSelected ? '#00cc66' : '#111',
+      color: '#fff'
+    })
+  }}
+        />
+
+        {comunidadesSeleccionadas.some(opt => opt.value === 'otra') && (
+          <input
+            type="text"
+            value={otraComunidadTexto}
+            onChange={(e) => setOtraComunidadTexto(e.target.value)}
+            placeholder="Especificá otra"
+            style={{ width: '50%', marginTop: '0.5rem' }}
+          />
+        )}
+
+        {/* Lugar de nacimiento */}
+        <label style={{ marginTop: '1.25rem', display: 'block' }}>¿Dónde naciste?</label>
+        <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '0.75rem' }}>
+          {['Gran BA', 'Otro Arg', 'Otro país'].map(option => (
+            <button
+              key={option}
+              type="button"
+              onClick={() => {
+                setNacimientoLugar(option)
+                setProvinciaNacimiento('')
+                setPaisNacimiento('')
+              }}
+              style={{
+                padding: '0.4rem 0.75rem',
+                borderRadius: '6px',
+                fontSize: '0.8rem',
+                fontWeight: '500',
+                border: nacimientoLugar === option ? '2px solid #00cc66' : '1px solid #ccc',
+                backgroundColor: nacimientoLugar === option ? '#e6ffe6' : '#2c2c2c',
+                color: nacimientoLugar === option ? '#000' : '#fff',
+                cursor: 'pointer',
+                whiteSpace: 'nowrap'
+              }}
+            >
+              {option}
+            </button>
+          ))}
+        </div>
+
+        {nacimientoLugar === 'Otro Arg' && (
+          <Select
+            options={provincias}
+            placeholder="Elegí tu provincia"
+            value={provincias.find(p => p.value === provinciaNacimiento)}
+            onChange={(selected) => setProvinciaNacimiento(selected.value)}
+            classNamePrefix="react-select"
+          />
+        )}
+
+        {nacimientoLugar === 'Otro país' && (
+          <Select
+            options={paises}
+            placeholder="Elegí tu país"
+            value={paises.find(p => p.value === paisNacimiento)}
+            onChange={(selected) => setPaisNacimiento(selected.value)}
+            classNamePrefix="react-select"
+          />
+        )}
+
+        {/* Edad / años */}
+        <div style={{ display: 'flex', gap: '1rem', marginTop: '1.25rem' }}>
+          <select value={age} onChange={(e) => setAge(e.target.value)} style={{ flex: 1 }}>
+            <option value="">Edad</option>
+            <option value="<20">Menos de 20</option>
+            <option value="20–29">20–29</option>
+            <option value="30–39">30–39</option>
+            <option value="40–49">40–49</option>
+            <option value="50–59">50–59</option>
+            <option value="60–69">60–69</option>
+            <option value="70+">70 o más</option>
+          </select>
+
+          <select value={yearsInBarrio} onChange={(e) => setYearsInBarrio(e.target.value)} style={{ flex: 1 }}>
+            <option value="">Años en barrio</option>
+            <option value="<1">Menos de 1 año</option>
+            <option value="1–5">1–5 años</option>
+            <option value="6–10">6–10 años</option>
+            <option value="10+">Más de 10 años</option>
+            <option value="toda_la_vida">Toda mi vida</option>
+          </select>
+        </div>
+
+        {/* Domicilio */}
+        <label style={{ marginTop: '1.25rem', display: 'block' }}>Para mi domicilio...</label>
+        <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+          {[
+            { value: 'dueño', label: 'Soy dueño' },
+            { value: 'alquiler', label: 'Alquilo' },
+            { value: 'familiar', label: 'Me lo presta un conocido/familiar' }
+          ].map(({ value, label }) => (
+            <button
+              key={value}
+              onClick={() => setSituacionDomicilio(value)}
+              type="button"
+              style={{
+                padding: '0.5rem 0.75rem',
+                borderRadius: '6px',
+                fontSize: '0.85rem',
+                fontWeight: '500',
+                border: situacionDomicilio === value ? '2px solid #00cc66' : '1px solid #ccc',
+                backgroundColor: situacionDomicilio === value ? '#e6ffe6' : '#2c2c2c',
+                color: situacionDomicilio === value ? '#000' : '#fff',
+                cursor: 'pointer',
+                whiteSpace: 'nowrap'
+              }}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* ✉️ Contacto */}
+      <div className="section-box">
+        <input
+          type="email"
+          placeholder="Email (opcional)"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          style={{ width: '95%', marginBottom: '0.75rem' }}
+        />
+
+<div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+  <input
+    type="checkbox"
+    checked={canContact === 'sí'}
+    onChange={(e) => setCanContact(e.target.checked ? 'sí' : 'no')}
+    style={{
+      transform: 'scale(1.1)',
+      appearance: 'checkbox',
+      accentColor: '#fff',
+      width: '18px',
+      height: '18px',
+      cursor: 'pointer'
+    }}
+  />
+  <label style={{ margin: 0, lineHeight: 1.2, fontSize: '0.9rem', color: '#fff' }}>
+    Estoy de acuerdo en que me contacten más adelante
+  </label>
+</div>
+      </div>
+
+      {/* Navigation Buttons */}
+      <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+        <div style={{ display: 'flex', gap: '1rem' }}>
+          <button onClick={goBack} className="btn-nav">Volver ⬅️</button>
+          <MotionButton
+            onClick={handleSubmit}
+            className={`btn-nav ${canProceedScreen4 ? 'btn-next' : 'btn-disabled'}`}
+            disabled={!canProceedScreen4}
+            animate={{ scale: canProceedScreen4 ? 1 : 0.98 }}
+            transition={{ duration: 0.2 }}
+          >
+            Enviar ➡️
+          </MotionButton>
+        </div>
+      </div>
+
+    </motion.div>
+  </>
+)}
         </AnimatePresence>
 
       {/* Step 5 */}

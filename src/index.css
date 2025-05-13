@@ -1,9 +1,8 @@
-/* src/index.css */
-
+/* Global font - clean, sans-serif, academic */
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   background-color: #000;
   color: #fff;
 }
@@ -29,4 +28,70 @@ input, select, textarea {
   border: 1px solid #444;
   padding: 0.5rem;
   border-radius: 4px;
+  font-family: inherit;
+}
+
+/* Section Containers */
+.section-box {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem auto; /* centers the box */
+  width: 95%;
+  max-width: 600px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+
+.section-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-title span {
+  font-size: 1.1rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* React Select dark theme */
+.react-select__control {
+  background-color: #111 !important;
+  color: #fff !important;
+  border-color: #444 !important;
+}
+
+.react-select__menu {
+  background-color: #222 !important;
+  color: #fff !important;
+}
+
+.react-select__option {
+  background-color: #222 !important;
+  color: #fff !important;
+}
+
+.react-select__option--is-focused {
+  background-color: #333 !important;
+}
+
+.react-select__multi-value {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+.react-select__single-value {
+  color: #fff !important;
+}
+
+/* Updated map sizings */
+.mapboxgl-ctrl-group button {
+  width: 42px !important;
+  height: 42px !important;
+  font-size: 1.5rem !important;
 }

@@ -239,6 +239,92 @@
         "coordinates": [
           [
             [
+              -58.42658451151553,
+              -34.577849717445396
+            ],
+            [
+              -58.43340805124906,
+              -34.57594162719929
+            ],
+            [
+              -58.43482425760922,
+              -34.575199580276276
+            ],
+            [
+              -58.442034035441054,
+              -34.571489246306285
+            ],
+            [
+              -58.43877246927897,
+              -34.5691569516289
+            ],
+            [
+              -58.43735626291878,
+              -34.56830882825357
+            ],
+            [
+              -58.43933036875403,
+              -34.566117802829574
+            ],
+            [
+              -58.445674215283276,
+              -34.560994753418946
+            ],
+            [
+              -58.44202606298532,
+              -34.56229073157605
+            ],
+            [
+              -58.438377910687365,
+              -34.56282089863894
+            ],
+            [
+              -58.436375003543674,
+              -34.56364559624107
+            ],
+            [
+              -58.428649504559715,
+              -34.568181286874996
+            ],
+            [
+              -58.423499171903984,
+              -34.57100860521217
+            ],
+            [
+              -58.42658451151553,
+              -34.577849717445396
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Las Cañitas",
+        "fillColor": "#A133FF",
+        "pinLocation": {
+          "lat": -34.5716942030548,
+          "lng": -58.429288178203365
+        },
+        "comments": "",
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "comunidad": "",
+        "situacionDomicilio": "",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "desktop",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-10T23:53:21.592Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
               -58.475551779923634,
               -34.563351198940474
             ],
@@ -380,7 +466,7 @@
       },
       "properties": {
         "barrio": "Belgrano R",
-        "fillColor": "#A133FF",
+        "fillColor": "#33FFF5",
         "pinLocation": {
           "lat": -34.563340155758205,
           "lng": -58.46715647525379
@@ -430,7 +516,7 @@
       },
       "properties": {
         "barrio": "Las Cañitas",
-        "fillColor": "#33FFF5",
+        "fillColor": "#A133FF",
         "pinLocation": {
           "lat": -34.5682724733659,
           "lng": -58.43564629855044
@@ -692,7 +778,7 @@
       },
       "properties": {
         "barrio": "Las Cañitas",
-        "fillColor": "#33FFF5",
+        "fillColor": "#A133FF",
         "pinLocation": {
           "lat": -34.57178058427991,
           "lng": -58.429388990948524
@@ -709,6 +795,134 @@
         "mapClicks": 0,
         "canContact": "sí",
         "timestamp": "2025-05-04T19:28:21.865Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.438095222699715,
+              -34.562630082330685
+            ],
+            [
+              -58.43637946940353,
+              -34.56351265329758
+            ],
+            [
+              -58.44706639783594,
+              -34.57385375088305
+            ],
+            [
+              -58.45764762988304,
+              -34.56930101266907
+            ],
+            [
+              -58.46716773806767,
+              -34.557848831722694
+            ],
+            [
+              -58.458636970927394,
+              -34.55321519529901
+            ],
+            [
+              -58.45309669928545,
+              -34.550531290410255
+            ],
+            [
+              -58.45083235559457,
+              -34.55277839619371
+            ],
+            [
+              -58.441822296636566,
+              -34.54782863761742
+            ],
+            [
+              -58.434653437022064,
+              -34.55395894155769
+            ],
+            [
+              -58.441667415500625,
+              -34.558917239572224
+            ],
+            [
+              -58.438095222699715,
+              -34.562630082330685
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Belgrano / límite con Colegiales",
+        "fillColor": "#FF5733",
+        "pinLocation": {
+          "lat": -34.56868158496291,
+          "lng": -58.447504339173264
+        },
+        "comments": "",
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "toda_la_vida",
+        "comunidad": "No",
+        "situacionDomicilio": "",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "desktop",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-10T14:59:47.687Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.381349007405646,
+              -34.58881856325489
+            ],
+            [
+              -58.38185647127496,
+              -34.60375712644824
+            ],
+            [
+              -58.41202103951551,
+              -34.59792961747408
+            ],
+            [
+              -58.39599342980884,
+              -34.581797316005584
+            ],
+            [
+              -58.381349007405646,
+              -34.58881856325489
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Recoleta",
+        "fillColor": "#33FF57",
+        "pinLocation": {
+          "lat": -34.58699094818079,
+          "lng": -58.39762684935464
+        },
+        "comments": "",
+        "email": "sofidangelo149@gmail.com",
+        "age": "20–29",
+        "yearsInBarrio": "<1",
+        "comunidad": "",
+        "situacionDomicilio": "alquiler",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "mobile",
+        "mapClicks": 2,
+        "canContact": "no",
+        "timestamp": "2025-05-11T04:35:53.878Z"
       }
     },
     {
@@ -758,7 +972,7 @@
       },
       "properties": {
         "barrio": "Las Cañitas",
-        "fillColor": "#33FFF5",
+        "fillColor": "#A133FF",
         "pinLocation": {
           "lat": -34.57157733862026,
           "lng": -58.429393025091116
@@ -832,7 +1046,7 @@
       },
       "properties": {
         "barrio": "Chacalermo",
-        "fillColor": "#FF5733",
+        "fillColor": "#3357FF",
         "pinLocation": {
           "lat": -34.58293134636718,
           "lng": -58.44830486557696
@@ -886,7 +1100,7 @@
       },
       "properties": {
         "barrio": "Palermo Sensible",
-        "fillColor": "#33FF57",
+        "fillColor": "#FF33A1",
         "pinLocation": {
           "lat": -34.59141638057281,
           "lng": -58.41413692747733
@@ -980,7 +1194,7 @@
       },
       "properties": {
         "barrio": "Villa Pueyrredón",
-        "fillColor": "#3357FF",
+        "fillColor": "#A133FF",
         "pinLocation": {
           "lat": -34.5827319450675,
           "lng": -58.498854038444804
@@ -1112,7 +1326,7 @@
       },
       "properties": {
         "barrio": "Parque Patricios",
-        "fillColor": "#FF33A1",
+        "fillColor": "#33FFF5",
         "pinLocation": {
           "lat": -34.635247227068454,
           "lng": -58.401226315837135
@@ -1129,6 +1343,110 @@
         "mapClicks": 0,
         "canContact": "no",
         "timestamp": "2025-05-05T10:30:18.133Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.43884535980179,
+              -34.635273296045455
+            ],
+            [
+              -58.43463965606621,
+              -34.634108052205136
+            ],
+            [
+              -58.43768664550667,
+              -34.63057691030777
+            ],
+            [
+              -58.441119873046276,
+              -34.63216594276337
+            ],
+            [
+              -58.43884535980179,
+              -34.635273296045455
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Parque Chacabuco",
+        "fillColor": "#F5FF33",
+        "pinLocation": {
+          "lat": -34.633677261591075,
+          "lng": -58.43888827514745
+        },
+        "comments": "",
+        "email": "test",
+        "age": "",
+        "yearsInBarrio": "",
+        "comunidad": "",
+        "situacionDomicilio": "",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "desktop",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-11T00:02:07.994Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.458419603441044,
+              -34.57824880577914
+            ],
+            [
+              -58.451278970152714,
+              -34.58053280107018
+            ],
+            [
+              -58.444573459488396,
+              -34.58320015594206
+            ],
+            [
+              -58.43650814143824,
+              -34.57579775226979
+            ],
+            [
+              -58.450126030847926,
+              -34.567004342056705
+            ],
+            [
+              -58.458419603441044,
+              -34.57824880577914
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "Colegiales",
+        "fillColor": "#FF8F33",
+        "pinLocation": {
+          "lat": -34.57432905601711,
+          "lng": -58.453351038150785
+        },
+        "comments": "",
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "comunidad": "",
+        "situacionDomicilio": "dueño",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-08T16:33:50.544Z"
       }
     },
     {
@@ -1158,7 +1476,7 @@
       },
       "properties": {
         "barrio": "Barrio Norte",
-        "fillColor": "#A133FF",
+        "fillColor": "#33FF8F",
         "pinLocation": {
           "lat": -34.59038334663038,
           "lng": -58.41653172606003
@@ -1262,7 +1580,7 @@
       },
       "properties": {
         "barrio": "v",
-        "fillColor": "#33FFF5",
+        "fillColor": "#8F33FF",
         "pinLocation": {
           "lat": -34.57892690865754,
           "lng": -58.439178948561064
@@ -1428,7 +1746,7 @@
       },
       "properties": {
         "barrio": "Belgrano R",
-        "fillColor": "#A133FF",
+        "fillColor": "#33FFF5",
         "pinLocation": {
           "lat": -34.563340155758205,
           "lng": -58.46715647525379
@@ -1474,7 +1792,7 @@
       },
       "properties": {
         "barrio": "Parque Avellaneda",
-        "fillColor": "#F5FF33",
+        "fillColor": "#FF5733",
         "pinLocation": {
           "lat": -34.60349865476773,
           "lng": -58.45605441284145
@@ -1524,7 +1842,7 @@
       },
       "properties": {
         "barrio": "Las Cañitas",
-        "fillColor": "#33FFF5",
+        "fillColor": "#A133FF",
         "pinLocation": {
           "lat": -34.568899962934225,
           "lng": -58.43436549709307
@@ -1636,7 +1954,7 @@
       },
       "properties": {
         "barrio": "villa 31",
-        "fillColor": "#FF8F33",
+        "fillColor": "#33FF57",
         "pinLocation": {
           "lat": -34.58295538531161,
           "lng": -58.37794848632885
@@ -1718,7 +2036,7 @@
       },
       "properties": {
         "barrio": "Parque Patricios",
-        "fillColor": "#FF33A1",
+        "fillColor": "#33FFF5",
         "pinLocation": {
           "lat": -34.635247227068454,
           "lng": -58.401226315837135
@@ -1735,6 +2053,52 @@
         "mapClicks": 0,
         "canContact": "no",
         "timestamp": "2025-05-05T10:36:02.827Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.43682833862303,
+              -34.604696119091315
+            ],
+            [
+              -58.43382426452676,
+              -34.602258783688036
+            ],
+            [
+              -58.43991824340846,
+              -34.60024527874708
+            ],
+            [
+              -58.43682833862303,
+              -34.604696119091315
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "test",
+        "fillColor": "#3357FF",
+        "pinLocation": {
+          "lat": -34.6037,
+          "lng": -58.437
+        },
+        "comments": "",
+        "email": "test",
+        "age": "",
+        "yearsInBarrio": "",
+        "comunidad": "",
+        "situacionDomicilio": "",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "desktop",
+        "mapClicks": 0,
+        "canContact": "",
+        "timestamp": "2025-05-11T00:21:13.979Z"
       }
     },
     {
@@ -1768,7 +2132,7 @@
       },
       "properties": {
         "barrio": "Recoleta",
-        "fillColor": "#33FF8F",
+        "fillColor": "#33FF57",
         "pinLocation": {
           "lat": -34.59251154018976,
           "lng": -58.3932972809872
@@ -1916,7 +2280,7 @@
       },
       "properties": {
         "barrio": "Caballito",
-        "fillColor": "#8F33FF",
+        "fillColor": "#FF33A1",
         "pinLocation": {
           "lat": -34.61802845239674,
           "lng": -58.438956453490235
@@ -1933,6 +2297,52 @@
         "mapClicks": 1,
         "canContact": "",
         "timestamp": "2025-05-08T00:42:01.359Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.44420977783325,
+              -34.62333759953176
+            ],
+            [
+              -58.439918243409295,
+              -34.61821673004925
+            ],
+            [
+              -58.44923231365533,
+              -34.62073001679633
+            ],
+            [
+              -58.44420977783325,
+              -34.62333759953176
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "barrio": "test",
+        "fillColor": "#3357FF",
+        "pinLocation": {
+          "lat": -34.62054058510915,
+          "lng": -58.444209777833194
+        },
+        "comments": "",
+        "email": "test",
+        "age": "",
+        "yearsInBarrio": "",
+        "comunidad": "",
+        "situacionDomicilio": "",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "desktop",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-11T00:15:39.545Z"
       }
     },
     {
@@ -2002,7 +2412,7 @@
       },
       "properties": {
         "barrio": "Belgrano C",
-        "fillColor": "#FF5733",
+        "fillColor": "#A133FF",
         "pinLocation": {
           "lat": -34.559877334280266,
           "lng": -58.45062366185485
