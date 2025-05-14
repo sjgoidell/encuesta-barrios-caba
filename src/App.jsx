@@ -1003,13 +1003,71 @@ function App() {
         </AnimatePresence>
 
       {/* Step 5 */}
-      {step === 5 && (
+{step === 5 && (
+  <div style={{ textAlign: 'center', padding: '2rem' }}>
+    <h2>✅ ¡Gracias por mapear tu barrio!</h2>
+    <p>Tu aporte es muy valioso para el mapa colectivo de Buenos Aires. 🚀</p>
+
+    <button onClick={goBack} className="btn-nav">
+      Volver<span>⬅️</span>
+    </button>
+
+    <hr style={{ margin: '2rem auto', width: '60%', borderColor: '#444' }} />
+
+    <h3 style={{ marginBottom: '1rem' }}>📣 Compartí el proyecto</h3>
+
+    {/** 👇 FIX: Declare once at top of block **/}
+    {(() => {
+      const shareUrl = 'https://dondevivocaba.com/?utm_source=whatsapp&utm_medium=share&utm_campaign=postsubmit'
+      const shareText = 'Yo ya mapeé mi barrio. Sumate vos también al mapa colectivo de CABA 🗺️'
+
+      return (
         <>
-          <h2>✅ ¡Gracias por mapear tu barrio!</h2>
-          <p>Tu aporte es muy valioso para el mapa colectivo de Buenos Aires. 🚀</p>
-          <button onClick={goBack} className="btn-nav">Volver<span>⬅️</span></button>
+          <button
+            onClick={() => {
+              if (navigator.share) {
+                navigator.share({
+                  title: 'Mapa de Barrios CABA',
+                  text: shareText,
+                  url: shareUrl
+                }).catch(err => console.log('Share cancelled or failed', err))
+              } else {
+                window.open(`https://wa.me/?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`, '_blank')
+              }
+            }}
+            style={{
+              marginTop: '1rem',
+              padding: '0.75rem 1.5rem',
+              fontSize: '1rem',
+              fontWeight: '600',
+              backgroundColor: '#25D366',
+              color: '#000',
+              border: 'none',
+              borderRadius: '8px',
+              cursor: 'pointer'
+            }}
+          >
+            📲 Compartir en WhatsApp
+          </button>
+
+          <div style={{ marginTop: '1rem', fontSize: '0.9rem' }}>
+            <p>O copiá el link: <br />
+              <code style={{ userSelect: 'all', cursor: 'pointer' }}
+                onClick={() => {
+                  navigator.clipboard.writeText(shareUrl)
+                  alert('¡Link copiado!')
+                }}
+              >
+                https://dondevivocaba.com
+              </code>
+            </p>
+          </div>
         </>
-      )}
+      )
+    })()}
+  </div>
+)}
+
 
 {/* Progress Bar */}
 {step >= 1 && step <= 4 && (
