@@ -207,50 +207,44 @@ const BoundaryDrawScreen = ({
     }}>
       <div ref={mapContainerRef} style={{ height: '100%', width: '100%' }} />
 
-    {showResetButton && (
-      <div style={{
-        position: 'absolute',
-        top: isPinInsidePolygon ? '7%' : '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        zIndex: 1000,
-        textAlign: 'center',
-        backgroundColor: isPinInsidePolygon ? 'transparent' : 'rgba(255, 255, 255, 0.9)',
-        padding: isPinInsidePolygon ? '0' : '2rem',
-        borderRadius: isPinInsidePolygon ? '0' : '12px',
-        boxShadow: isPinInsidePolygon ? 'none' : '0 4px 12px rgba(0, 0, 0, 0.2)',
-        maxWidth: '400px',
-        minWidth: '280px'
-      }}>
-        <button
-          onClick={() => {
-            drawRef.current.deleteAll()
-            setPolygonGeoJson(null)
-            setShowResetButton(false)
-            setIsPinInsidePolygon(true)
-            drawRef.current.changeMode('draw_polygon')
-          }}
-          style={{
-            backgroundColor: isPinInsidePolygon ? '#fff8b3' : '#ffc1c1',
-            color: '#000',
-            padding: '0.75rem 1.5rem',
-            fontSize: '1rem',
-            fontWeight: '600',
-            border: isPinInsidePolygon ? '2px solid #FFD700' : '2px solid red',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
-          }}
-        >
-          🔄 Empezá de nuevo
-        </button>
-        {!isPinInsidePolygon && (
-          <div style={{ marginTop: '1rem', color: '#c00', fontWeight: 400, fontSize: '1rem' }}>
-            El marcador rojo debe estar dentro del barrio que dibujaste.
-          </div>
-        )}
+{showResetButton && (
+  <div style={{
+    position: 'absolute',
+    top: '7%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    zIndex: 1000,
+    textAlign: 'center'
+  }}>
+    <button
+      onClick={() => {
+        drawRef.current.deleteAll()
+        setPolygonGeoJson(null)
+        setShowResetButton(false)
+        setIsPinInsidePolygon(true)
+        drawRef.current.changeMode('draw_polygon')
+      }}
+      style={{
+        backgroundColor: isPinInsidePolygon ? '#fff8b3' : '#ffc1c1',
+        color: '#000',
+        padding: '0.75rem 1.5rem',
+        fontSize: '1rem',
+        fontWeight: '600',
+        border: isPinInsidePolygon ? '2px solid #FFD700' : '2px solid red',
+        borderRadius: '8px',
+        cursor: 'pointer',
+        boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
+      }}
+    >
+      🔄 Empezá de nuevo
+    </button>
+    {!isPinInsidePolygon && (
+      <div style={{ marginTop: '0.5rem', color: 'red', fontWeight: 500 }}>
+        Asegurate de incluir el marcador rojo dentro del barrio.
       </div>
     )}
+  </div>
+)}
     </div>
   )
 }

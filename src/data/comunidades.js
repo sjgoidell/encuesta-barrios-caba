@@ -1,5 +1,6 @@
 const comunidadOptions = [
   { value: 'afrodescendiente', label: 'Afrodescendiente' },
+  { value: 'expatriado', label: 'Expatriado/a' },
   { value: 'pueblos_originarios', label: 'Pueblos originarios' },
   { value: 'gitano', label: 'Gitano/a' },
   { value: 'armenio', label: 'Armenio/a' },
@@ -15,20 +16,12 @@ const comunidadOptions = [
   { value: 'colombiano', label: 'Colombiano/a' },
   { value: 'migrante', label: 'Migrante' },
   { value: 'lgbtq', label: 'LGBT+' },
-  { value: 'trans_travesti', label: 'Travesti / trans' },
-  { value: 'no_binarie', label: 'No binarie' },
   { value: 'feminista', label: 'Feminista' },
-  { value: 'villero', label: 'Villero/a' },
-  { value: 'cartonero', label: 'Cartonero/a' },
   { value: 'estudiante', label: 'Estudiante' },
   { value: 'artista', label: 'Artista / cultural' },
   { value: 'ambientalista', label: 'Ambientalista' },
   { value: 'club_barrio', label: 'Club de barrio' },
-  { value: 'gamer', label: 'Gamer' },
   { value: 'hincha_futbol', label: 'Hincha de fútbol' },
-  { value: 'militante', label: 'Militante político/a' },
-  { value: 'vegano', label: 'Vegano/a / vegetariano/a' },
-  { value: 'economia_popular', label: 'Trabajador/a de la economía popular' },
   { value: 'otra', label: 'Otra' } // esta activa el input condicional
 ]
 
