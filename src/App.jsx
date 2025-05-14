@@ -347,13 +347,13 @@ function App() {
         >
           <h1>Ayudanos a mapear los barrios de Buenos Aires! 🗺️</h1>
           <p>
-          📌 Para vos, ¿dónde empieza y termina tu barrio? Cada día, porteños discuten los límites y nombres de sus barrios. Nuestra misión es construir un mapa colectivo de los barrios de CABA basado en cómo vos lo vivís.
+          📌 Para vos, ¿dónde empieza y termina tu barrio? Cada día, los porteños discuten los límites y nombres de sus barrios. Nuestra misión es construir juntos un mapa colectivo de la Ciudad de Buenos Aires.
           </p>
           <p>  
           🚀 ¡Sumate al proyecto! Recibirás información sobre los resultados cuando esté completo. 
           </p>
           <p>
-            <span style={{color: '#ff3840' }}>Tus respuestas serán <em>confidencial</em> y usadas <em>exclusivamente para este proyecto.</em> </span>
+            <span style={{color: '#ff3840' }}>Tus respuestas serán <em>confidencial</em>, serán usadas <em>exclusivamente para este proyecto.</em> </span>
           </p>
           <button onClick={goNext}>Aceptar y comenzar ➡️</button>
           <p style={{ fontSize: '0.8rem', marginTop: '2rem' }}>
@@ -548,10 +548,10 @@ function App() {
                 fontSize: '0.9rem',
                 boxShadow: '0 8px 20px rgba(0, 0, 0, 0.3)'
               }}>
-                <h3 style={{ marginTop: 0, fontSize: '1.1rem' }}>📍 ¿Dónde percibes los límites de tu barrio?</h3>
+                <h3 style={{ marginTop: 0, fontSize: '1.1rem' }}>📍 Dibujemos los límites de tu barrio</h3>
                 <p><strong>Cómo dibujar:</strong></p>
                 <ol style={{ textAlign: 'left', paddingLeft: '1.2rem', fontSize: '1rem' }}>
-                  <li>📌 Tocá el mapa para los puntos para formar el contorno.</li>
+                  <li>📌 Marca en el mapa los puntos.</li>
                   <li>✅ Hacé clic en el primer punto para cerrarlo.</li>
                   <li>🔄 Si necesitás reiniciar, usá el icono de la papelera arriba a la derecha.</li>
                 </ol>
@@ -594,7 +594,7 @@ function App() {
             textAlign: 'center',
             zIndex: 1000
           }}>
-            ✏️ Tocá el mapa para agregar puntos y cerrar el contorno en el primer punto
+            ✏️ Marcá con puntos el contorno de tu barrio. El último punto debe coincidir con el primero
           </div>
         )}
 
@@ -727,7 +727,7 @@ function App() {
 
         {/* Calles / Lugares */}
         <label style={{ marginTop: '1rem', display: 'block', marginBottom: '0.5rem' }}>
-          ¿Cuáles calles o lugares definen el barrio? ¿Querés contarnos algo más?
+          ¿Qué define a tu barrio? ¿Querés contarnos algo más?
         </label>
         <textarea
           value={comments}
@@ -852,7 +852,7 @@ function App() {
         {/* Lugar de nacimiento */}
         <label style={{ marginTop: '1.25rem', display: 'block' }}>¿Dónde naciste?</label>
         <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '0.75rem' }}>
-          {['Gran BA', 'Otro Arg', 'Otro país'].map(option => (
+          {['Gran BA', 'Otra Provincia', 'Otro país'].map(option => (
             <button
               key={option}
               type="button"
@@ -878,7 +878,7 @@ function App() {
           ))}
         </div>
 
-        {nacimientoLugar === 'Otro Arg' && (
+        {nacimientoLugar === 'Otra Provincia' && (
           <Select
             options={provincias}
             placeholder="Elegí tu provincia"
@@ -922,7 +922,7 @@ function App() {
         </div>
 
         {/* Domicilio */}
-        <label style={{ marginTop: '1.25rem', display: 'block' }}>Para mi domicilio...</label>
+        <label style={{ marginTop: '1.25rem', display: 'block' }}>Domicilio...</label>
         <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
           {[
             { value: 'dueño', label: 'Soy dueño' },
