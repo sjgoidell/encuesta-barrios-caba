@@ -868,7 +868,7 @@ function App() {
         {/* Lugar de nacimiento */}
         <label style={{ marginTop: '1.25rem', display: 'block' }}>¿Dónde naciste?</label>
         <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '0.75rem' }}>
-          {['Gran BA', 'Otra Provincia', 'Otro país'].map(option => (
+          {['CABA', 'Gran BA', 'Otra Provincia', 'Otro país'].map(option => (
             <button
               key={option}
               type="button"
