@@ -14,8 +14,10 @@ import * as turf from '@turf/turf'
 import mapboxgl from 'mapbox-gl'
 import { motion, AnimatePresence } from 'framer-motion'
 import Select from 'react-select'
+import { initAnalytics, logPageView } from "./lib/analytics"
+import { logEvent } from './lib/analytics'
 
-mapboxgl.accessToken = 'pk.eyJ1Ijoic2dvaWRlbGwiLCJhIjoiY21hM2J0ZzFoMWFhNDJqcTZibzQ4NzM5ZSJ9.hTrCOqO2-fWRG86oum5g_A'
+mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN
 
 function App() {
 
@@ -61,6 +63,15 @@ function App() {
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
+
+  // useEffect for Google Analytics (GA)
+  useEffect(() => {
+    initAnalytics(); // ✅ Initialize Google Analytics on mount
+  }, []);
+
+  useEffect(() => {
+    logPageView(`Step ${step}`); // ✅ Log pageview every time the step changes
+  }, [step]);
 
   // barrio match in search
   const fuse = new Fuse(barrios, {
@@ -174,7 +185,7 @@ function App() {
     }
   }  
   
-  // Tracking shape for submission (screen 2)
+  // Tracking name for submission (screen 2)
   const canProceedScreen2 = barrioName.trim().length > 0
 
   // Tracking shape for submission (screen 3)
@@ -250,6 +261,7 @@ function App() {
      
   // submission
   const handleSubmit = async () => {
+    logEvent("Form", "Submit", `Step ${step}`); // GA (google analytics) tracking
 
   // Bundle data for submission
       const fullSubmission = {
@@ -692,7 +704,7 @@ function App() {
         </div>
 
         {/* Otros nombres */}
-        <label style={{ marginBottom: '0.5rem', display: 'block' }}>¿Hay otros nombres para el barrio?</label>
+        <label style={{ marginBottom: '0.5rem', display: 'block' }}>¿Hay otros nombres para el barrio? (opcional)</label>
         <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
           {['sí', 'no'].map(option => (
             <button
@@ -727,7 +739,7 @@ function App() {
 
         {/* Calles / Lugares */}
         <label style={{ marginTop: '1rem', display: 'block', marginBottom: '0.5rem' }}>
-          ¿Qué define a tu barrio? ¿Querés contarnos algo más?
+          ¿Qué define a tu barrio? ¿Querés contarnos algo más? (opcional)
         </label>
         <textarea
           value={comments}
@@ -741,7 +753,7 @@ function App() {
       {/* 🧍 Sobre vos */}
       <div className="section-box">
         <div className="section-title">
-          <span>🧍</span> Sobre vos
+          <span>🧍</span> Sobre vos (opcional)
         </div>
 
         {/* Comunidad religiosa */}
@@ -822,6 +834,10 @@ function App() {
       borderRadius: '6px',
       border: '1px solid #ccc'
     }),
+      input: (base) => ({
+    ...base,
+    color: '#fff'  // ensure text readable when typing
+      }),
     multiValue: (base) => ({
       ...base,
       backgroundColor: '#e6ffe6'
@@ -885,6 +901,11 @@ function App() {
             value={provincias.find(p => p.value === provinciaNacimiento)}
             onChange={(selected) => setProvinciaNacimiento(selected.value)}
             classNamePrefix="react-select"
+            styles={{
+                  input: (base) => ({
+                    ...base,
+                    color: '#fff'  // ensure text readable when typing
+                  }), }}
           />
         )}
 
@@ -895,6 +916,11 @@ function App() {
             value={paises.find(p => p.value === paisNacimiento)}
             onChange={(selected) => setPaisNacimiento(selected.value)}
             classNamePrefix="react-select"
+            styles={{
+                  input: (base) => ({
+                    ...base,
+                    color: '#fff'  // ensure text readable when typing
+                  }), }}
           />
         )}
 

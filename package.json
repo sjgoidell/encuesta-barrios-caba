@@ -19,6 +19,7 @@
     "mapbox-gl": "^3.11.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-ga4": "^2.1.0",
     "react-select": "^5.10.1"
   },
   "devDependencies": {
