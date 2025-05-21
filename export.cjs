@@ -1,6 +1,5 @@
 const fs = require('fs')
 const admin = require('firebase-admin')
-
 const serviceAccount = require('/Users/Goidell Sam/encuesta-barrios-caba-personal/firebase-service-account.json')
 
 admin.initializeApp({
@@ -15,31 +14,40 @@ async function exportData() {
 
   snapshot.forEach(doc => {
     const data = doc.data()
-          rows.push({
-            email: data.email || '',
-            age: data.age || '',
-            yearsInBarrio: data.yearsInBarrio || '',
-            barrioName: data.barrioName || '',
-            pinLocation: JSON.stringify(data.pinLocation || ''),
-            comments: data.comments || '',
-            canContact: data.canContact || '',
-            religionAffiliation: data.religionAffiliation || '',
-            selectedReligion: data.selectedReligion || '',
-            otherReligion: data.otherReligion || '',
-            comunidadesSeleccionadas: Array.isArray(data.comunidadesSeleccionadas) ? data.comunidadesSeleccionadas.join('; ') : '',
-            otraComunidadTexto: data.otraComunidadTexto || '',
-            nacimientoLugar: data.nacimientoLugar || '',
-            provinciaNacimiento: data.provinciaNacimiento || '',
-            paisNacimiento: data.paisNacimiento || '',
-            situacionDomicilio: data.situacionDomicilio || '',
-            submittedAt: data.submittedAt?.toDate?.().toISOString() || '',
-            sessionDuration: data.sessionDuration || '',
-            deviceType: data.deviceType || '',
-            language: data.language || '',
-            userRegion: data.userRegion || '',
-            mapClickCount: data.mapClickCount || '',
-            polygon: data.polygon || ''
-          })
+
+    const pinLat = data.pinLocation?.lat || ''
+    const pinLng = data.pinLocation?.lng || ''
+    const polygonRaw = data.polygon || ''
+    const polygonObj = polygonRaw ? JSON.parse(polygonRaw) : null
+    const polygonCoords = polygonObj?.geometry?.coordinates?.[0]?.map(coord => coord.join(' ')).join(' | ') || ''
+
+    rows.push({
+      email: data.email || '',
+      age: data.age || '',
+      yearsInBarrio: data.yearsInBarrio || '',
+      barrioName: data.barrioName || '',
+      pinLat,
+      pinLng,
+      comments: data.comments || '',
+      religionAffiliation: data.religionAffiliation || '',
+      selectedReligion: data.selectedReligion || '',
+      otherReligion: data.otherReligion || '',
+      comunidadesSeleccionadas: Array.isArray(data.comunidadesSeleccionadas) ? data.comunidadesSeleccionadas.join('; ') : '',
+      otraComunidadTexto: data.otraComunidadTexto || '',
+      nacimientoLugar: data.nacimientoLugar || '',
+      provinciaNacimiento: data.provinciaNacimiento || '',
+      paisNacimiento: data.paisNacimiento || '',
+      situacionDomicilio: data.situacionDomicilio || '',
+      nivelEducacionJefe: data.nivelEducacionJefe || '',
+      canContact: data.canContact || '',
+      submittedAt: data.submittedAt?.toDate?.().toISOString() || '',
+      sessionDuration: data.sessionDuration || '',
+      deviceType: data.deviceType || '',
+      language: data.language || '',
+      userRegion: data.userRegion || '',
+      mapClickCount: data.mapClickCount || '',
+      polygonCoords // ✅ for basic visualization in Sheets
+    })
   })
 
   const headers = Object.keys(rows[0])

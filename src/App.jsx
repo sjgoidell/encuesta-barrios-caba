@@ -102,7 +102,7 @@ function App() {
   const [nacimientoLugar, setNacimientoLugar] = useState('')
   const [provinciaNacimiento, setProvinciaNacimiento] = useState('')
   const [paisNacimiento, setPaisNacimiento] = useState('')
-
+  const [nivelEducacionJefe, setnivelEducacionJefe] = useState('')
   const [situacionDomicilio, setSituacionDomicilio] = useState('')
   const [canContact, setCanContact] = useState(null)
   
@@ -282,6 +282,7 @@ function App() {
         provinciaNacimiento: provinciaNacimiento || '',
         paisNacimiento: paisNacimiento || '',
         situacionDomicilio: situacionDomicilio || '',
+        nivelEducacionJefe: nivelEducacionJefe || '',
         canContact: canContact || '',
         submittedAt: new Date(),
         sessionDuration: Date.now() - sessionStartTime.current,
@@ -756,8 +757,138 @@ function App() {
           <span>🧍</span> Sobre vos (opcional)
         </div>
 
+        {/* Edad / años */}
+        <div style={{ display: 'flex', gap: '1rem', marginTop: '1.25rem' }}>
+          <select value={age} onChange={(e) => setAge(e.target.value)} style={{ flex: 1 }}>
+            <option value="">Edad</option>
+            <option value="<20">Menos de 20</option>
+            <option value="20–29">20–29</option>
+            <option value="30–39">30–39</option>
+            <option value="40–49">40–49</option>
+            <option value="50–59">50–59</option>
+            <option value="60–69">60–69</option>
+            <option value="70+">70 o más</option>
+          </select>
+
+          <select value={yearsInBarrio} onChange={(e) => setYearsInBarrio(e.target.value)} style={{ flex: 1 }}>
+            <option value="">Años en barrio</option>
+            <option value="<1">Menos de 1 año</option>
+            <option value="1–5">1–5 años</option>
+            <option value="6–10">6–10 años</option>
+            <option value="10+">Más de 10 años</option>
+            <option value="toda_la_vida">Toda mi vida</option>
+          </select>
+        </div>
+
+        {/* Lugar de nacimiento */}
+        <label style={{ marginTop: '1.25rem', display: 'block' }}>¿Dónde naciste?</label>
+        <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '0.75rem' }}>
+          {['CABA', 'Gran BA', 'Otra Provincia', 'Otro país'].map(option => (
+            <button
+              key={option}
+              type="button"
+              onClick={() => {
+                setNacimientoLugar(option)
+                setProvinciaNacimiento('')
+                setPaisNacimiento('')
+              }}
+              style={{
+                padding: '0.4rem 0.75rem',
+                borderRadius: '6px',
+                fontSize: '0.8rem',
+                fontWeight: '500',
+                border: nacimientoLugar === option ? '2px solid #00cc66' : '1px solid #ccc',
+                backgroundColor: nacimientoLugar === option ? '#e6ffe6' : '#2c2c2c',
+                color: nacimientoLugar === option ? '#000' : '#fff',
+                cursor: 'pointer',
+                whiteSpace: 'nowrap'
+              }}
+            >
+              {option}
+            </button>
+          ))}
+        </div>
+
+        {nacimientoLugar === 'Otra Provincia' && (
+          <Select
+            options={provincias}
+            placeholder="Elegí tu provincia"
+            value={provincias.find(p => p.value === provinciaNacimiento)}
+            onChange={(selected) => setProvinciaNacimiento(selected.value)}
+            classNamePrefix="react-select"
+            styles={{
+                  input: (base) => ({
+                    ...base,
+                    color: '#fff'  // ensure text readable when typing
+                  }), }}
+          />
+        )}
+
+        {nacimientoLugar === 'Otro país' && (
+          <Select
+            options={paises}
+            placeholder="Elegí tu país"
+            value={paises.find(p => p.value === paisNacimiento)}
+            onChange={(selected) => setPaisNacimiento(selected.value)}
+            classNamePrefix="react-select"
+            styles={{
+                  input: (base) => ({
+                    ...base,
+                    color: '#fff'  // ensure text readable when typing
+                  }), }}
+          />
+        )}
+
+        {/* Domicilio */}
+        <label style={{ marginTop: '1.25rem', display: 'block' }}>Domicilio...</label>
+        <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+          {[
+            { value: 'dueño', label: 'Soy dueño' },
+            { value: 'alquiler', label: 'Alquilo' },
+            { value: 'familiar', label: 'Me lo presta un conocido/familiar' }
+          ].map(({ value, label }) => (
+            <button
+              key={value}
+              onClick={() => setSituacionDomicilio(value)}
+              type="button"
+              style={{
+                padding: '0.5rem 0.75rem',
+                borderRadius: '6px',
+                fontSize: '0.85rem',
+                fontWeight: '500',
+                border: situacionDomicilio === value ? '2px solid #00cc66' : '1px solid #ccc',
+                backgroundColor: situacionDomicilio === value ? '#e6ffe6' : '#2c2c2c',
+                color: situacionDomicilio === value ? '#000' : '#fff',
+                cursor: 'pointer',
+                whiteSpace: 'nowrap'
+              }}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+
+        {/* Educación */}
+        <label style={{ display: 'block', marginTop: '1.25rem' }}>¿Cuál es el nivel educativo más alto alcanzado por el jefe/a del hogar?</label>
+        <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
+          <select value={nivelEducacionJefe} onChange={(e) => setnivelEducacionJefe(e.target.value)} style={{ flex: 1 }}>
+          <option value="">Seleccioná una opción</option>
+          <option value="incompleta_primaria">No completó la primaria</option>
+          <option value="primaria_completa">Primaria completa</option>
+          <option value="incompleta_secundaria">Secundaria incompleta</option>
+          <option value="secundaria_completa">Secundaria completa</option>
+          <option value="incompleta_terciario">Terciario/Técnico incompleto</option>
+          <option value="terciario_completo">Terciario/Técnico completo</option>
+          <option value="incompleta_universitario">Universitario incompleto</option>
+          <option value="universitario_completo">Universitario completo</option>
+          <option value="posgrado">Posgrado (maestría o doctorado)</option>
+          <option value="ns_nc">No sabe / No contesta</option>
+          </select>
+        </div>
+
+
         {/* Comunidad religiosa */}
-        <label style={{ display: 'block', marginBottom: '0.5rem' }}>¿Te considerás parte de una comunidad religiosa?</label>
+        <label style={{ display: 'block', marginTop: '1.25rem' }}>¿Te considerás parte de una comunidad religiosa?</label>
         <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
           {['sí', 'no'].map(option => (
             <button
@@ -864,117 +995,6 @@ function App() {
             style={{ width: '50%', marginTop: '0.5rem' }}
           />
         )}
-
-        {/* Lugar de nacimiento */}
-        <label style={{ marginTop: '1.25rem', display: 'block' }}>¿Dónde naciste?</label>
-        <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '0.75rem' }}>
-          {['CABA', 'Gran BA', 'Otra Provincia', 'Otro país'].map(option => (
-            <button
-              key={option}
-              type="button"
-              onClick={() => {
-                setNacimientoLugar(option)
-                setProvinciaNacimiento('')
-                setPaisNacimiento('')
-              }}
-              style={{
-                padding: '0.4rem 0.75rem',
-                borderRadius: '6px',
-                fontSize: '0.8rem',
-                fontWeight: '500',
-                border: nacimientoLugar === option ? '2px solid #00cc66' : '1px solid #ccc',
-                backgroundColor: nacimientoLugar === option ? '#e6ffe6' : '#2c2c2c',
-                color: nacimientoLugar === option ? '#000' : '#fff',
-                cursor: 'pointer',
-                whiteSpace: 'nowrap'
-              }}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-
-        {nacimientoLugar === 'Otra Provincia' && (
-          <Select
-            options={provincias}
-            placeholder="Elegí tu provincia"
-            value={provincias.find(p => p.value === provinciaNacimiento)}
-            onChange={(selected) => setProvinciaNacimiento(selected.value)}
-            classNamePrefix="react-select"
-            styles={{
-                  input: (base) => ({
-                    ...base,
-                    color: '#fff'  // ensure text readable when typing
-                  }), }}
-          />
-        )}
-
-        {nacimientoLugar === 'Otro país' && (
-          <Select
-            options={paises}
-            placeholder="Elegí tu país"
-            value={paises.find(p => p.value === paisNacimiento)}
-            onChange={(selected) => setPaisNacimiento(selected.value)}
-            classNamePrefix="react-select"
-            styles={{
-                  input: (base) => ({
-                    ...base,
-                    color: '#fff'  // ensure text readable when typing
-                  }), }}
-          />
-        )}
-
-        {/* Edad / años */}
-        <div style={{ display: 'flex', gap: '1rem', marginTop: '1.25rem' }}>
-          <select value={age} onChange={(e) => setAge(e.target.value)} style={{ flex: 1 }}>
-            <option value="">Edad</option>
-            <option value="<20">Menos de 20</option>
-            <option value="20–29">20–29</option>
-            <option value="30–39">30–39</option>
-            <option value="40–49">40–49</option>
-            <option value="50–59">50–59</option>
-            <option value="60–69">60–69</option>
-            <option value="70+">70 o más</option>
-          </select>
-
-          <select value={yearsInBarrio} onChange={(e) => setYearsInBarrio(e.target.value)} style={{ flex: 1 }}>
-            <option value="">Años en barrio</option>
-            <option value="<1">Menos de 1 año</option>
-            <option value="1–5">1–5 años</option>
-            <option value="6–10">6–10 años</option>
-            <option value="10+">Más de 10 años</option>
-            <option value="toda_la_vida">Toda mi vida</option>
-          </select>
-        </div>
-
-        {/* Domicilio */}
-        <label style={{ marginTop: '1.25rem', display: 'block' }}>Domicilio...</label>
-        <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-          {[
-            { value: 'dueño', label: 'Soy dueño' },
-            { value: 'alquiler', label: 'Alquilo' },
-            { value: 'familiar', label: 'Me lo presta un conocido/familiar' }
-          ].map(({ value, label }) => (
-            <button
-              key={value}
-              onClick={() => setSituacionDomicilio(value)}
-              type="button"
-              style={{
-                padding: '0.5rem 0.75rem',
-                borderRadius: '6px',
-                fontSize: '0.85rem',
-                fontWeight: '500',
-                border: situacionDomicilio === value ? '2px solid #00cc66' : '1px solid #ccc',
-                backgroundColor: situacionDomicilio === value ? '#e6ffe6' : '#2c2c2c',
-                color: situacionDomicilio === value ? '#000' : '#fff',
-                cursor: 'pointer',
-                whiteSpace: 'nowrap'
-              }}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
       </div>
 
       {/* ✉️ Contacto */}
