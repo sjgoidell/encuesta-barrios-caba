@@ -16,12 +16,12 @@ const comunidadOptions = [
   { value: 'colombiano', label: 'Colombiano/a' },
   { value: 'migrante', label: 'Migrante' },
   { value: 'expatriado', label: 'Expatriado/a' },
-  { value: 'interior', label: 'Del interior' },
   { value: 'zona_norte', label: 'De zona norte' },
   { value: 'zona_oeste', label: 'De zona oeste' },
   { value: 'zona_sur', label: 'De zona sur' },
   { value: 'bonaerense', label: 'Bonaerense' },
 
+/*
   // (2) Grupo social
   { value: 'villero', label: 'Villero/a' },
   { value: 'cartonero', label: 'Cartonero/a' },
@@ -69,6 +69,8 @@ const comunidadOptions = [
   { value: 'artista', label: 'Artista / cultural' },
   { value: 'cinefilo', label: 'Cinéfilo/a' },
   { value: 'ambientalista', label: 'Ambientalista' },
+
+  */
 
   // Opción abierta
   { value: 'otra', label: 'Otra' } // esta activa el input condicional
