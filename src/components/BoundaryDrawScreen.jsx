@@ -39,8 +39,8 @@ const BoundaryDrawScreen = ({
           type: 'fill',
           filter: ['all', ['==', '$type', 'Polygon'], ['==', 'active', 'true']],
           paint: {
-            'fill-color': '#FFD700',
-            'fill-opacity': 0.3
+            'fill-color': '#FFD700', // yellow
+            'fill-opacity': 0.025
           }
         },
         {
@@ -62,7 +62,7 @@ const BoundaryDrawScreen = ({
           type: 'fill',
           filter: ['all', ['==', '$type', 'Polygon'], ['!=', 'active', 'true']],
           paint: {
-            'fill-color': '#00cc66',
+            'fill-color': '#00cc66', // green
             'fill-opacity': 0.3
           }
         },
