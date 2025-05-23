@@ -740,7 +740,7 @@ function App() {
 
         {/* Calles / Lugares */}
         <label style={{ marginTop: '1rem', display: 'block', marginBottom: '0.5rem' }}>
-          ¿Qué define a tu barrio? ¿Querés contarnos algo más? (opcional)
+          ¿Qué define a tu barrio y la identidad de ser de allá? ¿Querés contarnos algo más? (opcional)
         </label>
         <textarea
           value={comments}
