@@ -226,6 +226,23 @@ const BoundaryDrawScreen = ({
           setDrawnCoords(openCoords)
         }
       })
+map.on('touchend', () => {
+  const features = drawRef.current.getAll()
+  if (!features.features.length) return
+
+  const polygon = features.features[0]
+  if (polygon.geometry?.type === 'Polygon') {
+    const coords = polygon.geometry.coordinates[0]
+    const isClosed =
+      coords.length >= 4 &&
+      coords[0][0] === coords[coords.length - 1][0] &&
+      coords[0][1] === coords[coords.length - 1][1]
+
+    const openCoords = isClosed ? coords.slice(0, -1) : coords
+    setDrawnCoords(openCoords)
+  }
+})
+
     }
 
     return () => map.remove()
