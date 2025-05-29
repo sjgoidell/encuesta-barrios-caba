@@ -495,10 +495,7 @@ function App() {
               </AnimatePresence>
 
               <div style={{ display: 'flex', gap: '1rem' }}>
-                <button onClick={goBack} className="btn-nav">
-                  Volver
-                  <span>⬅️</span>
-                </button>
+
 
                 <button
               onClick={goNext}
@@ -646,10 +643,7 @@ function App() {
               </AnimatePresence>
 
               <div style={{ display: 'flex', gap: '1rem' }}>
-                <button onClick={goBack} className="btn-nav">
-                  Volver
-                  <span>⬅️</span>
-                </button>
+
 
                 <MotionButton
                   onClick={goNext}
@@ -1030,7 +1024,7 @@ function App() {
       {/* Navigation Buttons */}
       <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
         <div style={{ display: 'flex', gap: '1rem' }}>
-          <button onClick={goBack} className="btn-nav">Volver ⬅️</button>
+          {/* <button onClick={goBack} className="btn-nav">Volver ⬅️</button> */}
           <MotionButton
             onClick={handleSubmit}
             className={`btn-nav ${canProceedScreen4 ? 'btn-next' : 'btn-disabled'}`}
@@ -1054,9 +1048,11 @@ function App() {
     <h2>✅ ¡Gracias por mapear tu barrio!</h2>
     <p>Tu aporte es muy valioso para el mapa colectivo de Buenos Aires. 🚀</p>
 
+    {/* 
     <button onClick={goBack} className="btn-nav">
       Volver<span>⬅️</span>
-    </button>
+    </button> 
+    */}
 
     <hr style={{ margin: '2rem auto', width: '60%', borderColor: '#444' }} />
 

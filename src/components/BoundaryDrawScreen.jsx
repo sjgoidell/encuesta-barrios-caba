@@ -18,6 +18,8 @@ const BoundaryDrawScreen = ({
   const drawRef = useRef(null)
   const [showResetButton, setShowResetButton] = useState(false)
   const [isPinInsidePolygon, setIsPinInsidePolygon] = useState(true)
+  const [drawnCoords, setDrawnCoords] = useState([])
+  const [mapInstance, setMapInstance] = useState(null)
   const defaultCenter = [-58.437, -34.6037]
 
   useEffect(() => {
@@ -29,6 +31,8 @@ const BoundaryDrawScreen = ({
       interactive: !readOnly
     })
 
+    setMapInstance(map)
+
     const draw = new MapboxDraw({
       displayControlsDefault: false,
       controls: readOnly ? {} : { polygon: true, trash: true },
@@ -39,22 +43,8 @@ const BoundaryDrawScreen = ({
           type: 'fill',
           filter: ['all', ['==', '$type', 'Polygon'], ['==', 'active', 'true']],
           paint: {
-            'fill-color': '#FFD700', // yellow
-            'fill-opacity': 0.025
-          }
-        },
-        {
-          id: 'gl-draw-polygon-stroke-active',
-          type: 'line',
-          filter: ['all', ['==', '$type', 'Polygon'], ['==', 'active', 'true']],
-          layout: {
-            'line-cap': 'round',
-            'line-join': 'round'
-          },
-          paint: {
-            'line-color': '#FFD700',
-            'line-width': 3,
-            'line-dasharray': [2, 2]
+            'fill-color': '#FFD700',
+            'fill-opacity': 0.00
           }
         },
         {
@@ -62,7 +52,7 @@ const BoundaryDrawScreen = ({
           type: 'fill',
           filter: ['all', ['==', '$type', 'Polygon'], ['!=', 'active', 'true']],
           paint: {
-            'fill-color': '#00cc66', // green
+            'fill-color': '#00cc66',
             'fill-opacity': 0.3
           }
         },
@@ -116,6 +106,29 @@ const BoundaryDrawScreen = ({
     map.on('load', () => {
       map.resize()
 
+      map.addSource('confirmed-line', {
+        type: 'geojson',
+        data: {
+          type: 'Feature',
+          geometry: {
+            type: 'LineString',
+            coordinates: []
+          }
+        }
+      })
+      console.log('✅ Source added:', map.getSource('confirmed-line'))
+
+      map.addLayer({
+        id: 'confirmed-line-layer',
+        type: 'line',
+        source: 'confirmed-line',
+        paint: {
+          'line-color': '#FFD700',
+          'line-width': 3,
+          'line-dasharray': [2, 2]
+        }
+      })
+
       if (pinLocation) {
         new mapboxgl.Marker({ color: 'red' })
           .setLngLat([pinLocation.lng, pinLocation.lat])
@@ -147,6 +160,7 @@ const BoundaryDrawScreen = ({
         setPolygonGeoJson(null)
         setShowResetButton(false)
         setIsPinInsidePolygon(true)
+        setDrawnCoords([])
         return
       }
 
@@ -161,6 +175,7 @@ const BoundaryDrawScreen = ({
         if (isClosed) {
           setPolygonGeoJson(feature)
           setShowResetButton(true)
+          setDrawnCoords([])
 
           if (pinLocation) {
             const pin = turf.point([pinLocation.lng, pinLocation.lat])
@@ -168,10 +183,9 @@ const BoundaryDrawScreen = ({
             const inside = turf.booleanPointInPolygon(pin, drawnPoly)
             setIsPinInsidePolygon(inside)
           } else {
-            setIsPinInsidePolygon(true) // Assume valid if no pin
+            setIsPinInsidePolygon(true)
           }
 
-          // Optional: replace current polygon to lock it
           drawRef.current.deleteAll()
           drawRef.current.add(feature)
         }
@@ -179,6 +193,7 @@ const BoundaryDrawScreen = ({
         setPolygonGeoJson(null)
         setShowResetButton(false)
         setIsPinInsidePolygon(true)
+        setDrawnCoords([])
       }
     }
 
@@ -189,11 +204,54 @@ const BoundaryDrawScreen = ({
       map.on('draw.delete', () => {
         setPolygonGeoJson(null)
         setShowResetButton(false)
+        setDrawnCoords([])
+      })
+
+      map.on('click', () => {
+        const features = drawRef.current.getAll()
+        if (!features.features.length) return
+
+        const polygon = features.features[0]
+        if (polygon.geometry?.type === 'Polygon') {
+          const coords = polygon.geometry.coordinates[0]
+          const isClosed =
+            coords.length >= 4 &&
+            coords[0][0] === coords[coords.length - 1][0] &&
+            coords[0][1] === coords[coords.length - 1][1]
+
+          const openCoords = isClosed ? coords.slice(0, -1) : coords
+          console.log('📍 Polygon clicked coords:', coords)
+          console.log('📍 Open (non-closed) coords:', openCoords)
+
+          setDrawnCoords(openCoords)
+        }
       })
     }
 
     return () => map.remove()
   }, [setPolygonGeoJson, pinLocation, barrioName, polygonGeoJson, readOnly])
+
+useEffect(() => {
+  if (!mapInstance) {
+    console.log('❌ Map instance not yet set')
+    return
+  }
+
+  const source = mapInstance.getSource('confirmed-line')
+  if (!source) {
+    console.log('❌ Source not found on mapInstance')
+    return
+  }
+
+  console.log('✅ Updating source with coords:', drawnCoords)
+  source.setData({
+    type: 'Feature',
+    geometry: {
+      type: 'LineString',
+      coordinates: drawnCoords
+    }
+  })
+}, [drawnCoords, mapInstance])
 
   return (
     <div style={{
@@ -207,50 +265,51 @@ const BoundaryDrawScreen = ({
     }}>
       <div ref={mapContainerRef} style={{ height: '100%', width: '100%' }} />
 
-    {showResetButton && (
-      <div style={{
-        position: 'absolute',
-        top: isPinInsidePolygon ? '7%' : '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        zIndex: 1000,
-        textAlign: 'center',
-        backgroundColor: isPinInsidePolygon ? 'transparent' : 'rgba(255, 255, 255, 0.9)',
-        padding: isPinInsidePolygon ? '0' : '2rem',
-        borderRadius: isPinInsidePolygon ? '0' : '12px',
-        boxShadow: isPinInsidePolygon ? 'none' : '0 4px 12px rgba(0, 0, 0, 0.2)',
-        maxWidth: '400px',
-        minWidth: '280px'
-      }}>
-        <button
-          onClick={() => {
-            drawRef.current.deleteAll()
-            setPolygonGeoJson(null)
-            setShowResetButton(false)
-            setIsPinInsidePolygon(true)
-            drawRef.current.changeMode('draw_polygon')
-          }}
-          style={{
-            backgroundColor: isPinInsidePolygon ? '#fff8b3' : '#ffc1c1',
-            color: '#000',
-            padding: '0.75rem 1.5rem',
-            fontSize: '1rem',
-            fontWeight: '600',
-            border: isPinInsidePolygon ? '2px solid #FFD700' : '2px solid red',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
-          }}
-        >
-          🔄 Empezá de nuevo
-        </button>
-        {!isPinInsidePolygon && (
-          <div style={{ marginTop: '1rem', color: '#c00', fontWeight: 400, fontSize: '1rem' }}>
-            El marcador rojo debe estar dentro del barrio que dibujaste.
-          </div>
-        )}
-      </div>
-    )}
+      {showResetButton && (
+        <div style={{
+          position: 'absolute',
+          top: isPinInsidePolygon ? '7%' : '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          zIndex: 1000,
+          textAlign: 'center',
+          backgroundColor: isPinInsidePolygon ? 'transparent' : 'rgba(255, 255, 255, 0.9)',
+          padding: isPinInsidePolygon ? '0' : '2rem',
+          borderRadius: isPinInsidePolygon ? '0' : '12px',
+          boxShadow: isPinInsidePolygon ? 'none' : '0 4px 12px rgba(0, 0, 0, 0.2)',
+          maxWidth: '400px',
+          minWidth: '280px'
+        }}>
+          <button
+            onClick={() => {
+              drawRef.current.deleteAll()
+              setPolygonGeoJson(null)
+              setShowResetButton(false)
+              setIsPinInsidePolygon(true)
+              setDrawnCoords([])
+              drawRef.current.changeMode('draw_polygon')
+            }}
+            style={{
+              backgroundColor: isPinInsidePolygon ? '#fff8b3' : '#ffc1c1',
+              color: '#000',
+              padding: '0.75rem 1.5rem',
+              fontSize: '1rem',
+              fontWeight: '600',
+              border: isPinInsidePolygon ? '2px solid #FFD700' : '2px solid red',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
+            }}
+          >
+            🔄 Empezá de nuevo
+          </button>
+          {!isPinInsidePolygon && (
+            <div style={{ marginTop: '1rem', color: '#c00', fontWeight: 400, fontSize: '1rem' }}>
+              El marcador rojo debe estar dentro del barrio que dibujaste.
+            </div>
+          )}
+        </div>
+      )}
     </div>
   )
 }
