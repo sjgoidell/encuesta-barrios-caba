@@ -207,41 +207,27 @@ const BoundaryDrawScreen = ({
         setDrawnCoords([])
       })
 
-      map.on('click', () => {
-        const features = drawRef.current.getAll()
-        if (!features.features.length) return
+const updateCoordsAfterDraw = () => {
+  setTimeout(() => {
+    const features = drawRef.current.getAll()
+    if (!features.features.length) return
 
-        const polygon = features.features[0]
-        if (polygon.geometry?.type === 'Polygon') {
-          const coords = polygon.geometry.coordinates[0]
-          const isClosed =
-            coords.length >= 4 &&
-            coords[0][0] === coords[coords.length - 1][0] &&
-            coords[0][1] === coords[coords.length - 1][1]
+    const polygon = features.features[0]
+    if (polygon.geometry?.type === 'Polygon') {
+      const coords = polygon.geometry.coordinates[0]
+      const isClosed =
+        coords.length >= 4 &&
+        coords[0][0] === coords[coords.length - 1][0] &&
+        coords[0][1] === coords[coords.length - 1][1]
 
-          const openCoords = isClosed ? coords.slice(0, -1) : coords
-          console.log('📍 Polygon clicked coords:', coords)
-          console.log('📍 Open (non-closed) coords:', openCoords)
+      const openCoords = isClosed ? coords.slice(0, -1) : coords
+      setDrawnCoords(openCoords)
+    }
+  }, 0)
+}
 
-          setDrawnCoords(openCoords)
-        }
-      })
-map.on('touchend', () => {
-  const features = drawRef.current.getAll()
-  if (!features.features.length) return
-
-  const polygon = features.features[0]
-  if (polygon.geometry?.type === 'Polygon') {
-    const coords = polygon.geometry.coordinates[0]
-    const isClosed =
-      coords.length >= 4 &&
-      coords[0][0] === coords[coords.length - 1][0] &&
-      coords[0][1] === coords[coords.length - 1][1]
-
-    const openCoords = isClosed ? coords.slice(0, -1) : coords
-    setDrawnCoords(openCoords)
-  }
-})
+map.on('click', updateCoordsAfterDraw)
+map.on('touchend', updateCoordsAfterDraw)
 
     }
 
