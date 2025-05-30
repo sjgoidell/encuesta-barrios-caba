@@ -28,6 +28,7 @@ function App() {
   const inputRef = useRef()
   const [mapClickCount, setMapClickCount] = useState(0)
   const [showTerms, setShowTerms] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
  
  // Map and motion constants
   const MotionButton = motion.button
@@ -261,7 +262,9 @@ function App() {
      
   // submission
   const handleSubmit = async () => {
-    logEvent("Form", "Submit", `Step ${step}`); // GA (google analytics) tracking
+      if (submitting) return
+      setSubmitting(true)
+    logEvent("Form", "Submit", `Step ${step}`) // GA (google analytics) tracking
 
   // Bundle data for submission
       const fullSubmission = {
@@ -293,7 +296,6 @@ function App() {
         polygon: polygonGeoJson ? JSON.stringify(polygonGeoJson) : null
       }
 
-  
     console.log('Submitting with:', {
       email, canProceedScreen4
     })    
@@ -303,9 +305,13 @@ function App() {
       console.log('✅ Submission saved!')
       setStep(5)
     } catch (err) {
-      console.error('❌ Failed to save submission:', err)
+        console.error('❌ Failed to save submission:', err)
+        setModalMessage('Hubo un problema al enviar el formulario. Intentá de nuevo.')
+        setShowModal(true)
+      } finally {
+        setSubmitting(false)
+      }
     }
-  }
 
   // Go next / back button logic
     const goNext = () => {
@@ -1027,13 +1033,26 @@ function App() {
           {/* <button onClick={goBack} className="btn-nav">Volver ⬅️</button> */}
           <MotionButton
             onClick={handleSubmit}
-            className={`btn-nav ${canProceedScreen4 ? 'btn-next' : 'btn-disabled'}`}
-            disabled={!canProceedScreen4}
-            animate={{ scale: canProceedScreen4 ? 1 : 0.98 }}
+            disabled={!canProceedScreen4 || submitting}
+            className={`btn-nav ${!canProceedScreen4 || submitting ? 'btn-disabled' : 'btn-next'}`}
+            style={{
+              backgroundColor: submitting ? '#ccc' : '#00cc66',
+              color: '#000',
+              padding: '0.75rem 1.5rem',
+              fontSize: '1rem',
+              fontWeight: '600',
+              border: '2px solid #00cc66',
+              borderRadius: '8px',
+              cursor: submitting ? 'not-allowed' : 'pointer',
+              opacity: submitting ? 0.6 : 1,
+              boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
+            }}
+            animate={{ scale: canProceedScreen4 && !submitting ? 1 : 0.98 }}
             transition={{ duration: 0.2 }}
           >
-            Enviar ➡️
+            {submitting ? 'Enviando...' : 'Enviar ➡️'}
           </MotionButton>
+
         </div>
       </div>
 
@@ -1058,7 +1077,7 @@ function App() {
 
     <h3 style={{ marginBottom: '1rem' }}>📣 Compartí el proyecto</h3>
 
-    {/** 👇 FIX: Declare once at top of block **/}
+    {/** 👇 Declare once at top of block **/}
     {(() => {
       const shareUrl = 'https://dondevivocaba.com/?utm_source=whatsapp&utm_medium=share&utm_campaign=postsubmit'
       const shareText = 'Yo ya mapeé mi barrio. Sumate vos también al mapa colectivo de CABA 🗺️'
