@@ -2157,6 +2157,60 @@
         "coordinates": [
           [
             [
+              -58.3868486136611,
+              -34.592659823298284
+            ],
+            [
+              -58.38030398012444,
+              -34.58150124755
+            ],
+            [
+              -58.37088195807726,
+              -34.594422876316436
+            ],
+            [
+              -58.3868486136611,
+              -34.592659823298284
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "50–59",
+        "yearsInBarrio": "1–5",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "Estación\nPlaza San Martin\nCalle arroyo",
+        "religionAffiliation": "sí",
+        "selectedReligion": "católica",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "zona_norte",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Gran BA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "posgrado",
+        "sessionDuration": 228435,
+        "barrio": "Retiro",
+        "fillColor": "#33FFF5",
+        "pinLocation": "{\"lat\":-34.59147542803231,\"lng\":-58.376507828468235}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-GB",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-06-04T19:23:05.538Z",
+        "barrio_cleaned": "retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
               -58.40677233707896,
               -34.60322754965078
             ],
@@ -3029,6 +3083,68 @@
         "canContact": "no",
         "timestamp": "2025-05-17T02:43:29.547Z",
         "barrio_cleaned": "lascanitas"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.39725691837393,
+              -34.58311623683649
+            ],
+            [
+              -58.406046870561454,
+              -34.59246824477679
+            ],
+            [
+              -58.38302869761965,
+              -34.59532767157897
+            ],
+            [
+              -58.38001601701967,
+              -34.58560658330535
+            ],
+            [
+              -58.392436301915524,
+              -34.57981140371019
+            ],
+            [
+              -58.39725691837393,
+              -34.58311623683649
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "posgrado",
+        "sessionDuration": 100154,
+        "barrio": "Recoleta",
+        "fillColor": "#8F33FF",
+        "pinLocation": "{\"lat\":-34.589587445235104,\"lng\":-58.388438542237196}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "no",
+        "timestamp": "2025-06-04T17:51:55.239Z",
+        "barrio_cleaned": "recoleta"
       }
     },
     {
@@ -5323,6 +5439,80 @@
         "coordinates": [
           [
             [
+              -58.3837711895232,
+              -34.58759275212677
+            ],
+            [
+              -58.38793397791416,
+              -34.591655655330584
+            ],
+            [
+              -58.386775263620024,
+              -34.599215659389344
+            ],
+            [
+              -58.3679783428433,
+              -34.59833251683965
+            ],
+            [
+              -58.370338686776805,
+              -34.59056045750541
+            ],
+            [
+              -58.36634755976199,
+              -34.585472897674485
+            ],
+            [
+              -58.37480188257719,
+              -34.580349692826424
+            ],
+            [
+              -58.38126060839804,
+              -34.588632812842846
+            ],
+            [
+              -58.3837711895232,
+              -34.58759275212677
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "manualbertal@gmail.com",
+        "age": "20–29",
+        "yearsInBarrio": "10+",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "La estacion retiro",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 191658,
+        "barrio": "Retiro",
+        "fillColor": "#33FFF5",
+        "pinLocation": "{\"lat\":-34.58984506818809,\"lng\":-58.383197214389824}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "desktop",
+        "mapClicks": 2,
+        "canContact": "sí",
+        "timestamp": "2025-06-04T18:26:00.909Z",
+        "barrio_cleaned": "retiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
               -58.410002318764356,
               -34.58893112553269
             ],
@@ -6189,6 +6379,68 @@
         "canContact": "",
         "timestamp": "2025-05-31T02:35:03.439Z",
         "barrio_cleaned": "recoleta"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.38768519041072,
+              -34.589853627751566
+            ],
+            [
+              -58.38686600004394,
+              -34.59926103950056
+            ],
+            [
+              -58.37140981844422,
+              -34.59842049497179
+            ],
+            [
+              -58.37128210501176,
+              -34.59204251084944
+            ],
+            [
+              -58.3804489455643,
+              -34.58686181779386
+            ],
+            [
+              -58.38768519041072,
+              -34.589853627751566
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "10+",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "zona_norte",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 112715,
+        "barrio": "Retiro",
+        "fillColor": "#33FFF5",
+        "pinLocation": "{\"lat\":-34.588948695618555,\"lng\":-58.383915823318404}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-GB",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-06-04T17:52:54.093Z",
+        "barrio_cleaned": "retiro"
       }
     },
     {

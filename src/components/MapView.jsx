@@ -9,6 +9,7 @@ import mapboxgl from 'mapbox-gl';
 import * as turf from '@turf/turf';
 import groupBy from 'lodash.groupby';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import { initAnalytics, logPageView, logEvent } from '../lib/analytics'
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
 
@@ -118,6 +119,13 @@ const MapView = () => {
   const [loading, setLoading] = useState(true);
   const [dots, setDots] = useState('');
   const [lockedManzanaId, setLockedManzanaId] = useState(null);
+
+  // ✅ Google Analytics page view
+  useEffect(() => {
+    initAnalytics();         // Only initializes once
+    logPageView('/map');     // Logs the map view
+  }, []);
+
   useEffect(() => {
     if (!loading) return;
 
@@ -138,29 +146,32 @@ const handleShare = (mode = 'copy') => {
     return;
   }
 
-  const barrios = JSON.parse(hovered.properties.barrios || '{}');
+  const barriosRaw = hovered.properties.barrios;
+  const barrios = typeof barriosRaw === 'string' ? JSON.parse(barriosRaw) : barriosRaw;
   const total = Object.values(barrios).reduce((sum, v) => sum + Number(v), 0);
 
-  const summary = Object.entries(barrios)
+  const sorted = Object.entries(barrios)
     .sort((a, b) => b[1] - a[1])
+    .slice(0, 3)
     .map(([name, weight]) => {
-      const pct = Math.round((weight / total) * 100);
-      return `${name} (${pct}%)`;
-    })
-    .slice(0, 4)
-    .join(', ');
+      const pct = Math.round((Number(weight) / total) * 100);
+      return `${pct}% ${name}`;
+    });
 
-  const text = `Mi manzana según los porteños: ${summary} 👉 https://dondevivocaba.com`;
+  const summary = sorted.join(', ');
+  const message = `Yo vivo en ${sorted[0]}. (${summary}). Buscá tu manzana: 👉 https://dondevivocaba.com/map`;
 
   if (mode === 'whatsapp') {
-    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
   } else if (mode === 'x') {
-    window.open(`https://x.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://x.com/intent/tweet?text=${encodeURIComponent(message)}`, '_blank');
   } else {
-    navigator.clipboard.writeText(text).then(() => {
-      showToast('¡Copiado!');
+    navigator.clipboard.writeText(message).then(() => {
+      showToast('📋 Copiado!');
     });
   }
+
+  logEvent("Map", "Share", mode);
 };
 
   const shareButtonStyle = {
@@ -605,20 +616,22 @@ mapInstance.on('idle', () => {
 return (
   <>
 
-
-    <div style={{
-      position: 'absolute',
-      top: 20,
-      left: 20,
-      width: 350,
-      background: '#111',
-      color: 'white',
-      padding: '20px',
-      borderRadius: '8px',
-      zIndex: 1000,
-      fontFamily: 'sans-serif',
-      boxShadow: '0 0 10px rgba(0,0,0,0.5)'
-    }}>
+<div
+  className="map-sidebar"
+  style={{
+    position: 'absolute',
+    top: 20,
+    left: 20,
+    width: 350,
+    background: '#111',
+    color: 'white',
+    padding: '20px',
+    borderRadius: '8px',
+    zIndex: 1000,
+    fontFamily: 'sans-serif',
+    boxShadow: '0 0 10px rgba(0,0,0,0.5)',
+  }}
+>
       <h2 style={{
         fontSize: '20px',
         fontWeight: '700',
@@ -685,7 +698,7 @@ return (
       justifyContent: 'center',
     }}
     onClick={() => {
-      const message = encodeURIComponent("Mirá cómo votaron los porteños en mi manzana 👉 https://dondevivocaba.com");
+      handleShare('whatsapp')
       window.open(`https://wa.me/?text=${message}`, '_blank');
     }}
   >
@@ -709,7 +722,7 @@ return (
       justifyContent: 'center',
     }}
     onClick={() => {
-      const text = encodeURIComponent("Mirá cómo votaron los porteños en mi manzana 👉 https://dondevivocaba.com");
+      handleShare('x')
       window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
     }}
   >
@@ -729,29 +742,7 @@ return (
       cursor: 'pointer',
       borderRadius: '4px'
     }}
-    onClick={() => {
-      navigator.clipboard.writeText("Mirá cómo votaron los porteños en mi manzana 👉 https://dondevivocaba.com").then(() => {
-        const toast = document.createElement('div');
-        toast.textContent = '📋 Copiado!';
-        Object.assign(toast.style, {
-          position: 'absolute',
-          bottom: '30px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          background: '#333',
-          color: 'white',
-          padding: '10px 16px',
-          borderRadius: '6px',
-          zIndex: 2000,
-          fontFamily: 'sans-serif',
-          fontSize: '14px'
-        });
-        document.body.appendChild(toast);
-        setTimeout(() => {
-          toast.remove();
-        }, 2000);
-      });
-    }}
+    onClick={() => handleShare('copy')}
   >
     📋
   </button>
@@ -773,8 +764,7 @@ return (
 >
   📝 Sumá mi respuesta
 </button>
-
-    </div>
+</div>
 
 {loading && (
   <div style={{
