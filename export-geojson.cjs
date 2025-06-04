@@ -53,6 +53,7 @@ async function exportToGeoJSON() {
             nacimientoLugar: data.nacimientoLugar || '',
             provinciaNacimiento: data.provinciaNacimiento || '',
             paisNacimiento: data.paisNacimiento || '',
+            nivelEducacionJefe: data.nivelEducacionJefe || '',
             sessionDuration: data.sessionDuration || '',
             barrio: data.barrioName || '',
             fillColor: getColorForBarrio(data.barrioName || ''),
@@ -76,8 +77,8 @@ async function exportToGeoJSON() {
     features
   }
 
-  fs.writeFileSync('responses.geojson', JSON.stringify(geojson, null, 2))
-  console.log('✅ Exported to responses.geojson')
+  fs.writeFileSync('public/data/responses.geojson', JSON.stringify(geojson, null, 2))
+  console.log('✅ Exported to public/data/responses.geojson')
 }
 
 exportToGeoJSON()

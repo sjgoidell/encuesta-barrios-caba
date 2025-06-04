@@ -1,0 +1,447 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "montecastro"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.49912366541446,
+          -34.61959307303556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "mataderos"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.49029246054964,
+          -34.66237626904024
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "villapueyrredon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.50159058226736,
+          -34.58470638940631
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "villaurquiza"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.49000209471863,
+          -34.571738428380385
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "saavedra"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.48603544921957,
+          -34.55237336239886
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "villadelparque"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.48718970472914,
+          -34.60596277912327
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "coghlan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.476505540531186,
+          -34.56095235388435
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "belgranor"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.47072658958658,
+          -34.56878547066902
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "nunez"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.462067290530975,
+          -34.54543652587725
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "belgrano"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.453708021430465,
+          -34.56134230610509
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "colegiales"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.45343952892836,
+          -34.57616306031288
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "caballito"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.44349002270889,
+          -34.616077842613215
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "villacrespo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.44582057606656,
+          -34.598819209411836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "chacalermo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.44790960704129,
+          -34.58701901022946
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "belgranoc"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.443839583392226,
+          -34.56237412630478
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "palermohollywood"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.43756294635218,
+          -34.58175575771579
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "palermo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.420092216445695,
+          -34.58301466782383
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "lascanitas"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.433885115412004,
+          -34.56857041941801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "almagro"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.42109994749308,
+          -34.608599065106354
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "palermonuevo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.4244132095572,
+          -34.5776547018903
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "palermochico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.40907089068147,
+          -34.577294748241236
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "sancristobal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.40324661475391,
+          -34.61997674218138
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "palermosensible"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414452802215486,
+          -34.591770347699956
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "palermobotanico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413244342252355,
+          -34.58046023369426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "balvanera"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.40694609030195,
+          -34.60517704679659
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "recoleta"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.396020113733556,
+          -34.59030476335895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "facultaddemedicina"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.400319808550854,
+          -34.599988226445376
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "barrioparque"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.400400159143274,
+          -34.577093907420846
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "barrionorte"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.40125540104201,
+          -34.58112030176586
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "congreso"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.39205044105249,
+          -34.610372594802534
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "sannicolas"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.381950431269544,
+          -34.60467123976953
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "monserrat"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.38163229438336,
+          -34.614176620046116
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "retiro"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.3757009672775,
+          -34.59450518574422
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "santelmo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.372124916342216,
+          -34.62178588072909
+        ]
+      }
+    }
+  ]
+}

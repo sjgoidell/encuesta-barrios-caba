@@ -31,18 +31,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Teatro Colon",
-        "fillColor": "#FF5733",
-        "pinLocation": {
-          "lat": -34.6014323857603,
-          "lng": -58.38277422956121
-        },
-        "comments": "",
         "email": "beep@beep.org",
         "age": "",
         "yearsInBarrio": "",
-        "comunidad": "",
-        "situacionDomicilio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 90740,
+        "barrio": "Teatro Colon",
+        "fillColor": "#FF5733",
+        "pinLocation": "{\"lat\":-34.6014323857603,\"lng\":-58.38277422956121}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "desktop",
@@ -113,24 +119,154 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Belgrano",
-        "fillColor": "#33FF57",
-        "pinLocation": {
-          "lat": -34.55886091162459,
-          "lng": -58.452649084377825
-        },
-        "comments": "",
         "email": "belio.francisco.2000@gmail.com",
         "age": "18–24",
         "yearsInBarrio": "toda_la_vida",
-        "comunidad": "",
-        "situacionDomicilio": "dueño",
+        "altNames": "No",
+        "landmarks": "Barrancas de Belgrano",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": "",
+        "barrio": "Belgrano",
+        "fillColor": "#33FF57",
+        "pinLocation": "{\"lat\":-34.55886091162459,\"lng\":-58.452649084377825}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
         "canContact": "no",
         "timestamp": "2025-04-30T21:01:05.860Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.43790122223061,
+              -34.60765614649015
+            ],
+            [
+              -58.4370429153455,
+              -34.604547759000525
+            ],
+            [
+              -58.432622634889015,
+              -34.60514825201511
+            ],
+            [
+              -58.433223449708294,
+              -34.60871579744696
+            ],
+            [
+              -58.4364850158704,
+              -34.60871579744696
+            ],
+            [
+              -58.43790122223061,
+              -34.60765614649015
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "test",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 19844,
+        "barrio": "test",
+        "fillColor": "#3357FF",
+        "pinLocation": "{\"lat\":-34.606271516172946,\"lng\":-58.43562670898531}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "desktop",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-14T20:25:11.157Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.389698194044385,
+              -34.62223836288846
+            ],
+            [
+              -58.38153231055588,
+              -34.62223960013486
+            ],
+            [
+              -58.38150823973329,
+              -34.61338496896249
+            ],
+            [
+              -58.36958718222364,
+              -34.61253912929233
+            ],
+            [
+              -58.36987197728881,
+              -34.60896593935254
+            ],
+            [
+              -58.39024094194576,
+              -34.61038867168094
+            ],
+            [
+              -58.389698194044385,
+              -34.62223836288846
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "producciones.hhg@gmail.com",
+        "age": "30–39",
+        "yearsInBarrio": "1–5",
+        "altNames": "sí",
+        "landmarks": "San Cristóbal ",
+        "comments": "El mural del Diego Armando Maradona ",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "hincha_futbol; gamer; lector; trabajador_salud; empleado_publico; estudiante; universitario; ambientalista",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 335223,
+        "barrio": "Monserrat",
+        "fillColor": "#FF33A1",
+        "pinLocation": "{\"lat\":-34.62163531560349,\"lng\":-58.38872899462483}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "sí",
+        "timestamp": "2025-05-20T15:50:28.896Z"
       }
     },
     {
@@ -163,18 +299,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Palermo Soho",
-        "fillColor": "#3357FF",
-        "pinLocation": {
-          "lat": -34.6037,
-          "lng": -58.437
-        },
-        "comments": "",
         "email": "a@a.a",
         "age": "",
         "yearsInBarrio": "",
-        "comunidad": "",
-        "situacionDomicilio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": "",
+        "barrio": "Palermo Soho",
+        "fillColor": "#A133FF",
+        "pinLocation": "{\"lat\":-34.6037,\"lng\":-58.437}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
@@ -213,18 +355,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Palermo Hollywood",
-        "fillColor": "#FF33A1",
-        "pinLocation": {
-          "lat": -34.58076785859135,
-          "lng": -58.43406468588928
-        },
-        "comments": "",
         "email": "genaromendezc@gmail.com",
         "age": "20–29",
         "yearsInBarrio": "<1",
-        "comunidad": "",
-        "situacionDomicilio": "alquiler",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 175470,
+        "barrio": "Palermo Hollywood",
+        "fillColor": "#33FFF5",
+        "pinLocation": "{\"lat\":-34.58076785859135,\"lng\":-58.43406468588928}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
@@ -299,18 +447,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Las Cañitas",
-        "fillColor": "#A133FF",
-        "pinLocation": {
-          "lat": -34.5716942030548,
-          "lng": -58.429288178203365
-        },
-        "comments": "",
         "email": "",
         "age": "",
         "yearsInBarrio": "",
-        "comunidad": "",
-        "situacionDomicilio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 70783,
+        "barrio": "Las Cañitas",
+        "fillColor": "#F5FF33",
+        "pinLocation": "{\"lat\":-34.5716942030548,\"lng\":-58.429288178203365}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "desktop",
@@ -465,24 +619,438 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Belgrano R",
-        "fillColor": "#33FFF5",
-        "pinLocation": {
-          "lat": -34.563340155758205,
-          "lng": -58.46715647525379
-        },
-        "comments": "",
         "email": "galeno050@hotmail.com",
         "age": "40–49",
         "yearsInBarrio": "1–5",
-        "comunidad": "",
-        "situacionDomicilio": "alquiler",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 193633,
+        "barrio": "Belgrano R",
+        "fillColor": "#FF8F33",
+        "pinLocation": "{\"lat\":-34.563340155758205,\"lng\":-58.46715647525379}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-US",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "sí",
         "timestamp": "2025-05-07T16:23:23.851Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.38369365697531,
+              -34.58772921303786
+            ],
+            [
+              -58.38577970109159,
+              -34.58973927168052
+            ],
+            [
+              -58.3868938382908,
+              -34.590793069403844
+            ],
+            [
+              -58.384452218472475,
+              -34.592783539747586
+            ],
+            [
+              -58.38451067492662,
+              -34.5944860561776
+            ],
+            [
+              -58.384012868944,
+              -34.595422712406766
+            ],
+            [
+              -58.382307157440636,
+              -34.59543150978338
+            ],
+            [
+              -58.38019083905682,
+              -34.59951902418449
+            ],
+            [
+              -58.38084923320264,
+              -34.60316098687703
+            ],
+            [
+              -58.370680444819115,
+              -34.602876289677
+            ],
+            [
+              -58.37303925026632,
+              -34.59431349935963
+            ],
+            [
+              -58.38369365697531,
+              -34.58772921303786
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "6–10",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "La estación define a retiro ",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 187814,
+        "barrio": "retiro",
+        "fillColor": "#33FF8F",
+        "pinLocation": "{\"lat\":-34.59239616953384,\"lng\":-58.378776918108954}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-20T13:51:29.044Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.44499400880372,
+              -34.561690696818026
+            ],
+            [
+              -58.43158687994594,
+              -34.574522333471265
+            ],
+            [
+              -58.42418255523367,
+              -34.57077263506933
+            ],
+            [
+              -58.437051497253805,
+              -34.56318454750137
+            ],
+            [
+              -58.44499400880372,
+              -34.561690696818026
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "julia.h.schnell@gmail.com",
+        "age": "30–39",
+        "yearsInBarrio": "1–5",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "sí",
+        "selectedReligion": "judía",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Otro país",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "estados_unidos",
+        "sessionDuration": 98203,
+        "barrio": "Las Cañitas",
+        "fillColor": "#F5FF33",
+        "pinLocation": "{\"lat\":-34.567773382205736,\"lng\":-58.432765905797766}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "sí",
+        "timestamp": "2025-05-15T02:25:32.929Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.4535313712628,
+              -34.55081006226177
+            ],
+            [
+              -58.4468716099246,
+              -34.556439580145046
+            ],
+            [
+              -58.46273490810451,
+              -34.56612418550206
+            ],
+            [
+              -58.46827291301571,
+              -34.55831587551103
+            ],
+            [
+              -58.4535313712628,
+              -34.55081006226177
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "6–10",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Otra Provincia",
+        "provinciaNacimiento": "misiones",
+        "paisNacimiento": "",
+        "sessionDuration": 88234,
+        "barrio": "Belgrano",
+        "fillColor": "#33FF57",
+        "pinLocation": "{\"lat\":-34.557230978530484,\"lng\":-58.45585595416411}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-GB",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "sí",
+        "timestamp": "2025-05-18T03:59:44.281Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.49584456405046,
+              -34.614263020985504
+            ],
+            [
+              -58.50687449918905,
+              -34.601657350797815
+            ],
+            [
+              -58.4974576138803,
+              -34.59683329235108
+            ],
+            [
+              -58.48339979258557,
+              -34.59794470078512
+            ],
+            [
+              -58.483069095271006,
+              -34.60879121071782
+            ],
+            [
+              -58.494669123235994,
+              -34.612132635518876
+            ],
+            [
+              -58.49649368202866,
+              -34.61305299119781
+            ],
+            [
+              -58.49584456405046,
+              -34.614263020985504
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "arielgoland@gmail.com",
+        "age": "20–29",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 111808,
+        "barrio": "Villa del Parque",
+        "fillColor": "#8F33FF",
+        "pinLocation": "{\"lat\":-34.60997163782338,\"lng\":-58.49460001906792}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "no",
+        "timestamp": "2025-05-18T19:11:00.786Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.43554595903818,
+              -34.60879835817904
+            ],
+            [
+              -58.43722734360816,
+              -34.608148787850745
+            ],
+            [
+              -58.43829107724447,
+              -34.60600234512862
+            ],
+            [
+              -58.43722734360816,
+              -34.60478788582341
+            ],
+            [
+              -58.43491884854987,
+              -34.604516203081396
+            ],
+            [
+              -58.43387667351068,
+              -34.60488916098333
+            ],
+            [
+              -58.43307616304996,
+              -34.60572209387069
+            ],
+            [
+              -58.43277408347886,
+              -34.60701498861309
+            ],
+            [
+              -58.433151682942736,
+              -34.60795978389807
+            ],
+            [
+              -58.43395219340344,
+              -34.608419745614796
+            ],
+            [
+              -58.43554595903818,
+              -34.60879835817904
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "test",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 893779,
+        "barrio": "test",
+        "fillColor": "#3357FF",
+        "pinLocation": "{\"lat\":-34.605988122143316,\"lng\":-58.43557598134596}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-14T20:29:06.433Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.43800798702692,
+              -34.589146638619944
+            ],
+            [
+              -58.43001283015683,
+              -34.59414652067877
+            ],
+            [
+              -58.416057021693746,
+              -34.58518670907099
+            ],
+            [
+              -58.42658242316091,
+              -34.57784874920665
+            ],
+            [
+              -58.43107755251009,
+              -34.58267980424055
+            ],
+            [
+              -58.43584719665684,
+              -34.58604160191824
+            ],
+            [
+              -58.43800798702692,
+              -34.589146638619944
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "test",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "sí",
+        "landmarks": "Palermo",
+        "comments": "",
+        "religionAffiliation": "sí",
+        "selectedReligion": "católica",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "lgbtq; cooperativa; otra",
+        "otraComunidadTexto": "Coreano",
+        "nacimientoLugar": "Otro Arg",
+        "provinciaNacimiento": "santa_fe",
+        "paisNacimiento": "",
+        "sessionDuration": 73506,
+        "barrio": "Palermo Soho",
+        "fillColor": "#A133FF",
+        "pinLocation": "{\"lat\":-34.588108380818305,\"lng\":-58.431286734657874}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-13T19:23:50.890Z"
       }
     },
     {
@@ -515,18 +1083,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Las Cañitas",
-        "fillColor": "#A133FF",
-        "pinLocation": {
-          "lat": -34.5682724733659,
-          "lng": -58.43564629855044
-        },
-        "comments": "Es el mejor!",
         "email": "xxx@gmail.com",
         "age": "25–34",
         "yearsInBarrio": "1–2",
-        "comunidad": "Tías de cañitas ",
-        "situacionDomicilio": "dueño",
+        "altNames": "No",
+        "landmarks": "Baez",
+        "comments": "Es el mejor!",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": "",
+        "barrio": "Las Cañitas",
+        "fillColor": "#F5FF33",
+        "pinLocation": "{\"lat\":-34.5682724733659,\"lng\":-58.43564629855044}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
@@ -565,24 +1139,294 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Villa Crespo",
-        "fillColor": "#F5FF33",
-        "pinLocation": {
-          "lat": -34.6037,
-          "lng": -58.437
-        },
-        "comments": "",
         "email": "s@a.a",
         "age": "",
         "yearsInBarrio": "",
-        "comunidad": "",
-        "situacionDomicilio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": "",
+        "barrio": "Villa Crespo",
+        "fillColor": "#FF5733",
+        "pinLocation": "{\"lat\":-34.6037,\"lng\":-58.437}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
         "canContact": "",
         "timestamp": "2025-05-04T14:23:22.838Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.506104029460744,
+              -34.61407781755895
+            ],
+            [
+              -58.511915994032336,
+              -34.61736748242209
+            ],
+            [
+              -58.49421304431506,
+              -34.624619669406734
+            ],
+            [
+              -58.49808768616195,
+              -34.627787843700666
+            ],
+            [
+              -58.494039974841584,
+              -34.624660030100195
+            ],
+            [
+              -58.506104029460744,
+              -34.61407781755895
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "30–39",
+        "yearsInBarrio": "<1",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "Nada en particular",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Gran BA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 223353,
+        "barrio": "Monte Castro",
+        "fillColor": "#33FF57",
+        "pinLocation": "{\"lat\":-34.61906272011128,\"lng\":-58.505503214686044}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 2,
+        "canContact": "",
+        "timestamp": "2025-05-20T17:36:03.499Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.438212736114096,
+              -34.58866136484015
+            ],
+            [
+              -58.44513370349229,
+              -34.58465179128738
+            ],
+            [
+              -58.44340346164775,
+              -34.58143344097783
+            ],
+            [
+              -58.435457165464314,
+              -34.575154660703966
+            ],
+            [
+              -58.426455575964724,
+              -34.57755935760024
+            ],
+            [
+              -58.428121734778,
+              -34.5805140511108
+            ],
+            [
+              -58.438212736114096,
+              -34.58866136484015
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "sí",
+        "landmarks": "Palermo",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 64012,
+        "barrio": "Palermo Hollywood",
+        "fillColor": "#33FFF5",
+        "pinLocation": "{\"lat\":-34.5857193748812,\"lng\":-58.44179015746205}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-GB",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-18T19:20:49.092Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.43612701942885,
+              -34.60459964164522
+            ],
+            [
+              -58.438152273838526,
+              -34.60597669094007
+            ],
+            [
+              -58.43733776934761,
+              -34.60793351118203
+            ],
+            [
+              -58.43608299215897,
+              -34.60860389269604
+            ],
+            [
+              -58.43449801044699,
+              -34.60849518254841
+            ],
+            [
+              -58.433397328702455,
+              -34.60791539268723
+            ],
+            [
+              -58.43273691965631,
+              -34.60668332579211
+            ],
+            [
+              -58.43346336960758,
+              -34.60528816914772
+            ],
+            [
+              -58.43489425587481,
+              -34.60458152242295
+            ],
+            [
+              -58.43612701942885,
+              -34.60459964164522
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "test",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 24130,
+        "barrio": "S ",
+        "fillColor": "#3357FF",
+        "pinLocation": "{\"lat\":-34.6063139057665,\"lng\":-58.434253417968236}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-14T20:32:38.939Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.44247058913156,
+              -34.563596229586
+            ],
+            [
+              -58.42414506027521,
+              -34.57079367348418
+            ],
+            [
+              -58.43191273758221,
+              -34.57429202209948
+            ],
+            [
+              -58.436257456550976,
+              -34.56356562070344
+            ],
+            [
+              -58.42998300036368,
+              -34.56696268615904
+            ],
+            [
+              -58.425924589315784,
+              -34.570053936149066
+            ],
+            [
+              -58.44247058913156,
+              -34.563596229586
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "1–5",
+        "altNames": "sí",
+        "landmarks": "Está dentro de Palermo ",
+        "comments": "Las avenidas Luis maría campos,libertador y el puente de la estación Carranza",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 331957,
+        "barrio": "Las cañitas",
+        "fillColor": "#FF33A1",
+        "pinLocation": "{\"lat\":-34.565982344750694,\"lng\":-58.43374640598478}",
+        "userRegion": "El Calafate, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 3,
+        "canContact": "no",
+        "timestamp": "2025-05-17T02:43:29.547Z"
       }
     },
     {
@@ -615,24 +1459,86 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "s",
-        "fillColor": "#FF8F33",
-        "pinLocation": {
-          "lat": -34.6037,
-          "lng": -58.437
-        },
-        "comments": "",
         "email": "s@s.s",
         "age": "",
         "yearsInBarrio": "",
-        "comunidad": "",
-        "situacionDomicilio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 20022,
+        "barrio": "s",
+        "fillColor": "#A133FF",
+        "pinLocation": "{\"lat\":-34.6037,\"lng\":-58.437}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "mobile",
         "mapClicks": 0,
         "canContact": "",
         "timestamp": "2025-05-07T16:07:57.563Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.441131169300405,
+              -34.564609011355834
+            ],
+            [
+              -58.4504355092736,
+              -34.55847918334408
+            ],
+            [
+              -58.459512248470645,
+              -34.56343297347189
+            ],
+            [
+              -58.44764662570549,
+              -34.57120931904751
+            ],
+            [
+              -58.441131169300405,
+              -34.564609011355834
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "1–5",
+        "altNames": "sí",
+        "landmarks": "Belgrano",
+        "comments": "Barrancas de Belgrano",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 307125,
+        "barrio": "Belgrano C",
+        "fillColor": "#33FFF5",
+        "pinLocation": "{\"lat\":-34.562324499813116,\"lng\":-58.45020371962427}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-GB",
+        "deviceType": "mobile",
+        "mapClicks": 4,
+        "canContact": "",
+        "timestamp": "2025-05-18T03:12:50.644Z"
       }
     },
     {
@@ -665,18 +1571,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "barrio parque",
-        "fillColor": "#33FF8F",
-        "pinLocation": {
-          "lat": -34.578994528718745,
-          "lng": -58.403560363246484
-        },
-        "comments": "",
         "email": "a@s.com",
         "age": "",
         "yearsInBarrio": "",
-        "comunidad": "",
-        "situacionDomicilio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": "",
+        "barrio": "barrio parque",
+        "fillColor": "#F5FF33",
+        "pinLocation": "{\"lat\":-34.578994528718745,\"lng\":-58.403560363246484}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
@@ -723,18 +1635,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Palermo",
-        "fillColor": "#8F33FF",
-        "pinLocation": {
-          "lat": -34.6037,
-          "lng": -58.437
-        },
-        "comments": "No quiero, lo siento soy una persona privada ",
         "email": "gustavo@beep.com",
         "age": "35–44",
         "yearsInBarrio": "6–10",
-        "comunidad": "No me gusta mucha gente de mi barrio y no considero parte de mi comunidad. Ellos tienes menos de noventa años y quiero vivir en un nursing home. (No es in opción, pero ahora vivo en un nursing home y quiero más nursing homes en el barrio)",
-        "situacionDomicilio": "familiar",
+        "altNames": "Londres",
+        "landmarks": "Tu cara",
+        "comments": "No quiero, lo siento soy una persona privada ",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 307048,
+        "barrio": "Palermo",
+        "fillColor": "#FF8F33",
+        "pinLocation": "{\"lat\":-34.6037,\"lng\":-58.437}",
         "userRegion": "Brooklyn, US",
         "language": "en-US",
         "deviceType": "mobile",
@@ -777,18 +1695,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Las Cañitas",
-        "fillColor": "#A133FF",
-        "pinLocation": {
-          "lat": -34.57178058427991,
-          "lng": -58.429388990948524
-        },
-        "comments": "",
         "email": "sgoidell@yahoo.com",
         "age": "25–34",
         "yearsInBarrio": "1–5",
-        "comunidad": "",
-        "situacionDomicilio": "alquiler",
+        "altNames": "",
+        "landmarks": "Entre Luis Maria Campos y Libertador",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": "",
+        "barrio": "Las Cañitas",
+        "fillColor": "#F5FF33",
+        "pinLocation": "{\"lat\":-34.57178058427991,\"lng\":-58.429388990948524}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
@@ -855,18 +1779,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Belgrano / límite con Colegiales",
-        "fillColor": "#FF5733",
-        "pinLocation": {
-          "lat": -34.56868158496291,
-          "lng": -58.447504339173264
-        },
-        "comments": "",
         "email": "",
         "age": "20–29",
         "yearsInBarrio": "toda_la_vida",
-        "comunidad": "No",
-        "situacionDomicilio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 403518,
+        "barrio": "Belgrano / límite con Colegiales",
+        "fillColor": "#33FF8F",
+        "pinLocation": "{\"lat\":-34.56868158496291,\"lng\":-58.447504339173264}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "desktop",
@@ -905,24 +1835,218 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Recoleta",
-        "fillColor": "#33FF57",
-        "pinLocation": {
-          "lat": -34.58699094818079,
-          "lng": -58.39762684935464
-        },
-        "comments": "",
         "email": "sofidangelo149@gmail.com",
         "age": "20–29",
         "yearsInBarrio": "<1",
-        "comunidad": "",
-        "situacionDomicilio": "alquiler",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 332761,
+        "barrio": "Recoleta",
+        "fillColor": "#8F33FF",
+        "pinLocation": "{\"lat\":-34.58699094818079,\"lng\":-58.39762684935464}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "mobile",
         "mapClicks": 2,
         "canContact": "no",
         "timestamp": "2025-05-11T04:35:53.878Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.44928935900238,
+              -34.542719158772826
+            ],
+            [
+              -58.454171181982204,
+              -34.54901523476279
+            ],
+            [
+              -58.4638515046486,
+              -34.55405595390765
+            ],
+            [
+              -58.475631838404524,
+              -34.53893806265877
+            ],
+            [
+              -58.467292329882795,
+              -34.53573633432774
+            ],
+            [
+              -58.46376887476737,
+              -34.534806413891104
+            ],
+            [
+              -58.44928935900238,
+              -34.542719158772826
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "tomiarrachea@gmail.com",
+        "age": "20–29",
+        "yearsInBarrio": "6–10",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 188101,
+        "barrio": "Núñez",
+        "fillColor": "#FF5733",
+        "pinLocation": "{\"lat\":-34.539800068768386,\"lng\":-58.46942732250265}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-GB",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "sí",
+        "timestamp": "2025-05-17T17:01:30.482Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.439478410274745,
+              -34.562818156942676
+            ],
+            [
+              -58.441056533382664,
+              -34.56458061523643
+            ],
+            [
+              -58.43329609797408,
+              -34.57260540701164
+            ],
+            [
+              -58.430776521933666,
+              -34.569814910900654
+            ],
+            [
+              -58.43026177541216,
+              -34.567496989669536
+            ],
+            [
+              -58.43432992272534,
+              -34.56487438382096
+            ],
+            [
+              -58.4372633787837,
+              -34.56312429823109
+            ],
+            [
+              -58.439478410274745,
+              -34.562818156942676
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "50–59",
+        "yearsInBarrio": "1–5",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "To the left of and behind the polo, a very small neighborhood between Palermo and Belgrano",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "expatriado; inquilino; fan_cafes; gastronomico",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Otro país",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "estados_unidos",
+        "sessionDuration": 649360,
+        "barrio": "Las Canitas",
+        "fillColor": "#33FF57",
+        "pinLocation": "{\"lat\":-34.56489044331906,\"lng\":-58.43464206225241}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "mobile",
+        "mapClicks": 6,
+        "canContact": "",
+        "timestamp": "2025-05-15T22:56:15.848Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.420398733751966,
+              -34.58112678516221
+            ],
+            [
+              -58.410265441702066,
+              -34.582213411438865
+            ],
+            [
+              -58.40715570010356,
+              -34.57873428576455
+            ],
+            [
+              -58.414878900517394,
+              -34.57543527369373
+            ],
+            [
+              -58.420398733751966,
+              -34.58112678516221
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "matiasignaciopascual@gmail.com",
+        "age": "20–29",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "Barrio muy vivo, mucha actividad de restaurantes, bares y locales. Al mismo tiempo es tranquilo y seguro",
+        "religionAffiliation": "sí",
+        "selectedReligion": "católica",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "joven",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 212996,
+        "barrio": "Palermo Botánico",
+        "fillColor": "#3357FF",
+        "pinLocation": "{\"lat\":-34.58037207748821,\"lng\":-58.41328923250377}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-GB",
+        "deviceType": "mobile",
+        "mapClicks": 2,
+        "canContact": "sí",
+        "timestamp": "2025-05-16T14:51:08.288Z"
       }
     },
     {
@@ -971,18 +2095,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Las Cañitas",
-        "fillColor": "#A133FF",
-        "pinLocation": {
-          "lat": -34.57157733862026,
-          "lng": -58.429393025091116
-        },
-        "comments": "",
         "email": "sgoidell@yahoo.com",
         "age": "18–24",
         "yearsInBarrio": "1–5",
-        "comunidad": "",
-        "situacionDomicilio": "alquiler",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 264741,
+        "barrio": "Las Cañitas",
+        "fillColor": "#F5FF33",
+        "pinLocation": "{\"lat\":-34.57157733862026,\"lng\":-58.429393025091116}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "desktop",
@@ -1045,18 +2175,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Chacalermo",
-        "fillColor": "#3357FF",
-        "pinLocation": {
-          "lat": -34.58293134636718,
-          "lng": -58.44830486557696
-        },
-        "comments": "Es el límite entre Palermo Hollywood y la parte de Chacarita entre las avenidas Córdoba y Corrientes",
         "email": "genaromendezc@gmail.com",
         "age": "18–24",
         "yearsInBarrio": "1–5",
-        "comunidad": "Me considero indie palermitano",
-        "situacionDomicilio": "alquiler",
+        "altNames": "Palermo Hollywood, Chacarita",
+        "landmarks": "Corrientes, Jorge Newbery, Juan B. justo y Niceto Vega/Alvarez Thomas",
+        "comments": "Es el límite entre Palermo Hollywood y la parte de Chacarita entre las avenidas Córdoba y Corrientes",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": "",
+        "barrio": "Chacalermo",
+        "fillColor": "#FF33A1",
+        "pinLocation": "{\"lat\":-34.58293134636718,\"lng\":-58.44830486557696}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
@@ -1099,18 +2235,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Palermo Sensible",
-        "fillColor": "#FF33A1",
-        "pinLocation": {
-          "lat": -34.59141638057281,
-          "lng": -58.41413692747733
-        },
-        "comments": "Está plagado de psicólogos",
         "email": "a@a.a",
         "age": "",
         "yearsInBarrio": "",
-        "comunidad": "Interrior",
-        "situacionDomicilio": "alquiler",
+        "altNames": "Palermo, Palermo Freud",
+        "landmarks": "Charcas y Plaza Guemes",
+        "comments": "Está plagado de psicólogos",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": "",
+        "barrio": "Palermo Sensible",
+        "fillColor": "#A133FF",
+        "pinLocation": "{\"lat\":-34.59141638057281,\"lng\":-58.41413692747733}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
@@ -1193,18 +2335,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Villa Pueyrredón",
-        "fillColor": "#A133FF",
-        "pinLocation": {
-          "lat": -34.5827319450675,
-          "lng": -58.498854038444804
-        },
-        "comments": "Es un verdadero barrio, las señoras todavía sacan la reposera y toman mate en lanpuerta",
         "email": "agustinastout@hotmail.com",
         "age": "25–34",
         "yearsInBarrio": "toda_la_vida",
-        "comunidad": "No",
-        "situacionDomicilio": "familiar",
+        "altNames": "La nueva ( para la plaza)",
+        "landmarks": "Mosconi, Plaza de la estación Pueyrredón ",
+        "comments": "Es un verdadero barrio, las señoras todavía sacan la reposera y toman mate en lanpuerta",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": "",
+        "barrio": "Villa Pueyrredón",
+        "fillColor": "#33FFF5",
+        "pinLocation": "{\"lat\":-34.5827319450675,\"lng\":-58.498854038444804}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
@@ -1243,18 +2391,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Palermo Soho",
-        "fillColor": "#3357FF",
-        "pinLocation": {
-          "lat": -34.6037,
-          "lng": -58.437
-        },
-        "comments": "",
         "email": "a@a.a",
         "age": "",
         "yearsInBarrio": "",
-        "comunidad": "",
-        "situacionDomicilio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": "",
+        "barrio": "Palermo Soho",
+        "fillColor": "#A133FF",
+        "pinLocation": "{\"lat\":-34.6037,\"lng\":-58.437}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
@@ -1325,24 +2479,90 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Parque Patricios",
-        "fillColor": "#33FFF5",
-        "pinLocation": {
-          "lat": -34.635247227068454,
-          "lng": -58.401226315837135
-        },
-        "comments": "",
         "email": "a@a.a",
         "age": "35–44",
         "yearsInBarrio": "toda_la_vida",
-        "comunidad": "",
-        "situacionDomicilio": "dueño",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 74077,
+        "barrio": "Parque Patricios",
+        "fillColor": "#F5FF33",
+        "pinLocation": "{\"lat\":-34.635247227068454,\"lng\":-58.401226315837135}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "desktop",
         "mapClicks": 0,
         "canContact": "no",
         "timestamp": "2025-05-05T10:30:18.133Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.43485967956725,
+              -34.60820527481931
+            ],
+            [
+              -58.43750185447874,
+              -34.60716030118668
+            ],
+            [
+              -58.437947937181335,
+              -34.60450545083285
+            ],
+            [
+              -58.43389888726264,
+              -34.6026131113922
+            ],
+            [
+              -58.43235475911027,
+              -34.60735800183139
+            ],
+            [
+              -58.43485967956725,
+              -34.60820527481931
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "test",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 159777,
+        "barrio": "test",
+        "fillColor": "#3357FF",
+        "pinLocation": "{\"lat\":-34.606270552092376,\"lng\":-58.43557598134596}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-15T14:41:55.023Z"
       }
     },
     {
@@ -1375,18 +2595,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Parque Chacabuco",
-        "fillColor": "#F5FF33",
-        "pinLocation": {
-          "lat": -34.633677261591075,
-          "lng": -58.43888827514745
-        },
-        "comments": "",
         "email": "test",
         "age": "",
         "yearsInBarrio": "",
-        "comunidad": "",
-        "situacionDomicilio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 20144,
+        "barrio": "Parque Chacabuco",
+        "fillColor": "#FF8F33",
+        "pinLocation": "{\"lat\":-34.633677261591075,\"lng\":-58.43888827514745}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "desktop",
@@ -1429,24 +2655,166 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Colegiales",
-        "fillColor": "#FF8F33",
-        "pinLocation": {
-          "lat": -34.57432905601711,
-          "lng": -58.453351038150785
-        },
-        "comments": "",
         "email": "",
         "age": "",
         "yearsInBarrio": "",
-        "comunidad": "",
-        "situacionDomicilio": "dueño",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 88602,
+        "barrio": "Colegiales",
+        "fillColor": "#33FF8F",
+        "pinLocation": "{\"lat\":-34.57432905601711,\"lng\":-58.453351038150785}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
         "timestamp": "2025-05-08T16:33:50.544Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.475550686380885,
+              -34.53945976478304
+            ],
+            [
+              -58.46142758286099,
+              -34.55664504966084
+            ],
+            [
+              -58.452191383756755,
+              -34.55145324912258
+            ],
+            [
+              -58.46837017559983,
+              -34.53645975480242
+            ],
+            [
+              -58.475550686380885,
+              -34.53945976478304
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "1–5",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "Casas bajas, River",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "zona_norte",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Gran BA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 179871,
+        "barrio": "Núñez",
+        "fillColor": "#FF5733",
+        "pinLocation": "{\"lat\":-34.545816609905465,\"lng\":-58.4697356572367}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 2,
+        "canContact": "",
+        "timestamp": "2025-05-19T20:08:05.537Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.45301250220693,
+              -34.63103847534287
+            ],
+            [
+              -58.42682071534344,
+              -34.626870721819785
+            ],
+            [
+              -58.42925823360976,
+              -34.615098410127004
+            ],
+            [
+              -58.430065505748985,
+              -34.61541615371865
+            ],
+            [
+              -58.430365992987035,
+              -34.602409008331925
+            ],
+            [
+              -58.43221346336989,
+              -34.601952804294235
+            ],
+            [
+              -58.439263436013135,
+              -34.60511176111939
+            ],
+            [
+              -58.44594848026077,
+              -34.60758073405768
+            ],
+            [
+              -58.45813511756414,
+              -34.604506140328944
+            ],
+            [
+              -58.462517720115855,
+              -34.60730007746608
+            ],
+            [
+              -58.45301250220693,
+              -34.63103847534287
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "egresado",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 195551,
+        "barrio": "Caballito",
+        "fillColor": "#8F33FF",
+        "pinLocation": "{\"lat\":-34.62198796601649,\"lng\":-58.445015020107164}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-GB",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-18T19:10:47.674Z"
       }
     },
     {
@@ -1475,24 +2843,222 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Barrio Norte",
-        "fillColor": "#33FF8F",
-        "pinLocation": {
-          "lat": -34.59038334663038,
-          "lng": -58.41653172606003
-        },
-        "comments": "",
         "email": "a@a.a",
         "age": "",
         "yearsInBarrio": "",
-        "comunidad": "",
-        "situacionDomicilio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 428471,
+        "barrio": "Barrio Norte",
+        "fillColor": "#FF5733",
+        "pinLocation": "{\"lat\":-34.59038334663038,\"lng\":-58.41653172606003}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "mobile",
         "mapClicks": 0,
         "canContact": "",
         "timestamp": "2025-05-05T18:37:43.077Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.41012261147252,
+              -34.59797729729283
+            ],
+            [
+              -58.396095821596646,
+              -34.583393143385685
+            ],
+            [
+              -58.38180254667016,
+              -34.58870187622273
+            ],
+            [
+              -58.38389573292599,
+              -34.59906990286647
+            ],
+            [
+              -58.41012261147252,
+              -34.59797729729283
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "contactomartin1@gmail.com",
+        "age": "40–49",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "sí",
+        "landmarks": "Barrio Norte",
+        "comments": " Es uno de los barrios mas caros de CABA.",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Gran BA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 445005,
+        "barrio": "Recoleta",
+        "fillColor": "#8F33FF",
+        "pinLocation": "{\"lat\":-34.59475812752023,\"lng\":-58.40509974989119}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "sí",
+        "timestamp": "2025-05-15T20:04:00.251Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.43554595903818,
+              -34.60879835817904
+            ],
+            [
+              -58.43722734360816,
+              -34.608148787850745
+            ],
+            [
+              -58.43829107724447,
+              -34.60600234512862
+            ],
+            [
+              -58.43722734360816,
+              -34.60478788582341
+            ],
+            [
+              -58.43491884854987,
+              -34.604516203081396
+            ],
+            [
+              -58.43387667351068,
+              -34.60488916098333
+            ],
+            [
+              -58.43307616304996,
+              -34.60572209387069
+            ],
+            [
+              -58.43277408347886,
+              -34.60701498861309
+            ],
+            [
+              -58.433151682942736,
+              -34.60795978389807
+            ],
+            [
+              -58.43395219340344,
+              -34.608419745614796
+            ],
+            [
+              -58.43554595903818,
+              -34.60879835817904
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "test",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 33076,
+        "barrio": "test",
+        "fillColor": "#3357FF",
+        "pinLocation": "{\"lat\":-34.605988122143316,\"lng\":-58.43557598134596}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-14T20:14:45.730Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.4535313712628,
+              -34.55081006226177
+            ],
+            [
+              -58.4468716099246,
+              -34.556439580145046
+            ],
+            [
+              -58.46273490810451,
+              -34.56612418550206
+            ],
+            [
+              -58.46827291301571,
+              -34.55831587551103
+            ],
+            [
+              -58.4535313712628,
+              -34.55081006226177
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "6–10",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Otra Provincia",
+        "provinciaNacimiento": "misiones",
+        "paisNacimiento": "",
+        "sessionDuration": 89417,
+        "barrio": "Belgrano",
+        "fillColor": "#33FF57",
+        "pinLocation": "{\"lat\":-34.557230978530484,\"lng\":-58.45585595416411}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-GB",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "sí",
+        "timestamp": "2025-05-18T03:59:45.464Z"
       }
     },
     {
@@ -1533,18 +3099,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Palermo Hollywood",
-        "fillColor": "#FF33A1",
-        "pinLocation": {
-          "lat": -34.5822262653941,
-          "lng": -58.436264630089454
-        },
-        "comments": "",
         "email": "martin.niepo@gmail.com",
         "age": "18–24",
         "yearsInBarrio": "toda_la_vida",
-        "comunidad": "",
-        "situacionDomicilio": "dueño",
+        "altNames": "Palermo",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": "",
+        "barrio": "Palermo Hollywood",
+        "fillColor": "#33FFF5",
+        "pinLocation": "{\"lat\":-34.5822262653941,\"lng\":-58.436264630089454}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
@@ -1579,24 +3151,86 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "v",
-        "fillColor": "#8F33FF",
-        "pinLocation": {
-          "lat": -34.57892690865754,
-          "lng": -58.439178948561064
-        },
-        "comments": "",
         "email": "a@a.a",
         "age": "",
         "yearsInBarrio": "",
-        "comunidad": "",
-        "situacionDomicilio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 25585,
+        "barrio": "v",
+        "fillColor": "#33FF57",
+        "pinLocation": "{\"lat\":-34.57892690865754,\"lng\":-58.439178948561064}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
         "timestamp": "2025-05-07T07:15:51.791Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.415787061440156,
+              -34.627293572655105
+            ],
+            [
+              -58.4175659692183,
+              -34.61169059748755
+            ],
+            [
+              -58.38215608060128,
+              -34.609380208552864
+            ],
+            [
+              -58.38102010125205,
+              -34.62214475460392
+            ],
+            [
+              -58.415787061440156,
+              -34.627293572655105
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "martinchunga411@gmail.com",
+        "age": "30–39",
+        "yearsInBarrio": "1–5",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "peruano",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Otro país",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "peru",
+        "sessionDuration": 230789,
+        "barrio": "San Cristóbal ",
+        "fillColor": "#3357FF",
+        "pinLocation": "{\"lat\":-34.62041221526244,\"lng\":-58.400830219416875}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "sí",
+        "timestamp": "2025-05-17T00:31:30.780Z"
       }
     },
     {
@@ -1745,24 +3379,94 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Belgrano R",
-        "fillColor": "#33FFF5",
-        "pinLocation": {
-          "lat": -34.563340155758205,
-          "lng": -58.46715647525379
-        },
-        "comments": "",
         "email": "galeno050@hotmail.com",
         "age": "40–49",
         "yearsInBarrio": "1–5",
-        "comunidad": "",
-        "situacionDomicilio": "alquiler",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 192780,
+        "barrio": "Belgrano R",
+        "fillColor": "#FF8F33",
+        "pinLocation": "{\"lat\":-34.563340155758205,\"lng\":-58.46715647525379}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-US",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "sí",
         "timestamp": "2025-05-07T16:23:22.998Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.440718790800844,
+              -34.61609159360241
+            ],
+            [
+              -58.44415018684067,
+              -34.61363471237985
+            ],
+            [
+              -58.442811943314894,
+              -34.60784521939028
+            ],
+            [
+              -58.43776778633227,
+              -34.611714339259116
+            ],
+            [
+              -58.43841975366091,
+              -34.61499024230739
+            ],
+            [
+              -58.43920897609881,
+              -34.616317509927526
+            ],
+            [
+              -58.440718790800844,
+              -34.61609159360241
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "test",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "armenio; pueblos_originarios",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 55667,
+        "barrio": "s",
+        "fillColor": "#A133FF",
+        "pinLocation": "{\"lat\":-34.61310509320279,\"lng\":-58.44175249657174}",
+        "userRegion": "unknown",
+        "language": "en-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-13T21:38:07.699Z"
       }
     },
     {
@@ -1791,18 +3495,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Parque Avellaneda",
-        "fillColor": "#FF5733",
-        "pinLocation": {
-          "lat": -34.60349865476773,
-          "lng": -58.45605441284145
-        },
-        "comments": "",
         "email": "",
         "age": "",
         "yearsInBarrio": "1–2",
-        "comunidad": "",
-        "situacionDomicilio": "familiar",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": "",
+        "barrio": "Parque Avellaneda",
+        "fillColor": "#FF33A1",
+        "pinLocation": "{\"lat\":-34.60349865476773,\"lng\":-58.45605441284145}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
@@ -1841,18 +3551,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Las Cañitas",
-        "fillColor": "#A133FF",
-        "pinLocation": {
-          "lat": -34.568899962934225,
-          "lng": -58.43436549709307
-        },
-        "comments": "Palermo pero más tranquilo",
         "email": "sebastiens.96@gmail.com",
         "age": "25–34",
         "yearsInBarrio": "<1",
-        "comunidad": "No",
-        "situacionDomicilio": "alquiler",
+        "altNames": "Palermo",
+        "landmarks": "Dorrego, Olleros, LM Campos",
+        "comments": "Palermo pero más tranquilo",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 169107,
+        "barrio": "Las Cañitas",
+        "fillColor": "#F5FF33",
+        "pinLocation": "{\"lat\":-34.568899962934225,\"lng\":-58.43436549709307}",
         "userRegion": "Buenos Aires, AR",
         "language": "en",
         "deviceType": "mobile",
@@ -1903,24 +3619,274 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Palermo Hollywood",
-        "fillColor": "#FF33A1",
-        "pinLocation": {
-          "lat": -34.58154123567093,
-          "lng": -58.43370601951273
-        },
-        "comments": "no hay películas o personas famosas",
         "email": "beep@beepbeep.com",
         "age": "65+",
         "yearsInBarrio": "toda_la_vida",
-        "comunidad": "vivo con novia y sus viente y ocho primos",
-        "situacionDomicilio": "familiar",
+        "altNames": "tokyo pequeno ",
+        "landmarks": "96 and Central Park west",
+        "comments": "no hay películas o personas famosas",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": "",
+        "barrio": "Palermo Hollywood",
+        "fillColor": "#33FFF5",
+        "pinLocation": "{\"lat\":-34.58154123567093,\"lng\":-58.43370601951273}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
         "canContact": "no",
         "timestamp": "2025-04-30T21:20:39.898Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.41937642394838,
+              -34.62108946050413
+            ],
+            [
+              -58.4196176630811,
+              -34.61759539502905
+            ],
+            [
+              -58.42034138048015,
+              -34.61429972120519
+            ],
+            [
+              -58.42096860222557,
+              -34.61183780718814
+            ],
+            [
+              -58.42140283266468,
+              -34.609494950245626
+            ],
+            [
+              -58.42152682513316,
+              -34.60860230436087
+            ],
+            [
+              -58.421292148235395,
+              -34.605801569989
+            ],
+            [
+              -58.42101835866514,
+              -34.603223951677926
+            ],
+            [
+              -58.42829333320924,
+              -34.60241910051037
+            ],
+            [
+              -58.43220460984543,
+              -34.601968380450046
+            ],
+            [
+              -58.43666346521118,
+              -34.604318536747854
+            ],
+            [
+              -58.44217836526856,
+              -34.60647547098048
+            ],
+            [
+              -58.445542063176475,
+              -34.60740905200672
+            ],
+            [
+              -58.453371991244694,
+              -34.611303431229935
+            ],
+            [
+              -58.459551652042265,
+              -34.61387064110823
+            ],
+            [
+              -58.45744095974587,
+              -34.618104708003436
+            ],
+            [
+              -58.45291176585879,
+              -34.62798335746671
+            ],
+            [
+              -58.443303847611844,
+              -34.62284500702099
+            ],
+            [
+              -58.4383639827587,
+              -34.62308989001294
+            ],
+            [
+              -58.41937642394838,
+              -34.62108946050413
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "lukeradice2@gmail.com",
+        "age": "20–29",
+        "yearsInBarrio": "1–5",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "Avenidas, las vibras",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Gran BA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 319230,
+        "barrio": "Caballito",
+        "fillColor": "#8F33FF",
+        "pinLocation": "{\"lat\":-34.612271271175814,\"lng\":-58.4299796911923}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-US",
+        "deviceType": "desktop",
+        "mapClicks": 3,
+        "canContact": "sí",
+        "timestamp": "2025-05-16T18:51:48.820Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.475191146103015,
+              -34.539165627267955
+            ],
+            [
+              -58.46033867261812,
+              -34.55817015947641
+            ],
+            [
+              -58.44207589611395,
+              -34.54799711579719
+            ],
+            [
+              -58.4348787216764,
+              -34.54153803988177
+            ],
+            [
+              -58.446157875646534,
+              -34.53640581400211
+            ],
+            [
+              -58.457500532594466,
+              -34.52689059234594
+            ],
+            [
+              -58.46835000260383,
+              -34.53494365822277
+            ],
+            [
+              -58.475191146103015,
+              -34.539165627267955
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 54362,
+        "barrio": "Núñez",
+        "fillColor": "#FF5733",
+        "pinLocation": "{\"lat\":-34.55011787884155,\"lng\":-58.4576265251369}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-GB",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-18T19:21:49.307Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.37628501117224,
+              -34.60816226595107
+            ],
+            [
+              -58.391848966462135,
+              -34.609086699916176
+            ],
+            [
+              -58.3929228848089,
+              -34.599408174537196
+            ],
+            [
+              -58.370691438708846,
+              -34.59830467119311
+            ],
+            [
+              -58.370132859661354,
+              -34.60786787974271
+            ],
+            [
+              -58.37628501117224,
+              -34.60816226595107
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "yorman.martinezg@gmail.com",
+        "age": "30–39",
+        "yearsInBarrio": "6–10",
+        "altNames": "sí",
+        "landmarks": "microcentro",
+        "comments": "muchas oficinas \n",
+        "religionAffiliation": "sí",
+        "selectedReligion": "católica",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Otro país",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 647500,
+        "barrio": "San Nicolás",
+        "fillColor": "#A133FF",
+        "pinLocation": "{\"lat\":-34.60777372624924,\"lng\":-58.37624209582725}",
+        "userRegion": "Rio de Janeiro, BR",
+        "language": "en-US",
+        "deviceType": "desktop",
+        "mapClicks": 4,
+        "canContact": "sí",
+        "timestamp": "2025-05-15T12:38:45.731Z"
       }
     },
     {
@@ -1953,18 +3919,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "villa 31",
-        "fillColor": "#33FF57",
-        "pinLocation": {
-          "lat": -34.58295538531161,
-          "lng": -58.37794848632885
-        },
-        "comments": "",
         "email": "a@a.a",
         "age": "65+",
         "yearsInBarrio": "",
-        "comunidad": "",
-        "situacionDomicilio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 41876,
+        "barrio": "villa 31",
+        "fillColor": "#33FFF5",
+        "pinLocation": "{\"lat\":-34.58295538531161,\"lng\":-58.37794848632885}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "desktop",
@@ -2035,18 +4007,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Parque Patricios",
-        "fillColor": "#33FFF5",
-        "pinLocation": {
-          "lat": -34.635247227068454,
-          "lng": -58.401226315837135
-        },
-        "comments": "",
         "email": "a@a.a",
         "age": "35–44",
         "yearsInBarrio": "toda_la_vida",
-        "comunidad": "",
-        "situacionDomicilio": "dueño",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 418771,
+        "barrio": "Parque Patricios",
+        "fillColor": "#F5FF33",
+        "pinLocation": "{\"lat\":-34.635247227068454,\"lng\":-58.401226315837135}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "desktop",
@@ -2081,24 +4059,90 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "test",
-        "fillColor": "#3357FF",
-        "pinLocation": {
-          "lat": -34.6037,
-          "lng": -58.437
-        },
-        "comments": "",
         "email": "test",
         "age": "",
         "yearsInBarrio": "",
-        "comunidad": "",
-        "situacionDomicilio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 12424,
+        "barrio": "test",
+        "fillColor": "#3357FF",
+        "pinLocation": "{\"lat\":-34.6037,\"lng\":-58.437}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "desktop",
         "mapClicks": 0,
         "canContact": "",
         "timestamp": "2025-05-11T00:21:13.979Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.43228670048286,
+              -34.60147480610343
+            ],
+            [
+              -58.43182021053998,
+              -34.611347939631145
+            ],
+            [
+              -58.4142935169716,
+              -34.60964765031583
+            ],
+            [
+              -58.41356046134709,
+              -34.59829321300712
+            ],
+            [
+              -58.42742187679292,
+              -34.59840292514278
+            ],
+            [
+              -58.43228670048286,
+              -34.60147480610343
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "sí",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "estudiante",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 87233,
+        "barrio": "Almagro",
+        "fillColor": "#F5FF33",
+        "pinLocation": "{\"lat\":-34.60546616156056,\"lng\":-58.42378207397233}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-15T03:46:40.019Z"
       }
     },
     {
@@ -2131,24 +4175,90 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Recoleta",
-        "fillColor": "#33FF57",
-        "pinLocation": {
-          "lat": -34.59251154018976,
-          "lng": -58.3932972809872
-        },
-        "comments": "Mucho anciano con dinero, turistas e hijos de gente del interior que tienen propiedades",
         "email": "francoamasso@gmail.com",
         "age": "25–34",
         "yearsInBarrio": "1–5",
-        "comunidad": "No",
-        "situacionDomicilio": "dueño",
+        "altNames": "Barrio norte",
+        "landmarks": "Coronel días, 9 de julio, avenida córdoba y libertador",
+        "comments": "Mucho anciano con dinero, turistas e hijos de gente del interior que tienen propiedades",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": "",
+        "barrio": "Recoleta",
+        "fillColor": "#8F33FF",
+        "pinLocation": "{\"lat\":-34.59251154018976,\"lng\":-58.3932972809872}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
         "canContact": "no",
         "timestamp": "2025-05-04T17:08:08.346Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.43561344737722,
+              -34.575213620856616
+            ],
+            [
+              -58.44464725811014,
+              -34.583238742453545
+            ],
+            [
+              -58.459941341193556,
+              -34.57828022220311
+            ],
+            [
+              -58.45891116979398,
+              -34.569863109354706
+            ],
+            [
+              -58.45288862930518,
+              -34.56718772448216
+            ],
+            [
+              -58.43561344737722,
+              -34.575213620856616
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 51034,
+        "barrio": "Colegiales",
+        "fillColor": "#33FF8F",
+        "pinLocation": "{\"lat\":-34.58074694130411,\"lng\":-58.44562802897991}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-19T20:32:37.432Z"
       }
     },
     {
@@ -2205,18 +4315,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Belgrano",
-        "fillColor": "#33FF57",
-        "pinLocation": {
-          "lat": -34.559849131349594,
-          "lng": -58.45074473454875
-        },
-        "comments": "",
         "email": "cualquier.email@gmail.com",
         "age": "",
         "yearsInBarrio": "",
-        "comunidad": "",
-        "situacionDomicilio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 156360,
+        "barrio": "Belgrano",
+        "fillColor": "#33FF57",
+        "pinLocation": "{\"lat\":-34.559849131349594,\"lng\":-58.45074473454875}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "mobile",
@@ -2279,24 +4395,150 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Caballito",
-        "fillColor": "#FF33A1",
-        "pinLocation": {
-          "lat": -34.61802845239674,
-          "lng": -58.438956453490235
-        },
-        "comments": "No.",
         "email": "sofiasozaarjona@gmail.com",
         "age": "30–39",
         "yearsInBarrio": "10+",
-        "comunidad": "No.",
-        "situacionDomicilio": "dueño",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "No.",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 300688,
+        "barrio": "Caballito",
+        "fillColor": "#8F33FF",
+        "pinLocation": "{\"lat\":-34.61802845239674,\"lng\":-58.438956453490235}",
         "userRegion": "Buenos Aires, AR",
         "language": "en",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
         "timestamp": "2025-05-08T00:42:01.359Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.438212736114096,
+              -34.58866136484015
+            ],
+            [
+              -58.44513370349229,
+              -34.58465179128738
+            ],
+            [
+              -58.44340346164775,
+              -34.58143344097783
+            ],
+            [
+              -58.435457165464314,
+              -34.575154660703966
+            ],
+            [
+              -58.426455575964724,
+              -34.57755935760024
+            ],
+            [
+              -58.428121734778,
+              -34.5805140511108
+            ],
+            [
+              -58.438212736114096,
+              -34.58866136484015
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "sí",
+        "landmarks": "Palermo",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 54679,
+        "barrio": "Palermo Hollywood",
+        "fillColor": "#33FFF5",
+        "pinLocation": "{\"lat\":-34.5857193748812,\"lng\":-58.44179015746205}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-GB",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-18T19:20:39.759Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.39735923547693,
+              -34.57872448515333
+            ],
+            [
+              -58.401468867708815,
+              -34.58432490225241
+            ],
+            [
+              -58.416521249518865,
+              -34.582156186305795
+            ],
+            [
+              -58.41154986204259,
+              -34.572851110422086
+            ],
+            [
+              -58.39735923547693,
+              -34.57872448515333
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "1–5",
+        "altNames": "sí",
+        "landmarks": "Recoleta",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 112367,
+        "barrio": "Palermo Chico",
+        "fillColor": "#FF8F33",
+        "pinLocation": "{\"lat\":-34.57699088231864,\"lng\":-58.40827988127822}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-18T20:31:15.119Z"
       }
     },
     {
@@ -2325,24 +4567,274 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "test",
-        "fillColor": "#3357FF",
-        "pinLocation": {
-          "lat": -34.62054058510915,
-          "lng": -58.444209777833194
-        },
-        "comments": "",
         "email": "test",
         "age": "",
         "yearsInBarrio": "",
-        "comunidad": "",
-        "situacionDomicilio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 19583,
+        "barrio": "test",
+        "fillColor": "#3357FF",
+        "pinLocation": "{\"lat\":-34.62054058510915,\"lng\":-58.444209777833194}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "desktop",
         "mapClicks": 1,
         "canContact": "",
         "timestamp": "2025-05-11T00:15:39.545Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.43228670048286,
+              -34.60147480610343
+            ],
+            [
+              -58.43182021053998,
+              -34.611347939631145
+            ],
+            [
+              -58.4142935169716,
+              -34.60964765031583
+            ],
+            [
+              -58.41356046134709,
+              -34.59829321300712
+            ],
+            [
+              -58.42742187679292,
+              -34.59840292514278
+            ],
+            [
+              -58.43228670048286,
+              -34.60147480610343
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "sí",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "estudiante",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 85635,
+        "barrio": "Almagro",
+        "fillColor": "#F5FF33",
+        "pinLocation": "{\"lat\":-34.60546616156056,\"lng\":-58.42378207397233}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-15T03:46:38.421Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.41466505771386,
+              -34.594041347667286
+            ],
+            [
+              -58.43005129463276,
+              -34.594500606210424
+            ],
+            [
+              -58.44464484973258,
+              -34.58463613372906
+            ],
+            [
+              -58.43581266343398,
+              -34.57517020841226
+            ],
+            [
+              -58.40521639706287,
+              -34.5803989817052
+            ],
+            [
+              -58.41466505771386,
+              -34.594041347667286
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 95720,
+        "barrio": "Palermo",
+        "fillColor": "#FF8F33",
+        "pinLocation": "{\"lat\":-34.58506468370764,\"lng\":-58.41377094899035}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-20T18:58:32.140Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.407644354003594,
+              -34.574579066403736
+            ],
+            [
+              -58.40853116793319,
+              -34.57555265023601
+            ],
+            [
+              -58.40991681469818,
+              -34.57737808918963
+            ],
+            [
+              -58.39941996382568,
+              -34.58273615151467
+            ],
+            [
+              -58.398309162389,
+              -34.580863519169775
+            ],
+            [
+              -58.407644354003594,
+              -34.574579066403736
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "10+",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "Entre Libertador y Alcorta, desde Casares hasta Tagle. Ya del otro lado de Alcorta es Barrio Parque.",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 158160,
+        "barrio": "Palermo Chico",
+        "fillColor": "#FF8F33",
+        "pinLocation": "{\"lat\":-34.575558415253155,\"lng\":-58.40619962495376}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-GB",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-05-21T11:26:10.323Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.46843384812203,
+              -34.54855186282394
+            ],
+            [
+              -58.47634911853956,
+              -34.55022777713537
+            ],
+            [
+              -58.48084334975701,
+              -34.55613159622957
+            ],
+            [
+              -58.5077623397616,
+              -34.570257133692536
+            ],
+            [
+              -58.49899801743469,
+              -34.550666328698625
+            ],
+            [
+              -58.47485897928868,
+              -34.539282677868876
+            ],
+            [
+              -58.46843384812203,
+              -34.54855186282394
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "<1",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Gran BA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 164547,
+        "barrio": "Saavedra",
+        "fillColor": "#33FF8F",
+        "pinLocation": "{\"lat\":-34.54856953634662,\"lng\":-58.46997880051569}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 2,
+        "canContact": "",
+        "timestamp": "2025-05-17T20:33:48.351Z"
       }
     },
     {
@@ -2411,18 +4903,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Belgrano C",
-        "fillColor": "#A133FF",
-        "pinLocation": {
-          "lat": -34.559877334280266,
-          "lng": -58.45062366185485
-        },
-        "comments": "",
         "email": "valentin.szekasy@sanandres.esc.edu.ar",
         "age": "18–24",
         "yearsInBarrio": "10+",
-        "comunidad": "",
-        "situacionDomicilio": "",
+        "altNames": "Barrancas de Belgrano define mi sub-barrio",
+        "landmarks": "Barrancas de Belgrano, Barrio Chino, Cabildo y Juramento",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": 199795,
+        "barrio": "Belgrano C",
+        "fillColor": "#33FFF5",
+        "pinLocation": "{\"lat\":-34.559877334280266,\"lng\":-58.45062366185485}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "mobile",
@@ -2461,18 +4959,24 @@
         "type": "Polygon"
       },
       "properties": {
-        "barrio": "Palermo Soho",
-        "fillColor": "#3357FF",
-        "pinLocation": {
-          "lat": -34.6037,
-          "lng": -58.437
-        },
-        "comments": "",
         "email": "a@a.a",
         "age": "",
         "yearsInBarrio": "",
-        "comunidad": "",
-        "situacionDomicilio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "sessionDuration": "",
+        "barrio": "Palermo Soho",
+        "fillColor": "#A133FF",
+        "pinLocation": "{\"lat\":-34.6037,\"lng\":-58.437}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
