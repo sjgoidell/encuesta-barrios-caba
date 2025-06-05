@@ -4,7 +4,7 @@
 // -npm run preprocess-map
 // -npm run dev
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import * as turf from '@turf/turf';
 import groupBy from 'lodash.groupby';
@@ -119,6 +119,7 @@ const MapView = () => {
   const [loading, setLoading] = useState(true);
   const [dots, setDots] = useState('');
   const [lockedManzanaId, setLockedManzanaId] = useState(null);
+  const lockedRef = useRef(null);
 
   // ✅ Google Analytics page view
   useEffect(() => {
@@ -139,14 +140,24 @@ const MapView = () => {
 const handleShare = (mode = 'copy') => {
   if (!map) return;
 
-  const features = map.queryRenderedFeatures({ layers: ['manzanas-fill'] });
-  const hovered = features.find(f => f.layer.id === 'manzanas-fill');
-  if (!hovered || !hovered.properties?.barrios) {
-    alert('Seleccioná una manzana para compartir.');
-    return;
-  }
+const features = map.queryRenderedFeatures({ layers: ['manzanas-fill'] });
 
-  const barriosRaw = hovered.properties.barrios;
+let targetFeature = null;
+
+if (lockedManzanaId) {
+  targetFeature = features.find(f => f.properties.id === lockedManzanaId);
+} else {
+  targetFeature = features.find(f => f.layer.id === 'manzanas-fill');
+}
+
+if (!targetFeature || !targetFeature.properties?.barrios) {
+  const fallback = '¿En qué barrio está mi manzana? Descubrilo en https://dondevivocaba.com/map';
+  navigator.clipboard.writeText(fallback);
+  showToast('📋 Texto copiado!');
+  return;
+}
+
+  const barriosRaw = targetFeature.properties.barrios;
   const barrios = typeof barriosRaw === 'string' ? JSON.parse(barriosRaw) : barriosRaw;
   const total = Object.values(barrios).reduce((sum, v) => sum + Number(v), 0);
 
@@ -392,76 +403,82 @@ const handleShare = (mode = 'copy') => {
 
       const popup = new mapboxgl.Popup({ closeButton: false, closeOnClick: false });
 
+let hoverTimeout = null;
+
 mapInstance.on('mousemove', 'manzanas-fill', (e) => {
-  if (lockedManzanaId !== null) return; // 🚫 Skip hover if locked
+  if (lockedRef.current !== null) return;
 
-  const feature = e.features?.[0];
-  if (!feature) return;
+  clearTimeout(hoverTimeout);
+  hoverTimeout = setTimeout(() => {
+    const feature = e.features?.[0];
+    if (!feature) return;
 
-  const id = feature.properties.id;
-  mapInstance.setFilter('hover-outline', ['==', 'id', id]);
+    const id = feature.properties.id;
+    mapInstance.setFilter('hover-outline', ['==', 'id', id]);
 
-        const props = feature.properties;
-        const barriosRaw = props.barrios || {};
-        const barrios = typeof barriosRaw === 'string'
-          ? JSON.parse(barriosRaw)
-          : barriosRaw;
+    const props = feature.properties;
+    const barriosRaw = props.barrios || {};
+    const barrios = typeof barriosRaw === 'string'
+      ? JSON.parse(barriosRaw)
+      : barriosRaw;
 
-        const total = Object.values(barrios)
-          .map(w => Number(w))
-          .filter(w => !isNaN(w))
-          .reduce((sum, w) => sum + w, 0);
+    const total = Object.values(barrios)
+      .map(w => Number(w))
+      .filter(w => !isNaN(w))
+      .reduce((sum, w) => sum + w, 0);
 
-        let barrioList = '';
-        if (total > 0) {
-          barrioList = Object.entries(barrios)
-            .map(([name, weight]) => {
-              const w = Number(weight);
-              const pct = total > 0 ? (w / total) * 100 : 0;
-              const color = barrioColors[name] || '#ccc';
-              return {
-                name,
-                percent: Math.round(pct),
-                color,
-              };
-            })
-            .filter(entry => isFinite(entry.percent) && entry.name)
-            .sort((a, b) => b.percent - a.percent)
-            .map(({ name, percent, color }) => {
-              return `
-                <div style="margin-bottom:8px;">
-                  <div style="display:flex; justify-content:space-between; align-items:center;">
-                    <span style="font-weight:600; color:${color}; font-size:14px;">${name}</span>
-                    <span style="font-size:13px; color:${color};">${percent}%</span>
-                  </div>
-                  <div style="background:#eee; height:6px; border-radius:3px; overflow:hidden;">
-                    <div style="background:${color}; width:${percent}%; height:6px;"></div>
-                  </div>
-                </div>
-              `;
-            })
-            .join('');
-        } else {
-          barrioList = '<div style="font-style: italic;">Sin datos para esta manzana</div>';
-        }
-
-        popup
-          .setLngLat(e.lngLat)
-          .setHTML(`
-            <div style="background:white; color:black; padding:12px 16px; border-radius:6px; font-family:sans-serif; width:175px; box-shadow: 0 0 5px rgba(0,0,0,0.25);">
-              <div style="font-size:13px; font-weight:700; text-transform:uppercase; margin-bottom:10px; color:#666;">¿A qué barrio pertenece?</div>
-              ${barrioList}
+    let barrioList = '';
+    if (total > 0) {
+      barrioList = Object.entries(barrios)
+        .map(([name, weight]) => {
+          const w = Number(weight);
+          const pct = total > 0 ? (w / total) * 100 : 0;
+          const color = barrioColors[name] || '#ccc';
+          return {
+            name,
+            percent: Math.round(pct),
+            color,
+          };
+        })
+        .filter(entry => isFinite(entry.percent) && entry.name)
+        .sort((a, b) => b.percent - a.percent)
+        .map(({ name, percent, color }) => {
+          return `
+            <div style="margin-bottom:8px;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-weight:600; color:${color}; font-size:14px;">${name}</span>
+                <span style="font-size:13px; color:${color};">${percent}%</span>
+              </div>
+              <div style="background:#eee; height:6px; border-radius:3px; overflow:hidden;">
+                <div style="background:${color}; width:${percent}%; height:6px;"></div>
+              </div>
             </div>
-          `)
-          .addTo(mapInstance);
-      });
+          `;
+        })
+        .join('');
+    } else {
+      barrioList = '<div style="font-style: italic;">Sin datos para esta manzana</div>';
+    }
+
+    popup
+      .setLngLat(e.lngLat)
+      .setHTML(`
+        <div style="background:white; color:black; padding:12px 16px; border-radius:6px; font-family:sans-serif; width:175px; box-shadow: 0 0 5px rgba(0,0,0,0.25);">
+          <div style="font-size:13px; font-weight:700; text-transform:uppercase; margin-bottom:10px; color:#666;">¿A qué barrio pertenece?</div>
+          ${barrioList}
+        </div>
+      `)
+      .addTo(mapInstance);
+  }, 30);
+});
 
 mapInstance.on('click', 'manzanas-fill', (e) => {
   const feature = e.features?.[0];
   if (!feature) return;
 
   const id = feature.properties.id;
-  setLockedManzanaId(id); // 🔒 Lock this manzana
+  setLockedManzanaId(id);
+  lockedRef.current = id; // 🔒 Also store in ref
   mapInstance.setFilter('hover-outline', ['==', 'id', id]);
 
         const props = feature.properties;
@@ -525,12 +542,12 @@ mapInstance.on('click', (e) => {
   });
 
   if (!features.length) {
-    setLockedManzanaId(null); // 🔓 Unlock if clicked outside
+    setLockedManzanaId(null);
+    lockedRef.current = null;
     popup.remove();
     mapInstance.setFilter('hover-outline', ['==', 'id', -1]);
   }
 });
-
 
 geocoder.on('result', (e) => {
   const lngLat = e.result.center;
@@ -592,12 +609,14 @@ geocoder.on('result', (e) => {
   }
 });
 
-      mapInstance.on('mouseleave', 'manzanas-fill', () => {
-        mapInstance.setFilter('hover-outline', ['==', 'id', -1]);
-        mapInstance.getCanvas().style.cursor = '';
-        popup.remove();
-      });
+mapInstance.on('mouseleave', 'manzanas-fill', () => {
+  mapInstance.getCanvas().style.cursor = '';
 
+  if (lockedRef.current === null) {
+    mapInstance.setFilter('hover-outline', ['==', 'id', -1]);
+    popup.remove();
+  }
+});
 
 mapInstance.on('idle', () => {
   const layer = mapInstance.getLayer('manzanas-fill');
