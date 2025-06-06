@@ -98,6 +98,8 @@ function App() {
   const [religionAffiliation, setReligionAffiliation] = useState('')
   const [selectedReligion, setSelectedReligion] = useState('')
   const [otherReligion, setOtherReligion] = useState('')
+  const [gruposbarrio, setgruposbarrio] = useState('')
+  const [gruposbarriodetalle, setgruposbarriodetalle] = useState('')
   const [comunidadesSeleccionadas, setComunidadesSeleccionadas] = useState([])
   const [otraComunidadTexto, setOtraComunidadTexto] = useState('')
   const [nacimientoLugar, setNacimientoLugar] = useState('')
@@ -204,13 +206,14 @@ function App() {
 
   const canProceedScreen3 = isPolygonValid && isPinInsidePolygon
 
-  const canProceedScreen4 = true
-  
- //backup logic for screen4 email required
- // const canProceedScreen4 = (() => {
-    //const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/
-    //return emailRegex.test(email.trim())
- // })()  
+  const canProceedScreen4 = (() => {
+    const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/
+    if (canContact === 'sí') {
+      return emailRegex.test(email.trim())
+    }
+    return true
+  })()
+ 
 
   // submission validation
   const validateScreen2 = () => {
@@ -264,6 +267,16 @@ function App() {
   const handleSubmit = async () => {
       if (submitting) return
       setSubmitting(true)
+      // Manual email validation if contact consent is checked
+      if (canContact === 'sí') {
+        const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/
+        if (!email || !emailRegex.test(email.trim())) {
+          setModalMessage('Ingresá un email válido si querés ser contactado más adelante.')
+          setShowModal(true)
+          setSubmitting(false)
+          return
+        }
+      }
     logEvent("Form", "Submit", `Step ${step}`) // GA (google analytics) tracking
 
   // Bundle data for submission
@@ -279,6 +292,8 @@ function App() {
         religionAffiliation: religionAffiliation || '',
         selectedReligion: selectedReligion || '',
         otherReligion: otherReligion || '',
+        gruposbarrio: gruposbarrio || '',
+        gruposbarriodetalle: gruposbarriodetalle || '',
         comunidadesSeleccionadas: comunidadesSeleccionadas.map(c => c.value),
         otraComunidadTexto: otraComunidadTexto || '',
         nacimientoLugar: nacimientoLugar || '',
@@ -326,7 +341,7 @@ function App() {
         return
       }
       if (step === 4 && !canProceedScreen4) {
-        setModalMessage('Ingresá un email válido.')
+        setModalMessage('Ingresá un email válido si querés ser contactado más adelante.')
         setShowModal(true)
         return
       }
@@ -738,7 +753,7 @@ function App() {
           />
         )}
 
-        {/* Calles / Lugares */}
+        {/* Calles / Lugares / Identidad */}
         <label style={{ marginTop: '1rem', display: 'block', marginBottom: '0.5rem' }}>
           ¿Qué define a tu barrio y la identidad de ser de allá? ¿Querés contarnos algo más? (opcional)
         </label>
@@ -945,6 +960,40 @@ function App() {
           </>
         )}
 
+        {/* Grupos vecindarios */}
+        <label style={{ marginBottom: '0.5rem', display: 'block' }}>¿Te considerás parte de una o más comunidades vecinales o del barrio?</label>
+        <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
+          {['sí', 'no'].map(option => (
+            <button
+              key={option}
+              type="button"
+              onClick={() => setgruposbarrio(option)}
+              style={{
+                padding: '0.5rem 1rem',
+                borderRadius: '6px',
+                fontSize: '0.85rem',
+                fontWeight: '500',
+                border: gruposbarrio === option ? '2px solid #00cc66' : '1px solid #ccc',
+                backgroundColor: gruposbarrio === option ? '#e6ffe6' : '#2c2c2c',
+                color: gruposbarrio === option ? '#000' : '#fff',
+                cursor: 'pointer',
+              }}
+            >
+              {option.toUpperCase()}
+            </button>
+          ))}
+        </div>
+
+        {gruposbarrio === 'sí' && (
+          <textarea
+            value={gruposbarriodetalle}
+            onChange={(e) => setgruposbarriodetalle(e.target.value)}
+            rows={1}
+            placeholder="¿Cuál(es)?"
+            style={{ width: '95%' }}
+          />
+        )}
+
         {/* Otras comunidades */}
         <label style={{ marginTop: '1.25rem', display: 'block' }}>¿Te considerás parte de otra(s) comunidad(es)?</label>
         <Select
@@ -1004,7 +1053,14 @@ function App() {
           placeholder="Email (opcional)"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          style={{ width: '95%', marginBottom: '0.75rem' }}
+          style={{
+            width: '95%',
+            marginBottom: '0.75rem',
+            border: canContact === 'sí' && email.trim() && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.trim()) ? '2px solid red' : '1px solid #ccc',
+            outline: 'none',
+            padding: '0.5rem',
+            borderRadius: '4px'
+          }}
         />
 
 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -1033,8 +1089,8 @@ function App() {
           {/* <button onClick={goBack} className="btn-nav">Volver ⬅️</button> */}
           <MotionButton
             onClick={handleSubmit}
-            disabled={!canProceedScreen4 || submitting}
-            className={`btn-nav ${!canProceedScreen4 || submitting ? 'btn-disabled' : 'btn-next'}`}
+disabled={submitting}
+className={`btn-nav ${submitting ? 'btn-disabled' : 'btn-next'}`}
             style={{
               backgroundColor: submitting ? '#ccc' : '#00cc66',
               color: '#000',
@@ -1123,6 +1179,85 @@ function App() {
               </code>
             </p>
           </div>
+
+<div style={{
+  backgroundColor: '#2c2c2c',
+  color: '#f2f2f2',
+  padding: '1.5rem',
+  borderRadius: '8px',
+  marginTop: '2rem',
+  maxWidth: '420px',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.4)',
+  textAlign: 'center'
+}}>
+  <h4 style={{ marginTop: 0, marginBottom: '0.75rem' }}>📬 ¿Querés dejarnos un comentario?</h4>
+
+  <form
+    action="https://formspree.io/f/xkgborqz"
+    method="POST"
+    style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: '0.75rem'
+    }}
+  >
+    <textarea
+      name="message"
+      placeholder="Tu mensaje..."
+      rows="3"
+      required
+      style={{
+        width: '90%',
+        maxWidth: '300px',
+        padding: '0.75rem',
+        borderRadius: '6px',
+        border: '1px solid #ccc',
+        fontFamily: 'inherit',
+        fontSize: '0.95rem',
+        backgroundColor: '#1f1f1f',
+        color: '#fff',
+        resize: 'vertical'
+      }}
+    />
+    <input
+      type="email"
+      name="_replyto"
+      placeholder="Tu email (opcional)"
+      style={{
+        width: '90%',
+        maxWidth: '300px',
+        padding: '0.6rem',
+        borderRadius: '6px',
+        border: '1px solid #ccc',
+        fontFamily: 'inherit',
+        fontSize: '0.9rem',
+        backgroundColor: '#1f1f1f',
+        color: '#fff'
+      }}
+    />
+    <button
+      type="submit"
+      style={{
+        backgroundColor: '#444',
+        color: '#f2f2f2',
+        fontWeight: 'bold',
+        padding: '0.6rem 1.5rem',
+        fontSize: '1rem',
+        borderRadius: '6px',
+        border: '1px solid #ccc',
+        cursor: 'pointer',
+        marginTop: '0.5rem'
+      }}
+    >
+      Enviar comentario
+    </button>
+  </form>
+</div>
+
+
         </>
       )
     })()}

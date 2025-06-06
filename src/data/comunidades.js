@@ -1,9 +1,5 @@
 const comunidadOptions = [
   // (1) Etnicidad / Origen
-  { value: 'afrodescendiente', label: 'Afrodescendiente' },
-  { value: 'pueblos_originarios', label: 'Pueblos originarios' },
-  { value: 'gitano', label: 'Gitano/a' },
-  { value: 'armenio', label: 'Armenio/a' },
   { value: 'coreano', label: 'Coreano/a' },
   { value: 'chino', label: 'Chino/a' },
   { value: 'japones', label: 'Japonés/a' },
@@ -20,6 +16,10 @@ const comunidadOptions = [
   { value: 'zona_oeste', label: 'De zona oeste' },
   { value: 'zona_sur', label: 'De zona sur' },
   { value: 'bonaerense', label: 'Bonaerense' },
+  { value: 'afrodescendiente', label: 'Afrodescendiente' },
+  { value: 'pueblos_originarios', label: 'Pueblos originarios' },
+  { value: 'gitano', label: 'Gitano/a' },
+  { value: 'armenio', label: 'Armenio/a' },
 
 /*
   // (2) Grupo social

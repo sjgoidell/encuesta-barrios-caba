@@ -32,6 +32,8 @@ async function exportData() {
       religionAffiliation: data.religionAffiliation || '',
       selectedReligion: data.selectedReligion || '',
       otherReligion: data.otherReligion || '',
+      gruposbarrio: data.gruposbarrio || '',
+      gruposbarriodetalle: data.gruposbarriodetalle || '', 
       comunidadesSeleccionadas: Array.isArray(data.comunidadesSeleccionadas) ? data.comunidadesSeleccionadas.join('; ') : '',
       otraComunidadTexto: data.otraComunidadTexto || '',
       nacimientoLugar: data.nacimientoLugar || '',
