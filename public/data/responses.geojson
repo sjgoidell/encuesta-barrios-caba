@@ -72,6 +72,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -158,6 +160,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otro país",
@@ -216,6 +220,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -274,6 +280,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otro país",
@@ -356,6 +364,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "otra",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otro país",
@@ -422,6 +432,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "hincha_futbol; gamer; lector; trabajador_salud; empleado_publico; estudiante; universitario; ambientalista",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -504,6 +516,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "otra",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otro país",
@@ -574,6 +588,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -632,6 +648,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -726,6 +744,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -900,6 +920,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -986,6 +1008,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -1072,6 +1096,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otra Provincia",
@@ -1134,6 +1160,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otra Provincia",
@@ -1192,6 +1220,8 @@
         "religionAffiliation": "sí",
         "selectedReligion": "judía",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otro país",
@@ -1286,6 +1316,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otra Provincia",
@@ -1344,6 +1376,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otra Provincia",
@@ -1402,6 +1436,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otra Provincia",
@@ -1472,6 +1508,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -1534,6 +1572,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "otra",
         "otraComunidadTexto": "Porteña",
         "nacimientoLugar": "CABA",
@@ -1604,6 +1644,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -1662,6 +1704,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "zona_norte",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -1748,6 +1792,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "zona_sur",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -1818,6 +1864,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -1876,6 +1924,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otra Provincia",
@@ -1934,6 +1984,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -2016,6 +2068,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -2074,6 +2128,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -2132,6 +2188,8 @@
         "religionAffiliation": "sí",
         "selectedReligion": "otro",
         "otherReligion": "Yoruba",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "afrodescendiente",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otro país",
@@ -2149,6 +2207,94 @@
         "canContact": "",
         "timestamp": "2025-05-29T01:52:55.040Z",
         "barrio_cleaned": "belgranoc"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.38368003546182,
+              -34.58830309839921
+            ],
+            [
+              -58.3814484375619,
+              -34.5886917291935
+            ],
+            [
+              -58.37908809362861,
+              -34.59021090485764
+            ],
+            [
+              -58.37621276556439,
+              -34.591624066584544
+            ],
+            [
+              -58.375569035400915,
+              -34.59339048494181
+            ],
+            [
+              -58.37775771795721,
+              -34.59441499037862
+            ],
+            [
+              -58.37943141638257,
+              -34.59540415605465
+            ],
+            [
+              -58.382349659790464,
+              -34.59536882891117
+            ],
+            [
+              -58.38406627356024,
+              -34.59533350175385
+            ],
+            [
+              -58.3849674957888,
+              -34.59339048494181
+            ],
+            [
+              -58.38501041113325,
+              -34.59194202466132
+            ],
+            [
+              -58.38368003546182,
+              -34.58830309839921
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "1–5",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "",
+        "sessionDuration": 57789,
+        "barrio": "Retiro",
+        "fillColor": "#33FFF5",
+        "pinLocation": "{\"lng\":-58.37846603315252,\"lat\":-34.592326492304245}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-06-06T17:16:12.473Z",
+        "barrio_cleaned": "retiro"
       }
     },
     {
@@ -2186,6 +2332,8 @@
         "religionAffiliation": "sí",
         "selectedReligion": "católica",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "zona_norte",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Gran BA",
@@ -2248,6 +2396,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "migrante",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otro país",
@@ -2306,6 +2456,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otro país",
@@ -2392,6 +2544,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Gran BA",
@@ -2409,6 +2563,150 @@
         "canContact": "sí",
         "timestamp": "2025-05-23T18:35:44.129Z",
         "barrio_cleaned": "palermo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.44415809006631,
+              -34.536261916519166
+            ],
+            [
+              -58.454414857451866,
+              -34.549093800992914
+            ],
+            [
+              -58.45308448178045,
+              -34.5505430079214
+            ],
+            [
+              -58.45098159745784,
+              -34.55284048828345
+            ],
+            [
+              -58.45312736466971,
+              -34.55054301683161
+            ],
+            [
+              -58.467117766891775,
+              -34.55785935908376
+            ],
+            [
+              -58.4643711848601,
+              -34.5609694932511
+            ],
+            [
+              -58.47136633857754,
+              -34.565281075049356
+            ],
+            [
+              -58.474197299994486,
+              -34.567259351913215
+            ],
+            [
+              -58.46906612555314,
+              -34.57357575339853
+            ],
+            [
+              -58.46582672492738,
+              -34.57649905332106
+            ],
+            [
+              -58.46341662763297,
+              -34.575048081585166
+            ],
+            [
+              -58.462354135983645,
+              -34.57425857974891
+            ],
+            [
+              -58.459918123665275,
+              -34.575709565264745
+            ],
+            [
+              -58.45968488844311,
+              -34.57470668092024
+            ],
+            [
+              -58.45481286364924,
+              -34.56868912067071
+            ],
+            [
+              -58.45377627246715,
+              -34.56905189996259
+            ],
+            [
+              -58.451780815371905,
+              -34.56649111500613
+            ],
+            [
+              -58.444809672935904,
+              -34.570012171425056
+            ],
+            [
+              -58.4363872899179,
+              -34.563546112629446
+            ],
+            [
+              -58.44330874376807,
+              -34.56171791848088
+            ],
+            [
+              -58.43650222654993,
+              -34.56357014635764
+            ],
+            [
+              -58.44511768259666,
+              -34.55953030199563
+            ],
+            [
+              -58.4262210970159,
+              -34.54822405838231
+            ],
+            [
+              -58.44145909977024,
+              -34.5360511987162
+            ],
+            [
+              -58.44415809006631,
+              -34.536261916519166
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "40–49",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "sí",
+        "landmarks": "Se divide en Belgrano R, Belgrano C y el Bajo Belgrano.",
+        "comments": "Belgrano nació como un pueblo independiente de la antigua ciudad de Buenos Aires, lo que lo dota de características únicas.",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 346119,
+        "barrio": "Belgrano",
+        "fillColor": "#FF5733",
+        "pinLocation": "{\"lat\":-34.56497857653377,\"lng\":-58.45183992840296}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-ES",
+        "deviceType": "desktop",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-06-07T14:32:42.813Z",
+        "barrio_cleaned": "belgrano"
       }
     },
     {
@@ -2454,6 +2752,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Gran BA",
@@ -2520,6 +2820,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -2586,6 +2888,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otra Provincia",
@@ -2692,6 +2996,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Gran BA",
@@ -2750,6 +3056,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otro país",
@@ -2856,6 +3164,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Gran BA",
@@ -2938,6 +3248,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "otra",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otro país",
@@ -3000,6 +3312,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "venezolano",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otro país",
@@ -3066,6 +3380,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -3128,6 +3444,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -3194,6 +3512,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "brasileno",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -3252,6 +3572,8 @@
         "religionAffiliation": "sí",
         "selectedReligion": "judía",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "brasileno",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -3322,6 +3644,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -3404,6 +3728,8 @@
         "religionAffiliation": "sí",
         "selectedReligion": "católica",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -3478,6 +3804,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -3576,6 +3904,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otra Provincia",
@@ -3634,6 +3964,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -3720,6 +4052,8 @@
         "religionAffiliation": "sí",
         "selectedReligion": "católica",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -3790,6 +4124,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "bonaerense",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -3872,6 +4208,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "otra",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otro país",
@@ -3934,6 +4272,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -4020,6 +4360,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -4086,6 +4428,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otro país",
@@ -4144,6 +4488,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -4234,6 +4580,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -4292,6 +4640,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -4358,6 +4708,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otra Provincia",
@@ -4416,6 +4768,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -4482,6 +4836,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -4552,6 +4908,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "expatriado; inquilino; fan_cafes; gastronomico",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otro país",
@@ -4610,6 +4968,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "bonaerense",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otra Provincia",
@@ -4668,6 +5028,8 @@
         "religionAffiliation": "sí",
         "selectedReligion": "católica",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "joven",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -4726,6 +5088,8 @@
         "religionAffiliation": "sí",
         "selectedReligion": "católica",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -4800,6 +5164,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -4870,6 +5236,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -4928,6 +5296,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -4986,6 +5356,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -5044,6 +5416,8 @@
         "religionAffiliation": "sí",
         "selectedReligion": "católica",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "venezolano",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otro país",
@@ -5106,6 +5480,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -5188,6 +5564,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -5250,6 +5628,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -5312,6 +5692,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "otra",
         "otraComunidadTexto": "Porteña",
         "nacimientoLugar": "CABA",
@@ -5414,6 +5796,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -5488,6 +5872,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -5574,6 +5960,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otra Provincia",
@@ -5652,6 +6040,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -5718,6 +6108,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -5784,6 +6176,8 @@
         "religionAffiliation": "sí",
         "selectedReligion": "católica",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -5846,6 +6240,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -5904,6 +6300,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "zona_norte",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Gran BA",
@@ -5986,6 +6384,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "egresado",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -6044,6 +6444,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Gran BA",
@@ -6106,6 +6508,8 @@
         "religionAffiliation": "sí",
         "selectedReligion": "judía",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Gran BA",
@@ -6164,6 +6568,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otra Provincia",
@@ -6230,6 +6636,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -6288,6 +6696,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -6362,6 +6772,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "otra",
         "otraComunidadTexto": "judío",
         "nacimientoLugar": "CABA",
@@ -6424,6 +6836,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "zona_norte",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -6486,6 +6900,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -6568,6 +6984,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -6662,6 +7080,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otra Provincia",
@@ -6728,6 +7148,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otra Provincia",
@@ -6745,6 +7167,122 @@
         "canContact": "",
         "timestamp": "2025-05-25T17:47:48.677Z",
         "barrio_cleaned": "congreso"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.436456211664435,
+              -34.60429785549115
+            ],
+            [
+              -58.43220252034216,
+              -34.60211252220486
+            ],
+            [
+              -58.429861562701646,
+              -34.59959814287215
+            ],
+            [
+              -58.42869108388169,
+              -34.59877566582016
+            ],
+            [
+              -58.426607060616064,
+              -34.597953180623655
+            ],
+            [
+              -58.42343820332269,
+              -34.597788682607565
+            ],
+            [
+              -58.411876156439845,
+              -34.59800017999737
+            ],
+            [
+              -58.41398872796894,
+              -34.60775197468607
+            ],
+            [
+              -58.413160828315526,
+              -34.609443735745906
+            ],
+            [
+              -58.41289232749601,
+              -34.61476884979648
+            ],
+            [
+              -58.41251750468899,
+              -34.62059111896947
+            ],
+            [
+              -58.4276041226623,
+              -34.62213337350306
+            ],
+            [
+              -58.42915026674062,
+              -34.615231561622636
+            ],
+            [
+              -58.429868363131874,
+              -34.615439277754284
+            ],
+            [
+              -58.43075174137505,
+              -34.60606556970033
+            ],
+            [
+              -58.43217101649887,
+              -34.60657842396237
+            ],
+            [
+              -58.43289796229479,
+              -34.6057521572042
+            ],
+            [
+              -58.4341441550861,
+              -34.60475492775486
+            ],
+            [
+              -58.436456211664435,
+              -34.60429785549115
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "iar.mek@gmail.com",
+        "age": "30–39",
+        "yearsInBarrio": "<1",
+        "altNames": "sí",
+        "landmarks": "a una parte lindera a balvanera se le dice \"abasto\"",
+        "comments": "barrio céntrico, mucha oferta cultural, tango, bares, teatros, mucha densidad poblacional, poco espacios verdes",
+        "religionAffiliation": "sí",
+        "selectedReligion": "judía",
+        "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "posgrado",
+        "sessionDuration": 358795,
+        "barrio": "Almagro",
+        "fillColor": "#FF5733",
+        "pinLocation": "{\"lng\":-58.41874284844805,\"lat\":-34.604418253498764}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-ES",
+        "deviceType": "desktop",
+        "mapClicks": 2,
+        "canContact": "sí",
+        "timestamp": "2025-06-06T13:43:28.218Z",
+        "barrio_cleaned": "almagro"
       }
     },
     {
@@ -6786,6 +7324,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "peruano",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otro país",
@@ -6844,6 +7384,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -6906,6 +7448,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -7080,6 +7624,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -7138,6 +7684,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -7196,6 +7744,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -7314,6 +7864,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Gran BA",
@@ -7384,6 +7936,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -7446,6 +8000,8 @@
         "religionAffiliation": "sí",
         "selectedReligion": "católica",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otro país",
@@ -7524,6 +8080,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "gitano",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -7586,6 +8144,8 @@
         "religionAffiliation": "sí",
         "selectedReligion": "católica",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otra Provincia",
@@ -7644,6 +8204,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -7710,6 +8272,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -7768,6 +8332,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -7846,6 +8412,8 @@
         "religionAffiliation": "sí",
         "selectedReligion": "católica",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "zona_norte",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Gran BA",
@@ -7908,6 +8476,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "estudiante",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -7994,6 +8564,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otro país",
@@ -8052,6 +8624,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -8069,6 +8643,138 @@
         "canContact": "no",
         "timestamp": "2025-05-04T17:08:08.346Z",
         "barrio_cleaned": "recoleta"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.3676918701148,
+              -34.649925645543604
+            ],
+            [
+              -58.37052428409774,
+              -34.630329646674085
+            ],
+            [
+              -58.37103926822577,
+              -34.62660058633548
+            ],
+            [
+              -58.37464415714145,
+              -34.62667121403108
+            ],
+            [
+              -58.3789356915653,
+              -34.629143145511016
+            ],
+            [
+              -58.38159644290833,
+              -34.63119126151527
+            ],
+            [
+              -58.3905228345094,
+              -34.63394554469478
+            ],
+            [
+              -58.38996493503488,
+              -34.64011057039512
+            ],
+            [
+              -58.391638633460445,
+              -34.64078142181093
+            ],
+            [
+              -58.39146697208339,
+              -34.64222903005726
+            ],
+            [
+              -58.40133750125787,
+              -34.6462327708027
+            ],
+            [
+              -58.40099417850378,
+              -34.650963573530795
+            ],
+            [
+              -58.399105903357096,
+              -34.65830637434663
+            ],
+            [
+              -58.39927756473412,
+              -34.66134214998406
+            ],
+            [
+              -58.39361273929467,
+              -34.66268350379282
+            ],
+            [
+              -58.39181029483683,
+              -34.66289529451494
+            ],
+            [
+              -58.39009368106717,
+              -34.661200953583645
+            ],
+            [
+              -58.386917945593694,
+              -34.6600007744622
+            ],
+            [
+              -58.383913871497256,
+              -34.65795336996209
+            ],
+            [
+              -58.377476569861514,
+              -34.65752976271504
+            ],
+            [
+              -58.37430083438741,
+              -34.65689434778575
+            ],
+            [
+              -58.37052428409466,
+              -34.65449384742214
+            ],
+            [
+              -58.3676918701148,
+              -34.649925645543604
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "luisdom@filo.uba.ar",
+        "age": "60–69",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "En Buenos Aires tienen límites oficialmente definidos. Los que marqué se aproximan a esos límites, según mi recuerdo. Es un barrio con fuerte identidad y mucha historia, aunque con zonas muy diferenciadas entre sí. ",
+        "religionAffiliation": "sí",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "sí",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "zona_sur",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "posgrado",
+        "sessionDuration": 410068,
+        "barrio": "Barracas",
+        "fillColor": "#8F33FF",
+        "pinLocation": "{\"lng\":-58.37455832519207,\"lat\":-34.63801324316178}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "desktop",
+        "mapClicks": 5,
+        "canContact": "sí",
+        "timestamp": "2025-06-08T21:25:03.699Z",
+        "barrio_cleaned": "barracas"
       }
     },
     {
@@ -8114,6 +8820,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -8196,6 +8904,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -8258,6 +8968,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -8316,6 +9028,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -8324,7 +9038,7 @@
         "nivelEducacionJefe": "secundaria_completa",
         "sessionDuration": 343462,
         "barrio": "Barrio Parque",
-        "fillColor": "#8F33FF",
+        "fillColor": "#FF5733",
         "pinLocation": "{\"lat\":-34.57737682973292,\"lng\":-58.40217501308116}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
@@ -8398,6 +9112,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -8464,6 +9180,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -8582,6 +9300,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -8640,6 +9360,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -8702,6 +9424,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "estudiante",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -8764,6 +9488,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -8826,6 +9552,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -8900,6 +9628,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "CABA",
@@ -8966,6 +9696,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Gran BA",
@@ -9060,6 +9792,8 @@
         "religionAffiliation": "",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "",
@@ -9122,6 +9856,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "bonaerense",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otra Provincia",
@@ -9188,6 +9924,8 @@
         "religionAffiliation": "no",
         "selectedReligion": "",
         "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
         "comunidadesSeleccionadas": "",
         "otraComunidadTexto": "",
         "nacimientoLugar": "Otra Provincia",

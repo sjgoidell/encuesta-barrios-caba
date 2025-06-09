@@ -348,6 +348,8 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
         filter: ['==', 'id', -1],
       });
 
+      // Pin points (currently removed)
+      
       mapInstance.addLayer({
         id: 'pin-points-layer',
         type: 'circle',
@@ -358,6 +360,7 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
           'circle-opacity': 0.7,
         },
       });
+      
 
       mapInstance.addLayer({
         id: 'barrio-label-layer',
