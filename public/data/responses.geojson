@@ -1599,6 +1599,82 @@
         "coordinates": [
           [
             [
+              -58.48875054981029,
+              -34.584664578942295
+            ],
+            [
+              -58.46793989813196,
+              -34.57342446167847
+            ],
+            [
+              -58.477263070084035,
+              -34.56327963653999
+            ],
+            [
+              -58.480176561318586,
+              -34.56519902270977
+            ],
+            [
+              -58.486586242035415,
+              -34.558001096170564
+            ],
+            [
+              -58.494993745313806,
+              -34.54730588373344
+            ],
+            [
+              -58.50007154432318,
+              -34.550048376959424
+            ],
+            [
+              -58.51006065712866,
+              -34.569997294326505
+            ],
+            [
+              -58.48875054981029,
+              -34.584664578942295
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "30–39",
+        "yearsInBarrio": "1–5",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "zona_sur",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "posgrado",
+        "sessionDuration": 211032,
+        "barrio": "Villa Urquiza",
+        "fillColor": "#3357FF",
+        "pinLocation": "{\"lng\":-58.482780582882825,\"lat\":-34.58062564261853}",
+        "userRegion": "Flower Mound, US",
+        "language": "en-US",
+        "deviceType": "desktop",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2025-06-12T14:06:33.237Z",
+        "barrio_cleaned": "villaurquiza"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
               -58.4311441515725,
               -34.57575936238042
             ],
@@ -1671,6 +1747,66 @@
         "coordinates": [
           [
             [
+              -58.44498383789626,
+              -34.60271006343075
+            ],
+            [
+              -58.434255001836505,
+              -34.59670476157722
+            ],
+            [
+              -58.425972340398644,
+              -34.604087689093085
+            ],
+            [
+              -58.432881710821036,
+              -34.60829107229391
+            ],
+            [
+              -58.44498383789626,
+              -34.60271006343075
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "lkjlkj",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "",
+        "sessionDuration": 258049,
+        "barrio": "Villa Crespo",
+        "fillColor": "#FF33A1",
+        "pinLocation": "{\"lat\":-34.6037,\"lng\":-58.437}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-US",
+        "deviceType": "desktop",
+        "mapClicks": 0,
+        "canContact": "",
+        "timestamp": "2025-06-12T14:04:33.804Z",
+        "barrio_cleaned": "villacrespo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
               -58.40494642918755,
               -34.593342293998965
             ],
@@ -1714,7 +1850,7 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 337541,
         "barrio": "Barrio Norte",
-        "fillColor": "#3357FF",
+        "fillColor": "#A133FF",
         "pinLocation": "{\"lat\":-34.58228366006092,\"lng\":-58.401509719077325}",
         "userRegion": "Madrid, ES",
         "language": "es-419",
@@ -1802,7 +1938,7 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 227272,
         "barrio": "Mataderos",
-        "fillColor": "#FF33A1",
+        "fillColor": "#33FFF5",
         "pinLocation": "{\"lat\":-34.651188067979284,\"lng\":-58.493197511526034}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
@@ -1874,7 +2010,7 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 111808,
         "barrio": "Villa del Parque",
-        "fillColor": "#A133FF",
+        "fillColor": "#F5FF33",
         "pinLocation": "{\"lat\":-34.60997163782338,\"lng\":-58.49460001906792}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
@@ -2078,7 +2214,7 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 176013,
         "barrio": "Retiro",
-        "fillColor": "#33FFF5",
+        "fillColor": "#FF8F33",
         "pinLocation": "{\"lat\":-34.59623581590686,\"lng\":-58.37771118885405}",
         "userRegion": "Key West, US",
         "language": "es-419",
@@ -2286,7 +2422,7 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 57789,
         "barrio": "Retiro",
-        "fillColor": "#33FFF5",
+        "fillColor": "#FF8F33",
         "pinLocation": "{\"lng\":-58.37846603315252,\"lat\":-34.592326492304245}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
@@ -2342,7 +2478,7 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 228435,
         "barrio": "Retiro",
-        "fillColor": "#33FFF5",
+        "fillColor": "#FF8F33",
         "pinLocation": "{\"lat\":-34.59147542803231,\"lng\":-58.376507828468235}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
@@ -2406,7 +2542,7 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 275996,
         "barrio": "Balvanera",
-        "fillColor": "#F5FF33",
+        "fillColor": "#33FF8F",
         "pinLocation": "{\"lat\":-34.60349247778486,\"lng\":-58.4063860989812}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-ES",
@@ -2466,7 +2602,7 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 167162,
         "barrio": "Villa Urquiza",
-        "fillColor": "#FF8F33",
+        "fillColor": "#3357FF",
         "pinLocation": "{\"lat\":-34.57032895624933,\"lng\":-58.486909565961184}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
@@ -2762,7 +2898,7 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 223353,
         "barrio": "Monte Castro",
-        "fillColor": "#33FF8F",
+        "fillColor": "#8F33FF",
         "pinLocation": "{\"lat\":-34.61906272011128,\"lng\":-58.505503214686044}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-US",
@@ -2898,7 +3034,7 @@
         "nivelEducacionJefe": "incompleta_universitario",
         "sessionDuration": 127365,
         "barrio": "Congreso",
-        "fillColor": "#8F33FF",
+        "fillColor": "#FF5733",
         "pinLocation": "{\"lat\":-34.61334490936001,\"lng\":-58.3903323993047}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
@@ -3066,7 +3202,7 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 158090,
         "barrio": "Colegiales",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.574390703411666,\"lng\":-58.459562531654754}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
@@ -3322,7 +3458,7 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 181178,
         "barrio": "Monte Castro",
-        "fillColor": "#33FF8F",
+        "fillColor": "#8F33FF",
         "pinLocation": "{\"lat\":-34.61145112672248,\"lng\":-58.50008124045233}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-US",
@@ -3390,7 +3526,7 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 331957,
         "barrio": "Las cañitas",
-        "fillColor": "#33FF57",
+        "fillColor": "#3357FF",
         "pinLocation": "{\"lat\":-34.565982344750694,\"lng\":-58.43374640598478}",
         "userRegion": "El Calafate, AR",
         "language": "es-419",
@@ -3522,7 +3658,7 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 302740,
         "barrio": "Villa Crespo",
-        "fillColor": "#3357FF",
+        "fillColor": "#FF33A1",
         "pinLocation": "{\"lat\":-34.59884207817262,\"lng\":-58.445488441608006}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
@@ -3814,7 +3950,7 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 308089,
         "barrio": "Villa del Parque",
-        "fillColor": "#A133FF",
+        "fillColor": "#F5FF33",
         "pinLocation": "{\"lat\":-34.60941266986586,\"lng\":-58.477629139021886}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-US",
@@ -5490,7 +5626,7 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 142398,
         "barrio": "Barrio Norte",
-        "fillColor": "#3357FF",
+        "fillColor": "#A133FF",
         "pinLocation": "{\"lat\":-34.586896004726604,\"lng\":-58.405028043657424}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
@@ -5882,7 +6018,7 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 191658,
         "barrio": "Retiro",
-        "fillColor": "#33FFF5",
+        "fillColor": "#FF8F33",
         "pinLocation": "{\"lat\":-34.58984506818809,\"lng\":-58.383197214389824}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
@@ -6250,7 +6386,7 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 88602,
         "barrio": "Colegiales",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.57432905601711,\"lng\":-58.453351038150785}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
@@ -6846,7 +6982,7 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 112715,
         "barrio": "Retiro",
-        "fillColor": "#33FFF5",
+        "fillColor": "#FF8F33",
         "pinLocation": "{\"lat\":-34.588948695618555,\"lng\":-58.383915823318404}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
@@ -6910,7 +7046,7 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 140360,
         "barrio": "Barrio Norte",
-        "fillColor": "#3357FF",
+        "fillColor": "#A133FF",
         "pinLocation": "{\"lat\":-34.586896004726604,\"lng\":-58.405028043657424}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
@@ -7090,7 +7226,7 @@
         "nivelEducacionJefe": "terciario_completo",
         "sessionDuration": 262001,
         "barrio": "Retiro",
-        "fillColor": "#33FFF5",
+        "fillColor": "#FF8F33",
         "pinLocation": "{\"lat\":-34.591498557367146,\"lng\":-58.37795918498284}",
         "userRegion": "San Carlos de Bariloche, AR",
         "language": "es-419",
@@ -7158,7 +7294,7 @@
         "nivelEducacionJefe": "incompleta_universitario",
         "sessionDuration": 129903,
         "barrio": "Congreso",
-        "fillColor": "#8F33FF",
+        "fillColor": "#FF5733",
         "pinLocation": "{\"lat\":-34.61334490936001,\"lng\":-58.3903323993047}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
@@ -7394,7 +7530,7 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 328957,
         "barrio": "Villa Urquiza",
-        "fillColor": "#FF8F33",
+        "fillColor": "#3357FF",
         "pinLocation": "{\"lat\":-34.56802312553791,\"lng\":-58.485349243870914}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-ES",
@@ -8154,7 +8290,7 @@
         "nivelEducacionJefe": "terciario_completo",
         "sessionDuration": 699660,
         "barrio": "Retiro",
-        "fillColor": "#33FFF5",
+        "fillColor": "#FF8F33",
         "pinLocation": "{\"lat\":-34.59173253368591,\"lng\":-58.37808198054772}",
         "userRegion": "Split, HR",
         "language": "es-419",
@@ -8830,7 +8966,7 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 51034,
         "barrio": "Colegiales",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.58074694130411,\"lng\":-58.44562802897991}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
@@ -8978,7 +9114,7 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 408956,
         "barrio": "Colegiales",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.57175403563124,\"lng\":-58.45725668179571}",
         "userRegion": "Malvinas Argentinas, AR",
         "language": "es-419",
