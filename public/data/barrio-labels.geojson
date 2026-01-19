@@ -4,26 +4,26 @@
     {
       "type": "Feature",
       "properties": {
-        "barrio": "montecastro"
+        "barrio": "mataderos"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.49912366541446,
-          -34.61959307303556
+          -58.498163913760536,
+          -34.65702142284103
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "barrio": "mataderos"
+        "barrio": "montecastro"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.49029246054964,
-          -34.66237626904024
+          -58.49956752735513,
+          -34.61959234284097
         ]
       }
     },
@@ -35,8 +35,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.502207674910125,
-          -34.58490651519046
+          -58.50243820793287,
+          -34.58493820298936
         ]
       }
     },
@@ -48,8 +48,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.48960714750205,
-          -34.57212344750186
+          -58.488772367348716,
+          -34.572299428729934
         ]
       }
     },
@@ -61,8 +61,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.48577619642814,
-          -34.55211819427056
+          -58.48561776915444,
+          -34.55224686393759
         ]
       }
     },
@@ -74,8 +74,60 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.48718970472914,
-          -34.60596277912327
+          -58.487127365362134,
+          -34.60597734812387
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "agronomia"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.49323516159215,
+          -34.592312526872
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "villalugano"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.472688266177066,
+          -34.676915145513874
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "parqueavellaneda"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.47822305244377,
+          -34.64896494496937
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "villasantarita"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.48503897436869,
+          -34.61727925830641
         ]
       }
     },
@@ -87,21 +139,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.476505540531186,
-          -34.56095235388435
+          -58.47583380553755,
+          -34.56141955155989
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "barrio": "belgranor"
+        "barrio": "lapaternal"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.47030713934633,
-          -34.568519943302995
+          -58.4674112494292,
+          -34.59674394087872
         ]
       }
     },
@@ -113,8 +165,34 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.46230981964099,
-          -34.54534496033345
+          -58.463328338229466,
+          -34.544784666185826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "villaortuzar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.46629485778831,
+          -34.5824215199313
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "belgranor"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.46895898646968,
+          -34.56885162204937
         ]
       }
     },
@@ -126,8 +204,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.45342597242208,
-          -34.56113307025839
+          -58.452654858390126,
+          -34.56034147096395
         ]
       }
     },
@@ -139,8 +217,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.45343952892836,
-          -34.57616306031288
+          -58.45165805706552,
+          -34.57572933562026
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "chacarita"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.4522623586617,
+          -34.588078044495155
         ]
       }
     },
@@ -152,8 +243,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.44438187294252,
-          -34.61686579986798
+          -58.445410899770195,
+          -34.61721057287952
         ]
       }
     },
@@ -165,8 +256,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.444238285089575,
-          -34.599615701132386
+          -58.443795962190926,
+          -34.59975364238419
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "parquechacabuco"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.43795837795077,
+          -34.63715674164519
         ]
       }
     },
@@ -178,8 +282,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.44790960704129,
-          -34.58701901022946
+          -58.44833867421463,
+          -34.582773466813954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "sanbenito"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.44424657469548,
+          -34.57101132330909
         ]
       }
     },
@@ -191,8 +308,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.443944013323964,
-          -34.56259464536514
+          -58.44461167127748,
+          -34.562925769208654
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "bajobelgrano"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.444893882924404,
+          -34.54905608798328
         ]
       }
     },
@@ -204,8 +334,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.43756294635218,
-          -34.58175575771579
+          -58.43785883497895,
+          -34.581978361694965
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "primerajunta"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.44175312971975,
+          -34.620149724428174
         ]
       }
     },
@@ -217,8 +360,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.4199785059928,
-          -34.58286772674161
+          -58.42045419984531,
+          -34.582715950937285
         ]
       }
     },
@@ -230,8 +373,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.433885115412004,
-          -34.56857041941801
+          -58.43370894565986,
+          -34.568620781414204
         ]
       }
     },
@@ -243,8 +386,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.42103077234789,
-          -34.60920587835419
+          -58.42123146084011,
+          -34.609296500077484
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "boedo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.417614552455795,
+          -34.630596701358975
         ]
       }
     },
@@ -256,8 +412,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.4244132095572,
-          -34.5776547018903
+          -58.42400878589507,
+          -34.57571142139284
         ]
       }
     },
@@ -269,34 +425,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.40907089068147,
-          -34.577294748241236
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "barrio": "sancristobal"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.40303523048583,
-          -34.62005648800056
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "barrio": "palermosensible"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.414452802215486,
-          -34.591770347699956
+          -58.40838235714941,
+          -34.57669809312794
         ]
       }
     },
@@ -308,8 +438,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.413244342252355,
-          -34.58046023369426
+          -58.41376633369398,
+          -34.58029546805073
         ]
       }
     },
@@ -321,8 +451,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.40694609030195,
-          -34.60517704679659
+          -58.40294596882851,
+          -34.60704846425291
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "sancristobal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.40165500102816,
+          -34.62132045756216
         ]
       }
     },
@@ -334,47 +477,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.39700672914547,
-          -34.5900015590658
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "barrio": "facultaddemedicina"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.400319808550854,
-          -34.599988226445376
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "barrio": "barracas"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.38239497025659,
-          -34.6446497896563
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "barrio": "barrioparque"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.400400159143274,
-          -34.577093907420846
+          -58.39541805915996,
+          -34.58882841273317
         ]
       }
     },
@@ -386,8 +490,47 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.40125540104201,
-          -34.58112030176586
+          -58.401712013733956,
+          -34.58606553717058
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "facultaddemedicina"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.40363445817146,
+          -34.600271203339595
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "barracas"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.382353919504396,
+          -34.644572385076245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "barrio": "barrioparque"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.40020042300913,
+          -34.57721361550429
         ]
       }
     },
@@ -399,8 +542,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.39205044105249,
-          -34.610372594802534
+          -58.39205741592437,
+          -34.609358111286426
         ]
       }
     },
@@ -412,8 +555,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.38194142527533,
-          -34.604710534096775
+          -58.38107991133326,
+          -34.604706150091424
         ]
       }
     },
@@ -438,8 +581,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.37651923521122,
-          -34.593237220642486
+          -58.375864777123,
+          -34.59296545446826
         ]
       }
     },
@@ -451,8 +594,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.371688144702084,
-          -34.62020459436545
+          -58.3716772851784,
+          -34.620129256525885
         ]
       }
     }

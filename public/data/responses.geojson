@@ -5839,6 +5839,105 @@
         "coordinates": [
           [
             [
+              -58.47709443886116,
+              -34.57813225099777
+            ],
+            [
+              -58.46810801881958,
+              -34.572908016672585
+            ],
+            [
+              -58.47353589453782,
+              -34.56663732807277
+            ],
+            [
+              -58.47724051962663,
+              -34.5644913323203
+            ],
+            [
+              -58.47908016354917,
+              -34.563859724019764
+            ],
+            [
+              -58.481325895566556,
+              -34.56504179441982
+            ],
+            [
+              -58.485261104171954,
+              -34.5599610802343
+            ],
+            [
+              -58.490829814496905,
+              -34.56289186069459
+            ],
+            [
+              -58.49198831530143,
+              -34.5613725721887
+            ],
+            [
+              -58.49889210879344,
+              -34.56504396824401
+            ],
+            [
+              -58.50872219216046,
+              -34.570242361047875
+            ],
+            [
+              -58.50302842015326,
+              -34.57378161496153
+            ],
+            [
+              -58.496556240357336,
+              -34.57856344720512
+            ],
+            [
+              -58.488092959661444,
+              -34.58488314864362
+            ],
+            [
+              -58.47709443886116,
+              -34.57813225099777
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "luchofazio@hotmail.con",
+        "age": "20–29",
+        "yearsInBarrio": "10+",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "Mucho verde, arbolado, tranquilidad, la linea B",
+        "religionAffiliation": "sí",
+        "selectedReligion": "católica",
+        "otherReligion": "",
+        "gruposbarrio": "sí",
+        "gruposbarriodetalle": "Vecinos agrupados",
+        "comunidadesSeleccionadas": "otra",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Otra Provincia",
+        "provinciaNacimiento": "corrientes",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 178222,
+        "barrio": "Villa Urquiza",
+        "fillColor": "#33FF8F",
+        "pinLocation": "{\"lat\":-34.57534767586305,\"lng\":-58.487760545151204}",
+        "userRegion": "Ciudad del Libertador General San Martin, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "sí",
+        "timestamp": "2026-01-19T02:19:18.091Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
               -58.42390012988487,
               -34.57115243278559
             ],
@@ -8311,6 +8410,93 @@
         "mapClicks": 1,
         "canContact": "sí",
         "timestamp": "2025-05-25T17:31:24.416Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.42664691795467,
+              -34.577989565985554
+            ],
+            [
+              -58.43450223844425,
+              -34.57541286623519
+            ],
+            [
+              -58.436792982102475,
+              -34.57598213938712
+            ],
+            [
+              -58.44350209104334,
+              -34.58176361249368
+            ],
+            [
+              -58.44445170841452,
+              -34.58311466930576
+            ],
+            [
+              -58.44470768087862,
+              -34.58447875782339
+            ],
+            [
+              -58.43823113569947,
+              -34.58865471017959
+            ],
+            [
+              -58.437889606645314,
+              -34.58748204487357
+            ],
+            [
+              -58.43665677005828,
+              -34.58675512122873
+            ],
+            [
+              -58.430053763448626,
+              -34.581834385713286
+            ],
+            [
+              -58.42809621886754,
+              -34.579886632299306
+            ],
+            [
+              -58.42664691795467,
+              -34.577989565985554
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "40–49",
+        "yearsInBarrio": "1–5",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 156184,
+        "barrio": "Palermo Hollywood",
+        "fillColor": "#FF8F33",
+        "pinLocation": "{\"lat\":-34.578855257697406,\"lng\":-58.43220445503401}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-19T02:19:05.276Z"
       }
     },
     {
@@ -10901,6 +11087,69 @@
         "mapClicks": 1,
         "canContact": "sí",
         "timestamp": "2026-01-19T01:31:41.997Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.44693251292999,
+              -34.57357559692599
+            ],
+            [
+              -58.44116720698146,
+              -34.56474248049754
+            ],
+            [
+              -58.45270565851558,
+              -34.55063117565409
+            ],
+            [
+              -58.46692600066534,
+              -34.55757509114993
+            ],
+            [
+              -58.457345818955815,
+              -34.568876943499916
+            ],
+            [
+              -58.44693251292999,
+              -34.57357559692599
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "",
+        "sessionDuration": 100221,
+        "barrio": "Belgrano",
+        "fillColor": "#33FF57",
+        "pinLocation": "{\"lat\":-34.569078424853345,\"lng\":-58.44726670129296}",
+        "userRegion": "Olivos, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-19T02:11:57.408Z"
       }
     },
     {
