@@ -1,13 +1,18 @@
 // scripts/exportCleanedBarrios.js
+
+
+// to run: npm run export-barrios
+
 import fs from 'fs';
 import path from 'path';
 
 const normalizeBarrio = (str) =>
   str
     .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/\s+/g, '')
+    .normalize('NFD')                      // separate accents
+    .replace(/[\u0300-\u036f]/g, '')       // remove accents
+    .replace(/\s+/g, '')                   // remove spaces
+    .replace(/[^a-z0-9]/g, '')             // remove punctuation/specials
     .trim();
 
 const main = async () => {
@@ -19,7 +24,11 @@ const main = async () => {
   data.features.forEach((feature) => {
     const rawBarrio = feature.properties.barrio || '';
     const barrio = normalizeBarrio(rawBarrio);
+
+    // Skip obviously invalid names
     if (barrio.length <= 4) return;
+    if (barrio === 'test' || barrio === 'asdf') return;
+
     barrioCounts[barrio] = (barrioCounts[barrio] || 0) + 1;
   });
 

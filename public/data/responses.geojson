@@ -7,6 +7,85 @@
         "coordinates": [
           [
             [
+              -58.445372201428654,
+              -34.56949056740258
+            ],
+            [
+              -58.4513310274091,
+              -34.58023159734747
+            ],
+            [
+              -58.44535789782964,
+              -34.58471530266399
+            ],
+            [
+              -58.447812246529736,
+              -34.59183245997915
+            ],
+            [
+              -58.43631928915714,
+              -34.60115170026685
+            ],
+            [
+              -58.4182356254026,
+              -34.603231634878654
+            ],
+            [
+              -58.41436637757519,
+              -34.59433565433596
+            ],
+            [
+              -58.40366528905943,
+              -34.579516210436196
+            ],
+            [
+              -58.434762573557464,
+              -34.562930851753165
+            ],
+            [
+              -58.445372201428654,
+              -34.56949056740258
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "1–5",
+        "altNames": "sí",
+        "landmarks": "Villa freud",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "bonaerense; zona_sur",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Gran BA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 144205,
+        "barrio": "Palermo",
+        "fillColor": "#FF5733",
+        "pinLocation": "{\"lat\":-34.591488444813145,\"lng\":-58.42236388465528}",
+        "userRegion": "Santos Lugares, AR",
+        "language": "en-US",
+        "deviceType": "mobile",
+        "mapClicks": 2,
+        "canContact": "",
+        "timestamp": "2026-01-18T16:21:08.694Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
               -58.433968420570366,
               -34.55331826363158
             ],
@@ -82,15 +161,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": "",
         "barrio": "Belgrano",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.55886091162459,\"lng\":-58.452649084377825}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
         "canContact": "no",
-        "timestamp": "2025-04-30T21:01:05.860Z",
-        "barrio_cleaned": "belgrano"
+        "timestamp": "2025-04-30T21:01:05.860Z"
       }
     },
     {
@@ -170,15 +248,137 @@
         "nivelEducacionJefe": "secundaria_completa",
         "sessionDuration": 211677,
         "barrio": "San Telmo",
-        "fillColor": "#33FF57",
+        "fillColor": "#3357FF",
         "pinLocation": "{\"lat\":-34.617052952067105,\"lng\":-58.37163573480464}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "sí",
-        "timestamp": "2025-05-25T17:37:20.002Z",
-        "barrio_cleaned": "santelmo"
+        "timestamp": "2025-05-25T17:37:20.002Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.449039917231374,
+              -34.54242605196935
+            ],
+            [
+              -58.45431979860642,
+              -34.54925712508311
+            ],
+            [
+              -58.450757827590124,
+              -34.55288445425609
+            ],
+            [
+              -58.4664219249828,
+              -34.56209137063361
+            ],
+            [
+              -58.463672276538546,
+              -34.56350691654088
+            ],
+            [
+              -58.48063291842611,
+              -34.57342756404262
+            ],
+            [
+              -58.475539701397324,
+              -34.57711222390908
+            ],
+            [
+              -58.46931485525458,
+              -34.57865493861661
+            ],
+            [
+              -58.46300675409002,
+              -34.57505522225205
+            ],
+            [
+              -58.45789313150388,
+              -34.5698482153119
+            ],
+            [
+              -58.45222001767206,
+              -34.571425207883436
+            ],
+            [
+              -58.44697234213193,
+              -34.573664988067435
+            ],
+            [
+              -58.44361872293459,
+              -34.574957161188074
+            ],
+            [
+              -58.44099092694438,
+              -34.5721607636955
+            ],
+            [
+              -58.43486893854474,
+              -34.57523873651784
+            ],
+            [
+              -58.43111733870086,
+              -34.574805753394784
+            ],
+            [
+              -58.43925681242918,
+              -34.56634952465968
+            ],
+            [
+              -58.436587072018696,
+              -34.56363551873865
+            ],
+            [
+              -58.434863764718955,
+              -34.56219610143499
+            ],
+            [
+              -58.43125269355714,
+              -34.561722971281746
+            ],
+            [
+              -58.449039917231374,
+              -34.54242605196935
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "1–5",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "TRAFICO- señoras- edificios menemistas",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 237600,
+        "barrio": "Belgrano",
+        "fillColor": "#33FF57",
+        "pinLocation": "{\"lat\":-34.55843937597864,\"lng\":-58.45151457827748}",
+        "userRegion": "Caseros, AR",
+        "language": "es-ES",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T22:44:37.724Z"
       }
     },
     {
@@ -230,15 +430,14 @@
         "nivelEducacionJefe": "incompleta_terciario",
         "sessionDuration": 179382,
         "barrio": "Coghlan",
-        "fillColor": "#3357FF",
+        "fillColor": "#FF33A1",
         "pinLocation": "{\"lat\":-34.55672778262823,\"lng\":-58.47464932037583}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-25T17:48:46.399Z",
-        "barrio_cleaned": "coghlan"
+        "timestamp": "2025-05-25T17:48:46.399Z"
       }
     },
     {
@@ -290,15 +489,14 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 106790,
         "barrio": "Las Cañitas",
-        "fillColor": "#FF33A1",
+        "fillColor": "#A133FF",
         "pinLocation": "{\"lat\":-34.568804813532644,\"lng\":-58.43457476868562}",
         "userRegion": "San Carlos de Bariloche, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-26T00:46:46.168Z",
-        "barrio_cleaned": "lascanitas"
+        "timestamp": "2025-05-26T00:46:46.168Z"
       }
     },
     {
@@ -374,15 +572,14 @@
         "nivelEducacionJefe": "incompleta_universitario",
         "sessionDuration": 144709,
         "barrio": "Belgrano",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.56734726562308,\"lng\":-58.45851774850834}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "desktop",
         "mapClicks": 2,
         "canContact": "",
-        "timestamp": "2025-05-25T17:45:52.541Z",
-        "barrio_cleaned": "belgrano"
+        "timestamp": "2025-05-25T17:45:52.541Z"
       }
     },
     {
@@ -442,15 +639,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 335223,
         "barrio": "Monserrat",
-        "fillColor": "#A133FF",
+        "fillColor": "#33FFF5",
         "pinLocation": "{\"lat\":-34.62163531560349,\"lng\":-58.38872899462483}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-US",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "sí",
-        "timestamp": "2025-05-20T15:50:28.896Z",
-        "barrio_cleaned": "monserrat"
+        "timestamp": "2025-05-20T15:50:28.896Z"
       }
     },
     {
@@ -526,15 +722,14 @@
         "nivelEducacionJefe": "incompleta_universitario",
         "sessionDuration": 142290,
         "barrio": "Belgrano",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.56734726562308,\"lng\":-58.45851774850834}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "desktop",
         "mapClicks": 2,
         "canContact": "",
-        "timestamp": "2025-05-25T17:45:50.122Z",
-        "barrio_cleaned": "belgrano"
+        "timestamp": "2025-05-25T17:45:50.122Z"
       }
     },
     {
@@ -598,15 +793,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 316274,
         "barrio": "Belgrano C",
-        "fillColor": "#33FFF5",
+        "fillColor": "#F5FF33",
         "pinLocation": "{\"lat\":-34.562871603571004,\"lng\":-58.44620059904497}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 3,
         "canContact": "",
-        "timestamp": "2025-05-25T21:15:21.860Z",
-        "barrio_cleaned": "belgranoc"
+        "timestamp": "2025-05-25T21:15:21.860Z"
       }
     },
     {
@@ -658,15 +852,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 175470,
         "barrio": "Palermo Hollywood",
-        "fillColor": "#F5FF33",
+        "fillColor": "#FF8F33",
         "pinLocation": "{\"lat\":-34.58076785859135,\"lng\":-58.43406468588928}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "no",
-        "timestamp": "2025-05-07T14:20:29.221Z",
-        "barrio_cleaned": "palermohollywood"
+        "timestamp": "2025-05-07T14:20:29.221Z"
       }
     },
     {
@@ -754,15 +947,81 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 70783,
         "barrio": "Las Cañitas",
-        "fillColor": "#FF33A1",
+        "fillColor": "#A133FF",
         "pinLocation": "{\"lat\":-34.5716942030548,\"lng\":-58.429288178203365}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "desktop",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-10T23:53:21.592Z",
-        "barrio_cleaned": "lascanitas"
+        "timestamp": "2025-05-10T23:53:21.592Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.47379174080889,
+              -34.569424448551416
+            ],
+            [
+              -58.46716726132709,
+              -34.5772698237101
+            ],
+            [
+              -58.46328985301608,
+              -34.57507007802495
+            ],
+            [
+              -58.457568311484366,
+              -34.56913242076843
+            ],
+            [
+              -58.46293524488702,
+              -34.562902280261376
+            ],
+            [
+              -58.47357447500819,
+              -34.569268688125916
+            ],
+            [
+              -58.47379174080889,
+              -34.569424448551416
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "Es la zona de edificios que rodea a la estación Belgrano R y la Plaza Castelli, sumado a la zona de casas que está cerca de la Avenida Melián. Es un barrio residencial de clase media alta, muy lindo para caminar, bien arbolado y relativamente conectado. Tiene una asociación de fomento activa y una identidad arraigada especialmente entre quienes fueron a los colegios ingleses de la zona.",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 272458,
+        "barrio": "Belgrano R",
+        "fillColor": "#33FF8F",
+        "pinLocation": "{\"lat\":-34.56640081379755,\"lng\":-58.461546870738474}",
+        "userRegion": "Olivos, AR",
+        "language": "es-ES",
+        "deviceType": "desktop",
+        "mapClicks": 4,
+        "canContact": "",
+        "timestamp": "2026-01-18T18:56:30.404Z"
       }
     },
     {
@@ -930,15 +1189,97 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 193633,
         "barrio": "Belgrano R",
-        "fillColor": "#FF8F33",
+        "fillColor": "#33FF8F",
         "pinLocation": "{\"lat\":-34.563340155758205,\"lng\":-58.46715647525379}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-US",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "sí",
-        "timestamp": "2025-05-07T16:23:23.851Z",
-        "barrio_cleaned": "belgranor"
+        "timestamp": "2025-05-07T16:23:23.851Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.38827029083117,
+              -34.65997469244765
+            ],
+            [
+              -58.39022305365012,
+              -34.633972687552685
+            ],
+            [
+              -58.38317661219702,
+              -34.63230342334282
+            ],
+            [
+              -58.37841176340255,
+              -34.629047714320144
+            ],
+            [
+              -58.37434399735447,
+              -34.62675517730379
+            ],
+            [
+              -58.37106337707523,
+              -34.62659997039556
+            ],
+            [
+              -58.37026678598501,
+              -34.63315201731485
+            ],
+            [
+              -58.36756561257623,
+              -34.65005176880411
+            ],
+            [
+              -58.368824042353964,
+              -34.65225588366898
+            ],
+            [
+              -58.370741362232664,
+              -34.655025919850864
+            ],
+            [
+              -58.38827029083117,
+              -34.65997469244765
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "matiasfer2202@gmail.com",
+        "age": "<20",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "La historia de las Barracas del Riachuelo ",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "incompleta_universitario",
+        "sessionDuration": 111763,
+        "barrio": "Barracas",
+        "fillColor": "#8F33FF",
+        "pinLocation": "{\"lat\":-34.650271012243266,\"lng\":-58.38135864406662}",
+        "userRegion": "Avellaneda, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "sí",
+        "timestamp": "2026-01-18T20:15:33.198Z"
       }
     },
     {
@@ -1018,15 +1359,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 187814,
         "barrio": "retiro",
-        "fillColor": "#33FF8F",
+        "fillColor": "#FF5733",
         "pinLocation": "{\"lat\":-34.59239616953384,\"lng\":-58.378776918108954}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-20T13:51:29.044Z",
-        "barrio_cleaned": "retiro"
+        "timestamp": "2025-05-20T13:51:29.044Z"
       }
     },
     {
@@ -1106,15 +1446,14 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 241545,
         "barrio": "Recoleta",
-        "fillColor": "#8F33FF",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.58744045482875,\"lng\":-58.40501993921606}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-ES",
         "deviceType": "desktop",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-30T14:49:41.040Z",
-        "barrio_cleaned": "recoleta"
+        "timestamp": "2025-05-30T14:49:41.040Z"
       }
     },
     {
@@ -1177,8 +1516,7 @@
         "deviceType": "desktop",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-29T12:22:15.106Z",
-        "barrio_cleaned": "palermo"
+        "timestamp": "2025-05-29T12:22:15.106Z"
       }
     },
     {
@@ -1230,15 +1568,200 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 98203,
         "barrio": "Las Cañitas",
-        "fillColor": "#FF33A1",
+        "fillColor": "#A133FF",
         "pinLocation": "{\"lat\":-34.567773382205736,\"lng\":-58.432765905797766}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "sí",
-        "timestamp": "2025-05-15T02:25:32.929Z",
-        "barrio_cleaned": "lascanitas"
+        "timestamp": "2025-05-15T02:25:32.929Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.40704956584925,
+              -34.621977529464374
+            ],
+            [
+              -58.40711112014509,
+              -34.62381453523934
+            ],
+            [
+              -58.40673625472368,
+              -34.62748444234545
+            ],
+            [
+              -58.40659059237214,
+              -34.62896835606807
+            ],
+            [
+              -58.40635569956726,
+              -34.63032902228428
+            ],
+            [
+              -58.40795862953341,
+              -34.63200055405837
+            ],
+            [
+              -58.40954853416464,
+              -34.63319184912242
+            ],
+            [
+              -58.4096361242965,
+              -34.63253029947839
+            ],
+            [
+              -58.41935014699882,
+              -34.63438166815186
+            ],
+            [
+              -58.42119177736578,
+              -34.63462720103498
+            ],
+            [
+              -58.42090069713372,
+              -34.63591985709657
+            ],
+            [
+              -58.42482272071376,
+              -34.63628148495142
+            ],
+            [
+              -58.426458016258664,
+              -34.62859838247575
+            ],
+            [
+              -58.42779278888388,
+              -34.6220346765824
+            ],
+            [
+              -58.42410341281018,
+              -34.621690747799946
+            ],
+            [
+              -58.418556933215186,
+              -34.621064185715596
+            ],
+            [
+              -58.41270693517838,
+              -34.62069754607001
+            ],
+            [
+              -58.40770660054888,
+              -34.61975143554883
+            ],
+            [
+              -58.40704956584925,
+              -34.621977529464374
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "sí",
+        "landmarks": "San Cristobal",
+        "comments": "Tranquilo, casas bajas, silencio",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "incompleta_universitario",
+        "sessionDuration": 268543,
+        "barrio": "Boedo",
+        "fillColor": "#3357FF",
+        "pinLocation": "{\"lat\":-34.62264093762216,\"lng\":-58.41269471597565}",
+        "userRegion": "Coronel Brandsen, AR",
+        "language": "es-ES",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "no",
+        "timestamp": "2026-01-18T23:18:37.066Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.450876438386004,
+              -34.55266315090883
+            ],
+            [
+              -58.446840940654994,
+              -34.549972054728954
+            ],
+            [
+              -58.442636543167566,
+              -34.5479267634227
+            ],
+            [
+              -58.43752732556128,
+              -34.55042416496941
+            ],
+            [
+              -58.434408712216865,
+              -34.5532121238411
+            ],
+            [
+              -58.440808806526775,
+              -34.5580988997051
+            ],
+            [
+              -58.44335436712883,
+              -34.561231021375384
+            ],
+            [
+              -58.450876438386004,
+              -34.55266315090883
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "sí",
+        "landmarks": "Belgrano",
+        "comments": "Desde alcorta hasta libertador",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 188813,
+        "barrio": "Bajo Belgrano",
+        "fillColor": "#FF33A1",
+        "pinLocation": "{\"lat\":-34.549634160180155,\"lng\":-58.445420800733004}",
+        "userRegion": "Olivos, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T23:45:32.125Z"
       }
     },
     {
@@ -1333,8 +1856,66 @@
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "no",
-        "timestamp": "2025-05-30T14:12:06.688Z",
-        "barrio_cleaned": "palermo"
+        "timestamp": "2025-05-30T14:12:06.688Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.451462153859396,
+              -34.630489714869746
+            ],
+            [
+              -58.433657453178895,
+              -34.62803981554868
+            ],
+            [
+              -58.43044647867015,
+              -34.64493605814481
+            ],
+            [
+              -58.43707462322888,
+              -34.647210504163
+            ],
+            [
+              -58.451462153859396,
+              -34.630489714869746
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "40–49",
+        "yearsInBarrio": "1–5",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "posgrado",
+        "sessionDuration": 215487,
+        "barrio": "Parque Chacabuco",
+        "fillColor": "#A133FF",
+        "pinLocation": "{\"lat\":-34.64259043253391,\"lng\":-58.438560634231905}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-GB",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T19:53:55.155Z"
       }
     },
     {
@@ -1386,15 +1967,85 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 88234,
         "barrio": "Belgrano",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.557230978530484,\"lng\":-58.45585595416411}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "sí",
-        "timestamp": "2025-05-18T03:59:44.281Z",
-        "barrio_cleaned": "belgrano"
+        "timestamp": "2025-05-18T03:59:44.281Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.4585160995902,
+              -34.604111268265214
+            ],
+            [
+              -58.45641038739819,
+              -34.59768058460743
+            ],
+            [
+              -58.465389934425104,
+              -34.59635030393416
+            ],
+            [
+              -58.46456573934297,
+              -34.59252294291634
+            ],
+            [
+              -58.47074129882306,
+              -34.587557795603075
+            ],
+            [
+              -58.47581634203394,
+              -34.59148839502063
+            ],
+            [
+              -58.47866355189372,
+              -34.5993420020671
+            ],
+            [
+              -58.4585160995902,
+              -34.604111268265214
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "1–5",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "zona_oeste",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Gran BA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 157980,
+        "barrio": "La Paternal",
+        "fillColor": "#33FFF5",
+        "pinLocation": "{\"lat\":-34.60150761097609,\"lng\":-58.46491939331338}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-19T00:41:53.262Z"
       }
     },
     {
@@ -1446,15 +2097,14 @@
         "nivelEducacionJefe": "secundaria_completa",
         "sessionDuration": 119480,
         "barrio": "Monserrat",
-        "fillColor": "#A133FF",
+        "fillColor": "#33FFF5",
         "pinLocation": "{\"lat\":-34.61622120295347,\"lng\":-58.39154855466529}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-AR",
         "deviceType": "desktop",
         "mapClicks": 4,
         "canContact": "",
-        "timestamp": "2025-05-25T18:34:03.537Z",
-        "barrio_cleaned": "monserrat"
+        "timestamp": "2025-05-25T18:34:03.537Z"
       }
     },
     {
@@ -1518,15 +2168,14 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 176023,
         "barrio": "Núñez",
-        "fillColor": "#33FF57",
+        "fillColor": "#F5FF33",
         "pinLocation": "{\"lat\":-34.539280756359304,\"lng\":-58.46536091454921}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 3,
         "canContact": "",
-        "timestamp": "2025-05-25T17:36:35.543Z",
-        "barrio_cleaned": "nunez"
+        "timestamp": "2025-05-25T17:36:35.543Z"
       }
     },
     {
@@ -1582,15 +2231,73 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 412486,
         "barrio": "Belgrano C",
-        "fillColor": "#33FFF5",
+        "fillColor": "#F5FF33",
         "pinLocation": "{\"lat\":-34.56313261301395,\"lng\":-58.444305975808774}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "sí",
-        "timestamp": "2025-05-25T17:31:23.240Z",
-        "barrio_cleaned": "belgranoc"
+        "timestamp": "2025-05-25T17:31:23.240Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.41255639907415,
+              -34.620688150382044
+            ],
+            [
+              -58.41176965069866,
+              -34.63033286884709
+            ],
+            [
+              -58.39122164992061,
+              -34.62706231912071
+            ],
+            [
+              -58.3916509409452,
+              -34.61823589468791
+            ],
+            [
+              -58.41255639907415,
+              -34.620688150382044
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "Sus tangueros, poetas, arquitectura, espacios verdes, espacios de culto de diversas religiones, restaurantes, cafés, actividades barriales, centros culturales, deportivos",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "",
+        "sessionDuration": 177919,
+        "barrio": "San Cristóbal",
+        "fillColor": "#FF8F33",
+        "pinLocation": "{\"lat\":-34.624676161467114,\"lng\":-58.401579357456725}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T23:42:06.248Z"
       }
     },
     {
@@ -1658,15 +2365,274 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 211032,
         "barrio": "Villa Urquiza",
-        "fillColor": "#3357FF",
+        "fillColor": "#33FF8F",
         "pinLocation": "{\"lng\":-58.482780582882825,\"lat\":-34.58062564261853}",
         "userRegion": "Flower Mound, US",
         "language": "en-US",
         "deviceType": "desktop",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-06-12T14:06:33.237Z",
-        "barrio_cleaned": "villaurquiza"
+        "timestamp": "2025-06-12T14:06:33.237Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.45312053427455,
+              -34.56558790642295
+            ],
+            [
+              -58.44559679442425,
+              -34.5611204367428
+            ],
+            [
+              -58.44464083833692,
+              -34.562001763929665
+            ],
+            [
+              -58.4412928328467,
+              -34.56460755713129
+            ],
+            [
+              -58.43818112999212,
+              -34.56728655807982
+            ],
+            [
+              -58.43740466113154,
+              -34.568340793543186
+            ],
+            [
+              -58.441926769363704,
+              -34.571449760747115
+            ],
+            [
+              -58.45312053427455,
+              -34.56558790642295
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "6–10",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 167644,
+        "barrio": "San Benito",
+        "fillColor": "#8F33FF",
+        "pinLocation": "{\"lat\":-34.5648700507836,\"lng\":-58.44469454494241}",
+        "userRegion": "Luján, AR",
+        "language": "en-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-19T00:23:49.204Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.499864050908386,
+              -34.57513546201503
+            ],
+            [
+              -58.48097079386986,
+              -34.56567387491941
+            ],
+            [
+              -58.47282179669294,
+              -34.575487217473906
+            ],
+            [
+              -58.48854656722911,
+              -34.584501409220366
+            ],
+            [
+              -58.499864050908386,
+              -34.57513546201503
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "1–5",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Otra Provincia",
+        "provinciaNacimiento": "buenos_aires",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "incompleta_universitario",
+        "sessionDuration": 138833,
+        "barrio": "Villa Urquiza",
+        "fillColor": "#33FF8F",
+        "pinLocation": "{\"lat\":-34.5782446416975,\"lng\":-58.487510759483015}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T21:50:25.408Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.44970437237069,
+              -34.59385707232469
+            ],
+            [
+              -58.4412626844954,
+              -34.58055552486023
+            ],
+            [
+              -58.45367095244836,
+              -34.575985666612105
+            ],
+            [
+              -58.47151714715062,
+              -34.59960382433833
+            ],
+            [
+              -58.468129095512026,
+              -34.595367285971285
+            ],
+            [
+              -58.44970437237069,
+              -34.59385707232469
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "30–39",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "sí",
+        "landmarks": "Chacagiales",
+        "comments": "El cementerio",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Otra Provincia",
+        "provinciaNacimiento": "entre_rios",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 156736,
+        "barrio": "Chacarita",
+        "fillColor": "#FF5733",
+        "pinLocation": "{\"lat\":-34.58313813850132,\"lng\":-58.45338572257505}",
+        "userRegion": "Ciudad del Libertador General San Martin, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-19T00:35:09.977Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.50135307591077,
+              -34.673829660641566
+            ],
+            [
+              -58.46174272526635,
+              -34.70478004225367
+            ],
+            [
+              -58.43466941739649,
+              -34.67377455901398
+            ],
+            [
+              -58.449945802256664,
+              -34.664223046410136
+            ],
+            [
+              -58.45812201183287,
+              -34.67288616273956
+            ],
+            [
+              -58.47949608464411,
+              -34.657689741135925
+            ],
+            [
+              -58.50135307591077,
+              -34.673829660641566
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "lautaro.rinaldo@gmail.com",
+        "age": "20–29",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "sí",
+        "landmarks": "Lugano",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 148460,
+        "barrio": "Villa Lugano",
+        "fillColor": "#33FF57",
+        "pinLocation": "{\"lat\":-34.67963277858028,\"lng\":-58.4736621325126}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "sí",
+        "timestamp": "2026-01-18T21:15:47.340Z"
       }
     },
     {
@@ -1737,8 +2703,7 @@
         "deviceType": "mobile",
         "mapClicks": 2,
         "canContact": "",
-        "timestamp": "2025-05-25T17:36:20.049Z",
-        "barrio_cleaned": "palermo"
+        "timestamp": "2025-05-25T17:36:20.049Z"
       }
     },
     {
@@ -1790,15 +2755,105 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 258049,
         "barrio": "Villa Crespo",
-        "fillColor": "#FF33A1",
+        "fillColor": "#3357FF",
         "pinLocation": "{\"lat\":-34.6037,\"lng\":-58.437}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-US",
         "deviceType": "desktop",
         "mapClicks": 0,
         "canContact": "",
-        "timestamp": "2025-06-12T14:04:33.804Z",
-        "barrio_cleaned": "villacrespo"
+        "timestamp": "2025-06-12T14:04:33.804Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.450265252864895,
+              -34.61880160036586
+            ],
+            [
+              -58.44912131232145,
+              -34.622135679130515
+            ],
+            [
+              -58.448120364346025,
+              -34.62331238083302
+            ],
+            [
+              -58.44673810285569,
+              -34.627705253092
+            ],
+            [
+              -58.433868771741174,
+              -34.62597950958357
+            ],
+            [
+              -58.434631398770364,
+              -34.622841702154226
+            ],
+            [
+              -58.43620431701717,
+              -34.61821321962085
+            ],
+            [
+              -58.43753891431841,
+              -34.613976755129926
+            ],
+            [
+              -58.44068475081269,
+              -34.61495743744006
+            ],
+            [
+              -58.44343505117574,
+              -34.61661526859498
+            ],
+            [
+              -58.445627604004244,
+              -34.617360564363636
+            ],
+            [
+              -58.44765826106446,
+              -34.61771359690233
+            ],
+            [
+              -58.450265252864895,
+              -34.61880160036586
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "castellaro@gmail.com",
+        "age": "40–49",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "La estación Caballito y el centro de trasbordo Primera Junta",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Otra Provincia",
+        "provinciaNacimiento": "salta",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 160843,
+        "barrio": "Primera Junta",
+        "fillColor": "#FF33A1",
+        "pinLocation": "{\"lat\":-34.62046129576267,\"lng\":-58.44140543890333}",
+        "userRegion": "Santiago, CL",
+        "language": "es",
+        "deviceType": "desktop",
+        "mapClicks": 2,
+        "canContact": "sí",
+        "timestamp": "2026-01-19T00:25:58.069Z"
       }
     },
     {
@@ -1857,8 +2912,7 @@
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "no",
-        "timestamp": "2025-05-30T13:32:05.527Z",
-        "barrio_cleaned": "barrionorte"
+        "timestamp": "2025-05-30T13:32:05.527Z"
       }
     },
     {
@@ -1945,8 +2999,66 @@
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "sí",
-        "timestamp": "2025-05-26T02:06:12.175Z",
-        "barrio_cleaned": "mataderos"
+        "timestamp": "2025-05-26T02:06:12.175Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.525186658575734,
+              -34.65664252513895
+            ],
+            [
+              -58.49703507491259,
+              -34.64342350234733
+            ],
+            [
+              -58.47878445118474,
+              -34.657830139862305
+            ],
+            [
+              -58.501535528969924,
+              -34.67397657401309
+            ],
+            [
+              -58.525186658575734,
+              -34.65664252513895
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "zanelli.m.pablo@gmail.com",
+        "age": "40–49",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "sí",
+        "landmarks": "Cerca de Av. Emilio Castro existe una zona residencial conocida como Barrio Naón, pero en realidad es parte de Mataderos no tiene reconocimiento como barrio",
+        "comments": "Son características la plaza de Mataderos, la pizzería el Cedrón y el club Nueva Chicago por supuesto",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "incompleta_universitario",
+        "sessionDuration": 449576,
+        "barrio": "Mataderos",
+        "fillColor": "#33FFF5",
+        "pinLocation": "{\"lat\":-34.64861850220186,\"lng\":-58.49538356924266}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-AR",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "no",
+        "timestamp": "2026-01-18T21:34:47.852Z"
       }
     },
     {
@@ -2017,8 +3129,7 @@
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "no",
-        "timestamp": "2025-05-18T19:11:00.786Z",
-        "barrio_cleaned": "villadelparque"
+        "timestamp": "2025-05-18T19:11:00.786Z"
       }
     },
     {
@@ -2070,15 +3181,117 @@
         "nivelEducacionJefe": "incompleta_universitario",
         "sessionDuration": 165212,
         "barrio": "Las Cañitas",
-        "fillColor": "#FF33A1",
+        "fillColor": "#A133FF",
         "pinLocation": "{\"lat\":-34.569466757284125,\"lng\":-58.4334339557835}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-29T22:48:44.821Z",
-        "barrio_cleaned": "lascanitas"
+        "timestamp": "2025-05-29T22:48:44.821Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.4196895442268,
+              -34.59615030319056
+            ],
+            [
+              -58.41692679861666,
+              -34.5911229239512
+            ],
+            [
+              -58.41169212272368,
+              -34.586574080586985
+            ],
+            [
+              -58.40529418552123,
+              -34.582862997611926
+            ],
+            [
+              -58.40413092421167,
+              -34.57579951088588
+            ],
+            [
+              -58.40224062458371,
+              -34.56765779858329
+            ],
+            [
+              -58.40878396944987,
+              -34.55903629307692
+            ],
+            [
+              -58.41663598328924,
+              -34.556401765914494
+            ],
+            [
+              -58.42841400404896,
+              -34.560233777840956
+            ],
+            [
+              -58.43844713284376,
+              -34.56622094306426
+            ],
+            [
+              -58.43757468686162,
+              -34.575200882726335
+            ],
+            [
+              -58.4316129726502,
+              -34.57807425857808
+            ],
+            [
+              -58.43481194125144,
+              -34.58298271255271
+            ],
+            [
+              -58.43844713284376,
+              -34.58896823971623
+            ],
+            [
+              -58.42943185769481,
+              -34.594833638034316
+            ],
+            [
+              -58.4196895442268,
+              -34.59615030319056
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "juliandonsanto@gmail.com",
+        "age": "30–39",
+        "yearsInBarrio": "6–10",
+        "altNames": "sí",
+        "landmarks": "Palermo Botanico",
+        "comments": "Es Palermo pero de Santa Fe para abajo y una zona mas vieja, algunos chetos quieren ser Palermo Chico, otros Palermo Viejo, otros Palermo Botanico, otros solo Palermo.",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "zona_sur",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Gran BA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "posgrado",
+        "sessionDuration": 324687,
+        "barrio": "Palermo",
+        "fillColor": "#FF5733",
+        "pinLocation": "{\"lat\":-34.583627461757935,\"lng\":-58.41486034101426}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "no",
+        "timestamp": "2026-01-18T23:27:02.463Z"
       }
     },
     {
@@ -2130,15 +3343,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": "",
         "barrio": "Las Cañitas",
-        "fillColor": "#FF33A1",
+        "fillColor": "#A133FF",
         "pinLocation": "{\"lat\":-34.5682724733659,\"lng\":-58.43564629855044}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
         "canContact": "sí",
-        "timestamp": "2025-05-01T19:03:09.012Z",
-        "barrio_cleaned": "lascanitas"
+        "timestamp": "2025-05-01T19:03:09.012Z"
       }
     },
     {
@@ -2221,8 +3433,7 @@
         "deviceType": "mobile",
         "mapClicks": 2,
         "canContact": "sí",
-        "timestamp": "2025-05-26T02:42:49.397Z",
-        "barrio_cleaned": "retiro"
+        "timestamp": "2025-05-26T02:42:49.397Z"
       }
     },
     {
@@ -2274,15 +3485,14 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 107942,
         "barrio": "Coghlan",
-        "fillColor": "#3357FF",
+        "fillColor": "#FF33A1",
         "pinLocation": "{\"lat\":-34.56800305665535,\"lng\":-58.47656543280267}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 2,
         "canContact": "no",
-        "timestamp": "2025-05-22T10:54:26.252Z",
-        "barrio_cleaned": "coghlan"
+        "timestamp": "2025-05-22T10:54:26.252Z"
       }
     },
     {
@@ -2334,15 +3544,14 @@
         "nivelEducacionJefe": "incompleta_universitario",
         "sessionDuration": 385892,
         "barrio": "Belgrano C",
-        "fillColor": "#33FFF5",
+        "fillColor": "#F5FF33",
         "pinLocation": "{\"lat\":-34.55800892224643,\"lng\":-58.45187081430775}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-29T01:52:55.040Z",
-        "barrio_cleaned": "belgranoc"
+        "timestamp": "2025-05-29T01:52:55.040Z"
       }
     },
     {
@@ -2429,8 +3638,7 @@
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-06-06T17:16:12.473Z",
-        "barrio_cleaned": "retiro"
+        "timestamp": "2025-06-06T17:16:12.473Z"
       }
     },
     {
@@ -2485,8 +3693,7 @@
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-06-04T19:23:05.538Z",
-        "barrio_cleaned": "retiro"
+        "timestamp": "2025-06-04T19:23:05.538Z"
       }
     },
     {
@@ -2549,8 +3756,7 @@
         "deviceType": "desktop",
         "mapClicks": 3,
         "canContact": "",
-        "timestamp": "2025-05-28T04:48:16.423Z",
-        "barrio_cleaned": "balvanera"
+        "timestamp": "2025-05-28T04:48:16.423Z"
       }
     },
     {
@@ -2602,15 +3808,14 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 167162,
         "barrio": "Villa Urquiza",
-        "fillColor": "#3357FF",
+        "fillColor": "#33FF8F",
         "pinLocation": "{\"lat\":-34.57032895624933,\"lng\":-58.486909565961184}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-24T20:23:47.620Z",
-        "barrio_cleaned": "villaurquiza"
+        "timestamp": "2025-05-24T20:23:47.620Z"
       }
     },
     {
@@ -2697,8 +3902,122 @@
         "deviceType": "desktop",
         "mapClicks": 1,
         "canContact": "sí",
-        "timestamp": "2025-05-23T18:35:44.129Z",
-        "barrio_cleaned": "palermo"
+        "timestamp": "2025-05-23T18:35:44.129Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.4125095235072,
+              -34.620642280382384
+            ],
+            [
+              -58.42777170387252,
+              -34.62209482130023
+            ],
+            [
+              -58.42926631291206,
+              -34.61514454640841
+            ],
+            [
+              -58.430025538373044,
+              -34.61548252439796
+            ],
+            [
+              -58.43067622034347,
+              -34.60597308128339
+            ],
+            [
+              -58.4332237037747,
+              -34.602707829583956
+            ],
+            [
+              -58.43216135474323,
+              -34.60206799982169
+            ],
+            [
+              -58.42920037362745,
+              -34.59899252548872
+            ],
+            [
+              -58.427956569656715,
+              -34.598433955520996
+            ],
+            [
+              -58.42653097612161,
+              -34.59791894351846
+            ],
+            [
+              -58.42335760744119,
+              -34.59781148338286
+            ],
+            [
+              -58.41191655878444,
+              -34.598035197630914
+            ],
+            [
+              -58.414049653171645,
+              -34.60788490080287
+            ],
+            [
+              -58.4146317175917,
+              -34.608214491215556
+            ],
+            [
+              -58.41455437485321,
+              -34.60940253310449
+            ],
+            [
+              -58.414458383715896,
+              -34.61076125900483
+            ],
+            [
+              -58.413404629984484,
+              -34.6126499872583
+            ],
+            [
+              -58.412843840547396,
+              -34.614136484372054
+            ],
+            [
+              -58.4125095235072,
+              -34.620642280382384
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "fecaruso86@gmail.com",
+        "age": "30–39",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "Tiene todo lo que necesitás para ser feliz.",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "incompleta_terciario",
+        "sessionDuration": 294131,
+        "barrio": "Almagro",
+        "fillColor": "#8F33FF",
+        "pinLocation": "{\"lat\":-34.60338644148893,\"lng\":-58.42724244391236}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-19T01:25:31.784Z"
       }
     },
     {
@@ -2834,15 +4153,14 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 346119,
         "barrio": "Belgrano",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.56497857653377,\"lng\":-58.45183992840296}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-ES",
         "deviceType": "desktop",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-06-07T14:32:42.813Z",
-        "barrio_cleaned": "belgrano"
+        "timestamp": "2025-06-07T14:32:42.813Z"
       }
     },
     {
@@ -2898,15 +4216,85 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 223353,
         "barrio": "Monte Castro",
-        "fillColor": "#8F33FF",
+        "fillColor": "#FF5733",
         "pinLocation": "{\"lat\":-34.61906272011128,\"lng\":-58.505503214686044}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-US",
         "deviceType": "mobile",
         "mapClicks": 2,
         "canContact": "",
-        "timestamp": "2025-05-20T17:36:03.499Z",
-        "barrio_cleaned": "montecastro"
+        "timestamp": "2025-05-20T17:36:03.499Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.410131768579774,
+              -34.58840031334834
+            ],
+            [
+              -58.40446906989652,
+              -34.58024823220618
+            ],
+            [
+              -58.38868311099675,
+              -34.585014562045295
+            ],
+            [
+              -58.38194481591593,
+              -34.58889514236949
+            ],
+            [
+              -58.38200808629253,
+              -34.59590056333956
+            ],
+            [
+              -58.395547946830774,
+              -34.59642138889024
+            ],
+            [
+              -58.40462724583725,
+              -34.59321826004491
+            ],
+            [
+              -58.410131768579774,
+              -34.58840031334834
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "",
+        "sessionDuration": 76367,
+        "barrio": "Recoleta",
+        "fillColor": "#33FF57",
+        "pinLocation": "{\"lat\":-34.58832183543318,\"lng\":-58.40433523847037}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T16:15:24.942Z"
       }
     },
     {
@@ -2966,15 +4354,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 64012,
         "barrio": "Palermo Hollywood",
-        "fillColor": "#F5FF33",
+        "fillColor": "#FF8F33",
         "pinLocation": "{\"lat\":-34.5857193748812,\"lng\":-58.44179015746205}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-18T19:20:49.092Z",
-        "barrio_cleaned": "palermohollywood"
+        "timestamp": "2025-05-18T19:20:49.092Z"
       }
     },
     {
@@ -3034,15 +4421,14 @@
         "nivelEducacionJefe": "incompleta_universitario",
         "sessionDuration": 127365,
         "barrio": "Congreso",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.61334490936001,\"lng\":-58.3903323993047}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 4,
         "canContact": "",
-        "timestamp": "2025-05-25T17:47:46.139Z",
-        "barrio_cleaned": "congreso"
+        "timestamp": "2025-05-25T17:47:46.139Z"
       }
     },
     {
@@ -3149,8 +4535,7 @@
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "no",
-        "timestamp": "2025-05-26T11:23:29.789Z",
-        "barrio_cleaned": "palermo"
+        "timestamp": "2025-05-26T11:23:29.789Z"
       }
     },
     {
@@ -3202,15 +4587,14 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 158090,
         "barrio": "Colegiales",
-        "fillColor": "#33FF57",
+        "fillColor": "#3357FF",
         "pinLocation": "{\"lat\":-34.574390703411666,\"lng\":-58.459562531654754}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "mobile",
         "mapClicks": 2,
         "canContact": "",
-        "timestamp": "2025-05-27T15:28:46.243Z",
-        "barrio_cleaned": "colegiales"
+        "timestamp": "2025-05-27T15:28:46.243Z"
       }
     },
     {
@@ -3317,8 +4701,7 @@
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "no",
-        "timestamp": "2025-05-26T11:23:27.106Z",
-        "barrio_cleaned": "palermo"
+        "timestamp": "2025-05-26T11:23:27.106Z"
       }
     },
     {
@@ -3394,15 +4777,14 @@
         "nivelEducacionJefe": "incompleta_universitario",
         "sessionDuration": 144125,
         "barrio": "Belgrano",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.56734726562308,\"lng\":-58.45851774850834}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "desktop",
         "mapClicks": 2,
         "canContact": "",
-        "timestamp": "2025-05-25T17:45:51.957Z",
-        "barrio_cleaned": "belgrano"
+        "timestamp": "2025-05-25T17:45:51.957Z"
       }
     },
     {
@@ -3458,15 +4840,14 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 181178,
         "barrio": "Monte Castro",
-        "fillColor": "#8F33FF",
+        "fillColor": "#FF5733",
         "pinLocation": "{\"lat\":-34.61145112672248,\"lng\":-58.50008124045233}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-US",
         "deviceType": "mobile",
         "mapClicks": 2,
         "canContact": "",
-        "timestamp": "2025-05-24T19:07:59.959Z",
-        "barrio_cleaned": "montecastro"
+        "timestamp": "2025-05-24T19:07:59.959Z"
       }
     },
     {
@@ -3526,15 +4907,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 331957,
         "barrio": "Las cañitas",
-        "fillColor": "#3357FF",
+        "fillColor": "#FF33A1",
         "pinLocation": "{\"lat\":-34.565982344750694,\"lng\":-58.43374640598478}",
         "userRegion": "El Calafate, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 3,
         "canContact": "no",
-        "timestamp": "2025-05-17T02:43:29.547Z",
-        "barrio_cleaned": "lascanitas"
+        "timestamp": "2025-05-17T02:43:29.547Z"
       }
     },
     {
@@ -3590,15 +4970,14 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 100154,
         "barrio": "Recoleta",
-        "fillColor": "#8F33FF",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.589587445235104,\"lng\":-58.388438542237196}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "no",
-        "timestamp": "2025-06-04T17:51:55.239Z",
-        "barrio_cleaned": "recoleta"
+        "timestamp": "2025-06-04T17:51:55.239Z"
       }
     },
     {
@@ -3658,15 +5037,14 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 302740,
         "barrio": "Villa Crespo",
-        "fillColor": "#FF33A1",
+        "fillColor": "#3357FF",
         "pinLocation": "{\"lat\":-34.59884207817262,\"lng\":-58.445488441608006}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 3,
         "canContact": "",
-        "timestamp": "2025-05-26T19:12:25.234Z",
-        "barrio_cleaned": "villacrespo"
+        "timestamp": "2025-05-26T19:12:25.234Z"
       }
     },
     {
@@ -3718,15 +5096,113 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 161579,
         "barrio": "Belgrano",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.56654708640455,\"lng\":-58.44839675334795}",
         "userRegion": "London, GB",
         "language": "en-US",
         "deviceType": "desktop",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-30T15:00:03.897Z",
-        "barrio_cleaned": "belgrano"
+        "timestamp": "2025-05-30T15:00:03.897Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.43138467815801,
+              -34.57462417929815
+            ],
+            [
+              -58.436869945990495,
+              -34.56870917303188
+            ],
+            [
+              -58.43817616675355,
+              -34.56715742423816
+            ],
+            [
+              -58.44111840693546,
+              -34.564761329800234
+            ],
+            [
+              -58.44469936157385,
+              -34.56182041406511
+            ],
+            [
+              -58.45002664843577,
+              -34.56479643782681
+            ],
+            [
+              -58.452451172541586,
+              -34.565696327709496
+            ],
+            [
+              -58.45709988138485,
+              -34.56902047344506
+            ],
+            [
+              -58.455652273538036,
+              -34.57013175550559
+            ],
+            [
+              -58.45188974751716,
+              -34.571432467508046
+            ],
+            [
+              -58.44697823381101,
+              -34.57370753884211
+            ],
+            [
+              -58.44243397407325,
+              -34.57541121327286
+            ],
+            [
+              -58.439473450173836,
+              -34.57616080110233
+            ],
+            [
+              -58.437280888112284,
+              -34.575896682857234
+            ],
+            [
+              -58.43138467815801,
+              -34.57462417929815
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "entre virrey del pino y las vías del mitre. una zona que legalmente es colegiales pero la gente no se considera de colegiales",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "",
+        "sessionDuration": 289524,
+        "barrio": "San Benito",
+        "fillColor": "#8F33FF",
+        "pinLocation": "{\"lat\":-34.57077435444257,\"lng\":-58.447861457046315}",
+        "userRegion": "Ciudad del Libertador General San Martin, AR",
+        "language": "en-US",
+        "deviceType": "mobile",
+        "mapClicks": 3,
+        "canContact": "",
+        "timestamp": "2026-01-19T01:07:22.208Z"
       }
     },
     {
@@ -3790,15 +5266,14 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 168905,
         "barrio": "Recoleta",
-        "fillColor": "#8F33FF",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.587343477626874,\"lng\":-58.4056487124502}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-30T14:46:13.110Z",
-        "barrio_cleaned": "recoleta"
+        "timestamp": "2025-05-30T14:46:13.110Z"
       }
     },
     {
@@ -3874,15 +5349,14 @@
         "nivelEducacionJefe": "secundaria_completa",
         "sessionDuration": 1216934,
         "barrio": "Belgrano",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.56056971431095,\"lng\":-58.456823249617855}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "sí",
-        "timestamp": "2025-05-25T20:47:52.766Z",
-        "barrio_cleaned": "belgrano"
+        "timestamp": "2025-05-25T20:47:52.766Z"
       }
     },
     {
@@ -3957,8 +5431,7 @@
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-29T01:42:02.301Z",
-        "barrio_cleaned": "villadelparque"
+        "timestamp": "2025-05-29T01:42:02.301Z"
       }
     },
     {
@@ -4050,15 +5523,14 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 149357,
         "barrio": "Palermo hollywood",
-        "fillColor": "#FF33A1",
+        "fillColor": "#A133FF",
         "pinLocation": "{\"lat\":-34.580731016665325,\"lng\":-58.441887364643065}",
         "userRegion": "San Isidro, AR",
         "language": "en-US",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-30T14:14:39.335Z",
-        "barrio_cleaned": "palermohollywood"
+        "timestamp": "2025-05-30T14:14:39.335Z"
       }
     },
     {
@@ -4110,15 +5582,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 307125,
         "barrio": "Belgrano C",
-        "fillColor": "#33FFF5",
+        "fillColor": "#F5FF33",
         "pinLocation": "{\"lat\":-34.562324499813116,\"lng\":-58.45020371962427}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 4,
         "canContact": "",
-        "timestamp": "2025-05-18T03:12:50.644Z",
-        "barrio_cleaned": "belgranoc"
+        "timestamp": "2025-05-18T03:12:50.644Z"
       }
     },
     {
@@ -4198,15 +5669,14 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 428648,
         "barrio": "Recoleta",
-        "fillColor": "#8F33FF",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.59408211809119,\"lng\":-58.39589136002179}",
         "userRegion": "Pilar, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 3,
         "canContact": "no",
-        "timestamp": "2025-05-25T18:51:49.142Z",
-        "barrio_cleaned": "recoleta"
+        "timestamp": "2025-05-25T18:51:49.142Z"
       }
     },
     {
@@ -4270,15 +5740,14 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 878960,
         "barrio": "belgrano",
-        "fillColor": "#A133FF",
+        "fillColor": "#33FFF5",
         "pinLocation": "{\"lat\":-34.56387222717218,\"lng\":-58.45017414874815}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 3,
         "canContact": "",
-        "timestamp": "2025-05-25T17:40:40.798Z",
-        "barrio_cleaned": "belgrano"
+        "timestamp": "2025-05-25T17:40:40.798Z"
       }
     },
     {
@@ -4354,15 +5823,14 @@
         "nivelEducacionJefe": "incompleta_universitario",
         "sessionDuration": 144550,
         "barrio": "Belgrano",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.56734726562308,\"lng\":-58.45851774850834}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "desktop",
         "mapClicks": 2,
         "canContact": "",
-        "timestamp": "2025-05-25T17:45:52.382Z",
-        "barrio_cleaned": "belgrano"
+        "timestamp": "2025-05-25T17:45:52.382Z"
       }
     },
     {
@@ -4418,15 +5886,77 @@
         "nivelEducacionJefe": "",
         "sessionDuration": "",
         "barrio": "Las Cañitas",
-        "fillColor": "#FF33A1",
+        "fillColor": "#A133FF",
         "pinLocation": "{\"lat\":-34.57178058427991,\"lng\":-58.429388990948524}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
         "canContact": "sí",
-        "timestamp": "2025-05-04T19:28:21.865Z",
-        "barrio_cleaned": "lascanitas"
+        "timestamp": "2025-05-04T19:28:21.865Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.475471272098034,
+              -34.57047558402414
+            ],
+            [
+              -58.468129620455585,
+              -34.56597726988905
+            ],
+            [
+              -58.46615605261388,
+              -34.561963707058226
+            ],
+            [
+              -58.471770366266924,
+              -34.55490618759111
+            ],
+            [
+              -58.48254290256166,
+              -34.56077469590385
+            ],
+            [
+              -58.475471272098034,
+              -34.57047558402414
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "10+",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 151801,
+        "barrio": "Coghlan",
+        "fillColor": "#FF33A1",
+        "pinLocation": "{\"lat\":-34.56804730626937,\"lng\":-58.476350074112986}",
+        "userRegion": "Ciudad del Libertador General San Martin, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-19T00:10:44.862Z"
       }
     },
     {
@@ -4506,15 +6036,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 403518,
         "barrio": "Belgrano",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.56868158496291,\"lng\":-58.447504339173264}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "desktop",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-10T14:59:47.687Z",
-        "barrio_cleaned": "belgrano"
+        "timestamp": "2025-05-10T14:59:47.687Z"
       }
     },
     {
@@ -4574,15 +6103,137 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 138212,
         "barrio": "Núñez ",
-        "fillColor": "#33FFF5",
+        "fillColor": "#F5FF33",
         "pinLocation": "{\"lat\":-34.53991994050047,\"lng\":-58.46749773578708}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-27T20:28:47.444Z",
-        "barrio_cleaned": "nunez"
+        "timestamp": "2025-05-27T20:28:47.444Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.48049699363291,
+              -34.557675644397484
+            ],
+            [
+              -58.47234858829829,
+              -34.553215109673125
+            ],
+            [
+              -58.47004120098774,
+              -34.55002411544781
+            ],
+            [
+              -58.46985069522326,
+              -34.548770960628005
+            ],
+            [
+              -58.470391915491476,
+              -34.547403496582234
+            ],
+            [
+              -58.47143396348474,
+              -34.54577412252657
+            ],
+            [
+              -58.47309795792219,
+              -34.54513920215955
+            ],
+            [
+              -58.47389398789636,
+              -34.54226070383228
+            ],
+            [
+              -58.474678683977174,
+              -34.540663445200536
+            ],
+            [
+              -58.476950744175795,
+              -34.540146959409995
+            ],
+            [
+              -58.48522089068929,
+              -34.54393064909034
+            ],
+            [
+              -58.49189993624648,
+              -34.54704446390262
+            ],
+            [
+              -58.49439880405977,
+              -34.54799716992687
+            ],
+            [
+              -58.49691568540095,
+              -34.54882653382568
+            ],
+            [
+              -58.49962868988979,
+              -34.55082217949266
+            ],
+            [
+              -58.50076913811317,
+              -34.55313934382939
+            ],
+            [
+              -58.496949638932136,
+              -34.55709983800974
+            ],
+            [
+              -58.49569961398659,
+              -34.55987692390324
+            ],
+            [
+              -58.49409925419502,
+              -34.56251155257715
+            ],
+            [
+              -58.491866201432174,
+              -34.56179094359084
+            ],
+            [
+              -58.48049699363291,
+              -34.557675644397484
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "40–49",
+        "yearsInBarrio": "6–10",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Otra Provincia",
+        "provinciaNacimiento": "la_rioja",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 121498,
+        "barrio": "Saavedra",
+        "fillColor": "#FF8F33",
+        "pinLocation": "{\"lat\":-34.5564636098689,\"lng\":-58.48188281358381}",
+        "userRegion": "Olivos, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T22:56:25.139Z"
       }
     },
     {
@@ -4634,15 +6285,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 332761,
         "barrio": "Recoleta",
-        "fillColor": "#8F33FF",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.58699094818079,\"lng\":-58.39762684935464}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "mobile",
         "mapClicks": 2,
         "canContact": "no",
-        "timestamp": "2025-05-11T04:35:53.878Z",
-        "barrio_cleaned": "recoleta"
+        "timestamp": "2025-05-11T04:35:53.878Z"
       }
     },
     {
@@ -4726,15 +6376,14 @@
         "nivelEducacionJefe": "secundaria_completa",
         "sessionDuration": 305560,
         "barrio": "Núñez",
-        "fillColor": "#33FF57",
+        "fillColor": "#F5FF33",
         "pinLocation": "{\"lat\":-34.5503220076801,\"lng\":-58.46786552907693}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "sí",
-        "timestamp": "2025-05-29T17:19:08.512Z",
-        "barrio_cleaned": "nunez"
+        "timestamp": "2025-05-29T17:19:08.512Z"
       }
     },
     {
@@ -4786,15 +6435,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 134220,
         "barrio": "Belgrano",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.55605345431646,\"lng\":-58.45796338799981}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-26T03:20:58.123Z",
-        "barrio_cleaned": "belgrano"
+        "timestamp": "2025-05-26T03:20:58.123Z"
       }
     },
     {
@@ -4854,15 +6502,14 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 116916,
         "barrio": "Recoleta",
-        "fillColor": "#8F33FF",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.59255594099718,\"lng\":-58.38880644690052}",
         "userRegion": "San Carlos de Bariloche, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-30T14:19:28.372Z",
-        "barrio_cleaned": "recoleta"
+        "timestamp": "2025-05-30T14:19:28.372Z"
       }
     },
     {
@@ -4914,15 +6561,132 @@
         "nivelEducacionJefe": "secundaria_completa",
         "sessionDuration": 146991,
         "barrio": "Saavedra",
-        "fillColor": "#F5FF33",
+        "fillColor": "#FF8F33",
         "pinLocation": "{\"lat\":-34.55575485827564,\"lng\":-58.484504828416576}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-ES",
         "deviceType": "mobile",
         "mapClicks": 2,
         "canContact": "",
-        "timestamp": "2025-05-29T17:47:47.190Z",
-        "barrio_cleaned": "saavedra"
+        "timestamp": "2025-05-29T17:47:47.190Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.47626776907806,
+              -34.53962039441325
+            ],
+            [
+              -58.46679233725146,
+              -34.551131066757875
+            ],
+            [
+              -58.48922019224993,
+              -34.56434076533457
+            ],
+            [
+              -58.49858397501099,
+              -34.55049490272013
+            ],
+            [
+              -58.47626776907806,
+              -34.53962039441325
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "30–39",
+        "yearsInBarrio": "1–5",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Gran BA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 103515,
+        "barrio": "Saavedra",
+        "fillColor": "#FF8F33",
+        "pinLocation": "{\"lat\":-34.55259972401096,\"lng\":-58.48431998863704}",
+        "userRegion": "Olivos, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T19:39:31.932Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.4828660966126,
+              -34.62469049190998
+            ],
+            [
+              -58.474378439394926,
+              -34.61694924290414
+            ],
+            [
+              -58.480032118550994,
+              -34.60880252734881
+            ],
+            [
+              -58.49421628582742,
+              -34.61478208599967
+            ],
+            [
+              -58.4828660966126,
+              -34.62469049190998
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "Es el menos conocido de CABA, no tiene plaza",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "A",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Gran BA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 155617,
+        "barrio": "Villa Santa Rita",
+        "fillColor": "#33FF8F",
+        "pinLocation": "{\"lat\":-34.616137474182075,\"lng\":-58.49018157170612}",
+        "userRegion": "Santos Lugares, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-19T00:16:34.010Z"
       }
     },
     {
@@ -4982,15 +6746,156 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 188101,
         "barrio": "Núñez",
-        "fillColor": "#33FF57",
+        "fillColor": "#F5FF33",
         "pinLocation": "{\"lat\":-34.539800068768386,\"lng\":-58.46942732250265}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "sí",
-        "timestamp": "2025-05-17T17:01:30.482Z",
-        "barrio_cleaned": "nunez"
+        "timestamp": "2025-05-17T17:01:30.482Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.40914748285819,
+              -34.587304051529415
+            ],
+            [
+              -58.40638659571226,
+              -34.583311600124986
+            ],
+            [
+              -58.40165160273138,
+              -34.58338226464907
+            ],
+            [
+              -58.39909098719173,
+              -34.5856906060624
+            ],
+            [
+              -58.397217017159875,
+              -34.58738648950756
+            ],
+            [
+              -58.40329547255999,
+              -34.59186959915589
+            ],
+            [
+              -58.40914748285819,
+              -34.587304051529415
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "1–5",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "terciario_completo",
+        "sessionDuration": 94579,
+        "barrio": "Recoleta",
+        "fillColor": "#33FF57",
+        "pinLocation": "{\"lat\":-34.58518283792798,\"lng\":-58.404011946513776}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T22:24:25.122Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.49712700746494,
+              -34.59693316380379
+            ],
+            [
+              -58.48306919674771,
+              -34.59761842913274
+            ],
+            [
+              -58.479090342818665,
+              -34.59950102611079
+            ],
+            [
+              -58.47673746689476,
+              -34.59196695382959
+            ],
+            [
+              -58.48455102182368,
+              -34.58918346472748
+            ],
+            [
+              -58.48887284867939,
+              -34.584823080744776
+            ],
+            [
+              -58.49820791114058,
+              -34.59082371163808
+            ],
+            [
+              -58.50741620486275,
+              -34.59300507355804
+            ],
+            [
+              -58.49712700746494,
+              -34.59693316380379
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "raxer9000@gmail.com",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "sí",
+        "landmarks": "Villa Talar",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "posgrado",
+        "sessionDuration": 281475,
+        "barrio": "Agronomía",
+        "fillColor": "#8F33FF",
+        "pinLocation": "{\"lat\":-34.592643171086415,\"lng\":-58.49406501863835}",
+        "userRegion": "Ciudad del Libertador General San Martin, AR",
+        "language": "en-US",
+        "deviceType": "mobile",
+        "mapClicks": 2,
+        "canContact": "",
+        "timestamp": "2026-01-19T00:59:37.790Z"
       }
     },
     {
@@ -5054,15 +6959,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 649360,
         "barrio": "Las Canitas",
-        "fillColor": "#FF8F33",
+        "fillColor": "#FF5733",
         "pinLocation": "{\"lat\":-34.56489044331906,\"lng\":-58.43464206225241}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "mobile",
         "mapClicks": 6,
         "canContact": "",
-        "timestamp": "2025-05-15T22:56:15.848Z",
-        "barrio_cleaned": "lascanitas"
+        "timestamp": "2025-05-15T22:56:15.848Z"
       }
     },
     {
@@ -5114,15 +7018,14 @@
         "nivelEducacionJefe": "incompleta_universitario",
         "sessionDuration": 610514,
         "barrio": "Facultad de Medicina",
-        "fillColor": "#33FF8F",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.59953126485333,\"lng\":-58.40242562808521}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-ES",
         "deviceType": "desktop",
         "mapClicks": 6,
         "canContact": "",
-        "timestamp": "2025-05-25T23:30:21.360Z",
-        "barrio_cleaned": "facultaddemedicina"
+        "timestamp": "2025-05-25T23:30:21.360Z"
       }
     },
     {
@@ -5174,15 +7077,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 212996,
         "barrio": "Palermo Botánico",
-        "fillColor": "#8F33FF",
+        "fillColor": "#3357FF",
         "pinLocation": "{\"lat\":-34.58037207748821,\"lng\":-58.41328923250377}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 2,
         "canContact": "sí",
-        "timestamp": "2025-05-16T14:51:08.288Z",
-        "barrio_cleaned": "palermobotanico"
+        "timestamp": "2025-05-16T14:51:08.288Z"
       }
     },
     {
@@ -5234,15 +7136,286 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 287664,
         "barrio": "Almagro",
-        "fillColor": "#FF5733",
+        "fillColor": "#8F33FF",
         "pinLocation": "{\"lat\":-34.61924909763053,\"lng\":-58.426468176118405}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 2,
         "canContact": "",
-        "timestamp": "2025-06-02T02:15:58.930Z",
-        "barrio_cleaned": "almagro"
+        "timestamp": "2025-06-02T02:15:58.930Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.45298820169505,
+              -34.56579889108912
+            ],
+            [
+              -58.460191253971686,
+              -34.57830526691065
+            ],
+            [
+              -58.44434502959821,
+              -34.583222670201806
+            ],
+            [
+              -58.4338809867983,
+              -34.575620750229085
+            ],
+            [
+              -58.45298820169505,
+              -34.56579889108912
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "30–39",
+        "yearsInBarrio": "",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "venezolano",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Otro país",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "incompleta_universitario",
+        "sessionDuration": 119347,
+        "barrio": "Colegiales",
+        "fillColor": "#3357FF",
+        "pinLocation": "{\"lat\":-34.57121173050537,\"lng\":-58.45002764304277}",
+        "userRegion": "Florianopolis, BR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T22:41:09.465Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.42968838245355,
+              -34.59942468896409
+            ],
+            [
+              -58.427603383331814,
+              -34.62210407091492
+            ],
+            [
+              -58.41264801586662,
+              -34.62079867359684
+            ],
+            [
+              -58.41331329464357,
+              -34.59801420472366
+            ],
+            [
+              -58.42968838245355,
+              -34.59942468896409
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "30–39",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "posgrado",
+        "sessionDuration": 221682,
+        "barrio": "Almagro",
+        "fillColor": "#8F33FF",
+        "pinLocation": "{\"lat\":-34.617546402058615,\"lng\":-58.42582838071628}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 3,
+        "canContact": "",
+        "timestamp": "2026-01-18T23:47:09.495Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.461625204774506,
+              -34.70416085959823
+            ],
+            [
+              -58.501642528752996,
+              -34.67409243755662
+            ],
+            [
+              -58.478666832968926,
+              -34.65776574751009
+            ],
+            [
+              -58.444426473720185,
+              -34.68476475508325
+            ],
+            [
+              -58.461625204774506,
+              -34.70416085959823
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "sí",
+        "landmarks": "Lugano",
+        "comments": "El autodromo, la estacion, riestra, lugano i y ii. Nadie se refiere a villa riachuelo. Hasta los dni dicen villa lugano algunos. Todo deberia ser villa lugano. Decir lugano es la identidad para mi",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 204966,
+        "barrio": "Villa Lugano",
+        "fillColor": "#33FF57",
+        "pinLocation": "{\"lat\":-34.6879696039251,\"lng\":-58.475698331424994}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-ES",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T23:26:03.483Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.46743183801131,
+              -34.535019862844074
+            ],
+            [
+              -58.47585021932471,
+              -34.5384347279256
+            ],
+            [
+              -58.468122918310854,
+              -34.5489498424058
+            ],
+            [
+              -58.47353784986291,
+              -34.55197287551285
+            ],
+            [
+              -58.467200731118396,
+              -34.55800737535937
+            ],
+            [
+              -58.45286504957478,
+              -34.550578917982996
+            ],
+            [
+              -58.454379245946754,
+              -34.54931024898713
+            ],
+            [
+              -58.44858810402867,
+              -34.54192107500823
+            ],
+            [
+              -58.45065448270228,
+              -34.54082797609846
+            ],
+            [
+              -58.44857614855428,
+              -34.537494040326145
+            ],
+            [
+              -58.451322431549855,
+              -34.530167105894996
+            ],
+            [
+              -58.45779307811347,
+              -34.52702131429982
+            ],
+            [
+              -58.46217133387265,
+              -34.53214085596505
+            ],
+            [
+              -58.46743183801131,
+              -34.535019862844074
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "1–5",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 174485,
+        "barrio": "Núñez",
+        "fillColor": "#F5FF33",
+        "pinLocation": "{\"lat\":-34.543153048951346,\"lng\":-58.46176014842381}",
+        "userRegion": "Olivos, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 2,
+        "canContact": "",
+        "timestamp": "2026-01-18T23:14:33.755Z"
       }
     },
     {
@@ -5310,15 +7483,97 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 264741,
         "barrio": "Las Cañitas",
-        "fillColor": "#FF33A1",
+        "fillColor": "#A133FF",
         "pinLocation": "{\"lat\":-34.57157733862026,\"lng\":-58.429393025091116}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "desktop",
         "mapClicks": 0,
         "canContact": "no",
-        "timestamp": "2025-05-05T04:54:08.935Z",
-        "barrio_cleaned": "lascanitas"
+        "timestamp": "2025-05-05T04:54:08.935Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.42043707174278,
+              -34.580733345940374
+            ],
+            [
+              -58.40902662114327,
+              -34.568640504093246
+            ],
+            [
+              -58.411718261160075,
+              -34.56792088312032
+            ],
+            [
+              -58.4147012042084,
+              -34.567815338186314
+            ],
+            [
+              -58.418022058774156,
+              -34.56841022605934
+            ],
+            [
+              -58.42011859312811,
+              -34.56931538172191
+            ],
+            [
+              -58.42322882361978,
+              -34.571258024325736
+            ],
+            [
+              -58.42658199563087,
+              -34.578043568589294
+            ],
+            [
+              -58.425087343242225,
+              -34.578757901703476
+            ],
+            [
+              -58.42123558831295,
+              -34.581595556187494
+            ],
+            [
+              -58.42043707174278,
+              -34.580733345940374
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "<20",
+        "yearsInBarrio": "6–10",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "El rosedal",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Gran BA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 131849,
+        "barrio": "Palermo Nuevo",
+        "fillColor": "#FF33A1",
+        "pinLocation": "{\"lat\":-34.57357199988241,\"lng\":-58.42277779683204}",
+        "userRegion": "Boise, US",
+        "language": "en-GB",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T22:35:40.067Z"
       }
     },
     {
@@ -5389,8 +7644,110 @@
         "deviceType": "mobile",
         "mapClicks": 2,
         "canContact": "",
-        "timestamp": "2025-05-25T17:36:19.302Z",
-        "barrio_cleaned": "palermo"
+        "timestamp": "2025-05-25T17:36:19.302Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.44432547958155,
+              -34.59465040242757
+            ],
+            [
+              -58.43953716702521,
+              -34.591613308570736
+            ],
+            [
+              -58.438241967727734,
+              -34.588866904704275
+            ],
+            [
+              -58.448880186974876,
+              -34.58275783655444
+            ],
+            [
+              -58.44835315890897,
+              -34.581542890849846
+            ],
+            [
+              -58.450901910452885,
+              -34.58052866499465
+            ],
+            [
+              -58.45263548793142,
+              -34.58345312465706
+            ],
+            [
+              -58.456524469242765,
+              -34.58207369932524
+            ],
+            [
+              -58.460507911923074,
+              -34.58168894914849
+            ],
+            [
+              -58.46045541488721,
+              -34.58511163639415
+            ],
+            [
+              -58.466525493474606,
+              -34.59048503506184
+            ],
+            [
+              -58.46472433078878,
+              -34.592572923720006
+            ],
+            [
+              -58.46540925864181,
+              -34.596437811178774
+            ],
+            [
+              -58.4591400562841,
+              -34.5966861775772
+            ],
+            [
+              -58.45114275939851,
+              -34.59933457371269
+            ],
+            [
+              -58.44432547958155,
+              -34.59465040242757
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "30–39",
+        "yearsInBarrio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "Mi casa entiendo que está en el límite entre Chacarita, Palermo y colegiales. Lo que hoy los pseudo desarrolladores llaman Chacalermogiales (hsdp!!!)",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 184954,
+        "barrio": "Chacarita",
+        "fillColor": "#FF5733",
+        "pinLocation": "{\"lat\":-34.58426406717437,\"lng\":-58.44655982479526}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T21:56:28.668Z"
       }
     },
     {
@@ -5442,15 +7799,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 6631423,
         "barrio": "San Cristóbal ",
-        "fillColor": "#33FF57",
+        "fillColor": "#A133FF",
         "pinLocation": "{\"lat\":-34.622237829269466,\"lng\":-58.39304439539856}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-30T15:56:13.023Z",
-        "barrio_cleaned": "sancristobal"
+        "timestamp": "2025-05-30T15:56:13.023Z"
       }
     },
     {
@@ -5502,15 +7858,14 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 122455,
         "barrio": "San Nicolás",
-        "fillColor": "#3357FF",
+        "fillColor": "#33FFF5",
         "pinLocation": "{\"lat\":-34.60633294095797,\"lng\":-58.385524557802796}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-30T15:37:53.499Z",
-        "barrio_cleaned": "sannicolas"
+        "timestamp": "2025-05-30T15:37:53.499Z"
       }
     },
     {
@@ -5562,15 +7917,14 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 152485,
         "barrio": "Villa Pueyrredón",
-        "fillColor": "#FF33A1",
+        "fillColor": "#F5FF33",
         "pinLocation": "{\"lat\":-34.584433291376186,\"lng\":-58.49916650462609}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 2,
         "canContact": "no",
-        "timestamp": "2025-05-29T01:42:34.022Z",
-        "barrio_cleaned": "villapueyrredon"
+        "timestamp": "2025-05-29T01:42:34.022Z"
       }
     },
     {
@@ -5633,8 +7987,7 @@
         "deviceType": "desktop",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-30T14:46:33.475Z",
-        "barrio_cleaned": "barrionorte"
+        "timestamp": "2025-05-30T14:46:33.475Z"
       }
     },
     {
@@ -5710,15 +8063,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": "",
         "barrio": "Chacalermo",
-        "fillColor": "#A133FF",
+        "fillColor": "#FF8F33",
         "pinLocation": "{\"lat\":-34.58293134636718,\"lng\":-58.44830486557696}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
         "canContact": "sí",
-        "timestamp": "2025-05-04T16:28:57.774Z",
-        "barrio_cleaned": "chacalermo"
+        "timestamp": "2025-05-04T16:28:57.774Z"
       }
     },
     {
@@ -5774,15 +8126,128 @@
         "nivelEducacionJefe": "",
         "sessionDuration": "",
         "barrio": "Palermo Sensible",
-        "fillColor": "#33FFF5",
+        "fillColor": "#33FF8F",
         "pinLocation": "{\"lat\":-34.59141638057281,\"lng\":-58.41413692747733}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
         "canContact": "sí",
-        "timestamp": "2025-05-04T15:23:52.156Z",
-        "barrio_cleaned": "palermosensible"
+        "timestamp": "2025-05-04T15:23:52.156Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.39722778037478,
+              -34.58769787099909
+            ],
+            [
+              -58.40789276429855,
+              -34.597981257602704
+            ],
+            [
+              -58.400796471148794,
+              -34.59929250405339
+            ],
+            [
+              -58.39722778037478,
+              -34.58769787099909
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "",
+        "sessionDuration": 71420,
+        "barrio": "Barrio Norte",
+        "fillColor": "#A133FF",
+        "pinLocation": "{\"lat\":-34.59573552393083,\"lng\":-58.4014348563952}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T23:50:36.771Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.429300064840504,
+              -34.60127564387403
+            ],
+            [
+              -58.40732235562753,
+              -34.602683921680025
+            ],
+            [
+              -58.406990390344404,
+              -34.62377415776607
+            ],
+            [
+              -58.42934772867957,
+              -34.624901171492205
+            ],
+            [
+              -58.429300064840504,
+              -34.60127564387403
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "30–39",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "sí",
+        "selectedReligion": "católica",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "venezolano",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "incompleta_terciario",
+        "sessionDuration": 69389,
+        "barrio": "Almagro",
+        "fillColor": "#8F33FF",
+        "pinLocation": "{\"lat\":-34.60642821879623,\"lng\":-58.42916407461037}",
+        "userRegion": "San Justo, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-19T01:10:47.616Z"
       }
     },
     {
@@ -5838,15 +8303,14 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 413662,
         "barrio": "Belgrano C",
-        "fillColor": "#33FFF5",
+        "fillColor": "#F5FF33",
         "pinLocation": "{\"lat\":-34.56313261301395,\"lng\":-58.444305975808774}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "sí",
-        "timestamp": "2025-05-25T17:31:24.416Z",
-        "barrio_cleaned": "belgranoc"
+        "timestamp": "2025-05-25T17:31:24.416Z"
       }
     },
     {
@@ -5942,15 +8406,243 @@
         "nivelEducacionJefe": "",
         "sessionDuration": "",
         "barrio": "Villa Pueyrredón",
-        "fillColor": "#FF33A1",
+        "fillColor": "#F5FF33",
         "pinLocation": "{\"lat\":-34.5827319450675,\"lng\":-58.498854038444804}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
         "canContact": "sí",
-        "timestamp": "2025-05-04T23:57:30.224Z",
-        "barrio_cleaned": "villapueyrredon"
+        "timestamp": "2025-05-04T23:57:30.224Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.416525902708926,
+              -34.59775713252706
+            ],
+            [
+              -58.41493379848619,
+              -34.59395221038549
+            ],
+            [
+              -58.41031156042014,
+              -34.58866730717974
+            ],
+            [
+              -58.4064440983811,
+              -34.58310430001707
+            ],
+            [
+              -58.40492818053892,
+              -34.58031691728285
+            ],
+            [
+              -58.40300801793879,
+              -34.57790388360626
+            ],
+            [
+              -58.39634099882173,
+              -34.581076532564246
+            ],
+            [
+              -58.39174271470034,
+              -34.58028607095462
+            ],
+            [
+              -58.38951936853178,
+              -34.57604241170266
+            ],
+            [
+              -58.38020063682836,
+              -34.579280383337995
+            ],
+            [
+              -58.37472333212496,
+              -34.5797005387285
+            ],
+            [
+              -58.37295476130906,
+              -34.581281465567244
+            ],
+            [
+              -58.378765779704196,
+              -34.58889445527821
+            ],
+            [
+              -58.37961792436529,
+              -34.591057577329224
+            ],
+            [
+              -58.379516863175795,
+              -34.598170539033276
+            ],
+            [
+              -58.416525902708926,
+              -34.59775713252706
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "mcarosella4@gmail.com",
+        "age": "20–29",
+        "yearsInBarrio": "1–5",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "sí",
+        "selectedReligion": "católica",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Otra Provincia",
+        "provinciaNacimiento": "buenos_aires",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 248000,
+        "barrio": "Recoleta",
+        "fillColor": "#33FF57",
+        "pinLocation": "{\"lat\":-34.59076782401284,\"lng\":-58.41143149682782}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-GB",
+        "deviceType": "mobile",
+        "mapClicks": 4,
+        "canContact": "sí",
+        "timestamp": "2026-01-18T19:56:56.983Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.39763167696657,
+              -34.58356575891955
+            ],
+            [
+              -58.410426138976604,
+              -34.598119073151686
+            ],
+            [
+              -58.444942922119665,
+              -34.58451119585304
+            ],
+            [
+              -58.42313360525499,
+              -34.57172418881511
+            ],
+            [
+              -58.39763167696657,
+              -34.58356575891955
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "",
+        "sessionDuration": 131330,
+        "barrio": "Palermo",
+        "fillColor": "#FF5733",
+        "pinLocation": "{\"lat\":-34.584257858375686,\"lng\":-58.415561518525536}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T21:58:58.263Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.50845432980542,
+              -34.57020386356178
+            ],
+            [
+              -58.48788627846838,
+              -34.58484155105112
+            ],
+            [
+              -58.46764896494619,
+              -34.57290813940528
+            ],
+            [
+              -58.47380933942192,
+              -34.565923731769786
+            ],
+            [
+              -58.48046463417769,
+              -34.56315374377476
+            ],
+            [
+              -58.48376450414999,
+              -34.55772380733218
+            ],
+            [
+              -58.50845432980542,
+              -34.57020386356178
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "30–39",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "sí",
+        "landmarks": "La Siberia",
+        "comments": "",
+        "religionAffiliation": "sí",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 177602,
+        "barrio": "Villa Urquiza",
+        "fillColor": "#33FF8F",
+        "pinLocation": "{\"lat\":-34.568797646601396,\"lng\":-58.49609266248284}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-GB",
+        "deviceType": "mobile",
+        "mapClicks": 2,
+        "canContact": "",
+        "timestamp": "2026-01-18T18:12:19.905Z"
       }
     },
     {
@@ -6025,8 +8717,153 @@
         "deviceType": "desktop",
         "mapClicks": 2,
         "canContact": "sí",
-        "timestamp": "2025-06-04T18:26:00.909Z",
-        "barrio_cleaned": "retiro"
+        "timestamp": "2025-06-04T18:26:00.909Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.41847198167038,
+              -34.6213410831867
+            ],
+            [
+              -58.427863452780116,
+              -34.62221846953755
+            ],
+            [
+              -58.42363892444615,
+              -34.64026771281211
+            ],
+            [
+              -58.41135105920675,
+              -34.63832670271707
+            ],
+            [
+              -58.41065740225571,
+              -34.63517454656916
+            ],
+            [
+              -58.41199143576496,
+              -34.6275083457669
+            ],
+            [
+              -58.412324287668056,
+              -34.62081108139394
+            ],
+            [
+              -58.41847198167038,
+              -34.6213410831867
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "30–39",
+        "yearsInBarrio": "6–10",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "sí",
+        "gruposbarriodetalle": "Escuela de Comercio 22",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Gran BA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "terciario_completo",
+        "sessionDuration": 187058,
+        "barrio": "Boedo",
+        "fillColor": "#3357FF",
+        "pinLocation": "{\"lat\":-34.62172477637814,\"lng\":-58.41785906504364}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T21:08:37.969Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.478272375486455,
+              -34.55768947446883
+            ],
+            [
+              -58.461389914126,
+              -34.548957008342946
+            ],
+            [
+              -58.453879585520085,
+              -34.55690982725823
+            ],
+            [
+              -58.45179688935262,
+              -34.56192542994239
+            ],
+            [
+              -58.45122888130658,
+              -34.56496582940378
+            ],
+            [
+              -58.45905476993737,
+              -34.56901952245119
+            ],
+            [
+              -58.46470329439313,
+              -34.56901952245119
+            ],
+            [
+              -58.47429631916579,
+              -34.55987244778752
+            ],
+            [
+              -58.478272375486455,
+              -34.55768947446883
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "",
+        "sessionDuration": 96179,
+        "barrio": "Belgrano",
+        "fillColor": "#33FF57",
+        "pinLocation": "{\"lat\":-34.561687366982255,\"lng\":-58.464127869632335}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-19T01:07:58.399Z"
       }
     },
     {
@@ -6106,15 +8943,117 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 243996,
         "barrio": "Recoleta",
-        "fillColor": "#8F33FF",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.58744045482875,\"lng\":-58.40501993921606}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-ES",
         "deviceType": "desktop",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-30T14:49:43.491Z",
-        "barrio_cleaned": "recoleta"
+        "timestamp": "2025-05-30T14:49:43.491Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.43050887922149,
+              -34.60878999940469
+            ],
+            [
+              -58.43000148371472,
+              -34.61545573367053
+            ],
+            [
+              -58.421203886783715,
+              -34.61161687163735
+            ],
+            [
+              -58.419875861917134,
+              -34.61109210062174
+            ],
+            [
+              -58.41457266690503,
+              -34.61077418762357
+            ],
+            [
+              -58.414696466760205,
+              -34.60822120631573
+            ],
+            [
+              -58.41410419193353,
+              -34.607847317021076
+            ],
+            [
+              -58.41332931499346,
+              -34.604155184156056
+            ],
+            [
+              -58.41206289108473,
+              -34.598015501724475
+            ],
+            [
+              -58.42374462915201,
+              -34.5979512079916
+            ],
+            [
+              -58.426800243620434,
+              -34.597851273356675
+            ],
+            [
+              -58.42931589347357,
+              -34.598991502853735
+            ],
+            [
+              -58.432086292752174,
+              -34.60220241098416
+            ],
+            [
+              -58.43335663382379,
+              -34.60276499291765
+            ],
+            [
+              -58.43074561790955,
+              -34.60593882135827
+            ],
+            [
+              -58.43050887922149,
+              -34.60878999940469
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "30–39",
+        "yearsInBarrio": "1–5",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "zona_norte",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Gran BA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "posgrado",
+        "sessionDuration": 112500,
+        "barrio": "Almagro",
+        "fillColor": "#8F33FF",
+        "pinLocation": "{\"lat\":-34.608053864883175,\"lng\":-58.430409875113824}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-GB",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T23:30:00.519Z"
       }
     },
     {
@@ -6186,15 +9125,14 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 167041,
         "barrio": "Caballito",
-        "fillColor": "#F5FF33",
+        "fillColor": "#8F33FF",
         "pinLocation": "{\"lat\":-34.62974290452623,\"lng\":-58.448155265341455}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "desktop",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-29T13:27:09.937Z",
-        "barrio_cleaned": "caballito"
+        "timestamp": "2025-05-29T13:27:09.937Z"
       }
     },
     {
@@ -6254,15 +9192,14 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 197333,
         "barrio": "Almagro",
-        "fillColor": "#FF5733",
+        "fillColor": "#8F33FF",
         "pinLocation": "{\"lat\":-34.60639189478121,\"lng\":-58.42011639729347}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-AR",
         "deviceType": "mobile",
         "mapClicks": 5,
         "canContact": "sí",
-        "timestamp": "2025-05-30T13:41:14.645Z",
-        "barrio_cleaned": "almagro"
+        "timestamp": "2025-05-30T13:41:14.645Z"
       }
     },
     {
@@ -6329,8 +9266,7 @@
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-30T15:29:34.014Z",
-        "barrio_cleaned": "palermo"
+        "timestamp": "2025-05-30T15:29:34.014Z"
       }
     },
     {
@@ -6386,15 +9322,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 88602,
         "barrio": "Colegiales",
-        "fillColor": "#33FF57",
+        "fillColor": "#3357FF",
         "pinLocation": "{\"lat\":-34.57432905601711,\"lng\":-58.453351038150785}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-08T16:33:50.544Z",
-        "barrio_cleaned": "colegiales"
+        "timestamp": "2025-05-08T16:33:50.544Z"
       }
     },
     {
@@ -6446,15 +9381,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 179871,
         "barrio": "Núñez",
-        "fillColor": "#33FF57",
+        "fillColor": "#F5FF33",
         "pinLocation": "{\"lat\":-34.545816609905465,\"lng\":-58.4697356572367}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 2,
         "canContact": "",
-        "timestamp": "2025-05-19T20:08:05.537Z",
-        "barrio_cleaned": "nunez"
+        "timestamp": "2025-05-19T20:08:05.537Z"
       }
     },
     {
@@ -6530,15 +9464,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 195551,
         "barrio": "Caballito",
-        "fillColor": "#F5FF33",
+        "fillColor": "#8F33FF",
         "pinLocation": "{\"lat\":-34.62198796601649,\"lng\":-58.445015020107164}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-18T19:10:47.674Z",
-        "barrio_cleaned": "caballito"
+        "timestamp": "2025-05-18T19:10:47.674Z"
       }
     },
     {
@@ -6590,15 +9523,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 445005,
         "barrio": "Recoleta",
-        "fillColor": "#8F33FF",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.59475812752023,\"lng\":-58.40509974989119}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "sí",
-        "timestamp": "2025-05-15T20:04:00.251Z",
-        "barrio_cleaned": "recoleta"
+        "timestamp": "2025-05-15T20:04:00.251Z"
       }
     },
     {
@@ -6654,15 +9586,137 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 224967,
         "barrio": "Las Cañitas",
-        "fillColor": "#FF33A1",
+        "fillColor": "#A133FF",
         "pinLocation": "{\"lat\":-34.56878381535954,\"lng\":-58.43598331031785}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 3,
         "canContact": "",
-        "timestamp": "2025-05-24T22:51:18.728Z",
-        "barrio_cleaned": "lascanitas"
+        "timestamp": "2025-05-24T22:51:18.728Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.468103843906775,
+              -34.57286923985683
+            ],
+            [
+              -58.47428001356364,
+              -34.56578058899102
+            ],
+            [
+              -58.475214031382706,
+              -34.56619963170714
+            ],
+            [
+              -58.47619860237171,
+              -34.56686256833148
+            ],
+            [
+              -58.479080470952695,
+              -34.56425680201904
+            ],
+            [
+              -58.47928628821073,
+              -34.56408086167662
+            ],
+            [
+              -58.479050563250496,
+              -34.56398060325789
+            ],
+            [
+              -58.47994838658519,
+              -34.56335029188034
+            ],
+            [
+              -58.48101456430378,
+              -34.562681823364414
+            ],
+            [
+              -58.48354085799254,
+              -34.5591089812922
+            ],
+            [
+              -58.49096675514171,
+              -34.56266398772999
+            ],
+            [
+              -58.4919194360084,
+              -34.56130736561176
+            ],
+            [
+              -58.508827691913325,
+              -34.569484128991384
+            ],
+            [
+              -58.509072066451424,
+              -34.56998425468697
+            ],
+            [
+              -58.50631925232517,
+              -34.5715919324352
+            ],
+            [
+              -58.50312117893388,
+              -34.573429680888445
+            ],
+            [
+              -58.49618369769004,
+              -34.5786741135571
+            ],
+            [
+              -58.491723002371685,
+              -34.58222974815787
+            ],
+            [
+              -58.48881170341414,
+              -34.58482108182706
+            ],
+            [
+              -58.46910334352586,
+              -34.57355121519395
+            ],
+            [
+              -58.468103843906775,
+              -34.57286923985683
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "br1.t.carloni@gmail.com",
+        "age": "<20",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "sí",
+        "landmarks": "Altos de Urquiza, Urquiza recidencial, Urquiza Centro, Urquiza verde.",
+        "comments": "En general es un barrio muy tranquklo, con lindo centro de negocios para no irse tan lejos a buscar algo, en la ultima decada se hicieron mas de 400 edificios por la zona y estan creciendo los emprendimientos, no hay tanto robo.",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 830723,
+        "barrio": "Villa Urquiza",
+        "fillColor": "#33FF8F",
+        "pinLocation": "{\"lat\":-34.57123003742803,\"lng\":-58.48824702473431}",
+        "userRegion": "Ciudad del Libertador General San Martin, AR",
+        "language": "es-ES",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "no",
+        "timestamp": "2026-01-18T20:45:13.474Z"
       }
     },
     {
@@ -6714,15 +9768,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 89417,
         "barrio": "Belgrano",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.557230978530484,\"lng\":-58.45585595416411}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "sí",
-        "timestamp": "2025-05-18T03:59:45.464Z",
-        "barrio_cleaned": "belgrano"
+        "timestamp": "2025-05-18T03:59:45.464Z"
       }
     },
     {
@@ -6782,15 +9835,85 @@
         "nivelEducacionJefe": "",
         "sessionDuration": "",
         "barrio": "Palermo Hollywood",
-        "fillColor": "#F5FF33",
+        "fillColor": "#FF8F33",
         "pinLocation": "{\"lat\":-34.5822262653941,\"lng\":-58.436264630089454}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
         "canContact": "sí",
-        "timestamp": "2025-05-04T16:40:31.586Z",
-        "barrio_cleaned": "palermohollywood"
+        "timestamp": "2025-05-04T16:40:31.586Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.3955698327179,
+              -34.60102947407894
+            ],
+            [
+              -58.38950386791616,
+              -34.60081351148878
+            ],
+            [
+              -58.38928572677051,
+              -34.6042848965436
+            ],
+            [
+              -58.38903652405156,
+              -34.60662064795173
+            ],
+            [
+              -58.38611343269301,
+              -34.60639322321816
+            ],
+            [
+              -58.385911178292474,
+              -34.61333224784272
+            ],
+            [
+              -58.39572874242924,
+              -34.61388948022383
+            ],
+            [
+              -58.3955698327179,
+              -34.60102947407894
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "1–5",
+        "altNames": "sí",
+        "landmarks": "Balvanera",
+        "comments": "Céntrico, vacio a la noche, medianamente residencial",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 107626,
+        "barrio": "Congreso",
+        "fillColor": "#33FF57",
+        "pinLocation": "{\"lat\":-34.600996441457056,\"lng\":-58.39364504760718}",
+        "userRegion": "Ciudad del Libertador General San Martin, AR",
+        "language": "en-GB",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T20:13:32.626Z"
       }
     },
     {
@@ -6842,15 +9965,14 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 104114,
         "barrio": "Las Cañitas",
-        "fillColor": "#FF33A1",
+        "fillColor": "#A133FF",
         "pinLocation": "{\"lat\":-34.57089864005718,\"lng\":-58.43018935318179}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "sí",
-        "timestamp": "2025-05-31T16:02:40.334Z",
-        "barrio_cleaned": "lascanitas"
+        "timestamp": "2025-05-31T16:02:40.334Z"
       }
     },
     {
@@ -6918,15 +10040,101 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 174644,
         "barrio": "Recoleta",
-        "fillColor": "#8F33FF",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.58674693286592,\"lng\":-58.404921292609245}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-ES",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-31T02:35:03.439Z",
-        "barrio_cleaned": "recoleta"
+        "timestamp": "2025-05-31T02:35:03.439Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.42340265962545,
+              -34.5976549318352
+            ],
+            [
+              -58.426525469160424,
+              -34.59792249985338
+            ],
+            [
+              -58.42921801949575,
+              -34.59896988564925
+            ],
+            [
+              -58.43215116023357,
+              -34.60200023299046
+            ],
+            [
+              -58.43689401693054,
+              -34.60461970235442
+            ],
+            [
+              -58.441603734240445,
+              -34.60639330287141
+            ],
+            [
+              -58.44624777253321,
+              -34.607710341742134
+            ],
+            [
+              -58.458187091410124,
+              -34.60447815761833
+            ],
+            [
+              -58.45641026673849,
+              -34.59764897986168
+            ],
+            [
+              -58.450523801496445,
+              -34.59450756805751
+            ],
+            [
+              -58.43825830773562,
+              -34.58883358328619
+            ],
+            [
+              -58.42340265962545,
+              -34.5976549318352
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "6–10",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "incompleta_universitario",
+        "sessionDuration": 152172,
+        "barrio": "Villa Crespo",
+        "fillColor": "#3357FF",
+        "pinLocation": "{\"lat\":-34.60090646389678,\"lng\":-58.437843851032184}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T19:42:23.064Z"
       }
     },
     {
@@ -6989,8 +10197,7 @@
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-06-04T17:52:54.093Z",
-        "barrio_cleaned": "retiro"
+        "timestamp": "2025-06-04T17:52:54.093Z"
       }
     },
     {
@@ -7053,8 +10260,102 @@
         "deviceType": "desktop",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-30T14:46:31.437Z",
-        "barrio_cleaned": "barrionorte"
+        "timestamp": "2025-05-30T14:46:31.437Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.38529902430136,
+              -34.599170705166486
+            ],
+            [
+              -58.38379749902374,
+              -34.59913407791354
+            ],
+            [
+              -58.38405618180701,
+              -34.59441320446198
+            ],
+            [
+              -58.38384927960443,
+              -34.59077919188585
+            ],
+            [
+              -58.3829036980525,
+              -34.58763919598284
+            ],
+            [
+              -58.38559449965544,
+              -34.58477123179197
+            ],
+            [
+              -58.39053353829162,
+              -34.581848483230694
+            ],
+            [
+              -58.40141474761124,
+              -34.57624366589014
+            ],
+            [
+              -58.406630326488994,
+              -34.58516867178948
+            ],
+            [
+              -58.41165202248146,
+              -34.59143264514786
+            ],
+            [
+              -58.41036959406718,
+              -34.59747648208405
+            ],
+            [
+              -58.40451941529308,
+              -34.59794381998126
+            ],
+            [
+              -58.40110663084744,
+              -34.5995279955687
+            ],
+            [
+              -58.38529902430136,
+              -34.599170705166486
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "",
+        "sessionDuration": 76895,
+        "barrio": "Recoleta",
+        "fillColor": "#33FF57",
+        "pinLocation": "{\"lat\":-34.59779536279834,\"lng\":-58.38984907585859}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-19T00:17:25.816Z"
       }
     },
     {
@@ -7130,15 +10431,81 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 204372,
         "barrio": "Recoleta",
-        "fillColor": "#8F33FF",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.58669234573779,\"lng\":-58.40485653674567}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-30T15:49:57.487Z",
-        "barrio_cleaned": "recoleta"
+        "timestamp": "2025-05-30T15:49:57.487Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.5254229503323,
+              -34.48900923131966
+            ],
+            [
+              -58.51806645634018,
+              -34.501325871568675
+            ],
+            [
+              -58.481209996077354,
+              -34.485122755551735
+            ],
+            [
+              -58.47990451414732,
+              -34.47912533681258
+            ],
+            [
+              -58.48475443860977,
+              -34.47399144398894
+            ],
+            [
+              -58.489985374831804,
+              -34.471212039947034
+            ],
+            [
+              -58.5254229503323,
+              -34.48900923131966
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "danigroppa@gmail.com",
+        "age": "20–29",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "sí",
+        "selectedReligion": "otro cristianismo",
+        "otherReligion": "",
+        "gruposbarrio": "sí",
+        "gruposbarriodetalle": "Futbol Banade",
+        "comunidadesSeleccionadas": "zona_norte",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Otro país",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "brasil",
+        "nivelEducacionJefe": "incompleta_universitario",
+        "sessionDuration": 208775,
+        "barrio": "Martinez",
+        "fillColor": "#FF5733",
+        "pinLocation": "{\"lat\":-34.49340201801133,\"lng\":-58.51002527945978}",
+        "userRegion": "San Isidro, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 2,
+        "canContact": "sí",
+        "timestamp": "2026-01-19T00:30:23.048Z"
       }
     },
     {
@@ -7233,8 +10600,7 @@
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-30T14:24:00.788Z",
-        "barrio_cleaned": "retiro"
+        "timestamp": "2025-05-30T14:24:00.788Z"
       }
     },
     {
@@ -7294,15 +10660,14 @@
         "nivelEducacionJefe": "incompleta_universitario",
         "sessionDuration": 129903,
         "barrio": "Congreso",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.61334490936001,\"lng\":-58.3903323993047}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 4,
         "canContact": "",
-        "timestamp": "2025-05-25T17:47:48.677Z",
-        "barrio_cleaned": "congreso"
+        "timestamp": "2025-05-25T17:47:48.677Z"
       }
     },
     {
@@ -7410,15 +10775,14 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 358795,
         "barrio": "Almagro",
-        "fillColor": "#FF5733",
+        "fillColor": "#8F33FF",
         "pinLocation": "{\"lng\":-58.41874284844805,\"lat\":-34.604418253498764}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-ES",
         "deviceType": "desktop",
         "mapClicks": 2,
         "canContact": "sí",
-        "timestamp": "2025-06-06T13:43:28.218Z",
-        "barrio_cleaned": "almagro"
+        "timestamp": "2025-06-06T13:43:28.218Z"
       }
     },
     {
@@ -7470,15 +10834,73 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 230789,
         "barrio": "San Cristóbal ",
-        "fillColor": "#33FF57",
+        "fillColor": "#A133FF",
         "pinLocation": "{\"lat\":-34.62041221526244,\"lng\":-58.400830219416875}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "sí",
-        "timestamp": "2025-05-17T00:31:30.780Z",
-        "barrio_cleaned": "sancristobal"
+        "timestamp": "2025-05-17T00:31:30.780Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.39624684515667,
+              -34.6153545315237
+            ],
+            [
+              -58.384414550452576,
+              -34.614205617827594
+            ],
+            [
+              -58.384954483038385,
+              -34.607647232071855
+            ],
+            [
+              -58.396274794949306,
+              -34.60829269265901
+            ],
+            [
+              -58.39624684515667,
+              -34.6153545315237
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "florencia.gorri@gmail.com",
+        "age": "30–39",
+        "yearsInBarrio": "1–5",
+        "altNames": "sí",
+        "landmarks": "Balvanera",
+        "comments": "El palacio del congresos de la Nación. ",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "sí",
+        "gruposbarriodetalle": "Balvanera",
+        "comunidadesSeleccionadas": "bonaerense",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "Otra Provincia",
+        "provinciaNacimiento": "buenos_aires",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "",
+        "sessionDuration": 217110,
+        "barrio": "Congreso",
+        "fillColor": "#33FF57",
+        "pinLocation": "{\"lat\":-34.612867471108835,\"lng\":-58.39313597109657}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "sí",
+        "timestamp": "2026-01-19T01:31:41.997Z"
       }
     },
     {
@@ -7530,15 +10952,14 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 328957,
         "barrio": "Villa Urquiza",
-        "fillColor": "#3357FF",
+        "fillColor": "#33FF8F",
         "pinLocation": "{\"lat\":-34.56802312553791,\"lng\":-58.485349243870914}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-ES",
         "deviceType": "desktop",
         "mapClicks": 4,
         "canContact": "",
-        "timestamp": "2025-05-29T14:11:29.384Z",
-        "barrio_cleaned": "villaurquiza"
+        "timestamp": "2025-05-29T14:11:29.384Z"
       }
     },
     {
@@ -7594,15 +11015,73 @@
         "nivelEducacionJefe": "secundaria_completa",
         "sessionDuration": 153156,
         "barrio": "Saavedra",
-        "fillColor": "#F5FF33",
+        "fillColor": "#FF8F33",
         "pinLocation": "{\"lat\":-34.55004408317719,\"lng\":-58.485123058177805}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "no",
-        "timestamp": "2025-05-29T17:54:26.254Z",
-        "barrio_cleaned": "saavedra"
+        "timestamp": "2025-05-29T17:54:26.254Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.45644251253211,
+              -34.62681316830732
+            ],
+            [
+              -58.464435677618624,
+              -34.61584788099299
+            ],
+            [
+              -58.439248104856546,
+              -34.605668764046946
+            ],
+            [
+              -58.425114079286956,
+              -34.62853195722178
+            ],
+            [
+              -58.45644251253211,
+              -34.62681316830732
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "1–5",
+        "altNames": "sí",
+        "landmarks": "Plaza Irlanda",
+        "comments": "Lugar re lindi",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "otra",
+        "otraComunidadTexto": "Porteño",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "secundaria_completa",
+        "sessionDuration": 201999,
+        "barrio": "Caballito",
+        "fillColor": "#8F33FF",
+        "pinLocation": "{\"lat\":-34.6192924441596,\"lng\":-58.45994075561623}",
+        "userRegion": "Santos Lugares, AR",
+        "language": "es-US",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-19T00:06:37.023Z"
       }
     },
     {
@@ -7770,15 +11249,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 192780,
         "barrio": "Belgrano R",
-        "fillColor": "#FF8F33",
+        "fillColor": "#33FF8F",
         "pinLocation": "{\"lat\":-34.563340155758205,\"lng\":-58.46715647525379}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-US",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "sí",
-        "timestamp": "2025-05-07T16:23:22.998Z",
-        "barrio_cleaned": "belgranor"
+        "timestamp": "2025-05-07T16:23:22.998Z"
       }
     },
     {
@@ -7830,15 +11308,73 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 79333,
         "barrio": "Palermo Nuevo",
-        "fillColor": "#FF8F33",
+        "fillColor": "#FF33A1",
         "pinLocation": "{\"lat\":-34.577294258615325,\"lng\":-58.42518948715636}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-30T14:40:39.593Z",
-        "barrio_cleaned": "palermonuevo"
+        "timestamp": "2025-05-30T14:40:39.593Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.4737476297024,
+              -34.569421549490585
+            ],
+            [
+              -58.46695277443584,
+              -34.57717350276311
+            ],
+            [
+              -58.45729608832448,
+              -34.56891773654102
+            ],
+            [
+              -58.4629077619004,
+              -34.56298876186741
+            ],
+            [
+              -58.4737476297024,
+              -34.569421549490585
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "",
+        "sessionDuration": 117184,
+        "barrio": "Belgrano R",
+        "fillColor": "#33FF8F",
+        "pinLocation": "{\"lat\":-34.56968906480659,\"lng\":-58.47340957204679}",
+        "userRegion": "Pinamar, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T22:31:33.369Z"
       }
     },
     {
@@ -7890,15 +11426,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 169107,
         "barrio": "Las Cañitas",
-        "fillColor": "#FF33A1",
+        "fillColor": "#A133FF",
         "pinLocation": "{\"lat\":-34.568899962934225,\"lng\":-58.43436549709307}",
         "userRegion": "Buenos Aires, AR",
         "language": "en",
         "deviceType": "mobile",
         "mapClicks": 0,
         "canContact": "no",
-        "timestamp": "2025-05-07T00:25:34.870Z",
-        "barrio_cleaned": "lascanitas"
+        "timestamp": "2025-05-07T00:25:34.870Z"
       }
     },
     {
@@ -8010,15 +11545,133 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 319230,
         "barrio": "Caballito",
-        "fillColor": "#F5FF33",
+        "fillColor": "#8F33FF",
         "pinLocation": "{\"lat\":-34.612271271175814,\"lng\":-58.4299796911923}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-US",
         "deviceType": "desktop",
         "mapClicks": 3,
         "canContact": "sí",
-        "timestamp": "2025-05-16T18:51:48.820Z",
-        "barrio_cleaned": "caballito"
+        "timestamp": "2025-05-16T18:51:48.820Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.430918483809805,
+              -34.60053037720967
+            ],
+            [
+              -58.432159560083434,
+              -34.602048911087266
+            ],
+            [
+              -58.43011346136184,
+              -34.60221456764889
+            ],
+            [
+              -58.43075077221009,
+              -34.60597812520168
+            ],
+            [
+              -58.43007992017026,
+              -34.61536436498229
+            ],
+            [
+              -58.429285385261466,
+              -34.615191907992426
+            ],
+            [
+              -58.427910141894344,
+              -34.622037677127686
+            ],
+            [
+              -58.412540794686365,
+              -34.62057971998927
+            ],
+            [
+              -58.41341592579991,
+              -34.61253052497551
+            ],
+            [
+              -58.41438864420529,
+              -34.6106809080285
+            ],
+            [
+              -58.41458989981744,
+              -34.608279100442104
+            ],
+            [
+              -58.41395259037962,
+              -34.60780977360361
+            ],
+            [
+              -58.41230900288235,
+              -34.600162133114075
+            ],
+            [
+              -58.41190478614688,
+              -34.597951957572334
+            ],
+            [
+              -58.42296140577341,
+              -34.597744806851615
+            ],
+            [
+              -58.423808471169664,
+              -34.597805699951735
+            ],
+            [
+              -58.42648540352312,
+              -34.597843273068996
+            ],
+            [
+              -58.42863817002737,
+              -34.59871502908756
+            ],
+            [
+              -58.42972155427917,
+              -34.5993721325334
+            ],
+            [
+              -58.430918483809805,
+              -34.60053037720967
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "<20",
+        "yearsInBarrio": "toda_la_vida",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "sí",
+        "selectedReligion": "católica",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "secundaria_completa",
+        "sessionDuration": 193475,
+        "barrio": "Almagro",
+        "fillColor": "#8F33FF",
+        "pinLocation": "{\"lat\":-34.59811765047508,\"lng\":-58.42340843622409}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-GB",
+        "deviceType": "desktop",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-19T00:01:26.813Z"
       }
     },
     {
@@ -8082,15 +11735,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 54362,
         "barrio": "Núñez",
-        "fillColor": "#33FF57",
+        "fillColor": "#F5FF33",
         "pinLocation": "{\"lat\":-34.55011787884155,\"lng\":-58.4576265251369}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-18T19:21:49.307Z",
-        "barrio_cleaned": "nunez"
+        "timestamp": "2025-05-18T19:21:49.307Z"
       }
     },
     {
@@ -8146,15 +11798,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 647500,
         "barrio": "San Nicolás",
-        "fillColor": "#3357FF",
+        "fillColor": "#33FFF5",
         "pinLocation": "{\"lat\":-34.60777372624924,\"lng\":-58.37624209582725}",
         "userRegion": "Rio de Janeiro, BR",
         "language": "en-US",
         "deviceType": "desktop",
         "mapClicks": 4,
         "canContact": "sí",
-        "timestamp": "2025-05-15T12:38:45.731Z",
-        "barrio_cleaned": "sannicolas"
+        "timestamp": "2025-05-15T12:38:45.731Z"
       }
     },
     {
@@ -8226,15 +11877,14 @@
         "nivelEducacionJefe": "incompleta_terciario",
         "sessionDuration": 143397,
         "barrio": "San Telmo",
-        "fillColor": "#33FF57",
+        "fillColor": "#3357FF",
         "pinLocation": "{\"lat\":-34.61569199352747,\"lng\":-58.373845163277565}",
         "userRegion": "La Matanza, AR",
         "language": "es-AR",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "sí",
-        "timestamp": "2025-05-27T23:37:11.348Z",
-        "barrio_cleaned": "santelmo"
+        "timestamp": "2025-05-27T23:37:11.348Z"
       }
     },
     {
@@ -8297,8 +11947,7 @@
         "deviceType": "mobile",
         "mapClicks": 4,
         "canContact": "",
-        "timestamp": "2025-05-30T14:20:08.566Z",
-        "barrio_cleaned": "retiro"
+        "timestamp": "2025-05-30T14:20:08.566Z"
       }
     },
     {
@@ -8350,15 +11999,81 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 119687,
         "barrio": "Palermo Chico",
-        "fillColor": "#33FF8F",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.58027196478066,\"lng\":-58.41538637490365}",
         "userRegion": "Southwark, GB",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-26T00:33:07.902Z",
-        "barrio_cleaned": "palermochico"
+        "timestamp": "2025-05-26T00:33:07.902Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.485686554371384,
+              -34.64056462828296
+            ],
+            [
+              -58.482994004889946,
+              -34.63914333850417
+            ],
+            [
+              -58.47993891903525,
+              -34.64123661893737
+            ],
+            [
+              -58.46052874561005,
+              -34.656631442069454
+            ],
+            [
+              -58.46925010123053,
+              -34.66457710190475
+            ],
+            [
+              -58.495023520925486,
+              -34.64506376845545
+            ],
+            [
+              -58.485686554371384,
+              -34.64056462828296
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "El parque ",
+        "religionAffiliation": "sí",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "incompleta_universitario",
+        "sessionDuration": 128535,
+        "barrio": "Parque Avellaneda",
+        "fillColor": "#3357FF",
+        "pinLocation": "{\"lat\":-34.64327911713326,\"lng\":-58.49075773784605}",
+        "userRegion": "Santos Lugares, AR",
+        "language": "es-AR",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T20:15:47.957Z"
       }
     },
     {
@@ -8418,15 +12133,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 80545,
         "barrio": "San Nicolás",
-        "fillColor": "#3357FF",
+        "fillColor": "#33FFF5",
         "pinLocation": "{\"lat\":-34.604521990607786,\"lng\":-58.38642571744856}",
         "userRegion": "Villa Allende, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-25T18:12:00.708Z",
-        "barrio_cleaned": "sannicolas"
+        "timestamp": "2025-05-25T18:12:00.708Z"
       }
     },
     {
@@ -8478,15 +12192,156 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 80951,
         "barrio": "Palermo Nuevo",
-        "fillColor": "#FF8F33",
+        "fillColor": "#FF33A1",
         "pinLocation": "{\"lat\":-34.577294258615325,\"lng\":-58.42518948715636}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-30T14:40:41.211Z",
-        "barrio_cleaned": "palermonuevo"
+        "timestamp": "2025-05-30T14:40:41.211Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.39179688620587,
+              -34.61816144586222
+            ],
+            [
+              -58.40640821765186,
+              -34.61951442332312
+            ],
+            [
+              -58.40941582847779,
+              -34.61998427366117
+            ],
+            [
+              -58.40658794752386,
+              -34.598033798177006
+            ],
+            [
+              -58.3930673521557,
+              -34.59975361400709
+            ],
+            [
+              -58.39179688620587,
+              -34.61816144586222
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "1–5",
+        "altNames": "no",
+        "landmarks": "Once",
+        "comments": "Once ",
+        "religionAffiliation": "sí",
+        "selectedReligion": "católica",
+        "otherReligion": "",
+        "gruposbarrio": "sí",
+        "gruposbarriodetalle": "Militante ",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "",
+        "sessionDuration": 155821,
+        "barrio": "Balvanera",
+        "fillColor": "#33FF8F",
+        "pinLocation": "{\"lat\":-34.61839100899788,\"lng\":-58.39488679098996}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "es-419",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T19:30:58.212Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.44452299488242,
+              -34.57001159225829
+            ],
+            [
+              -58.43756342709116,
+              -34.562649307948554
+            ],
+            [
+              -58.42734171713353,
+              -34.5543313813527
+            ],
+            [
+              -58.43931260545297,
+              -34.547705174760914
+            ],
+            [
+              -58.4486886771508,
+              -34.542594783058036
+            ],
+            [
+              -58.455922441665564,
+              -34.54809474331786
+            ],
+            [
+              -58.4679991210091,
+              -34.5527522176056
+            ],
+            [
+              -58.45828152668818,
+              -34.563003984460714
+            ],
+            [
+              -58.45397159640905,
+              -34.56861221511147
+            ],
+            [
+              -58.44452299488242,
+              -34.57001159225829
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "",
+        "sessionDuration": 214209,
+        "barrio": "Belgrano",
+        "fillColor": "#33FF57",
+        "pinLocation": "{\"lat\":-34.56587664799098,\"lng\":-58.44090556938366}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-GB",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T20:15:36.604Z"
       }
     },
     {
@@ -8558,15 +12413,14 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 764029,
         "barrio": "Belgrano",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.553193540444155,\"lng\":-58.45792671427991}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-ES",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-26T01:04:05.617Z",
-        "barrio_cleaned": "belgrano"
+        "timestamp": "2025-05-26T01:04:05.617Z"
       }
     },
     {
@@ -8622,15 +12476,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 87233,
         "barrio": "Almagro",
-        "fillColor": "#FF5733",
+        "fillColor": "#8F33FF",
         "pinLocation": "{\"lat\":-34.60546616156056,\"lng\":-58.42378207397233}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-15T03:46:40.019Z",
-        "barrio_cleaned": "almagro"
+        "timestamp": "2025-05-15T03:46:40.019Z"
       }
     },
     {
@@ -8710,15 +12563,14 @@
         "nivelEducacionJefe": "secundaria_completa",
         "sessionDuration": 213239,
         "barrio": "San Telmo",
-        "fillColor": "#33FF57",
+        "fillColor": "#3357FF",
         "pinLocation": "{\"lat\":-34.617052952067105,\"lng\":-58.37163573480464}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "sí",
-        "timestamp": "2025-05-25T17:37:21.564Z",
-        "barrio_cleaned": "santelmo"
+        "timestamp": "2025-05-25T17:37:21.564Z"
       }
     },
     {
@@ -8770,15 +12622,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": "",
         "barrio": "Recoleta",
-        "fillColor": "#8F33FF",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.59251154018976,\"lng\":-58.3932972809872}",
         "userRegion": "",
         "language": "",
         "deviceType": "",
         "mapClicks": 0,
         "canContact": "no",
-        "timestamp": "2025-05-04T17:08:08.346Z",
-        "barrio_cleaned": "recoleta"
+        "timestamp": "2025-05-04T17:08:08.346Z"
       }
     },
     {
@@ -8909,8 +12760,7 @@
         "deviceType": "desktop",
         "mapClicks": 5,
         "canContact": "sí",
-        "timestamp": "2025-06-08T21:25:03.699Z",
-        "barrio_cleaned": "barracas"
+        "timestamp": "2025-06-08T21:25:03.699Z"
       }
     },
     {
@@ -8966,15 +12816,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 51034,
         "barrio": "Colegiales",
-        "fillColor": "#33FF57",
+        "fillColor": "#3357FF",
         "pinLocation": "{\"lat\":-34.58074694130411,\"lng\":-58.44562802897991}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-19T20:32:37.432Z",
-        "barrio_cleaned": "colegiales"
+        "timestamp": "2025-05-19T20:32:37.432Z"
       }
     },
     {
@@ -9050,15 +12899,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 156360,
         "barrio": "Belgrano",
-        "fillColor": "#FF5733",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.559849131349594,\"lng\":-58.45074473454875}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-07T21:58:35.100Z",
-        "barrio_cleaned": "belgrano"
+        "timestamp": "2025-05-07T21:58:35.100Z"
       }
     },
     {
@@ -9114,15 +12962,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 408956,
         "barrio": "Colegiales",
-        "fillColor": "#33FF57",
+        "fillColor": "#3357FF",
         "pinLocation": "{\"lat\":-34.57175403563124,\"lng\":-58.45725668179571}",
         "userRegion": "Malvinas Argentinas, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 3,
         "canContact": "",
-        "timestamp": "2025-05-25T17:53:16.831Z",
-        "barrio_cleaned": "colegiales"
+        "timestamp": "2025-05-25T17:53:16.831Z"
       }
     },
     {
@@ -9174,15 +13021,14 @@
         "nivelEducacionJefe": "secundaria_completa",
         "sessionDuration": 343462,
         "barrio": "Barrio Parque",
-        "fillColor": "#FF5733",
+        "fillColor": "#FF33A1",
         "pinLocation": "{\"lat\":-34.57737682973292,\"lng\":-58.40217501308116}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-30T15:29:37.657Z",
-        "barrio_cleaned": "barrioparque"
+        "timestamp": "2025-05-30T15:29:37.657Z"
       }
     },
     {
@@ -9258,15 +13104,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 300688,
         "barrio": "Caballito",
-        "fillColor": "#F5FF33",
+        "fillColor": "#8F33FF",
         "pinLocation": "{\"lat\":-34.61802845239674,\"lng\":-58.438956453490235}",
         "userRegion": "Buenos Aires, AR",
         "language": "en",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-08T00:42:01.359Z",
-        "barrio_cleaned": "caballito"
+        "timestamp": "2025-05-08T00:42:01.359Z"
       }
     },
     {
@@ -9326,15 +13171,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 54679,
         "barrio": "Palermo Hollywood",
-        "fillColor": "#F5FF33",
+        "fillColor": "#FF8F33",
         "pinLocation": "{\"lat\":-34.5857193748812,\"lng\":-58.44179015746205}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-18T19:20:39.759Z",
-        "barrio_cleaned": "palermohollywood"
+        "timestamp": "2025-05-18T19:20:39.759Z"
       }
     },
     {
@@ -9446,15 +13290,14 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 253135,
         "barrio": "Saavedra",
-        "fillColor": "#F5FF33",
+        "fillColor": "#FF8F33",
         "pinLocation": "{\"lat\":-34.55133842001307,\"lng\":-58.4890434516992}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 2,
         "canContact": "",
-        "timestamp": "2025-05-29T17:32:18.591Z",
-        "barrio_cleaned": "saavedra"
+        "timestamp": "2025-05-29T17:32:18.591Z"
       }
     },
     {
@@ -9506,15 +13349,286 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 112367,
         "barrio": "Palermo Chico",
-        "fillColor": "#33FF8F",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.57699088231864,\"lng\":-58.40827988127822}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-18T20:31:15.119Z",
-        "barrio_cleaned": "palermochico"
+        "timestamp": "2025-05-18T20:31:15.119Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.403829377743065,
+              -34.598548944221726
+            ],
+            [
+              -58.406117716873,
+              -34.607576000835095
+            ],
+            [
+              -58.40518565147876,
+              -34.61462758865299
+            ],
+            [
+              -58.391823283033645,
+              -34.61391434893848
+            ],
+            [
+              -58.392327144876546,
+              -34.59959796666562
+            ],
+            [
+              -58.403829377743065,
+              -34.598548944221726
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "",
+        "yearsInBarrio": "",
+        "altNames": "sí",
+        "landmarks": "",
+        "comments": "Once",
+        "religionAffiliation": "",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "",
+        "sessionDuration": 63268,
+        "barrio": "Balvanera",
+        "fillColor": "#33FF8F",
+        "pinLocation": "{\"lat\":-34.59919069373585,\"lng\":-58.40251330718725}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-GB",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T19:48:55.689Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.476153481141594,
+              -34.538690027434434
+            ],
+            [
+              -58.50083957175396,
+              -34.54957368486471
+            ],
+            [
+              -58.50913250337439,
+              -34.56965837965794
+            ],
+            [
+              -58.49197223254333,
+              -34.5615377544631
+            ],
+            [
+              -58.49086810644755,
+              -34.562945531609806
+            ],
+            [
+              -58.49002631649917,
+              -34.564252089247994
+            ],
+            [
+              -58.48467275495477,
+              -34.55993251412393
+            ],
+            [
+              -58.47167636916396,
+              -34.5524847084948
+            ],
+            [
+              -58.47267499672391,
+              -34.55138676968886
+            ],
+            [
+              -58.468237157104355,
+              -34.549037972114185
+            ],
+            [
+              -58.476153481141594,
+              -34.538690027434434
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "subeplata@gmail.com",
+        "age": "20–29",
+        "yearsInBarrio": "10+",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "posgrado",
+        "sessionDuration": 119826,
+        "barrio": "Saavedra",
+        "fillColor": "#FF8F33",
+        "pinLocation": "{\"lat\":-34.54758062387857,\"lng\":-58.47891117836153}",
+        "userRegion": "Olivos, AR",
+        "language": "de-DE",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "sí",
+        "timestamp": "2026-01-18T20:33:45.768Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.48794188720127,
+              -34.585141412787664
+            ],
+            [
+              -58.50070679833942,
+              -34.575212838831256
+            ],
+            [
+              -58.47947806694752,
+              -34.56439698050873
+            ],
+            [
+              -58.466207938991275,
+              -34.572386569164095
+            ],
+            [
+              -58.48794188720127,
+              -34.585141412787664
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "<1",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "sí",
+        "selectedReligion": "judía",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "incompleta_universitario",
+        "sessionDuration": 143140,
+        "barrio": "Villa Urquiza",
+        "fillColor": "#33FF8F",
+        "pinLocation": "{\"lat\":-34.57342762602258,\"lng\":-58.47961231831573}",
+        "userRegion": "Buenos Aires, AR",
+        "language": "en-AR",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-18T18:26:43.592Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -58.463217313255896,
+              -34.57517298598584
+            ],
+            [
+              -58.47372011906057,
+              -34.58106639464578
+            ],
+            [
+              -58.47062670907002,
+              -34.587440993079234
+            ],
+            [
+              -58.46660787035262,
+              -34.590700352205424
+            ],
+            [
+              -58.460854933707864,
+              -34.58568547989071
+            ],
+            [
+              -58.46005225560785,
+              -34.57856527606503
+            ],
+            [
+              -58.463217313255896,
+              -34.57517298598584
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "properties": {
+        "email": "",
+        "age": "20–29",
+        "yearsInBarrio": "1–5",
+        "altNames": "no",
+        "landmarks": "",
+        "comments": "",
+        "religionAffiliation": "no",
+        "selectedReligion": "",
+        "otherReligion": "",
+        "gruposbarrio": "no",
+        "gruposbarriodetalle": "",
+        "comunidadesSeleccionadas": "",
+        "otraComunidadTexto": "",
+        "nacimientoLugar": "CABA",
+        "provinciaNacimiento": "",
+        "paisNacimiento": "",
+        "nivelEducacionJefe": "universitario_completo",
+        "sessionDuration": 167380,
+        "barrio": "Villa Ortúzar",
+        "fillColor": "#A133FF",
+        "pinLocation": "{\"lat\":-34.57690277603702,\"lng\":-58.46415799387836}",
+        "userRegion": "Ciudad del Libertador General San Martin, AR",
+        "language": "es-ES",
+        "deviceType": "mobile",
+        "mapClicks": 1,
+        "canContact": "",
+        "timestamp": "2026-01-19T00:04:39.929Z"
       }
     },
     {
@@ -9570,15 +13684,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 85635,
         "barrio": "Almagro",
-        "fillColor": "#FF5733",
+        "fillColor": "#8F33FF",
         "pinLocation": "{\"lat\":-34.60546616156056,\"lng\":-58.42378207397233}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-15T03:46:38.421Z",
-        "barrio_cleaned": "almagro"
+        "timestamp": "2025-05-15T03:46:38.421Z"
       }
     },
     {
@@ -9641,8 +13754,7 @@
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-20T18:58:32.140Z",
-        "barrio_cleaned": "palermo"
+        "timestamp": "2025-05-20T18:58:32.140Z"
       }
     },
     {
@@ -9698,15 +13810,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 158160,
         "barrio": "Palermo Chico",
-        "fillColor": "#33FF8F",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.575558415253155,\"lng\":-58.40619962495376}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-21T11:26:10.323Z",
-        "barrio_cleaned": "palermochico"
+        "timestamp": "2025-05-21T11:26:10.323Z"
       }
     },
     {
@@ -9774,15 +13885,14 @@
         "nivelEducacionJefe": "universitario_completo",
         "sessionDuration": 590944,
         "barrio": "Caballito",
-        "fillColor": "#F5FF33",
+        "fillColor": "#8F33FF",
         "pinLocation": "{\"lat\":-34.60613899624242,\"lng\":-58.45727809513521}",
         "userRegion": "Victoria, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 8,
         "canContact": "sí",
-        "timestamp": "2025-05-25T17:43:19.709Z",
-        "barrio_cleaned": "caballito"
+        "timestamp": "2025-05-25T17:43:19.709Z"
       }
     },
     {
@@ -9842,15 +13952,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 164547,
         "barrio": "Saavedra",
-        "fillColor": "#F5FF33",
+        "fillColor": "#FF8F33",
         "pinLocation": "{\"lat\":-34.54856953634662,\"lng\":-58.46997880051569}",
         "userRegion": "Buenos Aires, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 2,
         "canContact": "",
-        "timestamp": "2025-05-17T20:33:48.351Z",
-        "barrio_cleaned": "saavedra"
+        "timestamp": "2025-05-17T20:33:48.351Z"
       }
     },
     {
@@ -9938,15 +14047,14 @@
         "nivelEducacionJefe": "",
         "sessionDuration": 199795,
         "barrio": "Belgrano C",
-        "fillColor": "#33FFF5",
+        "fillColor": "#F5FF33",
         "pinLocation": "{\"lat\":-34.559877334280266,\"lng\":-58.45062366185485}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-US",
         "deviceType": "mobile",
         "mapClicks": 0,
         "canContact": "",
-        "timestamp": "2025-05-06T21:38:10.879Z",
-        "barrio_cleaned": "belgranoc"
+        "timestamp": "2025-05-06T21:38:10.879Z"
       }
     },
     {
@@ -10002,15 +14110,14 @@
         "nivelEducacionJefe": "secundaria_completa",
         "sessionDuration": 149282,
         "barrio": "Recoleta",
-        "fillColor": "#8F33FF",
+        "fillColor": "#33FF57",
         "pinLocation": "{\"lat\":-34.58727529459902,\"lng\":-58.39772222809263}",
         "userRegion": "Buenos Aires, AR",
         "language": "en-GB",
         "deviceType": "mobile",
         "mapClicks": 2,
         "canContact": "",
-        "timestamp": "2025-05-26T11:55:07.021Z",
-        "barrio_cleaned": "recoleta"
+        "timestamp": "2025-05-26T11:55:07.021Z"
       }
     },
     {
@@ -10070,15 +14177,14 @@
         "nivelEducacionJefe": "posgrado",
         "sessionDuration": 97802,
         "barrio": "Las Cañitas",
-        "fillColor": "#FF33A1",
+        "fillColor": "#A133FF",
         "pinLocation": "{\"lat\":-34.56870842203996,\"lng\":-58.43473417773316}",
         "userRegion": "San Carlos de Bariloche, AR",
         "language": "es-419",
         "deviceType": "mobile",
         "mapClicks": 1,
         "canContact": "",
-        "timestamp": "2025-05-30T14:17:21.782Z",
-        "barrio_cleaned": "lascanitas"
+        "timestamp": "2025-05-30T14:17:21.782Z"
       }
     }
   ]
