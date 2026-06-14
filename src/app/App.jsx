@@ -1,21 +1,21 @@
 // Import
 import { useState, useEffect, useRef } from 'react'
 import './App.css'
-import MapScreen from './components/MapScreen'
+import MapScreen from './MapScreen'
 import Fuse from 'fuse.js'
-import barrios from './data/barrios'
-import comunidadOptions from './data/comunidades'
-import provincias from './data/provincias'
-import paises from './data/paises'
-import BoundaryDrawScreen from './components/BoundaryDrawScreen'
+import barrios from '../data/barrios'
+import comunidadOptions from '../data/comunidades'
+import provincias from '../data/provincias'
+import paises from '../data/paises'
+import BoundaryDrawScreen from './BoundaryDrawScreen'
 import { collection, addDoc } from 'firebase/firestore'
-import { db } from './firebase'
+import { db } from '../lib/firebase'
 import * as turf from '@turf/turf'
 import mapboxgl from 'mapbox-gl'
 import { motion, AnimatePresence } from 'framer-motion'
 import Select from 'react-select'
-import { initAnalytics, logPageView } from "./lib/analytics"
-import { logEvent } from './lib/analytics'
+import { initAnalytics, logPageView } from "../lib/analytics"
+import { logEvent } from '../lib/analytics'
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN
 

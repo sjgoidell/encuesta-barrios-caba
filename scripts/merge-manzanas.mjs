@@ -1,4 +1,15 @@
-// to run: npm run merge-manzanas
+/**
+ * merge-manzanas.mjs  —  collapse raw city blocks into one polygon per manzana id.
+ *
+ * The raw source (public/data/manzanas.geojson) can split a single block across
+ * multiple features / MultiPolygons. This script flattens them, buffers each
+ * piece outward slightly (~5 m) so adjacent pieces of the same block overlap,
+ * then dissolves by `manzana_id` into a single polygon per block. Failed
+ * dissolves fall back to a raw MultiPolygon. Output: merged-manzanas.geojson,
+ * the block layer the map renders. Run only when the manzanas source changes.
+ *
+ * Run: npm run merge-manzanas
+ */
 
 import fs from 'fs';
 import path from 'path';

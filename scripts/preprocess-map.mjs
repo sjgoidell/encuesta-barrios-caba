@@ -1,5 +1,20 @@
-
-// to run: npm run preprocess-map
+/**
+ * preprocess-map.mjs  —  precompute the map layers offline.
+ *
+ * Reads merged-manzanas + responses + cleanedBarrios and, for every block, runs
+ * the same inverse-distance-weighted enrichment the live map uses (see
+ * enrichManzana below and docs/FORMULA.md) to produce:
+ *   - enriched-manzanas.geojson  (blocks colored by barrio mix)
+ *   - pin-points.geojson         (home points)
+ *   - barrio-labels.geojson      (label centroids per majority barrio)
+ * It also rewrites responses.geojson adding a `barrio_cleaned` slug.
+ *
+ * NOTE: MapView currently recomputes this in the browser instead of consuming
+ * enriched-manzanas.geojson — see docs/ARCHITECTURE.md. The enrichManzana here
+ * duplicates the MapView version; consolidate into a shared module (Phase 2/4C).
+ *
+ * Run: npm run preprocess-map
+ */
 
 import fs from 'fs';
 import path from 'path';

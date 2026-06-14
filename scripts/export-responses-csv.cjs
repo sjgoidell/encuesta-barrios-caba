@@ -1,3 +1,20 @@
+/**
+ * export.cjs  —  Firebase responses -> responses.csv (PRIVATE analysis export).
+ *
+ * ⚠️ PII WARNING: responses.csv contains personal data (email, age, religion,
+ * birthplace, education, comments, contact flags, plus home coordinates and
+ * polygon). It is intended for the survey owner's PRIVATE analysis ONLY.
+ *
+ *   - responses.csv is gitignored and MUST NOT be committed or published.
+ *   - Do NOT place this file anywhere served publicly (e.g. /public).
+ *   - The public map uses public/data/responses.geojson, which is stripped to
+ *     a privacy-safe schema by export-geojson.cjs — do not confuse the two.
+ *
+ * If you ever need to share this CSV, remove the personal columns first.
+ *
+ * Run: node export.cjs
+ */
+
 const fs = require('fs')
 const admin = require('firebase-admin')
 const serviceAccount = require('/Users/Goidell Sam/encuesta-barrios-caba-personal/firebase-service-account.json')

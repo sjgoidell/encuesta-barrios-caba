@@ -1,10 +1,21 @@
-// scripts/exportCleanedBarrios.js
-
-
-// to run: npm run export-barrios
+/**
+ * export-cleaned-barrios.mjs  —  build the whitelist of valid barrio slugs.
+ *
+ * Reads public/data/responses.geojson, normalizes each `barrio` value, drops
+ * obviously-invalid and out-of-area names, and writes the de-duplicated list
+ * (sorted by frequency desc) to public/data/cleanedBarrios.json. The map uses
+ * this list to decide which response barrios to render.
+ *
+ * Run: npm run export-barrios
+ */
 
 import fs from 'fs';
 import path from 'path';
+
+// Normalized slugs to exclude. These are Greater Buenos Aires (AMBA) localities,
+// not CABA barrios, so they should not appear on the CABA map. Add future
+// out-of-area or junk slugs here.
+const EXCLUDED_SLUGS = new Set(['test', 'asdf', 'olivos', 'martinez']);
 
 const normalizeBarrio = (str) =>
   str
@@ -25,9 +36,9 @@ const main = async () => {
     const rawBarrio = feature.properties.barrio || '';
     const barrio = normalizeBarrio(rawBarrio);
 
-    // Skip obviously invalid names
+    // Skip obviously invalid names and out-of-area (AMBA) localities
     if (barrio.length <= 4) return;
-    if (barrio === 'test' || barrio === 'asdf') return;
+    if (EXCLUDED_SLUGS.has(barrio)) return;
 
     barrioCounts[barrio] = (barrioCounts[barrio] || 0) + 1;
   });

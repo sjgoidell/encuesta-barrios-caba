@@ -1,8 +1,13 @@
-// commands to run and update:
-// -node export-geojson.cjs
-// -npm run export-barrios
-// -npm run preprocess-map
-// -npm run dev
+// MapView — the public choropleth at /map_test.
+//
+// On load it fetches merged-manzanas (city blocks), the privacy-safe responses
+// (drawn barrio polygons + home pins), and the barrio whitelist, then RECOMPUTES
+// the block colors in the browser via enrichManzana() and renders with Mapbox GL.
+// (Note: it does not use the precomputed enriched-manzanas.geojson — see
+// docs/ARCHITECTURE.md "Key pipeline observation".)
+//
+// To refresh the underlying data, see DEPLOY.md:
+//   npm run export-geojson && npm run export-barrios && npm run preprocess-map
 
 import React, { useEffect, useState, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
@@ -33,11 +38,22 @@ const hexToRgb = (hex) => {
 const rgbToHex = (r, g, b) =>
   '#' + [r, g, b].map(x => (x < 16 ? '0' : '') + x.toString(16)).join('');
 
-// ✅ Cleaned + modular enrichment logic
+// enrichManzana — assign a block (manzana) its barrio mix and color.
+//
+// For each response whose drawn polygon overlaps this block, we weight that
+// "vote" by INVERSE DISTANCE from the respondent's home pin to the block centroid
+// (w = 1/(d+0.01), capped at 5 km). Intent: people who live closest to a block
+// understand it best and should have the most say; someone far away who included
+// the block still counts, but at much lower weight. The per-barrio % shown in the
+// tooltip is weight_barrio / total_weight. The fill is an RGB blend of the
+// contributing barrio colors by their share. Full spec: docs/FORMULA.md.
+//
+// NOTE: this duplicates the logic in scripts/preprocess-map.mjs — they should be
+// consolidated into a shared module (tracked for Phase 2/4C).
 const enrichManzana = (feature, responseFeatures, barrioColors, palette, cleanedBarrios, pinPoints) => {
   const centroid = turf.centroid(feature);
-  const barrios = {};
-  let count = 0;
+  const barrios = {};            // barrio slug -> accumulated inverse-distance weight
+  let count = 0;                 // total weight across all contributing responses
 
   responseFeatures.forEach(response => {
     if (!turf.booleanIntersects(feature, response)) return;

@@ -8,9 +8,11 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "export-barrios": "node ./src/utils/exportcleanedBarrios.js",
-    "preprocess-map": "node ./src/utils/MapViewPreprocess.js",
-    "merge-manzanas": "node ./src/utils/mergeManzanas.js"
+    "export-geojson": "node ./scripts/export-responses-geojson.cjs",
+    "export-csv": "node ./scripts/export-responses-csv.cjs",
+    "export-barrios": "node ./scripts/export-cleaned-barrios.mjs",
+    "preprocess-map": "node ./scripts/preprocess-map.mjs",
+    "merge-manzanas": "node ./scripts/merge-manzanas.mjs"
   },
   "dependencies": {
     "@mapbox/mapbox-gl-draw": "^1.5.0",
