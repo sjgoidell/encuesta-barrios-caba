@@ -17,6 +17,21 @@ const auth = new google.auth.JWT(
 
 const sheets = google.sheets({ version: 'v4', auth });
 
+// Deterministic color for a barrio name, stable across invocations (each Cloud
+// Function call is isolated, so we can't keep an in-memory color map). Fixes a
+// crash: getColorForBarrio was referenced below but never defined, so
+// onNewResponse threw on every submission and the Sheet sync never ran (P4C).
+const COLOR_PALETTE = [
+  '#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#A133FF',
+  '#33FFF5', '#F5FF33', '#FF8F33', '#33FF8F', '#8F33FF',
+];
+function getColorForBarrio(barrio) {
+  const s = String(barrio || '');
+  let hash = 0;
+  for (let i = 0; i < s.length; i++) hash = (hash * 31 + s.charCodeAt(i)) >>> 0;
+  return COLOR_PALETTE[hash % COLOR_PALETTE.length];
+}
+
 // ✅ Replace v2 trigger with v1-compatible onCreate Firestore trigger
 exports.onNewResponse = functions
   .region('us-central1')

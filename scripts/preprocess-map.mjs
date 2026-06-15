@@ -116,7 +116,7 @@ const enrichManzana = (feature, responses, barrioColors, palette, cleanedBarrios
 };
 
 const main = async () => {
-  const rawManzanas = fs.readFileSync('./public/data/merged-manzanas.geojson', 'utf-8');
+  const rawManzanas = fs.readFileSync('./pipeline-data/merged-manzanas.geojson', 'utf-8');
   const rawResponses = fs.readFileSync('./public/data/responses.geojson', 'utf-8');
   const rawCleaned = fs.readFileSync('./public/data/cleanedBarrios.json', 'utf-8');
 
@@ -146,38 +146,19 @@ const main = async () => {
     features: enriched.filter(f => f.properties.totalResponses > 0),
   };
 
-  // create label centroids
-  const labelPoints = [];
-  const grouped = groupBy(enrichedManzanas.features, f => f.properties.majorityBarrio);
-  Object.entries(grouped).forEach(([slug, features]) => {
-    if (!slug || slug === 'desconocido') return;
-    try {
-      const collection = turf.featureCollection(features);
-      const combined = turf.combine(collection);
-      const centroid = turf.centroid(combined);
-      centroid.properties = { barrio: slug };
-      labelPoints.push(centroid);
-    } catch (e) {
-      console.warn(`Failed centroid for ${slug}`);
-    }
-  });
-
   // Save output — round coordinates to 6 decimals + minify (P4D-FILESIZE).
+  // Only the files the app actually serves are written. pin-points.geojson and
+  // barrio-labels.geojson are no longer generated (P4C): the map hides the pin
+  // layer and builds barrio labels at runtime from enriched-manzanas.
   fs.writeFileSync('./public/data/enriched-manzanas.geojson',
     JSON.stringify(roundFeatureCollection(enrichedManzanas)));
-  fs.writeFileSync('./public/data/pin-points.geojson',
-    JSON.stringify(roundFeatureCollection({ type: 'FeatureCollection', features: pinPoints })));
-  fs.writeFileSync('./public/data/barrio-labels.geojson',
-    JSON.stringify(roundFeatureCollection({ type: 'FeatureCollection', features: labelPoints })));
 
-  // ✅ Overwrite responses.geojson with barrio_cleaned field added
+  // Overwrite responses.geojson with barrio_cleaned field added.
   fs.writeFileSync('./public/data/responses.geojson',
     JSON.stringify(roundFeatureCollection(responses)));
 
   console.log('✅ Preprocessing complete. Files saved:');
   console.log(' - enriched-manzanas.geojson');
-  console.log(' - pin-points.geojson');
-  console.log(' - barrio-labels.geojson');
   console.log(' - responses.geojson (with barrio_cleaned)');
 };
 

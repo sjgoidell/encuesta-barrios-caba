@@ -28,9 +28,21 @@ admin.initializeApp({
 
 const db = admin.firestore()
 
+// CABA bounding box. Polygons drawn entirely outside the city (e.g. Olivos,
+// Martínez, or junk) are "orphans" — they never match a CABA manzana, so they
+// just add clutter to the límites view and file size. Drop them (P4C-ORPHANS).
+const CABA = { W: -58.53, E: -58.34, S: -34.70, N: -34.53 }
+function touchesCABA(geometry) {
+  let ring = geometry && geometry.coordinates
+  if (!ring) return false
+  while (Array.isArray(ring[0][0])) ring = ring[0]
+  return ring.some(([lng, lat]) => lng >= CABA.W && lng <= CABA.E && lat >= CABA.S && lat <= CABA.N)
+}
+
 async function exportToGeoJSON() {
   const snapshot = await db.collection('responses').get()
   const features = []
+  let orphans = 0
 
   snapshot.forEach(doc => {
     const data = doc.data()
@@ -38,6 +50,9 @@ async function exportToGeoJSON() {
     if (data.polygon) {
       try {
         const parsed = JSON.parse(data.polygon)
+
+        // P4C-ORPHANS: skip polygons drawn entirely outside CABA.
+        if (!touchesCABA(parsed.geometry)) { orphans++; return }
 
         // Minimal, privacy-safe schema only. See header before adding fields.
         features.push({
@@ -60,8 +75,8 @@ async function exportToGeoJSON() {
     features
   }
 
-  fs.writeFileSync('public/data/responses.geojson', JSON.stringify(geojson, null, 2))
-  console.log(`✅ Exported ${features.length} features to public/data/responses.geojson (privacy-safe schema)`)
+  fs.writeFileSync('public/data/responses.geojson', JSON.stringify(geojson))
+  console.log(`✅ Exported ${features.length} features to public/data/responses.geojson (privacy-safe schema; dropped ${orphans} orphan polygons outside CABA)`)
 }
 
 exportToGeoJSON()
