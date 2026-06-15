@@ -85,6 +85,21 @@ const MapView = () => {
   const [lockedManzanaId, setLockedManzanaId] = useState(null);
   const lockedRef = useRef(null);
 
+  // P4B-MAP-MOBILE: track viewport so the sidebar adapts to phones, reactively
+  // (covers rotation/resize, unlike a one-time window.innerWidth read).
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== 'undefined' && window.innerWidth <= 768
+  );
+  // On phones the control panel starts collapsed so the map is fully visible.
+  const [panelCollapsed, setPanelCollapsed] = useState(
+    typeof window !== 'undefined' && window.innerWidth <= 768
+  );
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
   // ✅ Google Analytics page view
   useEffect(() => {
     initAnalytics();         // Only initializes once
@@ -626,12 +641,16 @@ return (
   className="map-sidebar"
   style={{
     position: 'absolute',
-    top: 20,
-    left: 20,
-    width: 350,
+    top: isMobile ? 10 : 20,
+    left: isMobile ? 10 : 20,
+    // P4B-MAP-MOBILE: span the width as a compact top bar on phones instead of a
+    // fixed 350px box overlaying the map.
+    right: isMobile ? 10 : 'auto',
+    width: isMobile ? 'auto' : 350,
+    maxWidth: 'calc(100vw - 20px)',
     background: '#111',
     color: 'white',
-    padding: '20px',
+    padding: isMobile ? '12px 14px' : '20px',
     borderRadius: '8px',
     zIndex: 1000,
     fontFamily: 'sans-serif',
@@ -639,17 +658,37 @@ return (
   }}
 >
       <h2 style={{
-        fontSize: '20px',
+        fontSize: isMobile ? '16px' : '20px',
         fontWeight: '700',
-        lineHeight: '1.4',
-        marginBottom: '16px'
+        lineHeight: '1.3',
+        marginBottom: (isMobile && panelCollapsed) ? 0 : '16px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'flex-start',
+        gap: '8px',
       }}>
-        Dónde Vivo CABA<br />
-        <span style={{ fontWeight: 400 }}>
-          Mapa de la ciudad según los porteños
+        <span>
+          Dónde Vivo CABA
+          {!(isMobile && panelCollapsed) && (
+            <><br /><span style={{ fontWeight: 400, fontSize: isMobile ? '13px' : 'inherit' }}>
+              Mapa de la ciudad según los porteños
+            </span></>
+          )}
         </span>
+        {/* P4B-MAP-MOBILE: collapse/expand the panel so the map is fully visible on phones */}
+        {isMobile && (
+          <button
+            onClick={() => setPanelCollapsed(c => !c)}
+            aria-label={panelCollapsed ? 'Expandir panel' : 'Colapsar panel'}
+            style={{ background: 'transparent', color: 'white', border: 'none', fontSize: '20px', cursor: 'pointer', lineHeight: 1, padding: '0 4px' }}
+          >
+            {panelCollapsed ? '▾' : '▴'}
+          </button>
+        )}
       </h2>
 
+      {!(isMobile && panelCollapsed) && (
+      <>
       <div id="geocoder-container" style={{ marginBottom: '16px' }}></div>
 
       <div style={{ display: 'flex', marginBottom: '12px' }}>
@@ -770,6 +809,8 @@ return (
 >
   📝 Sumá mi respuesta
 </button>
+      </>
+      )}
 </div>
 
 {loading && (
