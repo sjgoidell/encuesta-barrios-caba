@@ -39,3 +39,6 @@ responses.csv
 docs/ARCHITECTURE.md
 docs/DEPENDENCIES.md
 docs/PROPOSAL.md
+
+# Local data snapshots (Phase 4 rollback) — never commit
+_backups/
