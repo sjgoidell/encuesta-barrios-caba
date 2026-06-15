@@ -231,10 +231,11 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
           latitude: -34.61
         }
       });
-      document.getElementById('geocoder-container').innerHTML = '';
-      document.getElementById('geocoder-container')?.appendChild(
-        geocoder.onAdd(mapInstance)
-      );
+      const geocoderContainer = document.getElementById('geocoder-container');
+      if (geocoderContainer) {
+        geocoderContainer.innerHTML = '';
+        geocoderContainer.appendChild(geocoder.onAdd(mapInstance));
+      }
 
       // Lever 3 (P4D): load the PRECOMPUTED choropleth instead of recomputing it.
       // enriched-manzanas already carries per-block { barrios (weights),
@@ -687,8 +688,9 @@ return (
         )}
       </h2>
 
-      {!(isMobile && panelCollapsed) && (
-      <>
+      {/* Collapse via CSS (not conditional render) so #geocoder-container stays
+          mounted — initializeMap attaches the Mapbox geocoder to it on load. */}
+      <div style={{ display: (isMobile && panelCollapsed) ? 'none' : 'block' }}>
       <div id="geocoder-container" style={{ marginBottom: '16px' }}></div>
 
       <div style={{ display: 'flex', marginBottom: '12px' }}>
@@ -803,8 +805,7 @@ return (
 >
   📝 Sumá mi respuesta
 </button>
-      </>
-      )}
+      </div>
 </div>
 
 {loading && (
