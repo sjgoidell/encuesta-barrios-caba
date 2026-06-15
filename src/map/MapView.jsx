@@ -35,14 +35,13 @@ const normalizeBarrio = (raw) =>
 
 const debug = false;
 
-// P4A-NYT-LOOK: muted, desaturated categorical palette (softer than the original
-// saturated tab20 set) for a calmer, NYT-neighborhood-map feel. This is the main
-// color lever to react to on the preview.
+// P4A-NYT-LOOK: a balanced categorical palette — more saturated than the first
+// pastel pass (which read too washed-out), but calmer than the original tab20.
 const palette = [
-  '#7ba6c4', '#e2a96b', '#8cb88f', '#cf8b8b',
-  '#a890b8', '#b3937c', '#d3a6c6', '#9aa0a6',
-  '#c8c47e', '#86b8b8', '#aecbdd', '#ecc9a3',
-  '#b9d6b2', '#e6b3b3', '#d2c4e0', '#cdbcae',
+  '#4a90b8', '#e08a35', '#54a866', '#d05656',
+  '#9a6bb0', '#a86a4c', '#d36bb0', '#7d7d7d',
+  '#c2bf3a', '#33a8a8', '#7aa6d6', '#eaa54e',
+  '#74c07a', '#e87878', '#b394d8', '#b39a82',
 ];
 
 //Mapbox labels layer
@@ -386,6 +385,12 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
       // 5. barrio-borders-outline (added below) — the "límites" view; P4A-LIMITES
       //                         wants ~80% transparency, color matched to the
       //                         block color, and a tooltip re-added.
+      // Insert the choropleth BENEATH the base map's first symbol (label) layer
+      // so street labels render ON TOP of the fill (P4A-STREETS fix). Falls back
+      // to top-of-stack if no symbol layer is found.
+      const firstSymbolId = (mapInstance.getStyle().layers || [])
+        .find(l => l.type === 'symbol')?.id;
+
       mapInstance.addLayer({
         id: 'manzanas-fill',
         type: 'fill',
@@ -394,7 +399,7 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
           'fill-color': ['get', 'blendedColor'],
           'fill-opacity': 0.62, // P4A-NYT-LOOK: slightly richer fill
         },
-      });
+      }, firstSymbolId);
 
       // P4A-NYT-LOOK: thin, consistent hairline between blocks for crisp geometry.
       mapInstance.addLayer({
@@ -406,7 +411,7 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
           'line-width': 0.4,
           'line-opacity': 0.45,
         },
-      });
+      }, firstSymbolId);
 
       mapInstance.addLayer({
         id: 'hover-outline',
@@ -442,17 +447,17 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
         source: 'barrio-labels',
         layout: {
           'text-field': ['get', 'barrio'],
-          'text-size': ['interpolate', ['linear'], ['zoom'], 10, 10, 14, 16],
+          'text-size': ['interpolate', ['linear'], ['zoom'], 10, 12, 14, 18], // P4A: a bit larger
           'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
           'text-anchor': 'center',
           'text-allow-overlap': false,
           'text-letter-spacing': 0.04, // P4A-NYT-LOOK: airier label spacing
         },
         paint: {
-          // P4A-NYT-LOOK: dark label with a soft white halo (calmer over muted fills)
+          // P4A-NYT-LOOK: dark label with a soft, dimmed halo (less bright than pure white)
           'text-color': '#2b2b2b',
-          'text-halo-color': '#ffffff',
-          'text-halo-width': 1.2,
+          'text-halo-color': 'rgba(245,245,245,0.7)',
+          'text-halo-width': 1.4,
         },
       });
 
@@ -463,8 +468,7 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
 
     // Límites (borders) view: each respondent's drawn barrio outline, colored to
     // match that barrio's color in the blocks view (via barrio_cleaned -> barrioColors).
-    // P4A-LIMITES: outlines at high transparency (~80% → opacity 0.25) so overlaps
-    // stay legible; line-opacity is the knob to tune on the preview.
+    // P4A-LIMITES: semi-transparent so overlaps stay legible but colors still read.
     mapInstance.addLayer({
       id: 'barrio-borders-outline',
       type: 'line',
@@ -477,7 +481,7 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
           '#ccc',
         ],
         'line-width': 2,
-        'line-opacity': 0.25,
+        'line-opacity': 0.6,
       },
       layout: {
         'visibility': 'none',
@@ -587,11 +591,20 @@ geocoder.on('result', (e) => {
     essential: true,   // honor the animation even with reduced-motion
   });
 
+  // Clear any previously-selected manzana + its popup so the searched one
+  // replaces it instead of leaving the old tooltip open (#5).
+  popup.remove();
+  setLockedManzanaId(null);
+  lockedRef.current = null;
+
   const point = turf.point(lngLat);
   const hit = enrichedGeoJSON.features.find(f => turf.booleanPointInPolygon(point, f));
 
   if (hit) {
     const id = hit.properties.id;
+    // Lock to the searched manzana so its tooltip stays put after the fly-to.
+    setLockedManzanaId(id);
+    lockedRef.current = id;
     if (mapInstance.getLayer('hover-outline')) {
       mapInstance.setFilter('hover-outline', ['==', 'id', id]);
     }
@@ -600,6 +613,8 @@ geocoder.on('result', (e) => {
       .setLngLat(centroid.geometry.coordinates)
       .setHTML(buildBarrioPopupHTML(hit.properties.barrios))
       .addTo(mapInstance);
+  } else if (mapInstance.getLayer('hover-outline')) {
+    mapInstance.setFilter('hover-outline', ['==', 'id', -1]);
   }
 });
 
