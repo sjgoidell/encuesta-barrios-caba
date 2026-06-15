@@ -15,16 +15,34 @@ import * as turf from '@turf/turf';
 import groupBy from 'lodash.groupby';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import { initAnalytics, logPageView, logEvent } from '../lib/analytics'
+import barrioNames from '../../data/barrio-names.json'
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
 
+// Map a cleaned barrio slug (e.g. "villacrespo") to its grammatically-correct
+// display name (e.g. "Villa Crespo") from data/barrio-names.json (P4A-NAMES /
+// P2-NAMES-TABLE). Falls back to the raw slug if unmapped.
+const displayBarrio = (slug) => barrioNames[slug] || slug;
+
+// Normalize a raw barrio name to its slug (lowercase, no accents, no spaces) —
+// same scheme as cleanedBarrios.json and the enrichment logic. Used to color
+// the límites view, since the privacy-safe responses.geojson no longer carries
+// a precomputed barrio_cleaned field.
+const normalizeBarrio = (raw) =>
+  typeof raw === 'string'
+    ? raw.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, '')
+    : '';
+
 const debug = false;
 
+// P4A-NYT-LOOK: muted, desaturated categorical palette (softer than the original
+// saturated tab20 set) for a calmer, NYT-neighborhood-map feel. This is the main
+// color lever to react to on the preview.
 const palette = [
-  '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728',
-  '#9467bd', '#8c564b', '#e377c2', '#7f7f7f',
-  '#bcbd22', '#17becf', '#aec7e8', '#ffbb78',
-  '#98df8a', '#ff9896', '#c5b0d5', '#c49c94',
+  '#7ba6c4', '#e2a96b', '#8cb88f', '#cf8b8b',
+  '#a890b8', '#b3937c', '#d3a6c6', '#9aa0a6',
+  '#c8c47e', '#86b8b8', '#aecbdd', '#ecc9a3',
+  '#b9d6b2', '#e6b3b3', '#d2c4e0', '#cdbcae',
 ];
 
 //Mapbox labels layer
@@ -240,6 +258,7 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
   };
 
   useEffect(() => {
+    let escHandler;
     const initializeMap = async () => {
     const mapInstance = new mapboxgl.Map({
       container: 'map',
@@ -282,11 +301,23 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
       const responsesGeo = await responsesRes.json();
       const cleanedBarrios = new Set(await cleanedBarriosRes.json());
 
+      // Derive the normalized slug on each response so the límites (borders)
+      // view can color-match the blocks view. The privacy-safe responses.geojson
+      // ships only id/barrio/pinLocation (no barrio_cleaned), so compute it here.
+      responsesGeo.features.forEach((f) => {
+        f.properties.barrio_cleaned = normalizeBarrio(f.properties.barrio);
+      });
+
       if (debug) {
         const bbox = turf.bboxPolygon([-58.53, -34.58, -58.35, -34.54]);
         manzanasGeo.features = manzanasGeo.features.filter(f => turf.booleanIntersects(f, bbox));
       }
 
+      // Client-side geometry simplification of every block before rendering.
+      // Runs in the browser on the full ~94MB merged-manzanas set each load —
+      // a load-speed cost (relevant to Phase 4D). Higher tolerance = simpler
+      // polygons = faster but coarser borders (relevant to the Phase 4A "crisp
+      // geometry" look). Tune deliberately + re-measure.
       const simplificationTolerance = 0.00005;
       manzanasGeo.features = manzanasGeo.features.map(f =>
         turf.simplify(f, { tolerance: simplificationTolerance, highQuality: false })
@@ -315,7 +346,7 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
           const collection = turf.featureCollection(features);
           const combined = turf.combine(collection);
           const centroid = turf.centroid(combined);
-          centroid.properties = { barrio: slug };
+          centroid.properties = { barrio: displayBarrio(slug) }; // P4A-NAMES: show real name, not slug
           labelPoints.push(centroid);
         } catch (e) {
           console.warn(`Failed centroid for ${slug}`);
@@ -343,13 +374,37 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
         },
       });
 
+      // ── Map layer stack (the surface Phase 4A restyles) ──
+      // 1. manzanas-fill        block choropleth — fill = per-block RGB BLEND of
+      //                         contributing barrio colors (the "muddy" mix),
+      //                         50% opacity. NYT-look target: muted/consistent
+      //                         ramp, crisper edges, less blend mud.
+      // 2. hover-outline        white 1.25px outline of the hovered/locked block.
+      // 3. pin-points-layer     cyan dots at every home pin (visual noise in the
+      //                         blocks view; candidate to drop/restyle).
+      // 4. barrio-label-layer   barrio name labels, white text + black halo.
+      // 5. barrio-borders-outline (added below) — the "límites" view; P4A-LIMITES
+      //                         wants ~80% transparency, color matched to the
+      //                         block color, and a tooltip re-added.
       mapInstance.addLayer({
         id: 'manzanas-fill',
         type: 'fill',
         source: 'manzanas',
         paint: {
           'fill-color': ['get', 'blendedColor'],
-          'fill-opacity': 0.50,
+          'fill-opacity': 0.62, // P4A-NYT-LOOK: slightly richer fill
+        },
+      });
+
+      // P4A-NYT-LOOK: thin, consistent hairline between blocks for crisp geometry.
+      mapInstance.addLayer({
+        id: 'manzanas-border',
+        type: 'line',
+        source: 'manzanas',
+        paint: {
+          'line-color': '#ffffff',
+          'line-width': 0.4,
+          'line-opacity': 0.45,
         },
       });
 
@@ -364,8 +419,8 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
         filter: ['==', 'id', -1],
       });
 
-      // Pin points (currently removed)
-      
+      // Home pin dots — hidden by default in the NYT-look (raw cyan dots read as
+      // noise over the choropleth). Flip visibility to 'visible' to show them.
       mapInstance.addLayer({
         id: 'pin-points-layer',
         type: 'circle',
@@ -374,6 +429,9 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
           'circle-radius': 4,
           'circle-color': '#00ffff',
           'circle-opacity': 0.7,
+        },
+        layout: {
+          'visibility': 'none', // P4A-NYT-LOOK
         },
       });
       
@@ -388,11 +446,13 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
           'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
           'text-anchor': 'center',
           'text-allow-overlap': false,
+          'text-letter-spacing': 0.04, // P4A-NYT-LOOK: airier label spacing
         },
         paint: {
-          'text-color': '#ffffff',
-          'text-halo-color': '#000000',
-          'text-halo-width': 1.5,
+          // P4A-NYT-LOOK: dark label with a soft white halo (calmer over muted fills)
+          'text-color': '#2b2b2b',
+          'text-halo-color': '#ffffff',
+          'text-halo-width': 1.2,
         },
       });
 
@@ -401,6 +461,10 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
       data: responsesGeo,
     });
 
+    // Límites (borders) view: each respondent's drawn barrio outline, colored to
+    // match that barrio's color in the blocks view (via barrio_cleaned -> barrioColors).
+    // P4A-LIMITES: outlines at high transparency (~80% → opacity 0.25) so overlaps
+    // stay legible; line-opacity is the knob to tune on the preview.
     mapInstance.addLayer({
       id: 'barrio-borders-outline',
       type: 'line',
@@ -412,8 +476,8 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
           ...Object.entries(barrioColors).flatMap(([b, c]) => [b, c]),
           '#ccc',
         ],
-        'line-width': 1.5,
-        'line-opacity': 0.75,
+        'line-width': 2,
+        'line-opacity': 0.25,
       },
       layout: {
         'visibility': 'none',
@@ -421,6 +485,48 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
     });
 
       const popup = new mapboxgl.Popup({ closeButton: false, closeOnClick: false });
+
+    // Shared "¿A qué barrio pertenece?" popup HTML for a manzana's weighted
+    // barrio mix. Was duplicated in hover/click/address-search; now one place.
+    // Renders grammatically-correct names via displayBarrio() (P4A-NAMES).
+    const buildBarrioPopupHTML = (barriosRaw) => {
+      const barrios = typeof barriosRaw === 'string'
+        ? JSON.parse(barriosRaw)
+        : (barriosRaw || {});
+      const total = Object.values(barrios)
+        .map(w => Number(w)).filter(w => !isNaN(w))
+        .reduce((sum, w) => sum + w, 0);
+
+      let barrioList;
+      if (total > 0) {
+        barrioList = Object.entries(barrios)
+          .map(([slug, weight]) => ({
+            name: displayBarrio(slug),
+            percent: Math.round((Number(weight) / total) * 100),
+            color: barrioColors[slug] || '#ccc',
+          }))
+          .filter(e => isFinite(e.percent) && e.name)
+          .sort((a, b) => b.percent - a.percent)
+          .map(({ name, percent, color }) => `
+            <div style="margin-bottom:8px;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-weight:600; color:${color}; font-size:14px;">${name}</span>
+                <span style="font-size:13px; color:${color};">${percent}%</span>
+              </div>
+              <div style="background:#eee; height:6px; border-radius:3px; overflow:hidden;">
+                <div style="background:${color}; width:${percent}%; height:6px;"></div>
+              </div>
+            </div>`).join('');
+      } else {
+        barrioList = '<div style="font-style: italic;">Sin datos para esta manzana</div>';
+      }
+
+      return `
+        <div style="background:white; color:black; padding:12px 16px; border-radius:6px; font-family:sans-serif; width:175px; box-shadow: 0 0 5px rgba(0,0,0,0.25);">
+          <div style="font-size:13px; font-weight:700; text-transform:uppercase; margin-bottom:10px; color:#666;">¿A qué barrio pertenece?</div>
+          ${barrioList}
+        </div>`;
+    };
 
 let hoverTimeout = null;
 
@@ -435,58 +541,9 @@ mapInstance.on('mousemove', 'manzanas-fill', (e) => {
     const id = feature.properties.id;
     mapInstance.setFilter('hover-outline', ['==', 'id', id]);
 
-    const props = feature.properties;
-    const barriosRaw = props.barrios || {};
-    const barrios = typeof barriosRaw === 'string'
-      ? JSON.parse(barriosRaw)
-      : barriosRaw;
-
-    const total = Object.values(barrios)
-      .map(w => Number(w))
-      .filter(w => !isNaN(w))
-      .reduce((sum, w) => sum + w, 0);
-
-    let barrioList = '';
-    if (total > 0) {
-      barrioList = Object.entries(barrios)
-        .map(([name, weight]) => {
-          const w = Number(weight);
-          const pct = total > 0 ? (w / total) * 100 : 0;
-          const color = barrioColors[name] || '#ccc';
-          return {
-            name,
-            percent: Math.round(pct),
-            color,
-          };
-        })
-        .filter(entry => isFinite(entry.percent) && entry.name)
-        .sort((a, b) => b.percent - a.percent)
-        .map(({ name, percent, color }) => {
-          return `
-            <div style="margin-bottom:8px;">
-              <div style="display:flex; justify-content:space-between; align-items:center;">
-                <span style="font-weight:600; color:${color}; font-size:14px;">${name}</span>
-                <span style="font-size:13px; color:${color};">${percent}%</span>
-              </div>
-              <div style="background:#eee; height:6px; border-radius:3px; overflow:hidden;">
-                <div style="background:${color}; width:${percent}%; height:6px;"></div>
-              </div>
-            </div>
-          `;
-        })
-        .join('');
-    } else {
-      barrioList = '<div style="font-style: italic;">Sin datos para esta manzana</div>';
-    }
-
     popup
       .setLngLat(e.lngLat)
-      .setHTML(`
-        <div style="background:white; color:black; padding:12px 16px; border-radius:6px; font-family:sans-serif; width:175px; box-shadow: 0 0 5px rgba(0,0,0,0.25);">
-          <div style="font-size:13px; font-weight:700; text-transform:uppercase; margin-bottom:10px; color:#666;">¿A qué barrio pertenece?</div>
-          ${barrioList}
-        </div>
-      `)
+      .setHTML(buildBarrioPopupHTML(feature.properties.barrios))
       .addTo(mapInstance);
   }, 30);
 });
@@ -500,60 +557,11 @@ mapInstance.on('click', 'manzanas-fill', (e) => {
   lockedRef.current = id; // 🔒 Also store in ref
   mapInstance.setFilter('hover-outline', ['==', 'id', id]);
 
-        const props = feature.properties;
-        const barriosRaw = props.barrios || {};
-        const barrios = typeof barriosRaw === 'string'
-          ? JSON.parse(barriosRaw)
-          : barriosRaw;
-
-        const total = Object.values(barrios)
-          .map(w => Number(w))
-          .filter(w => !isNaN(w))
-          .reduce((sum, w) => sum + w, 0);
-
-        let barrioList = '';
-        if (total > 0) {
-          barrioList = Object.entries(barrios)
-            .map(([name, weight]) => {
-              const w = Number(weight);
-              const pct = total > 0 ? (w / total) * 100 : 0;
-              const color = barrioColors[name] || '#ccc';
-              return {
-                name,
-                percent: Math.round(pct),
-                color,
-              };
-            })
-            .filter(entry => isFinite(entry.percent) && entry.name)
-            .sort((a, b) => b.percent - a.percent)
-            .map(({ name, percent, color }) => {
-              return `
-                <div style="margin-bottom:8px;">
-                  <div style="display:flex; justify-content:space-between; align-items:center;">
-                    <span style="font-weight:600; color:${color}; font-size:14px;">${name}</span>
-                    <span style="font-size:13px; color:${color};">${percent}%</span>
-                  </div>
-                  <div style="background:#eee; height:6px; border-radius:3px; overflow:hidden;">
-                    <div style="background:${color}; width:${percent}%; height:6px;"></div>
-                  </div>
-                </div>
-              `;
-            })
-            .join('');
-        } else {
-          barrioList = '<div style="font-style: italic;">Sin datos para esta manzana</div>';
-        }
-
-        popup
-          .setLngLat(e.lngLat)
-          .setHTML(`
-            <div style="background:white; color:black; padding:12px 16px; border-radius:6px; font-family:sans-serif; width:175px; box-shadow: 0 0 5px rgba(0,0,0,0.25);">
-              <div style="font-size:13px; font-weight:700; text-transform:uppercase; margin-bottom:10px; color:#666;">¿A qué barrio pertenece?</div>
-              ${barrioList}
-            </div>
-          `)
-          .addTo(mapInstance);
-      });
+  popup
+    .setLngLat(e.lngLat)
+    .setHTML(buildBarrioPopupHTML(feature.properties.barrios))
+    .addTo(mapInstance);
+});
 
 mapInstance.on('click', (e) => {
   const features = mapInstance.queryRenderedFeatures(e.point, {
@@ -570,60 +578,27 @@ mapInstance.on('click', (e) => {
 
 geocoder.on('result', (e) => {
   const lngLat = e.result.center;
-  setTimeout(() => {
-    mapInstance.flyTo({ center: lngLat, zoom: 15 });
-  }, 250); // delay to ensure responsiveness
-
+  // P4A-FLYTO: smooth, eased fly-to (replaces the abrupt 250ms timed jump).
+  mapInstance.flyTo({
+    center: lngLat,
+    zoom: 15,
+    speed: 1.2,        // a touch faster than default
+    curve: 1.42,       // gentle zoom-out-then-in arc
+    essential: true,   // honor the animation even with reduced-motion
+  });
 
   const point = turf.point(lngLat);
   const hit = enrichedGeoJSON.features.find(f => turf.booleanPointInPolygon(point, f));
 
   if (hit) {
     const id = hit.properties.id;
-
     if (mapInstance.getLayer('hover-outline')) {
       mapInstance.setFilter('hover-outline', ['==', 'id', id]);
     }
-
     const centroid = turf.centroid(hit);
-    const props = hit.properties;
-    const barrios = props.barrios || {};
-    const total = Object.values(barrios)
-      .map(w => Number(w))
-      .filter(w => !isNaN(w))
-      .reduce((sum, w) => sum + w, 0);
-
-    let barrioList = '';
-    if (total > 0) {
-      barrioList = Object.entries(barrios)
-        .map(([name, weight]) => {
-          const pct = Math.round((Number(weight) / total) * 100);
-          const color = barrioColors[name] || '#ccc';
-          return `
-            <div style="margin-bottom:8px;">
-              <div style="display:flex; justify-content:space-between; align-items:center;">
-                <span style="font-weight:600; color:${color}; font-size:14px;">${name}</span>
-                <span style="font-size:13px; color:${color};">${pct}%</span>
-              </div>
-              <div style="background:#eee; height:6px; border-radius:3px; overflow:hidden;">
-                <div style="background:${color}; width:${pct}%; height:6px;"></div>
-              </div>
-            </div>
-          `;
-        })
-        .join('');
-    } else {
-      barrioList = '<div style="font-style: italic;">Sin datos para esta manzana</div>';
-    }
-
     popup
       .setLngLat(centroid.geometry.coordinates)
-      .setHTML(`
-        <div style="background:white; color:black; padding:12px 16px; border-radius:6px; font-family:sans-serif; width:175px; box-shadow: 0 0 5px rgba(0,0,0,0.25);">
-          <div style="font-size:13px; font-weight:700; text-transform:uppercase; margin-bottom:10px; color:#666;">¿A qué barrio pertenece?</div>
-          ${barrioList}
-        </div>
-      `)
+      .setHTML(buildBarrioPopupHTML(hit.properties.barrios))
       .addTo(mapInstance);
   }
 });
@@ -637,6 +612,40 @@ mapInstance.on('mouseleave', 'manzanas-fill', () => {
   }
 });
 
+// P4A-LIMITES: tooltip for the borders view (manzanas-fill is hidden there, so
+// these only fire in the límites view). Shows the hovered outline's barrio name.
+mapInstance.on('mousemove', 'barrio-borders-outline', (e) => {
+  const f = e.features?.[0];
+  if (!f) return;
+  mapInstance.getCanvas().style.cursor = 'pointer';
+  const slug = f.properties.barrio_cleaned || normalizeBarrio(f.properties.barrio);
+  const color = barrioColors[slug] || '#ccc';
+  popup
+    .setLngLat(e.lngLat)
+    .setHTML(`<div style="background:white; color:#000; padding:8px 12px; border-radius:6px; font-family:sans-serif; font-size:14px; font-weight:600; box-shadow:0 0 5px rgba(0,0,0,0.25);"><span style="color:${color};">${displayBarrio(slug)}</span></div>`)
+    .addTo(mapInstance);
+});
+mapInstance.on('mouseleave', 'barrio-borders-outline', () => {
+  mapInstance.getCanvas().style.cursor = '';
+  popup.remove();
+});
+
+// P4A-STREETS: declutter the base map — keep street/road labels, hide other
+// symbol labels (POI, places, transit, water, etc.). Heuristic on layer id;
+// our own 'barrio-label-layer' is preserved. Refine the keep-rule on the preview.
+mapInstance.on('load', () => {
+  const baseLayers = mapInstance.getStyle()?.layers || [];
+  baseLayers.forEach((layer) => {
+    if (layer.type !== 'symbol' || layer.id === 'barrio-label-layer') return;
+    const id = layer.id.toLowerCase();
+    const isStreet = id.includes('road') || id.includes('street') || id.includes('motorway');
+    const isLabel = id.includes('label') || id.includes('text');
+    if (isLabel && !isStreet) {
+      try { mapInstance.setLayoutProperty(layer.id, 'visibility', 'none'); } catch (e) { /* layer not togglable */ }
+    }
+  });
+});
+
 mapInstance.on('idle', () => {
   const layer = mapInstance.getLayer('manzanas-fill');
   if (layer && mapInstance.isStyleLoaded()) {
@@ -644,11 +653,27 @@ mapInstance.on('idle', () => {
   }
 });
 
+// P4A-ESC: Escape closes an open tooltip and clears the locked selection.
+// (Clicking an empty area already closes it via the map 'click' handler above.)
+escHandler = (ev) => {
+  if (ev.key !== 'Escape') return;
+  popup.remove();
+  setLockedManzanaId(null);
+  lockedRef.current = null;
+  if (mapInstance.getLayer('hover-outline')) {
+    mapInstance.setFilter('hover-outline', ['==', 'id', -1]);
+  }
+};
+window.addEventListener('keydown', escHandler);
+
   setLoading(false);
 
     };
 
     initializeMap();
+    return () => {
+      if (escHandler) window.removeEventListener('keydown', escHandler);
+    };
   }, []);
 
 return (
