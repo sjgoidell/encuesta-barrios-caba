@@ -42,3 +42,6 @@ docs/PROPOSAL.md
 
 # Local data snapshots (Phase 4 rollback) — never commit
 _backups/
+
+# Raw source blocks (113MB) — regenerate pipeline locally; never commit
+pipeline-data/manzanas.geojson

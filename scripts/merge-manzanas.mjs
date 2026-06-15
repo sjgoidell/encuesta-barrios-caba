@@ -1,7 +1,7 @@
 /**
  * merge-manzanas.mjs  —  collapse raw city blocks into one polygon per manzana id.
  *
- * The raw source (public/data/manzanas.geojson) can split a single block across
+ * The raw source (pipeline-data/manzanas.geojson) can split a single block across
  * multiple features / MultiPolygons. This script flattens them, buffers each
  * piece outward slightly (~5 m) so adjacent pieces of the same block overlap,
  * then dissolves by `manzana_id` into a single polygon per block. Failed
@@ -19,7 +19,7 @@ import { featureCollection } from '@turf/helpers';
 import { roundFeatureCollection } from './geo-precision.mjs';
 
 // Load input GeoJSON
-const input = JSON.parse(fs.readFileSync('./public/data/manzanas.geojson', 'utf-8'));
+const input = JSON.parse(fs.readFileSync('./pipeline-data/manzanas.geojson', 'utf-8'));
 
 // Tag each feature with a merge group
 input.features.forEach(f => {
@@ -96,7 +96,7 @@ for (const [id, features] of grouped.entries()) {
 
 // Write output — round coordinates to 6 decimals + minify (P4D-FILESIZE).
 const output = roundFeatureCollection(featureCollection(merged));
-fs.writeFileSync('./public/data/merged-manzanas.geojson', JSON.stringify(output));
+fs.writeFileSync('./pipeline-data/merged-manzanas.geojson', JSON.stringify(output));
 
 console.log(`\n✅ Wrote ${merged.length} merged manzanas to merged-manzanas.geojson`);
 

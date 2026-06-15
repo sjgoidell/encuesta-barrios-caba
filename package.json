@@ -12,7 +12,8 @@
     "export-csv": "node ./scripts/export-responses-csv.cjs",
     "export-barrios": "node ./scripts/export-cleaned-barrios.mjs",
     "preprocess-map": "node ./scripts/preprocess-map.mjs",
-    "merge-manzanas": "node ./scripts/merge-manzanas.mjs"
+    "merge-manzanas": "node ./scripts/merge-manzanas.mjs",
+    "refresh-data": "npm run export-geojson && npm run export-barrios && npm run preprocess-map"
   },
   "dependencies": {
     "@mapbox/mapbox-gl-draw": "^1.5.0",
