@@ -1,10 +1,11 @@
 // MapView — the public choropleth at /map_test.
 //
-// On load it fetches merged-manzanas (city blocks), the privacy-safe responses
-// (drawn barrio polygons + home pins), and the barrio whitelist, then RECOMPUTES
-// the block colors in the browser via enrichManzana() and renders with Mapbox GL.
-// (Note: it does not use the precomputed enriched-manzanas.geojson — see
-// docs/ARCHITECTURE.md "Key pipeline observation".)
+// On load it fetches the PRECOMPUTED enriched-manzanas (city blocks already
+// carrying their barrio mix + majority barrio), the privacy-safe responses (for
+// the límites view), and the barrio whitelist, then only re-applies the current
+// palette (cheap RGB blend) and renders with Mapbox GL. The heavy per-block
+// weighting is done offline in scripts/preprocess-map.mjs (P4D Lever 3 removed
+// the old in-browser recompute that made the page take ~40s).
 //
 // To refresh the underlying data, see DEPLOY.md:
 //   npm run export-geojson && npm run export-barrios && npm run preprocess-map
@@ -55,95 +56,25 @@ const hexToRgb = (hex) => {
 const rgbToHex = (r, g, b) =>
   '#' + [r, g, b].map(x => (x < 16 ? '0' : '') + x.toString(16)).join('');
 
-// enrichManzana — assign a block (manzana) its barrio mix and color.
-//
-// For each response whose drawn polygon overlaps this block, we weight that
-// "vote" by INVERSE DISTANCE from the respondent's home pin to the block centroid
-// (w = 1/(d+0.01), capped at 5 km). Intent: people who live closest to a block
-// understand it best and should have the most say; someone far away who included
-// the block still counts, but at much lower weight. The per-barrio % shown in the
-// tooltip is weight_barrio / total_weight. The fill is an RGB blend of the
-// contributing barrio colors by their share. Full spec: docs/FORMULA.md.
-//
-// NOTE: this duplicates the logic in scripts/preprocess-map.mjs — they should be
-// consolidated into a shared module (tracked for Phase 2/4C).
-const enrichManzana = (feature, responseFeatures, barrioColors, palette, cleanedBarrios, pinPoints) => {
-  const centroid = turf.centroid(feature);
-  const barrios = {};            // barrio slug -> accumulated inverse-distance weight
-  let count = 0;                 // total weight across all contributing responses
-
-  responseFeatures.forEach(response => {
-    if (!turf.booleanIntersects(feature, response)) return;
-
-    const raw = response.properties.barrio ?? '';
-    const barrio = typeof raw === 'string'
-      ? raw
-          .trim()
-          .toLowerCase()
-          .normalize('NFD')
-          .replace(/[\u0300-\u036f]/g, '') // remove accents
-          .replace(/\s+/g, '')
-      : '';
-
-    if (barrio.length < 5 || !cleanedBarrios.has(barrio)) return;
-
-    try {
-      const pin = JSON.parse(response.properties.pinLocation || '{}');
-      if (!pin.lat || !pin.lng) return;
-
-      const pinPoint = turf.point([pin.lng, pin.lat]);
-      pinPoints.push(pinPoint);
-
-      const distance = turf.distance(pinPoint, centroid, { units: 'kilometers' });
-      if (distance > 5) return;
-
-      const weight = 1 / (distance + 0.01);
-      barrios[barrio] = (barrios[barrio] || 0) + weight;
-
-      if (!barrioColors[barrio]) {
-        barrioColors[barrio] = palette[Object.keys(barrioColors).length % palette.length];
-      }
-
-      count += weight;
-    } catch (e) {
-      console.warn('Invalid pinLocation:', response.properties.pinLocation);
-    }
-  });
-
-  let blendedColor = '#444444';
-  if (count > 0) {
-    let r = 0, g = 0, b = 0;
-    for (const [slug, weight] of Object.entries(barrios)) {
-      const percent = weight / count;
-      const [cr, cg, cb] = hexToRgb(barrioColors[slug] || '#888888');
-      r += cr * percent;
-      g += cg * percent;
-      b += cb * percent;
-    }
-    blendedColor = rgbToHex(Math.round(r), Math.round(g), Math.round(b));
+// blendBarrioColor \u2014 given a block's PRECOMPUTED barrio weights (from
+// enriched-manzanas) and the barrio->color map, return the weighted RGB-average
+// fill color. Cheap (no geometry math) \u2014 this re-applies the current palette to
+// the precomputed data so we avoid the old per-load intersection recompute (P4D
+// Lever 3). The expensive weighting is done offline in preprocess-map.mjs; see
+// docs/FORMULA.md for the inverse-distance weighting.
+const blendBarrioColor = (barriosRaw, barrioColors) => {
+  const entries = Object.entries(barriosRaw || {});
+  const total = entries.reduce((s, [, w]) => s + Number(w), 0);
+  if (!(total > 0)) return '#444444';
+  let r = 0, g = 0, b = 0;
+  for (const [slug, weight] of entries) {
+    const percent = Number(weight) / total;
+    const [cr, cg, cb] = hexToRgb(barrioColors[slug] || '#888888');
+    r += cr * percent;
+    g += cg * percent;
+    b += cb * percent;
   }
-
-  let majorityBarrio = 'desconocido';
-  let maxWeight = 0;
-  for (const [slug, weight] of Object.entries(barrios)) {
-    if (weight > maxWeight) {
-      majorityBarrio = slug;
-      maxWeight = weight;
-    }
-  }
-  
-  return {
-    type: 'Feature',
-    id: feature.properties?.id || null,
-    geometry: feature.geometry,
-    properties: {
-      id: feature.properties?.id || null,
-      totalResponses: count,
-      barrios,
-      blendedColor,
-      majorityBarrio,
-    },
-  };
+  return rgbToHex(Math.round(r), Math.round(g), Math.round(b));
 };
 
 const MapView = () => {
@@ -290,55 +221,52 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
         geocoder.onAdd(mapInstance)
       );
 
+      // Lever 3 (P4D): load the PRECOMPUTED choropleth instead of recomputing it.
+      // enriched-manzanas already carries per-block { barrios (weights),
+      // majorityBarrio, totalResponses } from preprocess-map, so we skip the
+      // ~5M turf.booleanIntersects + per-feature turf.simplify that used to run
+      // on every page load (the dominant load-time cost).
       const [manzanasRes, responsesRes, cleanedBarriosRes] = await Promise.all([
-        fetch('/data/merged-manzanas.geojson'),
+        fetch('/data/enriched-manzanas.geojson'),
         fetch('/data/responses.geojson'),
         fetch('/data/cleanedBarrios.json'),
       ]);
 
-      const manzanasGeo = await manzanasRes.json();
+      const enrichedGeoJSON = await manzanasRes.json();
       const responsesGeo = await responsesRes.json();
-      const cleanedBarrios = new Set(await cleanedBarriosRes.json());
+      const cleanedBarriosList = await cleanedBarriosRes.json();
 
       // Derive the normalized slug on each response so the límites (borders)
-      // view can color-match the blocks view. The privacy-safe responses.geojson
-      // ships only id/barrio/pinLocation (no barrio_cleaned), so compute it here.
+      // view can color-match the blocks view (privacy-safe responses drop it).
       responsesGeo.features.forEach((f) => {
         f.properties.barrio_cleaned = normalizeBarrio(f.properties.barrio);
       });
 
-      if (debug) {
-        const bbox = turf.bboxPolygon([-58.53, -34.58, -58.35, -34.54]);
-        manzanasGeo.features = manzanasGeo.features.filter(f => turf.booleanIntersects(f, bbox));
-      }
-
-      // Client-side geometry simplification of every block before rendering.
-      // Runs in the browser on the full ~94MB merged-manzanas set each load —
-      // a load-speed cost (relevant to Phase 4D). Higher tolerance = simpler
-      // polygons = faster but coarser borders (relevant to the Phase 4A "crisp
-      // geometry" look). Tune deliberately + re-measure.
-      const simplificationTolerance = 0.00005;
-      manzanasGeo.features = manzanasGeo.features.map(f =>
-        turf.simplify(f, { tolerance: simplificationTolerance, highQuality: false })
-      );
-
+      // Deterministic barrio -> palette color (stable order: cleanedBarrios is
+      // sorted by frequency). Drives fills, popups, labels and the límites view.
       const barrioColors = {};
-      const pinPoints = [];
-      const responseFeatures = responsesGeo.features.map(f =>
-        turf.feature(f.geometry, f.properties)
-      );
-
-      const enrichedFeatures = manzanasGeo.features.map(feature =>
-        enrichManzana(feature, responseFeatures, barrioColors, palette, cleanedBarrios, pinPoints)
-      );
-
-      const enrichedGeoJSON = {
-        type: 'FeatureCollection',
-        features: enrichedFeatures.filter(f => f.properties.totalResponses > 0),
+      const assignColor = (slug) => {
+        if (slug && !barrioColors[slug]) {
+          barrioColors[slug] = palette[Object.keys(barrioColors).length % palette.length];
+        }
       };
+      cleanedBarriosList.forEach(assignColor);
+      enrichedGeoJSON.features.forEach((f) =>
+        Object.keys(f.properties.barrios || {}).forEach(assignColor)
+      );
 
+      // Re-derive each block's blended fill from its precomputed barrio weights,
+      // so the current (Phase 4A) palette is applied — cheap RGB averaging, no
+      // geometry math.
+      enrichedGeoJSON.features.forEach((f) => {
+        f.properties.blendedColor = blendBarrioColor(f.properties.barrios, barrioColors);
+      });
+
+      const pinPoints = []; // home-pin layer is hidden in the NYT look; keep source empty
+
+      // Label centroids per (precomputed) majority barrio.
       const labelPoints = [];
-      const grouped = groupBy(enrichedFeatures, f => f.properties.majorityBarrio);
+      const grouped = groupBy(enrichedGeoJSON.features, f => f.properties.majorityBarrio);
       Object.entries(grouped).forEach(([slug, features]) => {
         if (!slug || slug === 'desconocido') return;
         try {

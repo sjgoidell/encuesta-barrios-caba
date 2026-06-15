@@ -20,6 +20,7 @@ import fs from 'fs';
 import path from 'path';
 import * as turf from '@turf/turf';
 import groupBy from 'lodash.groupby';
+import { roundFeatureCollection } from './geo-precision.mjs';
 
 const palette = [
   '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728',
@@ -161,19 +162,17 @@ const main = async () => {
     }
   });
 
-  // Save output
-  fs.writeFileSync('./public/data/enriched-manzanas.geojson', JSON.stringify(enrichedManzanas, null, 2));
-  fs.writeFileSync('./public/data/pin-points.geojson', JSON.stringify({
-    type: 'FeatureCollection',
-    features: pinPoints
-  }, null, 2));
-  fs.writeFileSync('./public/data/barrio-labels.geojson', JSON.stringify({
-    type: 'FeatureCollection',
-    features: labelPoints
-  }, null, 2));
+  // Save output — round coordinates to 6 decimals + minify (P4D-FILESIZE).
+  fs.writeFileSync('./public/data/enriched-manzanas.geojson',
+    JSON.stringify(roundFeatureCollection(enrichedManzanas)));
+  fs.writeFileSync('./public/data/pin-points.geojson',
+    JSON.stringify(roundFeatureCollection({ type: 'FeatureCollection', features: pinPoints })));
+  fs.writeFileSync('./public/data/barrio-labels.geojson',
+    JSON.stringify(roundFeatureCollection({ type: 'FeatureCollection', features: labelPoints })));
 
   // ✅ Overwrite responses.geojson with barrio_cleaned field added
-  fs.writeFileSync('./public/data/responses.geojson', JSON.stringify(responses, null, 2));
+  fs.writeFileSync('./public/data/responses.geojson',
+    JSON.stringify(roundFeatureCollection(responses)));
 
   console.log('✅ Preprocessing complete. Files saved:');
   console.log(' - enriched-manzanas.geojson');

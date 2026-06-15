@@ -16,6 +16,7 @@ import path from 'path';
 import buffer from '@turf/buffer';
 import dissolve from '@turf/dissolve';
 import { featureCollection } from '@turf/helpers';
+import { roundFeatureCollection } from './geo-precision.mjs';
 
 // Load input GeoJSON
 const input = JSON.parse(fs.readFileSync('./public/data/manzanas.geojson', 'utf-8'));
@@ -93,9 +94,9 @@ for (const [id, features] of grouped.entries()) {
   }
 }
 
-// Write output
-const output = featureCollection(merged);
-fs.writeFileSync('./public/data/merged-manzanas.geojson', JSON.stringify(output, null, 2));
+// Write output — round coordinates to 6 decimals + minify (P4D-FILESIZE).
+const output = roundFeatureCollection(featureCollection(merged));
+fs.writeFileSync('./public/data/merged-manzanas.geojson', JSON.stringify(output));
 
 console.log(`\n✅ Wrote ${merged.length} merged manzanas to merged-manzanas.geojson`);
 
