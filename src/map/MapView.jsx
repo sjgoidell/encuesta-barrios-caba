@@ -100,6 +100,33 @@ const MapView = () => {
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
+  // Comment box → Formspree (same endpoint the survey's step-5 form uses).
+  const [comment, setComment] = useState('');
+  const [commentSending, setCommentSending] = useState(false);
+  const submitComment = async () => {
+    const message = comment.trim();
+    if (!message || commentSending) return;
+    setCommentSending(true);
+    try {
+      const res = await fetch('https://formspree.io/f/xkgborqz', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ message, source: 'map_test' }),
+      });
+      if (res.ok) {
+        setComment('');
+        showToast('💬 ¡Gracias por tu comentario!');
+        logEvent('Map', 'Comment', 'submit');
+      } else {
+        showToast('No se pudo enviar. Intentá de nuevo.');
+      }
+    } catch (e) {
+      showToast('No se pudo enviar. Intentá de nuevo.');
+    } finally {
+      setCommentSending(false);
+    }
+  };
+
   // ✅ Google Analytics page view
   useEffect(() => {
     initAnalytics();         // Only initializes once
@@ -431,6 +458,12 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
         'visibility': 'none',
       },
     });
+
+    // Keep barrio labels above the border lines in the límites view (the borders
+    // layer is added last, so without this it would paint over the labels).
+    if (mapInstance.getLayer('barrio-label-layer')) {
+      mapInstance.moveLayer('barrio-label-layer');
+    }
 
       const popup = new mapboxgl.Popup({ closeButton: false, closeOnClick: false });
 
@@ -786,6 +819,33 @@ return (
     onClick={() => handleShare('copy')}
   >
     📋
+  </button>
+</div>
+
+{/* Comment box → Formspree (AJAX so it doesn't navigate away from the map) */}
+<div style={{ marginBottom: '12px' }}>
+  <textarea
+    value={comment}
+    onChange={(e) => setComment(e.target.value)}
+    rows={2}
+    placeholder="💬 Dejanos un comentario..."
+    style={{
+      width: '100%', boxSizing: 'border-box', padding: '8px',
+      borderRadius: '4px', border: '1px solid #444', background: '#1f1f1f',
+      color: '#fff', fontFamily: 'inherit', fontSize: '13px', resize: 'vertical',
+    }}
+  />
+  <button
+    onClick={submitComment}
+    disabled={commentSending || !comment.trim()}
+    style={{
+      width: '100%', marginTop: '6px', padding: '8px', fontWeight: '600',
+      background: (comment.trim() && !commentSending) ? '#444' : '#333',
+      color: 'white', border: 'none', borderRadius: '4px',
+      cursor: (comment.trim() && !commentSending) ? 'pointer' : 'default',
+    }}
+  >
+    {commentSending ? 'Enviando…' : 'Enviar comentario'}
   </button>
 </div>
 
