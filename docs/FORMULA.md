@@ -1,15 +1,12 @@
 # The %-per-manzana formula — as it works today
 
-_Last updated: 2026-06-14 (P1-FORMULA-DOC). **Documentation only** — evaluation/
-alternatives are deferred to P4E-FORMULA. This describes current behavior, not a
-recommendation._
+_Last updated: 2026-06-15 (P4E — decay softened). Describes the current formula._
 
-The same logic runs in two places:
-- `src/utils/MapViewPreprocess.js` → `enrichManzana()` (offline, output unused at runtime)
-- `src/components/MapView.jsx` → `enrichManzana()` (the version actually rendered)
-
-Both are identical in substance. The numbers shown in the tooltip come from the
-**MapView.jsx** version.
+The weighting runs in **one place**: `scripts/preprocess-map.mjs` → `enrichManzana()`,
+offline. It writes each block's barrio weights + majority into
+`enriched-manzanas.geojson`; the app (`src/map/MapView.jsx`) renders those
+precomputed weights and only re-blends colors (P4D Lever 3 removed the old
+in-browser recompute). The tooltip %s come straight from the precomputed weights.
 
 ## Inputs
 - **Manzanas**: city blocks (`merged-manzanas.geojson`), each a polygon with an `id`.
@@ -32,7 +29,7 @@ for each response R:
     if pin invalid:                            skip
     d = haversine_distance(pin, C) in km
     if d > 5:                                  skip           # 5 km cap
-    w = 1 / (d + 0.01)                                        # inverse-distance weight
+    w = 1 / (d + 0.3)                                         # inverse-distance weight (P4E: +0.3km, softened)
     barrios[slug] += w
     total += w
 
@@ -65,13 +62,19 @@ It is a **proximity-weighted share of overlapping respondents** — **not**:
    lives 4 km away but drew a polygon covering the block contributes little.
 2. **The 5 km cap** is generous for CABA (the city is ~ that wide), so it rarely
    binds — but it can silently exclude valid far-but-overlapping polygons.
-3. **`1/(d+0.01)`** makes very close pins extremely heavy (a pin ~10 m from the
-   centroid ≈ weight 100), so a single nearby respondent can swamp a block.
+3. **`1/(d+0.3)`** (P4E-refined). The original `+0.01` made very close pins
+   extremely heavy (a pin ~10 m away ≈ weight 100), letting a single adjacent
+   respondent define a block. The `+0.3 km` ("neighborhood scale") epsilon keeps
+   "locals decide" but tempers it toward a small local consensus. Effect of the
+   change: ~2.4% of blocks shifted majority barrio.
 4. **Each respondent contributes to many blocks** (every block their polygon
    touches within 5 km), so "votes" are not one-per-person-per-block-equivalent.
 5. The intersection test uses the polygon, but the weight uses the pin — the two
    can disagree.
 
-These are **observations to confirm against intent** in P4E-FORMULA, where the
-first question is: *what is each % meant to claim?* (share of respondents?
-density? population-normalized?). The right formula depends on that answer.
+## Intended meaning (confirmed P4E)
+The % is a **proximity-weighted share of local opinion**: residents closest to a
+block weigh most; people who included the block from farther away still count, at
+lower weight. This matches the owner's stated intent ("the most-local residents
+understand a block best and should have the most say"). The formula was kept
+(not redesigned) and only its decay was softened (`+0.01` → `+0.3`).

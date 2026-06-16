@@ -67,7 +67,12 @@ const enrichManzana = (feature, responses, barrioColors, palette, cleanedBarrios
       const distance = turf.distance(pinPoint, centroid, { units: 'kilometers' });
       if (distance > 5) return;
 
-      const weight = 1 / (distance + 0.01);
+      // Inverse-distance weight (P4E): closest residents weigh most, far-but-
+      // including respondents still count, lower. The +0.3km ("neighborhood
+      // scale") epsilon softens the decay vs the old +0.01: it keeps "locals
+      // decide" but prevents a single adjacent respondent from single-handedly
+      // defining a block. See docs/FORMULA.md.
+      const weight = 1 / (distance + 0.3);
       barrios[barrio] = (barrios[barrio] || 0) + weight;
 
       if (!barrioColors[barrio]) {
