@@ -55,7 +55,10 @@ const enrichManzana = (feature, responses, barrioColors, palette, cleanedBarrios
 
     const raw = response.properties.barrio ?? '';
     const barrio = normalizeBarrio(raw);
-    if (barrio.length < 5 || !cleanedBarrios.has(barrio)) return;
+    // cleanedBarrios (export-cleaned-barrios.mjs) is the single source of
+    // truth for valid/invalid barrios -- no separate length check here, so
+    // the two scripts can't drift out of sync on the threshold again.
+    if (!cleanedBarrios.has(barrio)) return;
 
     try {
       const pin = JSON.parse(response.properties.pinLocation || '{}');
