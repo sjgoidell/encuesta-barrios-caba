@@ -12,24 +12,43 @@ function Landing() {
   const [showTerms, setShowTerms] = useState(false)
   const MotionDiv = motion.div
 
-  const buttonStyle = {
-    display: 'block',
-    width: '100%',
-    padding: '1.25rem',
-    fontSize: '1.1rem',
+  const tileStyle = {
+    flex: '1 1 0',
+    aspectRatio: '1 / 1',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '0.75rem',
+    fontSize: '1.15rem',
     fontWeight: '700',
-    borderRadius: '8px',
+    borderRadius: '12px',
     cursor: 'pointer',
-    marginBottom: '1rem',
+    textAlign: 'center',
+    lineHeight: 1.3,
   }
 
   return (
-    <div style={{ position: 'relative' }}>
+    <div style={{ position: 'relative', minHeight: '100vh' }}>
       <MapScreen readOnly blurred />
 
+      {/* Hover "bezel" affordance on the hub tiles -- plain <style>, since
+          inline styles can't express :hover. */}
+      <style>{`
+        .hub-tile { transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease; }
+        .hub-tile:hover { transform: translateY(-2px); }
+        .hub-tile-primary { border: 2px solid transparent; }
+        .hub-tile-primary:hover { border-color: #baffd8; box-shadow: 0 0 0 2px rgba(186,255,216,0.4); }
+        .hub-tile-secondary { border: 2px solid #5b7c99; }
+        .hub-tile-secondary:hover { border-color: #cfe3f2; box-shadow: 0 0 0 2px rgba(207,227,242,0.4); }
+      `}</style>
+
+      {/* Opacity-only fade: framer-motion takes over the `transform` CSS
+          property for any animated x/y/scale, which would silently overwrite
+          the translate(-50%,-50%) centering below. */}
       <MotionDiv
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.5, ease: 'easeInOut' }}
         style={{
           position: 'absolute',
@@ -42,7 +61,7 @@ function Landing() {
           padding: '2rem',
           borderRadius: '8px',
           width: 'calc(100vw - 4rem)',
-          maxWidth: '400px',
+          maxWidth: '560px',
           color: '#fff',
           textAlign: 'center',
         }}
@@ -52,20 +71,25 @@ function Landing() {
           El mapa colectivo de cómo los porteños definimos nuestros barrios.
         </p>
 
-        <button
-          className="btn-next"
-          style={buttonStyle}
-          onClick={() => navigate('/encuesta')}
-        >
-          📝 Sumar mi barrio
-        </button>
+        <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
+          <button
+            className="hub-tile hub-tile-primary"
+            style={{ ...tileStyle, backgroundColor: '#00cc66', color: '#fff' }}
+            onClick={() => navigate('/encuesta')}
+          >
+            <span style={{ fontSize: '2rem' }}>📝</span>
+            Sumar mi barrio
+          </button>
 
-        <button
-          style={{ ...buttonStyle, backgroundColor: '#222', border: '1px solid #444', color: '#fff', marginBottom: 0 }}
-          onClick={() => navigate('/live_results')}
-        >
-          🗺️ Revisar los resultados
-        </button>
+          <button
+            className="hub-tile hub-tile-secondary"
+            style={{ ...tileStyle, backgroundColor: '#3e5c76', color: '#fff' }}
+            onClick={() => navigate('/live_results')}
+          >
+            <span style={{ fontSize: '2rem' }}>🗺️</span>
+            Revisar los resultados
+          </button>
+        </div>
 
         <p style={{ fontSize: '0.8rem', marginTop: '2rem' }}>
           Al participar, aceptás los <span style={{ color: 'lightblue', cursor: 'pointer' }} onClick={() => setShowTerms(true)}>términos y condiciones</span> del proyecto.
