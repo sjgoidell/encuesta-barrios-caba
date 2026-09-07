@@ -94,6 +94,8 @@ const MapView = () => {
   const [panelCollapsed, setPanelCollapsed] = useState(
     typeof window !== 'undefined' && window.innerWidth <= 768
   );
+  // The "about this project" blurbs start collapsed so the panel stays compact.
+  const [aboutCollapsed, setAboutCollapsed] = useState(true);
   useEffect(() => {
     const onResize = () => setIsMobile(window.innerWidth <= 768);
     window.addEventListener('resize', onResize);
@@ -297,6 +299,15 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
       responsesGeo.features.forEach((f) => {
         f.properties.barrio_cleaned = normalizeBarrio(f.properties.barrio);
       });
+
+      // Only draw outlines for whitelisted CABA barrios (cleanedBarrios) — the
+      // blocks view already excludes junk/AMBA responses (test, olivos,
+      // villacaraza, etc. — see export-cleaned-barrios.mjs) via this same list;
+      // without this filter, the límites view was showing their polygons anyway.
+      const cleanedBarriosSet = new Set(cleanedBarriosList);
+      responsesGeo.features = responsesGeo.features.filter(
+        (f) => f.properties.barrio_cleaned && cleanedBarriosSet.has(f.properties.barrio_cleaned)
+      );
 
       // Deterministic barrio -> palette color (stable order: cleanedBarrios is
       // sorted by frequency). Drives fills, popups, labels and the límites view.
@@ -786,30 +797,56 @@ return (
       {/* Collapse via CSS (not conditional render) so #geocoder-container stays
           mounted — initializeMap attaches the Mapbox geocoder to it on load. */}
       <div style={{ display: (isMobile && panelCollapsed) ? 'none' : 'block' }}>
-      <p style={{
-        fontSize: isMobile ? '12px' : '13px',
-        lineHeight: 1.5,
-        color: '#ccc',
-        marginTop: 0,
-        marginBottom: '16px',
-      }}>
-        Acerca de este proyecto: un mapa colaborativo de cómo los porteños definimos
-        nuestros barrios. Cada manzana refleja las respuestas de vecinos que trazaron
-        los límites de su propio barrio, con más peso para quienes viven más cerca.
-      </p>
+      <button
+        onClick={() => setAboutCollapsed(c => !c)}
+        aria-expanded={!aboutCollapsed}
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          width: '100%',
+          background: 'transparent',
+          border: 'none',
+          color: '#ccc',
+          fontSize: isMobile ? '12px' : '13px',
+          fontWeight: '600',
+          cursor: 'pointer',
+          padding: 0,
+          marginBottom: aboutCollapsed ? '16px' : '8px',
+        }}
+      >
+        <span>Acerca de este proyecto</span>
+        <span style={{ fontSize: '14px' }}>{aboutCollapsed ? '▾' : '▴'}</span>
+      </button>
 
-      <p style={{
-        fontSize: isMobile ? '12px' : '13px',
-        lineHeight: 1.5,
-        color: '#ccc',
-        marginTop: 0,
-        marginBottom: '16px',
-      }}>
-        Dónde Vivo CABA es un proyecto impulsado por Sam Goidell, con el apoyo de amigos y
-        conocidos que aman a la Ciudad de Buenos Aires y el patrimonio cultural de sus barrios.
-        La comunidad cuenta con representación del mundo académico e inmobiliario, y del
-        gobierno local. ¡Gracias a todos por su apoyo!
-      </p>
+      {!aboutCollapsed && (
+        <>
+          <p style={{
+            fontSize: isMobile ? '12px' : '13px',
+            lineHeight: 1.5,
+            color: '#ccc',
+            marginTop: 0,
+            marginBottom: '16px',
+          }}>
+            Un mapa colaborativo de cómo los porteños definimos nuestros barrios. Cada
+            manzana refleja las respuestas de vecinos que trazaron los límites de su
+            propio barrio, con más peso para quienes viven más cerca.
+          </p>
+
+          <p style={{
+            fontSize: isMobile ? '12px' : '13px',
+            lineHeight: 1.5,
+            color: '#ccc',
+            marginTop: 0,
+            marginBottom: '16px',
+          }}>
+            Dónde Vivo CABA es un proyecto impulsado por Sam Goidell, con el apoyo de amigos y
+            conocidos que aman a la Ciudad de Buenos Aires y el patrimonio cultural de sus barrios.
+            La comunidad cuenta con representación del mundo académico e inmobiliario, y del
+            gobierno local. ¡Gracias a todos por su apoyo!
+          </p>
+        </>
+      )}
 
       <div id="geocoder-container" style={{ marginBottom: '16px' }}></div>
 
@@ -962,7 +999,7 @@ return (
 
 
 <button
-  onClick={() => window.open('https://dondevivocaba.com', '_blank')}
+  onClick={() => window.open('https://dondevivocaba.com/encuesta', '_blank')}
   style={{
     width: '100%',
     padding: '10px',

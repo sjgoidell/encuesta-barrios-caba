@@ -6,7 +6,8 @@ barrio's boundary, and name it; the responses are aggregated into a block
 ("manzana") level map showing which barrio each city block belongs to. Inspired
 by the NYT "Extremely Detailed Map of NYC Neighborhoods."
 
-- **Survey:** https://dondevivocaba.com
+- **Landing (hub):** https://dondevivocaba.com — two buttons: "Sumar mi barrio" (survey) and "Revisar los resultados" (map)
+- **Survey:** https://dondevivocaba.com/encuesta
 - **Map:** https://dondevivocaba.com/live_results (`/map_test` redirects here)
 
 ## Stack
@@ -18,12 +19,12 @@ in `docs/ARCHITECTURE.md`.
 ```
 scripts/        data pipeline (run via npm — see "Updating the map")
 src/
-  app/          the survey (App.jsx + MapScreen, BoundaryDrawScreen)
+  app/          Landing.jsx (hub) + the survey (App.jsx + MapScreen, BoundaryDrawScreen)
   map/          the public choropleth map (MapView.jsx)
   components/   shared (QueriedDB)
   data/         static option lists
   lib/          firebase.js, analytics.js
-  main.jsx      routes: / (survey), /live_results (map, /map_test redirects here), /db (counts)
+  main.jsx      routes: / (hub), /encuesta (survey), /live_results (map, /map_test redirects here), /db (counts)
 data/           barrio-names.json (cleaned key → display name)
 public/data/    SERVED data: enriched-manzanas.geojson, responses.geojson, cleanedBarrios.json
 pipeline-data/  pipeline source/intermediate (NOT web-published): manzanas + merged-manzanas
@@ -34,7 +35,7 @@ docs/           ARCHITECTURE.md (architecture + roadmap), FORMULA.md (methodolog
 ## Run locally
 ```bash
 npm install
-npm run dev        # http://localhost:5173  (survey at /, map at /live_results)
+npm run dev        # http://localhost:5173  (hub at /, survey at /encuesta, map at /live_results)
 npm run build      # production build to dist/
 npm run lint
 ```
