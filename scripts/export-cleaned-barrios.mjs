@@ -36,8 +36,10 @@ const main = async () => {
     const rawBarrio = feature.properties.barrio || '';
     const barrio = normalizeBarrio(rawBarrio);
 
-    // Skip obviously invalid names and out-of-area (AMBA) localities
-    if (barrio.length <= 4) return;
+    // Skip obviously invalid names and out-of-area (AMBA) localities. Length
+    // threshold is 3, not 4 -- "Once" (a real CABA barrio) normalizes to 4
+    // chars and was getting silently dropped by this heuristic.
+    if (barrio.length <= 3) return;
     if (EXCLUDED_SLUGS.has(barrio)) return;
 
     barrioCounts[barrio] = (barrioCounts[barrio] || 0) + 1;
