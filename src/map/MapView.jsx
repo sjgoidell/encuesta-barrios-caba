@@ -798,6 +798,19 @@ return (
         los límites de su propio barrio, con más peso para quienes viven más cerca.
       </p>
 
+      <p style={{
+        fontSize: isMobile ? '12px' : '13px',
+        lineHeight: 1.5,
+        color: '#ccc',
+        marginTop: 0,
+        marginBottom: '16px',
+      }}>
+        Dónde Vivo CABA es un proyecto impulsado por Sam Goidell, con el apoyo de amigos y
+        conocidos que aman a la Ciudad de Buenos Aires y el patrimonio cultural de sus barrios.
+        La comunidad cuenta con representación del mundo académico e inmobiliario, y del
+        gobierno local. ¡Gracias a todos por su apoyo!
+      </p>
+
       <div id="geocoder-container" style={{ marginBottom: '16px' }}></div>
 
       <div style={{ display: 'flex', marginBottom: '12px' }}>

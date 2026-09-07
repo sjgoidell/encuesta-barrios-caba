@@ -401,6 +401,12 @@ function App() {
               @dondevivocaba
             </a>
           </p>
+          <p style={{ fontSize: '0.8rem', marginTop: '1rem' }}>
+            Dónde Vivo CABA es un proyecto impulsado por Sam Goidell, con el apoyo de amigos y
+            conocidos que aman a la Ciudad de Buenos Aires y el patrimonio cultural de sus barrios.
+            La comunidad cuenta con representación del mundo académico e inmobiliario, y del
+            gobierno local. ¡Gracias a todos por su apoyo!
+          </p>
         </motion.div>
         </>
       )}
