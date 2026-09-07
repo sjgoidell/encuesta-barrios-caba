@@ -15,7 +15,7 @@ import path from 'path';
 // Normalized slugs to exclude. These are Greater Buenos Aires (AMBA) localities,
 // not CABA barrios, so they should not appear on the CABA map. Add future
 // out-of-area or junk slugs here.
-const EXCLUDED_SLUGS = new Set(['test', 'asdf', 'olivos', 'martinez']);
+const EXCLUDED_SLUGS = new Set(['test', 'asdf', 'olivos', 'martinez', 'villacaraza', 'valentinalsina']);
 
 const normalizeBarrio = (str) =>
   str
