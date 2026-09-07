@@ -396,17 +396,6 @@ function App() {
               Extremely Detailed Map of New York City Neighborhoods
             </a>")
           </p>
-          <p style={{ fontSize: '0.8rem' }}>
-            Seguinos en Instagram: <a href="https://instagram.com/dondevivocaba" target="_blank" rel="noopener noreferrer" style={{ color: 'lightblue' }}>
-              @dondevivocaba
-            </a>
-          </p>
-          <p style={{ fontSize: '0.8rem', marginTop: '1rem' }}>
-            Dónde Vivo CABA es un proyecto impulsado por Sam Goidell, con el apoyo de amigos y
-            conocidos que aman a la Ciudad de Buenos Aires y el patrimonio cultural de sus barrios.
-            La comunidad cuenta con representación del mundo académico e inmobiliario, y del
-            gobierno local. ¡Gracias a todos por su apoyo!
-          </p>
         </motion.div>
         </>
       )}
@@ -1146,7 +1135,7 @@ className={`btn-nav ${submitting ? 'btn-disabled' : 'btn-next'}`}
 
     {/** 👇 Declare once at top of block **/}
     {(() => {
-      const shareUrl = 'https://dondevivocaba.com/?utm_source=whatsapp&utm_medium=share&utm_campaign=postsubmit'
+      const shareUrl = 'https://dondevivocaba.com/encuesta?utm_source=whatsapp&utm_medium=share&utm_campaign=postsubmit'
       const shareText = 'Yo ya mapeé mi barrio. Sumate vos también al mapa colectivo de CABA 🗺️'
 
       return (
@@ -1186,7 +1175,7 @@ className={`btn-nav ${submitting ? 'btn-disabled' : 'btn-next'}`}
                   alert('¡Link copiado!')
                 }}
               >
-                https://dondevivocaba.com
+                https://dondevivocaba.com/encuesta
               </code>
             </p>
           </div>

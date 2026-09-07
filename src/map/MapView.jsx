@@ -999,7 +999,7 @@ return (
 
 
 <button
-  onClick={() => window.open('https://dondevivocaba.com', '_blank')}
+  onClick={() => window.open('https://dondevivocaba.com/encuesta', '_blank')}
   style={{
     width: '100%',
     padding: '10px',
