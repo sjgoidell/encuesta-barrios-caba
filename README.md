@@ -7,7 +7,7 @@ barrio's boundary, and name it; the responses are aggregated into a block
 by the NYT "Extremely Detailed Map of NYC Neighborhoods."
 
 - **Survey:** https://dondevivocaba.com
-- **Map:** https://dondevivocaba.com/map_test
+- **Map:** https://dondevivocaba.com/live_results (`/map_test` redirects here)
 
 ## Stack
 React 19 + Vite 6 · Mapbox GL JS v3 · Turf.js · Firebase (Firestore + one Cloud
@@ -23,7 +23,7 @@ src/
   components/   shared (QueriedDB)
   data/         static option lists
   lib/          firebase.js, analytics.js
-  main.jsx      routes: / (survey), /map_test (map), /db (counts)
+  main.jsx      routes: / (survey), /live_results (map, /map_test redirects here), /db (counts)
 data/           barrio-names.json (cleaned key → display name)
 public/data/    SERVED data: enriched-manzanas.geojson, responses.geojson, cleanedBarrios.json
 pipeline-data/  pipeline source/intermediate (NOT web-published): manzanas + merged-manzanas
@@ -34,7 +34,7 @@ docs/           ARCHITECTURE.md (architecture + roadmap), FORMULA.md (methodolog
 ## Run locally
 ```bash
 npm install
-npm run dev        # http://localhost:5173  (survey at /, map at /map_test)
+npm run dev        # http://localhost:5173  (survey at /, map at /live_results)
 npm run build      # production build to dist/
 npm run lint
 ```
@@ -47,7 +47,7 @@ survey → Firestore 'responses'
   → npm run export-barrios  → cleanedBarrios.json (valid barrio whitelist)
   → npm run merge-manzanas  → pipeline-data/merged-manzanas.geojson (only when raw blocks change)
   → npm run preprocess-map  → public/data/enriched-manzanas.geojson (the served choropleth)
-map (/map_test) renders the precomputed enriched-manzanas (no in-browser recompute).
+map (/live_results) renders the precomputed enriched-manzanas (no in-browser recompute).
 ```
 The %-per-manzana methodology (inverse-distance weighting) is documented in
 [`docs/FORMULA.md`](docs/FORMULA.md).
@@ -56,7 +56,7 @@ The %-per-manzana methodology (inverse-distance weighting) is documented in
 ```bash
 git checkout -b update-map-<month>
 npm run refresh-data     # = export-geojson → export-barrios → preprocess-map  (preprocess is ~5 min)
-npm run dev              # verify at /map_test
+npm run dev              # verify at /live_results
 git add . && git commit -m "vX.X.X updated map <Month Year>"
 git push -u origin update-map-<month>     # open a PR → main
 # review the Netlify Deploy Preview, then merge the PR to ship.
@@ -71,10 +71,11 @@ ship. Rollback via Netlify **Deploys → "Publish deploy."** Never push directly
 `main`. See [`DEPLOY.md`](DEPLOY.md).
 
 ## Roadmap
-The map currently lives at `/map_test`. The plan is to promote it to a polished,
-public, NYT-style interactive — including an Argentinian-Spanish landing intro,
-a legend, and methodology/about content. See `docs/ARCHITECTURE.md` for the full
-roadmap (architecture, performance, UI/UX proposals, and publication plan).
+The map now lives at `/live_results` (promoted from `/map_test`, which
+redirects there for old links), with a first-load intro modal and an "acerca
+de" sidebar blurb. Remaining plan: a legend and fuller methodology/about
+content. See `docs/ARCHITECTURE.md` for the full roadmap (architecture,
+performance, UI/UX proposals, and publication plan).
 
 ## Privacy
 The public `responses.geojson` is restricted to `id`, `barrio`, and `pinLocation`
