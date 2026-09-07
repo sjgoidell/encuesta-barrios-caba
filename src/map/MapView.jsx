@@ -1,4 +1,4 @@
-// MapView — the public choropleth at /map_test.
+// MapView — the public choropleth at /live_results.
 //
 // On load it fetches the PRECOMPUTED enriched-manzanas (city blocks already
 // carrying their barrio mix + majority barrio), the privacy-safe responses (for
@@ -100,6 +100,19 @@ const MapView = () => {
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
+  // First-load "about this project" intro modal — dismissible, remembered via
+  // localStorage so returning visitors aren't interrupted again.
+  const [showIntro, setShowIntro] = useState(false);
+  useEffect(() => {
+    if (!localStorage.getItem('liveResultsIntroDismissed')) {
+      setShowIntro(true);
+    }
+  }, []);
+  const dismissIntro = () => {
+    localStorage.setItem('liveResultsIntroDismissed', 'true');
+    setShowIntro(false);
+  };
+
   // Comment box → Formspree (same endpoint the survey's step-5 form uses).
   const [comment, setComment] = useState('');
   const [commentSending, setCommentSending] = useState(false);
@@ -111,7 +124,7 @@ const MapView = () => {
       const res = await fetch('https://formspree.io/f/xkgborqz', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ message, source: 'map_test' }),
+        body: JSON.stringify({ message, source: 'live_results' }),
       });
       if (res.ok) {
         setComment('');
@@ -129,8 +142,8 @@ const MapView = () => {
 
   // ✅ Google Analytics page view
   useEffect(() => {
-    initAnalytics();         // Only initializes once
-    logPageView('/map');     // Logs the map view
+    initAnalytics();              // Only initializes once
+    logPageView('/live_results');  // Logs the map view
   }, []);
 
   useEffect(() => {
@@ -157,7 +170,7 @@ if (lockedManzanaId) {
 }
 
 if (!targetFeature || !targetFeature.properties?.barrios) {
-  const fallback = '¿En qué barrio está mi manzana? Descubrilo en https://dondevivocaba.com/map';
+  const fallback = '¿En qué barrio está mi manzana? Descubrilo en https://dondevivocaba.com/live_results';
   navigator.clipboard.writeText(fallback);
   showToast('📋 Texto copiado!');
   return;
@@ -176,7 +189,7 @@ if (!targetFeature || !targetFeature.properties?.barrios) {
     });
 
   const summary = sorted.join(', ');
-  const message = `Yo vivo en ${sorted[0]}. (${summary}). Buscá tu manzana: 👉 https://dondevivocaba.com/map`;
+  const message = `Yo vivo en ${sorted[0]}. (${summary}). Buscá tu manzana: 👉 https://dondevivocaba.com/live_results`;
 
   if (mode === 'whatsapp') {
     window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
@@ -671,6 +684,55 @@ window.addEventListener('keydown', escHandler);
 return (
   <>
 
+{showIntro && (
+  <div style={{
+    position: 'fixed',
+    inset: 0,
+    background: 'rgba(0,0,0,0.7)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 2000,
+    padding: '1rem',
+  }}>
+    <div style={{
+      background: '#fff',
+      color: '#000',
+      padding: '1.75rem',
+      borderRadius: '8px',
+      maxWidth: '400px',
+      width: '100%',
+      boxShadow: '0 8px 20px rgba(0,0,0,0.3)',
+      fontFamily: 'sans-serif',
+    }}>
+      <h3 style={{ marginTop: 0, fontSize: '1.2rem' }}>El mapa de los barrios porteños 🗺️</h3>
+      <p style={{ fontSize: '0.95rem', lineHeight: 1.5 }}>
+        Este es un mapa colaborativo de los límites de los barrios de Buenos Aires,
+        dibujado por los propios vecinos. Cada manzana se pinta según los vecinos
+        que la incluyeron en su barrio, con más peso para quienes viven más cerca.
+        Es un proyecto independiente, inspirado en el mapa de barrios de Nueva
+        York del New York Times.
+      </p>
+      <button
+        onClick={dismissIntro}
+        style={{
+          marginTop: '0.5rem',
+          padding: '0.7rem 1.4rem',
+          fontSize: '0.95rem',
+          fontWeight: '600',
+          background: '#000',
+          color: '#fff',
+          border: 'none',
+          borderRadius: '6px',
+          cursor: 'pointer',
+        }}
+      >
+        Explorar el mapa ➡️
+      </button>
+    </div>
+  </div>
+)}
+
 <div
   className="map-sidebar"
   style={{
@@ -724,6 +786,18 @@ return (
       {/* Collapse via CSS (not conditional render) so #geocoder-container stays
           mounted — initializeMap attaches the Mapbox geocoder to it on load. */}
       <div style={{ display: (isMobile && panelCollapsed) ? 'none' : 'block' }}>
+      <p style={{
+        fontSize: isMobile ? '12px' : '13px',
+        lineHeight: 1.5,
+        color: '#ccc',
+        marginTop: 0,
+        marginBottom: '16px',
+      }}>
+        Acerca de este proyecto: un mapa colaborativo de cómo los porteños definimos
+        nuestros barrios. Cada manzana refleja las respuestas de vecinos que trazaron
+        los límites de su propio barrio, con más peso para quienes viven más cerca.
+      </p>
+
       <div id="geocoder-container" style={{ marginBottom: '16px' }}></div>
 
       <div style={{ display: 'flex', marginBottom: '12px' }}>
@@ -820,6 +894,30 @@ return (
   >
     📋
   </button>
+
+  <a
+    href="https://instagram.com/dondevivocaba"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram @dondevivocaba"
+    style={{
+      flex: 1,
+      padding: '10px',
+      fontWeight: '600',
+      background: 'linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)',
+      color: 'white',
+      border: 'none',
+      borderRadius: '4px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textDecoration: 'none',
+    }}
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="18" height="18" fill="white">
+      <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+    </svg>
+  </a>
 </div>
 
 {/* Comment box → Formspree (AJAX so it doesn't navigate away from the map) */}

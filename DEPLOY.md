@@ -31,7 +31,7 @@
 cd /path/to/encuesta-barrios-caba
 git checkout -b update-map-<month>      # work on a branch, not main
 npm run refresh-data                     # export-geojson → export-barrios → preprocess-map
-npm run dev                              # VERIFY locally (http://localhost:5173/map_test)
+npm run dev                              # VERIFY locally (http://localhost:5173/live_results)
 git add . && git commit -m "vX.X.X updated map <Month Year>"
 git push -u origin update-map-<month>    # then open a PR → main
 # Review the Netlify Deploy Preview, get approval, then MERGE the PR to ship.

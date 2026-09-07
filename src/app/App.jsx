@@ -396,6 +396,11 @@ function App() {
               Extremely Detailed Map of New York City Neighborhoods
             </a>")
           </p>
+          <p style={{ fontSize: '0.8rem' }}>
+            Seguinos en Instagram: <a href="https://instagram.com/dondevivocaba" target="_blank" rel="noopener noreferrer" style={{ color: 'lightblue' }}>
+              @dondevivocaba
+            </a>
+          </p>
         </motion.div>
         </>
       )}
