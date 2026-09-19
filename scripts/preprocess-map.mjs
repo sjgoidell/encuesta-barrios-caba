@@ -37,12 +37,18 @@ const hexToRgb = (hex) => {
 const rgbToHex = (r, g, b) =>
   '#' + [r, g, b].map(x => (x < 16 ? '0' : '') + x.toString(16)).join('');
 
+// Must match export-cleaned-barrios.mjs's normalizeBarrio exactly (including
+// the punctuation strip) -- a drift here silently breaks the cleanedBarrios
+// whitelist check below for any raw text containing punctuation (found via a
+// "Parque Chacabuco, Barrio Sim\u00f3n Bolivar" response that was being dropped
+// because the comma survived here but not in the whitelist's version).
 const normalizeBarrio = (str) =>
   str
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     .replace(/\s+/g, '')
+    .replace(/[^a-z0-9]/g, '')
     .trim();
 
 const enrichManzana = (feature, responses, barrioColors, palette, cleanedBarrios, pinPoints) => {

@@ -25,13 +25,16 @@ mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
 // P2-NAMES-TABLE). Falls back to the raw slug if unmapped.
 const displayBarrio = (slug) => barrioNames[slug] || slug;
 
-// Normalize a raw barrio name to its slug (lowercase, no accents, no spaces) —
-// same scheme as cleanedBarrios.json and the enrichment logic. Used to color
-// the límites view, since the privacy-safe responses.geojson no longer carries
-// a precomputed barrio_cleaned field.
+// Normalize a raw barrio name to its slug (lowercase, no accents, no spaces,
+// no punctuation) — must match export-cleaned-barrios.mjs's normalizeBarrio
+// exactly, including the punctuation strip, or responses with punctuation
+// (e.g. "Parque Chacabuco, Barrio Simón Bolivar") silently fail the
+// cleanedBarrios whitelist check. Used to color the límites view, since the
+// privacy-safe responses.geojson no longer carries a precomputed
+// barrio_cleaned field.
 const normalizeBarrio = (raw) =>
   typeof raw === 'string'
-    ? raw.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, '')
+    ? raw.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, '').replace(/[^a-z0-9]/g, '')
     : '';
 
 const debug = false;
